@@ -8,7 +8,9 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 
-The _realtime web_ is almost as hyped a word as _geolocation_. It actually groups a lot of different realities and doesn't have the same meaning and implementation from service A to service B. Let's first focus on publishers.
+The _realtime web_ is almost as hyped a word as _geolocation_. It actually groups a lot of different realities and doesn't have the same meaning and implementation from service A to service B. Let's first focus on publishers. 
+
+The first thing we should all acknowledge is that _every publisher can and should be part of the realtime web movement_. We'd all be in a better position if we *stopped assuming that Realtime web is the same as Twitter ecosystem*.
 
 h2. Definitions
 
