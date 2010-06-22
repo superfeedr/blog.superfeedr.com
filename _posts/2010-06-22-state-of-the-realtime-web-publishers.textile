@@ -1,0 +1,82 @@
+---
+layout: post
+title: "State of the Realtime Web : the Publishers"
+categories: [realtime, publishers, twitter, facebook, pubsubhubbub]
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+
+The _realtime web_ is almost as hyped a word as _geolocation_. It actually groups a lot of different realities and doesn't have the same meaning and implementation from service A to service B. Let's first focus on publishers.
+
+h2. Definitions
+
+These are obviously subject to debate, let me know if you disagree in the comments, but I'm posting them first so you can understand the rest of the post.
+
+*User* : you, me, them, everybody.
+
+*Application* : a piece of software on the internet, that can be used by users, but also by other applications.
+
+*Content* : a piece of data available on the internet. A blog post, a job offer, a product description... etc. Some people call that a resource. This brings us to the fact that most content should have a URL (Universal Resource Location).
+
+*Publisher* : an application that publishes content on the internet. In more words : an application that makes pieces of content available at a given URL. 
+
+*Pushing* : an action by a publisher which consist of actually distributing the published content. Distribution involves sending the content away.
+
+*Pinging* : an action by a publisher which consist of telling to some other application that some content is available. It doesn't send the content, it just tells that the content is available for pickup.
+
+h2. The Realtime web Publishers
+
+A small minority (yep, the opposite of a vast majority) of the content is currently being published in realtime. A lot of publishers will just make their content available without caring about the fact that this content is distributed. For a few years _a few publishers where pinging_ another (smaller) set of people when they updated their content. You might be familiar with services like "Ping-O-matic":http://pingomatic.com/.
+It's not until *very recently* (maybe 18 months) that some services started to push their content away and distribute it. The main motivation behind this was to stop being polled over and over again for the same content. The first company who did this was "Twitter":http://twitter.com/, and their infamous firehose.
+
+h3. Twitter
+
+!{float:right; width:200px; margin: 0px 0px 15px 10px}http://www.crunchbase.com/assets/images/resized/0000/2755/2755v30-max-250x250.png!
+Twitter opened the pandora box. By pushing their content, *they allowed a whole new breed of applications which would consume the firehose in realtime and show it to their users*. I know several people who were consuming Twitter only thru "Friendfeed":http://friendfeed.com/'s interface. At the same time, this proved like a very important monetization scheme for Twitter : search engines like Google have a very hard time crawling the whole web, yet alone high frequency publishing services like Twitter, so "they paid a lot to get access":http://techcrunch.com/2009/10/21/that-didnt-take-long-twitter-is-coming-to-google/ to this firehose.
+Yet, *Twitter failed at establishing an open and standard protocol* that could be used by other publishers to represent and distribute their data in a similar fashion. Worse, if you want Twitter's data in realtime, you need to have a specific business relationship, which, in a lot of ways is the opposite to being open. 
+Their main motivation is still very present, and their -Chirp- "User Stream":http://apiwiki.twitter.com/User-Stream-Implementation-Suggestions is just another iteration which aims at making desktop clients like "Seesmic":http://seesmic.com/ or "Tweetdeck":http://tweetdeck.com/ much more efficient by pushing (in a proprietary manner again) them all the data for a given user. 
+
+h3. Facebook
+
+!{float:right; width:200px; margin: 0px 0px 15px 10px}http://www.crunchbase.com/assets/images/resized/0000/4561/4561v1-max-250x250.png!
+Facebook "jumped on the boat":http://developers.facebook.com/docs/api/realtime very recently. Their "private" approach has long prevented them to push their content, because it would mean that they don't have any control on the data once it's out the door. Until a few weeks ago, they were fighting this by forcing any person who got content from Facebook to delete it after 24 hours. In practice, it meant that any service would have to poll Facebook every 24 hours for all the data they care about. Broken.
+
+This changed a few weeks ago, because Facebook started to push some content (obviously "people who hate their boss":http://graph.facebook.com/search?q=I%20hate%20my%20boss don't get it). Facebook is becoming very good at communicating stuff, they hired a bunch of Open Web advocates and _they now claim that they are open_. Listen to me : +Facebook is Open+. +Facebook is Open+, +Facebook is Open+. Got it? *Facebook is Open*. _Except that it's not_.
+Of course, they say they use something similar to PubSubHubbub. Except that hum, the point of PubSubHubbub is to be an open and *standard* protocol. The standard part is very important. It means that services could interact together, since they speak the same language. Currently, this is not true : the PubSubHubbub from Facebook *is not* the PubSubHubbub defined by the spec, "for many good? reasons":http://montrics.blogspot.com/2010/05/facebooks-realtime-updates-use-cases.html, but calling it PubSubHubbub has more marketing value, I guess.
+The worst thing about all this is that *Facebook does push* a hell of a lot of data... to whom you may ask? "To Google":http://searchengineland.com/facebook-fan-page-updates-now-in-google-real-time-search-36836. You see the pattern : an open platform that pushes content to some people (just not you, because your too small), based on business relationships, again.
+
+h3. The rest of the world of realtime publishers
+
+By reading the 2 previous paragraphs, you may think I'm some kind of socialist and I hate business relationships. Well, I'm french, so that could explain it, but I'd argue that *business relationships are also walled-gardens*. Anytime you have a one-to-one, it's about the 2, not about the others, right? If you married your spouse, it's not to have -sex- dinner every night with a different person, is it? 
+*In many ways, the relationships that Twitter and Facebook have with a very small subset of other application is de-facto excluding the rest of the world, and the rest of the future world.*
+
+Interestingly enough _both Twitter and Facebook hide behind their APIs_. Having an API is great, but it's just another form of slavery (thanks "@brad":http://twitter.com/bradfitz for the analogy). The consumers of these APIs are at the mercy of the API provider. Twitter decides to shut down HTTP Basic Auth? Sorry little app maker, you'll have to shut down your app or abide by this new commandment "Thou shall not ask for user credentials"[1]. Facebook changes their TOS? Sorry Zynga, no more invites for you.
+
+*If we want to build the realtime web, like we built emails or even HTML sites, we need a protocol. We need a way for services to interact safely with one another as peers, not as client and servers.*
+
+Luckily we have this protocol. We even have several (that's the beauty of it : people fight for the shared wealth!). At Superfeedr, we placed our bets on "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub and "XMPP PubSub":http://superfeedr.com/documentation#xmpp_pubsub.
+
+Most of the smaller (but much numerous) _publishers have chosen the protocol approach_. Whether it's because they genuinely believe that it's the good approach, or because they're actually too small to force their API down other people's throats is irrelevant. What matters is that now, a*ll the main blogging platforms : Wordpress, SixApart, Blogger, Tumblr, Posterous are using the same protocol : PubSubHubbub*. Some other smaller social networks, like Cliqset or Status.net and Gowalla are using it as well. Even a few newspapers! Combined, this is probably bigger than Twitter or Facebook's data. _Soon, it will be much much bigger, because so many publishers don't push their content yet_...
+
+h2. The non realtime publishers
+
+This is the last category of site, and still the vast majority. When looking at "Alexa's top 50":http://www.alexa.com/topsites/global, it's obvious. Yahoo!, Windows Live, Baidu, Wikipedia, Amazon, Ebay, LinkedIn, Flickr, Craigslist, RapidShare... 
+
+_Where are the e-commerce website sharing their catalogs in realtime with the price comparison search engines?_
+
+_Where are the classifieds website pushing their content in realtime to iPhones?_
+
+_Where are the Sports site pushing their content in realtime to forums or chat services?_
+
+_Where are the news outlets pushing data to the feed readers?_
+
+One could argue that pushing data is letting 3rd party application use it. That's my point actually : _pushing data away is at worse pushing it to services with users, which means that your content will eventually gain eyeballs_. At best, nobody cares about your content, so you're safe.
+
+Of course, "we talked about the hundreds":http://blog.superfeedr.com/gospel/pubsubhubbub/synchronization/pubsubhubbub-for-synchronization/ of new usages that are yet to be seen, from sync, to mobile, from presence to notifications... we haven't seen anything yet. Please, "publishers, let others benefit from your data":http://superfeedr.com/publisher. _Publishing your awesome content without distributing it is pretty much like making the best product in the world but leaving it in the factory._
+
+It's time for content publishers to make their content dynamic and push it so they can control its distribution. 
+
+
+fn1. I'm not advocating for HTTP Basic Auth, right? Just saying that thousands of small apps will shut their door, just because Twitter decided so.
