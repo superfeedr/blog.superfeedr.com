@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Track
-categories: [track filter xmpp pubsubhubbub]
+categories: [track, filter, xmpp, pubsubhubbub]
 author_name: Julien
 author_uri: http://twitter.com/julien51
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
@@ -13,7 +13,7 @@ Today, there is *Superfeedr's track*. It's a *simple way to get all the Atom ent
 
 Once again, we hide all the complexity from you, and you can use the exact same API calls that you're used too, whether it's with the "XMPP PubSub":http://superfeedr.com/documentation#xmpp_pubsub endpoint or the "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub protocol. Are you tracking music as a keyword? subscribe to @http://superfeedr.com/track/music@. And yes, it works with any keyword like this : http://superfeedr.com/track/@<keyword>@.
 
-Looking for a few apps that were built in less than 24 hours with Track? Check out this "friendfeed page":http://friendfeed.com/trackmusic : it shows the track feed for the keyword _Music_. "RSSFall":http://www.rssfall.com/sf/ by "@jalada":http://twitter.com/jalada allows you to specify the keywords you want to track! Try out _soccer_, _worldcup_, _iphone_.. etc :) Want the results into your IM client? Check "Harper's":http://harperreed.org/ "SuperTrackr":http://www.supertrackr.com/, just add @supertrackr@appspot.com@ to your contacts if you use gtalk, then, enter @/track music@ and start dancing!
+Looking for a few apps that were built in less than 24 hours with Track? Check out this "friendfeed page":http://friendfeed.com/trackmusic : it shows the track feed for the keyword _Music_. "RSSFall":http://www.rssfall.com/sf/ by "@jalada":http://twitter.com/jalada allows you to specify the keywords you want to track! Try out _soccer_, _worldcup_, _iphone_.. etc :) Want the results into your IM client? Check "Harper's":http://harperreed.org/ "SuperTrackr":http://www.supertrackr.com/, just add @supertrackr@appspot.com@ to your contacts if you use gtalk, then, enter @/track music@ and start dancing! Finally, "@matijarajivec":http://twitter.com/matijarijavec even built a mashup with "Twitter's trending words":http://superfeedr.labs.domenca.com/, pretty awesome for a few hours of work! 
 
 The results are taken from the more than 2M feeds that Superfeedr filters in realtime, as soon as the entries are published. These feeds include the feeds from the publishers who designated Superfeedr as their PubSubHubbub hub, like "Six Apart":http://hubbub.api.typepad.com/, "Tumblr":http://tumblr.superfeedr.com/, "Posterous":http://posterous.superfeedr.com/, "Gowalla":http://gowalla.superfeedr.com/, "Huffington Post":http://huffingtonpost.superfeedr.com/, "Gawker Media":http://gawker.superfeedr.com/ and more than 800 other big and small publishers, as well as the data from thousands of subscribers who offloaded their feed polling to Superfeedr.
 
