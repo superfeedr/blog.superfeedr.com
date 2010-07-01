@@ -19,7 +19,7 @@ The results are taken from the more than 2M feeds that Superfeedr filters in rea
 
 We want more feeds! If you're a publisher, "start using us a a hub":http://superfeedr.com/publisher, and if your app polls feeds, stop doing it, it's dangerous, "have us push them to you":http://superfeedr.com/subscriber.
 
-Today is also the day when we start counting how much data we send to subscribers, which means that you'll soon receive an email saying that _you'll need to buy credits if you want to keep receiving the notifications from the default hub_. It's not fun, but we're now confident enough with our service that we think it makes sense for us to move on to the next step. Obviously this doesn't mean that the service is perfect, it means that *your money will help us make it better*. We will add everyone with 25,000 credits, so you can get free 25,000 notifications from us, as with any new account.
+Today we're also launching our paid service for developers subscribing to feeds via Superfeedr's default hub. Everyone will receive 25,000 free notifications to get started when developing with our infrastructure. We've come a long way in the past few months and while we're still not perfect *plan to make it even better with this support*. Additional notifications start at only $0.0002 per entry which we guarantee will be cheaper than building it yourself!
 
 *One last thing!*
 As you've probably seen, "the website's design":http://superfeedr.com/ is changing... at least now it's done by someone whose work is to design websites! Please bear with us as we put a little more paint here and there, but again, it's moving in the right direction.
