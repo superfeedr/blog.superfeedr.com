@@ -1,50 +1,81 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
     <title>Superfeedr : {{ page.title }} </title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <link href="http://superfeedr.com/stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="http://superfeedr.com/stylesheets/shjs/sh_nedit.min.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/css/blog.css" />
-</head>
-<body>
-    <div id="navigation">
-        <div>
-            <a href="http://superfeedr.com/" class="home"><img alt="Superfeedr" src="http://superfeedr.com/images/superfeedr.png" /> Superfeedr</a>
-            <a href="http://superfeedr.com/documentation">Docs</a>
-            <a href="http://superfeedr.com/about">About</a>
-        </div>
-    </div>
-    <div id="user-navigation">
-        <div>&nbsp;</div>
-    </div>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+    
+    <!-- Stylesheets --> 
+    <link href="http://yui.yahooapis.com/3.1.1/build/cssreset/reset-min.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="http://superfeedr.com/stylesheets/superfeedr.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="http://superfeedr.com/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> 
+    <link href="http://superfeedr.com/stylesheets/shjs/sh_nedit.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="http://superfeedr.com/stylesheets/thickbox.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="/css/blog.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <!--[if lt IE 8]>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js">IE7_PNG_SUFFIX=".png";</script>
+		<link rel="stylesheet" type="text/css" href="css/ie.css" />
+	<![endif]--> 
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
+	<![endif]--> 
+</head> 
+ 
+<body> 
+	<div id="bg"> 
+	<div id="wrapper"> 
+		<div id="logo"> 
+			<h1><a href="http://superfeedr.com" class="home"><img alt="Superfeedr" src="http://superfeedr.com/images/superfeedr_complete.png" /></a></h1> 
+		</div> 
+		<ul id="navigation"> 
+		    <li><a href="http://superfeedr.com/publisher" alt="Got feeds? Push them in realtime">Publishers</a></li> 
+		    <li><a href="http://superfeedr.com/subscriber" alt="Want data? We have it for you">Subscribers</a></li> 
+		    <li><a href="http://superfeedr.com/documentation" alt="RTFM">Documentation</a></li> 
+		    <li><a href="http://superfeedr.com/about" alt="All you wanted to know. Almost">About</a></li> 
+		</ul> 
+		<div class="clear"></div> 
 
-    <div id="page">
-        {{ content }}
+ 	<div id="main_bg"> 
+	    
+            <div id="main_top"> 
+    			<h2>PubSubHubbub with benefits</h2> 
+    		</div> <!--main_top--> 
+ 
+    		<div id="content"> 
+{{ content }}
+            <div class="clear"></div> 
+            </div> <!--content--> 
 
-        <div id="bottom">
-            <a href="http://superfeedr.com">Home</a> |
-            <a href="http://superfeedr.com/documentation">Documentation</a> |
-            <a href="http://groups.google.com/group/superfeedr/web/frequently-asked-questions">Faq</a> |
-            <a href="http://groups.google.com/group/superfeedr">Community</a> |
-            <a href="http://superfeedr.com/about">About</a>
-        </div>
-    </div>
-
-    <!-- Google Analytics Code -->
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    <!--//--><![CDATA[//><!--
-    var pageTracker = _gat._getTracker('UA-9285763-1');
-    pageTracker._setDomainName("superfeedr.com");
-    pageTracker._initData();
-    pageTracker._trackPageview();
-    //--><!]]>
-    </script>
-</body>
-</html>
-
+ 
+ 
+	</div><!--wrapper--> 
+	</div><!--bg--> 
+	<!-- UserVoice --> 
+    <script type="text/javascript"> 
+    var uservoiceOptions = {
+      /* required */
+      key: 'superfeedr',
+      host: 'superfeedr.uservoice.com', 
+      forum: '17481',
+      showTab: true,  
+      /* optional */
+      alignment: 'left',
+      background_color:'#f00', 
+      text_color: 'white',
+      hover_color: '#06C',
+      lang: 'en'
+    };
+ 
+    function _loadUserVoice() {
+      var s = document.createElement('script');
+      s.setAttribute('type', 'text/javascript');
+      s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js");
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }
+    _loadSuper = window.onload;
+    window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+    </script> 
+    <!-- UserVoice (end) --> 
+</body> 
+</html> 
+    
