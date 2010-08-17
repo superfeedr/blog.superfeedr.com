@@ -1,0 +1,38 @@
+---
+layout: post
+title: Feed Retrieving and Status Improved
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+*Publish-Subscribe patterns are hard to debug*, because they silently fail. When you give us a feed to parse on your behalf, you have to wait for us to actually send you some data to be 100% sure that everything works. In the coming months, we will slowly release more tools to help you with this. Today we're releasing 2.
+
+h3. Feed Statuses in Notifications
+
+We believe notifications can be richer. Not only we send you any new entry in the feed, but we also *send you some data about the feed* itself. This data can help you debug feeds on your end, but also _make decisions, such as unsubscribe verbose feeds_ which would cost you way too many credits.
+
+<script src="http://gist.github.com/532369.js?file=status.xml"></script>
+
+* *@<http>@* : this element gives you the last HTTP status, as well as message about the last processing of this feed. Hopefully, it will show you the number of bytes, the time it took us to fetch the feed as well as the number of entries we just found.
+* *@<next_fetch>@* : the feed will be fetched at most before this time.
+* *@<period>@* : the polling frequency in seconds for this feed.
+* *@<last_fetch>@* : the last time at which we fetched the feed.
+* *@<last_parse>@* : the last time at which we parsed the feed. It happens that we fetch a feed and do not parse it as its content hasn't been modified.
+* *@<last_maintenance_at>@* : Each feed inside Superfeedr has a maintenance cycle that we use to detect stale feeds, or related feeds. We normally run maintenance at most every 24hour for each feed.
+* *@<entries_count_since_last_maintenance>@* (provided only upon notification) : The number of new entries in the feed since we last ran the maintenance script. This is a very good indicator of the verboseness of a feed. You may want to remove feeds that are too verbose.
+* *@<title>@* (provided only upon notification) : the feed title.
+
+Obviously you can get this data thru both "XMPP":http://superfeedr.com/documentation#xmpp_pubsub and "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub notifications.
+
+h3. Retrieving a feed status
+
+If at any point, you want to get this information, it is also possible and quite simple, but note that some data may not be up to date. However, don't abuse it, as we will take one credit away from your account for each request: we don't want you to poll us!
+
+* *PubSubHubbub* : use @hub.mode=retrieve@ and a @GET@ to the hub. See more details in the "PubSubHubbub documentation":http://superfeedr.com/documentation#pubsubhubbub_retrieve.
+* *XMPP PubSubHubbub* : use the *items* command per the XEP-060 spec. Check our "XMPP doc":http://superfeedr.com/documentation#xmpp_retrieve for more info.
+
+Like always, feedback and comments are much appreciated!
+
+
