@@ -34,7 +34,8 @@ More and more we consume the web from outside the browser, as Wired tried to sho
 
 h3. To the Phone
 
-!{margin:0px 0px 10px 10px; float:right;}http://s3.amazonaws.com/twitter_production/profile_images/768419049/ua-sq-icon.png!Heard about SMS? This is push data from a publisher to a subscriber. The UX isn't all that magic, so Apple went live with their "Push Notification Service":http://en.wikipedia.org/wiki/Apple_Push_Notification_Service which allows app builders to push data down to the phones where the app is installed. The fine people at UrbanAirship have built an awesome wrapper around the systems from Apple, Android and Blackberry because they all require a significant amount of work. Blackberry actually is quite famous for their "BlackBerry Enterprise Server":http://na.blackberry.com/eng/services/business/ which is dedicated to emails mainly. There is a lot of different techniques and protocol, most of them close and proprietary, but that's how the telephony industry rolls it seems :)
+!{margin:0px 0px 10px 10px; float:right;}http://s3.amazonaws.com/twitter_production/profile_images/768419049/ua-sq-icon.png!Heard about SMS? This is push data from a publisher to a subscriber. The UX isn't all that magic, so Apple went live with their "Push Notification Service":http://en.wikipedia.org/wiki/Apple_Push_Notification_Service which allows app builders to push data down to the phones where the app is installed. The fine people at "UrbanAirship":http://urbanairship.com/
+ have built an awesome wrapper around the systems from Apple, Android and Blackberry because they all require a significant amount of work. Blackberry actually is quite famous for their "BlackBerry Enterprise Server":http://na.blackberry.com/eng/services/business/ which is dedicated to emails mainly. There is a lot of different techniques and protocol, most of them close and proprietary, but that's how the telephony industry rolls it seems :)
 
 h3. To the Desktop
 
