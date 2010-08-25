@@ -1,0 +1,17 @@
+---
+layout: post
+title: PubSubHubbub in the new Digg
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+Today's best news is coming from Digg HQ : "Digg v4":http://digg.com/. I wasn't a big Digg user, but their new approach, with news tailored to me based on my social network _makes a ton of sense for me_. 
+
+!{float:left; margin:0px 5px 5px 0px}http://www.crunchbase.com/assets/images/resized/0000/4138/4138v1-max-150x150.png!If you've been playing with it in the past weeks, you've seen that you can "auto-submit content from your RSS feeds":http://digg.com/settings/feeds. The great news about this is that they support *PubSubHubbub* for this feature, which means that if you want your feed updates to show up on Digg as soon as you publish them, you just have to become a "PubSubHubbub publisher":http://superfeedr.com/publisher.
+
+As a matter of facts, if you become a publisher, your stories will be pushed in realtime to Digg, but also to "Google Reader":http://www.google.com/reader/view/, "Twitterfeed":http://twitterfeed.com/, "Google Buzz":http://www.google.com/buzz, "Ping.fm":http://ping.fm/, "Cliqset":http://cliqset.com/, "Plaxo":http://www.plaxo.com/, "FeedMyInbox":http://www.feedmyinbox.com/, "Appnotifications":http://www.appnotifications.com/, "Feedingo":http://feedingo.com/, "Status.net":http://status.net/, "Twingly":http://www.twingly.com/... and many many other!
+
+Finally, don't forget to "friend me up":http://digg.com/julien51 : I'll see you there :)
+
