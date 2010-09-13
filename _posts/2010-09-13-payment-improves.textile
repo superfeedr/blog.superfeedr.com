@@ -20,7 +20,7 @@ We found out that it wasn't really easy to deal with "packages". Some of our cus
 h3. Our pricing is competitive... on high packages
 
 ... But _not so much on small packages_. As a matter of facts, we barely sold our $50 package. So we decided to drop down the pricing a lot.
-When $50 used to get you 25,000 credits, you will now get 100,000 credits (4 times as much). When $300 used to get you 300,000 credits, you will now get 900,000 (3 times as much), and $1500 will get you 6.2M credits, vs. 3M previously. We also introduced a "simulator":superfeedr.com/orders/new so you have an idea of how much we will charge you. Your Account's page also shows your current consumption and an estimate of the price by the end of the month.
+When $50 used to get you 25,000 credits, you will now get 100,000 credits (4 times as much). When $300 used to get you 300,000 credits, you will now get 900,000 (3 times as much), and $1500 will get you 6.2M credits, vs. 3M previously. We also introduced a "simulator":http://superfeedr.com/orders/new so you have an idea of how much we will charge you. Your Account's page also shows your current consumption and an estimate of the price by the end of the month.
 
 We really want to thank all the customers who trusted us from the beginning and *this new pricing is retro-active*, which means that if you bought packages in the past, *we granted you the extra credits to match this new pricing*.
 
