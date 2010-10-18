@@ -46,7 +46,7 @@ A big mess. So much that we fucked it up (see the support part). It's also hard 
 
 h4. The Chef integration is not there yet
 
-As much as I was scared by "knife":http://wiki.opscode.com/display/chef/Knife initially, I started to get used to it but it doesn't have Linode support for boostrapping. "I know it's up to me":http://github.com/opscode/chef. It's not my "to-contribute" list now.
+As much as I was scared by "knife":http://wiki.opscode.com/display/chef/Knife initially, I started to get used to it but it doesn't have Linode support for boostrapping. "I know it's up to me":http://github.com/opscode/chef. It's on my "to-contribute" list now.
 
 h4. Resizing and cloning are not as convenient 
 
