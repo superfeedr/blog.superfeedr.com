@@ -26,7 +26,7 @@ h4. Much cheaper
 
 On smaller slices, _it's roughly twice as cheap to use Linode than Slicehost_. We use a lot of small instances (our parsers). For $20, Slicehost gives you 256MB of RAM, 10GB of storage and 150GB of bandwidth. For $20, you get 512MB of RAM (+100%), 16GB (+60%) of storage and 200GB (+33%) of bandwidth. The CPU perf is not easy to compare at all[1], but in the tests we ran, we did get better performance for our code (about 20%). We decided to not take this into account because it could mean that the host we tried wasn't loaded at all and we benefited from available CPU cycles, but after deploying our whole stack, it seems to be on-par. *We expect to save about 40% on our server bill, for similar performance.*
 
-h4. More feature
+h4. More features
 
 One of the issues we had with Slicehost is that we pay for a lot of hard drive that we don't use. Linode offers some kind of customization so you can make machines with more RAM, or more bandwidth if you need to. 
 
