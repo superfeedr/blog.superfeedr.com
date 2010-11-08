@@ -1,0 +1,23 @@
+---
+layout: post
+title: JSON PubSubHubbub Notifications
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+At Superfeedr, our biggest focus is to *make RSS/Atom feeds consumption much easier* than what it was, just a year ago. Of course, the "transportation" part of it is a big issue. Polling was the only way up to a few months ago. It's now less and less the case and pushing the "PubSubHubbub protocol for publishers":http://superfeedr.com/publisher is a way to solve this pain. _Another pain is to parse the XML_, not only because there are multiple flavors of it : RSS, Atom, and all their versions and sub-namespaces, but also because of all the invalid feeds that we have out there in the wild. *Normalization to Atom is our way to fix this*.
+
+However, for many people, _even clean Atom doesn't cut it_. It's still XML and, even though there are a lot of libraries that make parsing easy in almost any language, many people are still struggling with it. From there we had 2 solutions. The first one is tell people that XML is like violence : if it doesn't solve their problems, it's because they don't use it enough. Or, consider pushing them the data in another format, while keeping the same schema. 
+
+JSON is the new cool kid. It's not nearly as rich as XML, but it's also not nearly as complex. If you'd like more on this debate, feel free to read "this StackOverflow thread":http://stackoverflow.com/questions/3536893/what-are-the-pros-and-cons-of-xml-and-json. From today, Superfeedr is also able to send you the data that we got from feeds in a JSON format. 
+
+We tried to keep this JSON format consistent with the JSON version of ActivityStreams, and also tried to be compatible with the OSync format. Here is a sample right below. <small>Please note that not all fields may be present in the actual notifications</small> :
+
+<script src="https://gist.github.com/667892.js?file=superfeedr.json"></script>
+
+Now, as everybody knows XMPP relies on XML, and it just felt really weird to send JSON payloads inside XML to people because they would struggle parsing XML, so it's currently limited to the "PubSubHubbub API":http://superfeedr.com/documentation#pubsubhubbub. Rather than extending PubSubHubbub with another extra param, we re-used "HTTP's Accept Header":http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. When you subscribe, just add a HTTP header to your subscription with the JSON mime-type : <code>Accept: application/json</code>. We will then push you a JSON version of the feeds. 
+
+This feature is still mostly experimental, and we're expecting a lot of feedback and comments to improve it in the coming weeks. 
+
