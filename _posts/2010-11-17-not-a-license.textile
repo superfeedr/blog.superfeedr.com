@@ -7,7 +7,8 @@ author_uri: http://twitter.com/julien51
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-Today, it became very clear to me that from the beginning, we were not clear enough that *PubSubHubbub* was -just- a technical protocol. 
+Today, "GNIP and Twitter announced a deal where GNIP will be able to resell some of the Twitter data":http://www.readwriteweb.com/archives/twitter_to_sell_50_of_all_tweets_for_360kyear_thro.php. Twitter repeated several times that they didn't want to use PubSubHubbub and *prefered closed and proprietary solutions*. I believe that, from the beginning, we were not clear enough that *PubSubHubbub* was -just- a technical protocol. It's a mistake that I'm trying to repair now.
+
 * If you're a subscriber, implementing PubSubHubbub doesn't mean that you will have access to any content and have the right to use this content in any way. 
 * Similarly, if you're a publisher, making your content (or some of your content) available as PubSubHubbub doesn't mean that you will grant any kind of license to your content and that you will allow anyone to do anything with it_.
 
