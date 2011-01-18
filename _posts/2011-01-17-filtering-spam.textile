@@ -1,0 +1,20 @@
+---
+layout: post
+title: Filtering Spam
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+Let's face it : _RSS feeds, like any other useful technology on the web, suffer from spam_. If your app let's user input feed urls, it's likely that a few of them have entered spam feeds. It's even more true if your app is used to re-publish, re-share or re-post content : spammers want their spam to be seen and they will use RSS as a channel for this.
+
+!{width:300px; float:left;}/images/spam.png!
+
+Spam feeds usually share a pretty common feature : they're verbose and will likely publish tens of stories daily. Today we "release a feature that will be useful to filter out those spam feeds":http://superfeedr.com/documentation#notification_threshold.
+
+Several of our users have asked for a feature that would allow them to filter out the feeds that are too verbose. Since we charge for the notifications we send, some users want us to *stop sending them data for a given feed after a certain threshold*. It can now easily be done.
+
+First, check out your settings and decide how many entries you want to get at most for each feed, on a daily basis. We count the number of entries for periods of 24hours and whenever a feed reaches this threshold, we stop sending notifications, until the counter is reset. But be careful, don't set the limit too low, or you will miss legit notifications. Of course, it's much more efficient if you can unsubscribe from spam feeds, rather than must them after a given number of notifications.
+
+Like always, your feedback is much appreciated :)
