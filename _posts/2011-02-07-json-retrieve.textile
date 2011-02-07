@@ -1,0 +1,31 @@
+---
+layout: post
+title: JSON retrieve
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+This is the second week ("first week is here":http://blog.superfeedr.com/feature-friday-pubsubhubbub-tricks/) of our #FeatureFriday series! I've been traveling quite a bunch in the past few days, so I haven't been able to push as much code as I hoped, but we have a released a bunch of features and fixed a few bugs again :)
+
+h3. JSON when retrieving a feed status
+
+This was a request by the folks at "SocialFlow":http://www.socialflow.com/. Nothing fancy : you can "subscribe to feeds and get JSON":http://superfeedr.com/documentation#json_schema pushed to you, so why wouldn't you be able to "retrieve a feed's":http://superfeedr.com/documentation#pubsubhubbub_retrieve status on get JSON? Since we didn't have a good answer to this, we implemented JSON feed retrieval :) Just submit an <code>Accept</code> header with <code>application/json</code>.
+
+h3. Fixed SSL certificates
+
+It's a shame, but for some reason, I missed the fact that our SSL certificates had expired. Needless to say that the warning at at least very annoying. We gave a few more dollars to Godaddy and our *SSL certificates are now up to date*!
+
+h3. Higher pricing levels
+
+Our beloved customers use Superfeedr more and more, and we're happy to say that a few of them grew beyond our current pricing levels. Luckily for us, we're able to save more $$$s when people use us more and we'd like to thank these customer for being so faithful, so we introduced to extra layers to our pricing : 
+
+* $1 for 5,000 notifications between 3,700,000 and 15,700,000
+* $1 for 6,000 notifications between 15,700,000 and 51,700,000
+* *$1 for 7,000 notifications* above 51,700,000! 
+
+Use our "simulation tool":http://superfeedr.com/orders/new to see what's going on woth your level of pricing!
+
+
+Keep the #FeatureFriday requests coming!
