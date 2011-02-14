@@ -1,0 +1,25 @@
+---
+layout: post
+title: Notifixlite
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+Often times people email me to ask if "Superfeedr":http://superfeedr.com/ can be used to get IM alerts when a feed they follow as been updated. I usually tell them that, even though we are able to "send traffic via XMPP":http://superfeedr.com/documentation#xmpp_pubsub, it's unlikely that their client can "understand" that traffic, because it's probably only a chat client, and not a PubSub client. In a nutshell, Superfeedr is a service on which RSS to IM bots can easily be built.
+
+That's exactly how "Notifixlite":http://notifixlite.appspot.com/ was built : a -very- simple bot which will send you messages whenever a feed that you follow has been updated. If you have a chat client that supports XMPP (see a "full list of clients here":http://xmpp.org/xmpp-software/clients/), and if you have a "Google Mail":http://gmail.com account, you can very easily get started. First, connect using your gmail credentials, and then, add <code>notifixlite@appspot.com</code> as a contact.
+
+Then, you're set. Notifixlite is a bot to which you can give instructions. Right now the set of instructions is quite minimal :
+
+* <code>/subscribe _url_</code> : subscribes to the feed in question. 
+* <code>/unsubscribe _url_</code> : unsubscribes from the feed. You can also use _all_ to unsubscribe from all feeds.
+* <code>/list _page_index_</code> :  list subscriptions, default to page 1.
+* <code>/help</code> : shows this help message!
+
+Of course, you can track any feed out there... including "track feeds":http://superfeedr.com/documentation#track! Superfeedr provides a nice way to filter traffic based on keywords and you can easily subscribe to "http://superfeedr.com/track/valentine":http://superfeedr.com/track/valentine if you want to see any mention of Valentine!
+
+Also, one of the great things with Notifixlite is that it's *open source* : you can not only "fork it on github":https://github.com/superfeedr/notifixlight, but also run it under your very own "Google App Engine":http://code.google.com/appengine/ account.  If you're feeling brave, feel free to implement any feature that you miss! An import from Google Reader would be quite handsome for example!
+
+
