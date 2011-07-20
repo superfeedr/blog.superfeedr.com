@@ -1,0 +1,42 @@
+---
+layout: post
+title: HTTP Headers
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+It's one of the small tricks we're the proudest, but it's also a well hidden gem, so I'd like to take a couple seconds to introduce you to the HTTP headers we send on PubSubHubbub notifications.
+
+On PubSubHubbub notifications, the body of the POST request contains the feed's new entries. The only way to send additional data is then to use the HTTP headers. Here is a list of some of the headers we send, with their meaning!
+
+h2. Content-Type
+
+This is not custom to Superfeedr, but you should give it special care, as it tells you want kind of content is being pushed to you. As Superfeedr supports any kind of arbitrary format, you want to make sure you can handle them. Sometimes, you will subscribe to what you think is an RSS feed, but which, unfortunately, we can't parse (the feed has been deleted and redirects to another HTML page...). In this case, we will use the Content-Type header to indicate that the content is not a feed.
+
+h2. X-Superfeedr-Credits
+
+This, I think is the most interesting one. It gives you your Superfeedr credit balance. It's quite convenient to track your usage of credits, so you know at any point what's your rate.
+It's also an easy way for you to make sure that we do not "cheat" and take more credits than we ought to. You just have to check that the balance decreases by one between 2 notifications. 
+Finally, it's a simple way for you to make sure you haven't missed any notification, as, again, this value should keep decreasing by 1. If it doesn't, then you have missed a notification.
+
+h2. X-PubSubHubbub-Callback
+
+This is the callback url to which we have sent the notification. It's pretty useful in the cases where you want to unsubscribe, as you don't have to look up things on your end to know what callback url you used.
+
+h2. X-PubSubHubbub-Topic
+
+As with the X-PubSubHubbub-Callback, it includes the topic to which you've subscribed, which, once again is very useful for you to subscribe/unsubscribe.
+It's very useful when urls are redirected as Superfeedr follows the redirects.
+
+h2. X-Superfeedr-PubSubHubbub-Expire
+
+This is the expiration date for the subscriptions. Please note that we use 'soft' expiration dates and you may see dates that are in the past here. However, you should _always_ make sure that these dates are actually in the future, so that we will always send notifications.
+
+h2. X-Superfeedr-Retried
+
+That field will indicate that we had to retry when sending you a notification. It's quite useful to know that the reachability of your callback url as decreased. Generally, if you see too many requests with this header, you want to check the performance of your servers.
+
+
+There are a couple of other headers, that you want to check as well, but I'll let you discover these =)
