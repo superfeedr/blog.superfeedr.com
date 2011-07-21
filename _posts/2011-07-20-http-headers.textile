@@ -7,7 +7,7 @@ author_uri: http://twitter.com/julien51
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-It's one of the small tricks we're the proudest, but it's also a well hidden gem, so I'd like to take a couple seconds to introduce you to the HTTP headers we send on PubSubHubbub notifications.
+It's one of the small tricks we're the proudest of, but it's also a well hidden gem, so I'd like to take a couple seconds to introduce you to the HTTP headers we send on PubSubHubbub notifications.
 
 On PubSubHubbub notifications, the body of the POST request contains the feed's new entries. The only way to send additional data is then to use the HTTP headers. Here is a list of some of the headers we send, with their meaning!
 
