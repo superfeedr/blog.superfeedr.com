@@ -37,3 +37,10 @@
 .footnote {
     font-size:0.8em;
 }
+
+blockquote {
+    font-style:italic;
+    padding-left: 10px;
+    margin-left:10px;
+    border-left: 3px solid #E6E6E6;
+}
