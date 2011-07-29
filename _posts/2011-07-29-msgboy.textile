@@ -23,4 +23,5 @@ We used a lot of the _open protocols, and HTML5 magic_ and the msgboy is already
 
 It's *still extremely early*, but we already love our new baby. We are slowly opening up to friends and family, so "please help us spread the word":http://beta.msgboy.com/ to get faster access to it. 
 
+Also, I want to take this to very deeply thank the amazing team at "Andyet":http://andyet.net/ for their very hard work. This team knows what realtime is, and I will never recommend enough to work with them.
 
