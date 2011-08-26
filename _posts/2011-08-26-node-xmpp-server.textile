@@ -15,7 +15,7 @@ h3. A node KO treat
 
 In the context of the "msgboy":http://msgboy.com (request your invite now!), we had to setup a new XMPP server. After fighting with "ejabberd":http://www.ejabberd.im/, we installed "Prosody":http://prosody.im/, but we also quickly concluded that we would need a lot of customization, as well as the ability to tweak our server(s) to fit our exact needs. 
 
-Since "astro":http://astro.soup.io/ had been doing an *amazing work* with his "node-xmpp":https://github.com/astro/node-xmpp library to build _Client_, _Components_ and even _Server to server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That's what we worked on the past couple days, and "it's now on Github":https://github.com/superfeedr/node-xmpp!
+Since "astro":http://spaceboyz.net/~astro/ had been doing an *amazing work* with his "node-xmpp":https://github.com/astro/node-xmpp library to build _Client_, _Components_ and even _Server to server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That's what we worked on the past couple days, and "it's now on Github":https://github.com/superfeedr/node-xmpp!
 
 bq. Beware though... as it's extremely early and some key features are not yet supported. Our biggest challenge is trying to fix a weird TLS bug. Please help if you can!
 
