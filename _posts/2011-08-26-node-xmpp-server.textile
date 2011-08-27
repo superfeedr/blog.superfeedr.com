@@ -15,7 +15,7 @@ h3. A node KO treat
 
 In the context of the "msgboy":http://msgboy.com (request your invite now!), we had to setup a new XMPP server. After fighting with "ejabberd":http://www.ejabberd.im/, we installed "Prosody":http://prosody.im/, but we also quickly concluded that we would need a lot of customization, as well as the ability to tweak our server(s) to fit our exact needs. 
 
-Since "astro":http://spaceboyz.net/~astro/ had been doing an *amazing work* with his "node-xmpp":https://github.com/astro/node-xmpp library to build _Client_, _Components_ and even _Server to server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That's what we worked on the past couple days, and "it's now on Github":https://github.com/superfeedr/node-xmpp!
+Since "astro":http://spaceboyz.net/~astro/ had been doing an *amazing work* with his "node-xmpp":https://github.com/astro/node-xmpp library to build _Client_, _Components_ and even _Server to Server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That's what we worked on the past couple days, and "it's now on Github":https://github.com/superfeedr/node-xmpp!
 
 bq. Beware though... as it's extremely early and some key features are not yet supported. Our biggest challenge is trying to fix a weird TLS bug. Please help if you can!
 
@@ -30,13 +30,13 @@ Now, that was -relatively- easy, and quite useless so far, as you could do that 
 
 * Auth is simple: the c2s module will just callback with a username and a password. Your code should then decide whether you want to authorize or not connection, based on your database, or any other piece of application that you want.
 
-* You can define modules supported by your server from the most popular XEPs, using <code>node-xmpp</code>'s mixins. The modules should be at the heart of any implementations, as we want to keep the c2s code itself at its minimal.
+* You can define modules supported by your server from the most popular XEPs, using <code>node-xmpp</code>'s mixins. The modules should be at the heart of any implementations, as we want to keep the c2s code itself very bare.
 
-* There are currently 4 events that you can listen to on the C2S module itself : <code>connect, disconnect, authenticate, stanza</code>, which are relatively self explanatory.  The <code>connect</code> event should be used to register apply mixins to user connections. The <code>stanza</code> event should probably be left empty (unlike they example), as all meaningful stanzas should probably be treated in mixins. 
+* There are currently 4 events that you can listen to on the C2S module itself : <code>connect, disconnect, authenticate, stanza</code>, which are relatively self explanatory.  The <code>connect</code> event should be used to register mixins to user connections. The <code>stanza</code> event should probably be left empty (unlike in the example), as all meaningful stanzas should probably be treated in mixins. 
 
 h3. Clustering!
 
-One of the key aspects of most XMPP servers is their -in-ability to be deployed in clusters to handle more users. For those who want to dive in that direction, Redis's PubSub provides an elegant solution. Combining this with some sharding on the jids should probably go a long way!
+Also, you get all the JS magic that lets you rewrite any code without much hassle. One of the key aspects of most XMPP servers is their -in-ability to be deployed in clusters to handle more users. For those who want to dive in that direction, Redis's PubSub provides an elegant solution. Combining this with some sharding on the jids should probably go a long way! You can see in the basic example below that we rewrote the routing mechanism to use Redis and run multiple instances of the same server in a cluster.
 
 <script src="https://gist.github.com/1174490.js?file=cluster.js"></script>
 
