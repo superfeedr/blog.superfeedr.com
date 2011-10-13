@@ -1,0 +1,14 @@
+---
+layout: post
+title: Superfeedr on FLOSS weekly
+categories: [meta]
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+Twit is an amazing web success. It's been an honor to be invited to talk about Superfeedr and PubSubHubbub on FLOSS Weekly!
+Watch the show : 
+<iframe src="http://twit.tv/embed/9985" width="640" height="320" scrolling="no" marginwidth="0" marginheight="0" hspace="0" align="middle" frameborder="0"></iframe>
+
+And don't forget to subscribe to the podcast, as it's one of the best podcasts out there :)
