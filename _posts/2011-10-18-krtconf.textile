@@ -1,0 +1,22 @@
+---
+layout: post
+title: Krtconf (realtime web conference)
+categories: [meta]
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+We've been a bit silent over the past couple weeks, but *we have an excuse*: days last 24 hours! We worked hard on the "msgboy":msgboy.com. Chrome's latest versions broke our legs several times (changes in "IndexedDB":http://www.w3.org/TR/IndexedDB/, changes in "Websockets":http://dev.w3.org/html5/websockets/... etc). If what doesn't kill us makes us stronger, _Msgboy is going to be super-hero strong_.
+
+Hopefully we can introduce it very soon, at the "Krtconf":http://krtconf.com/. 
+
+!{width:500px}http://dl.dropbox.com/u/857122/krtconfscreen.png!
+
+
+Krtconf is a *2 day conference (Nov 7+8), organized by developers, for developers, in Portland, OR*. It's the place to be to stay to date on all realtime web technologies : _XMPP, PubSubHubbub, Websockets, Socket.io, long-polling_, and many many more. You will learn about these, but you will also get to implement them, with lots of demos, hackathons and conversations. 
+
+Check the "list of speakers":http://krtconf.com/. A lot of them are heroes for us. You'll see that you can't miss such an event, so "grab your ticket now":http://krtconf.eventbrite.com/ ($300 discount if you book before Oct 21st).
+
+Superfeedr is co-organizing it with the great folks at "&yet":http://andyet.net/. We have a few speaker spots left, for sponsors mostly. If you're interested, please "drop us a note":mailto:adam@andyet.net.
+
