@@ -1,0 +1,67 @@
+---
+layout: post
+title: WebIntents
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+We *hate barriers and user locks of any kind*, but the web is full of them. The _web works better when services are decoupled_, when the user is at the center and picks the services he wants to use, not the services other services wants him to use.
+
+One of the key characteristics of the "msgboy":http://msgboy.com is that it integrates seamlessly with your web : the user's web. We have 2 features in mind : *allowing our users to subscribe* to more content using the msgboy or 3rd party services, and *allowing the msgboy's users to share the content* they received using their favorite 3rd party services.
+
+h2. Enter WebIntents.
+
+"Paul Kinlan":http://paul.kinlan.me/ is a developer advocate at Google. He introduced "WebIntents":http://webintents.org/ almost a year ago. WebIntent's general idea is to allow web services to register features with each others in a decoupled way.  One of the example that Paul uses often is editing an image to remove red-eye. 
+
+bq. If I am the developer who creates a photo library online, I may not have that feature. Yet, I know there exists services online that do that very well (maybe better than what I would do). WebIntents allows these 3rd services to register their "red-eye-removal" feature as an "intent". WebIntents also allows my app to call these services without "knowing" about them previously.
+
+If you think about it, the web is full of services that do a great job, but the web itself would be tremendously more useful if all these services worked together in workflows.
+
+Msgboy wants to be a first class citizen of the web by allowing you to subscribe to content thru it anywhere you are. There are 2 ways of doing it : 
+* Convince every other website out there to just work for us and add a msgboy button to their site. Of course it'd be much better for us in terms of branding.... but that wouldn't work. Why would people promote us?
+* The other option is to implement the WebIntents so that rather than promoting another company/service/product, they promote a feature and make their application more useful for their users, without trading them!
+
+h3. Registering the "subscribe" intent.
+
+Registering an intent is fairly easy; you add the following code to your web application's HTML code (in the <code><head></code> part) :
+    
+<code><intent action="http://webintents.org/subscribe" /></code>
+
+Also, make sure you add a <code><link></code> element to "webintents.min.js":http://code.google.com/p/webintents/source/browse/webintents.min.js
+
+What this code does is simple : it registers an intent on the webintents.org service. This intent is to handle the "subscribe" action on behalf of the user. There are a couple more options, but for the sake of simplicity, let's stick with this simple default : feel free to check the "msgboy's webintent's branch":https://github.com/superfeedr/msgboy/tree/webintents to see how registration is performed in the context of a more complex app.
+
+Technically, what happend here is that webintents.org stored the intent (using HTML5's localStorage). Which means that all the user data is local, but we'll come back to this a bit later. Of course the action/verb is stored, but also the url of the page that declared the intent.
+
+h3. Starting the activity.
+
+Say you have a blog and you want to provide a subscribe button that your readers could use to indicate they want more of your content, using the application of their choice. When the button is triggered, you would do something like this:
+
+<code>
+    var intent = new Intent("http://webintents.org/subscribe", "application/atom+xml", "http://blog.msgboy.com/rss");
+    window.navigator.startActivity(intent);
+</code>
+
+What this does is quite simple: it creates an action of type "subscribe", and uses the params <code>"application/atom+xml", "http://blog.msgboy.com/rss"</code> for it. It then starts the activity, and that's when the magic happens: 
+
+* If you looked a bit in the webintents.js code, you would see that this will just send a request to webintents.org to perform that action. 
+* Webintents.org will then open a popup and read the previously stored data in local storage about intents. 
+* If there intents registered for that action, they are presented to the user
+* If the user choses any of the previously registered application, it it redirected to it.
+
+<small>If you implement WebIntents you have to know that the params for the action are stored in a base64 encoded JSON stringed used as the window's name.</small>
+
+h3. What's next
+
+It is fairly easy to register events, but also to trigger actions, and that works fine, even though this is very early for webintents. However, ff you've taken a couple minutes to think about it, you will rightly notice that *webintents.org becomes a single point of failure*, which kind of kills the principle of decentralized, decoupled, that's so precious for the web.
+
+Of course, you can run your own own if you forked the "code from Github":https://github.com/PaulKinlan/WebIntents. But then, if an app is registered on a given web intents server, while the action is triggered on another server, the chain will not be completed. 
+
+Luckily there is a solution for this, and that was actually Paul Kinlan's orginal idea : _use the browser to register intents and trigger actions_. Browsers already include a lot of Javascript APIs, and it's Paul's goal to have them integrate the webintent's API as well. When that happens there is no need to use a 3rd party server. Users will eventually use their browsers to register intents and trigger actions, and the workflow stay the same.
+
+
+
+
+
