@@ -1,0 +1,21 @@
+---
+layout: post
+title: Twitter SERP Drama
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+Today Google introduced significant changes to their algorithm. Like every time this happens some people are scared their _free pension_ will end. This is clearly due to Google's -too- incredibly high market share. This time, among the whiners, is Twitter, and this is interesting.
+
+Not so long ago, _Twitter sold its public and user-owned_ [their words, at the time] data to Microsoft and Google. What's interesting is that this is, to my knowledge *the only time that Google paid anyone to index their content*. A couple years later, it looks like Google has sobered down and they eventually did not renew the Twitter contract when it ended. In other words, Google considered that Twitter's data wasn't worth more than anyone else's data on the web and that their regular crawling should be plenty. Now, Twitter seems to be a bit sour, because *not only have they lost a significant revenue opportunity, but they also likely lost couple positions* in Google's search engine result pages.
+
+The $1Bn question becomes : _did Google favor their own results over Twitter's or did Twitter just go back to where they belong?_ Some people may give Google the benefit of the doubt after last week's "Chrome-gate":http://siliconfilter.com/this-post-is-sponsored-by-google-chrome/, but that's not enough. The only way to know for real would be to make sure that Google+ and Twitter have the same visibility and that Google can access Twitter's data in the same way that they access their own data.
+
+*This is where open protocols win*. Google has been a strong advocate for an open web, with no barrier, no contract and an undiscriminated access. If Twitter supported open protocols, Google (and anyone else) would be able to get this public data in realtime, and they should then get their old SERP ranking back. If they did not, well, then, we could certainly suspect that Google is pushing up its own results.
+
+Using proprietary protocols, forcing partnerships, discriminating between services mostly obfuscates the play field. At the time nobody was really shocked that twitter and Google entered in a specific agreement, but what we're seeing today is the immediate consequence. Maybe Google is favoring their own results, but even if they did, can Twitter really complain about it? They lost their credibility when they restricted the access to that data: _Nemo auditur propriam turpitudinem allegans_
+
+
+
