@@ -40,7 +40,7 @@ Plugging complete web applications will certainly make creating complex systems 
 
 For example, not only could we (humans and machines) "subscribe", and combine that with other actions, like write. We could even imagine machines subscribing to other machines's action to let the user decide which workflow he wants. Does this remind you of "WebIntents":http://blog.superfeedr.com/webintents/? it should, as web intents are a way to subscribe to a user's actions. I told you this publish/subscribe pattern is everywhere!
 
-h2. Getting involved!
+h3. Getting involved!
 
 Some of the smartest web engineers have fought for years to *bring this subscribe approach to the web stack*, through start-ups, the use of other non-http protocols, by bending HTTP, or by writing HTTP-based protocols for specific sub-cases. None of these approaches became as ubiquitous as the pattern itself.
 
