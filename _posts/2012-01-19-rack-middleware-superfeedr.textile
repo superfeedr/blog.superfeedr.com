@@ -1,0 +1,22 @@
+---
+layout: post
+title: Rack Middleware for Superfeedr
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+I am a bit ashamed that this comes so late... but it's always better late than never : we have a rack middleware for Superfeedr.
+
+What it does is simple : subscribe, unsubscribe and help you handle notifications by hiding all the PubSubHubbub -complexity- magic. 
+
+Since it's Rack, it should work with any Ruby web framework that supports Rack.
+
+Here is a small example that you can play with right away!
+
+<script src="https://gist.github.com/1644799.js?file=superfeedr-sinatra.rb"></script>
+
+Get it while it's hot: `gem install rack-superfeedr`, and check the code on "github":https://github.com/superfeedr/rack-superfeedr. If you build something awesome, please let us know and we'll link to it.
+
+As you can see it's quite elegant :) Can't wait to show you how to run that with our "Heroku Addon":https://gist.github.com/1585628! if you want to be among the very first testers. Please let us know!
