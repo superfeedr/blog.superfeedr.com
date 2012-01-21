@@ -108,6 +108,8 @@ Check "mine":http://floating-sky-5183.herokuapp.com/!
 
 h2. Gotchas
 
+Heroku will put this application to sleep if you only use a single dyno... and since we store the entries in memory for now, that means you'll lose that data if the app goes idle. The solution is very simple: store the data, using another "Heroku addon":https://addons.heroku.com/!
+
 Of course, this is a very simple application and there is a ton of little things that one can do to improve it:
 
 * add the ability to dynamically subscribe to feeds
