@@ -1,0 +1,21 @@
+---
+layout: post
+title: Flattr PubSubHubbub-ed
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+I have to confess I am not the best at writing consistently and often on that blog. There are so many topics that I want to write about: writing a "Chrome application":http://msgboy.com/, the future of "PubSubHubbub":http://code.google.com/p/pubsubhubbub/, not using "JQuery":http://jquery.com/ when it's not necessary, our "Heroku Addon":https://addons.heroku.com/superfeedr... etc. But today, I want to share with you an awesome new hub that we host at Superfeedr.
+
+h2. Flattr
+
+"Flattr":http://flattr.com/ is a very innovative service that brings a very cool monetization solution to anyone *creating* web content. Each user decides on how much money they want to give to the _internetz_. During the month, they can then flattr various "things":http://flattr.com/catalog, including music, video, games, software, or even people! When the end of the month comes, the user's money is shared between all the thing he previously flattred.
+
+
+h2. PubSubHubbub
+
+Flattr provides a lot of different feeds, and they're now all "PubSubHubbub":http://flattr.superfeedr.com/! It becomes really easy to resyndicate the things you've flattred using a "user activity feed":https://api.flattr.com/rest/v2/users/voxpelli/activities.atom. A thing owner could also subscribe to the feed of people flattring it... and then send a realtime thank you tweet :p
+
+We're extremely proud to see services like *flattr use PubSubHubbub*, as we know their community is clearly among the trend setters. Who's next?
