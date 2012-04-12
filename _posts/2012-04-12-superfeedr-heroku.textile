@@ -1,0 +1,35 @@
+---
+layout: post
+title: Superfeedr Heroku
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+For the past few months, one of our projects involved working on an Heroku addon. Today it reached public beta. In a nutshell, it allows for anyone using Heroku to *integrate* with all of Superfeedr's features with minimal effort: all the provisioning, integration and even billing is managed thru Heroku. 
+
+
+h2. Integrating
+
+!{float: right; margin: 5px;}/images/heroku.png!
+
+The first step is to _add_ the Superfeedr addon to your existing application. Like for most Heroku addon, type this in your application's repository:
+
+<code>heroku addons:add superfeedr</code>
+
+The next step is the most important step: picking up the right API to use:
+
+* The "XMPP PubSub":http://superfeedr.com/documentation#xmpp_pubsub may require you to run an extra Dyno (process), and XMPP may not have good libraries for your language of choice. 
+* The "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub API uses webhooks, which means that your development machine will need to be 'accessible' from outside the firewall.
+
+Then, you can start implementing! When making calls to Superfeedr, make sure you use <code>SUPERFEEDR_LOGIN</code> and <code>SUPERFEEDR_PASSWORD</code> as your credentials. (you can also set these environment variables to your local development machine)
+
+h2. Billing
+
+For now, using the "Superfeedr heroku addon":https://addons.heroku.com/superfeedr is free, but we will soon introduce plans. These plans will obviously include a *free version*, but they will be based on the number of feeds (we exclude track feeds though), rather than the number of entries. This has been a rather frequent request for superfeedr and we may use Heroku as a sandbox for a new superfeedr pricing model.
+
+If you're looking at sample applications, check this "node.js example":https://github.com/superfeedr/superfeedr-node-sample _which uses XMPP_, "Superpipes":https://github.com/superfeedr/superpipes, or this "Sinatra application":https://github.com/superfeedr/rack-superfeedr/blob/master/examples/sinatra_app.rb, which uses PubSubHubbub.
+
+Happy coding!
+
