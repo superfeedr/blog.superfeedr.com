@@ -26,6 +26,6 @@ When you decide to work with a given's service API, please tell them *you want t
 
 At Superfeedr, we're obviously big promoters of protocols ("XMPP":http://superfeedr.com/documentation/#xmpp_pubsub, "PubSubHubbub":http://superfeedr.com/documentation/#pubsubhubbub, ATOM, ActivityStreams) over APIs, and we obviously kept the same philosophy for "Msgboy":http://msgboy.com/. 
 
-
+_Addendum: what makes me even sadder about this story is that "Brad Fitz":http://bradfitz.com/, who wrote the "Social Graph API":https://developers.google.com/social-graph/ is the one who told me first about protocols being better than API..; and guess what? The Social Graph API has been deprecated as well. :(_
 
 
