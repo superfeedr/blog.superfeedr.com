@@ -7,11 +7,13 @@ author_uri: http://twitter.com/julien51
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
+<em>Beware, the WebIntents protocol has been updated and the example given below are inaccurate. The general idea stays true, though.</em>
+
 We *hate barriers and user locks of any kind*, but the web is full of them. The _web works better when services are decoupled_, when the user is at the center and picks the services he wants to use, not the services other services wants him to use.
 
 One of the key characteristics of the "msgboy":http://msgboy.com is that it integrates seamlessly with your web : the user's web. We have 2 features in mind : *allowing our users to subscribe* to more content using the msgboy or 3rd party services, and *allowing the msgboy's users to share the content* they received using their favorite 3rd party services.
 
-h2. Enter WebIntents.
+h3. Enter WebIntents.
 
 "Paul Kinlan":http://paul.kinlan.me/ is a developer advocate at Google. He introduced "WebIntents":http://webintents.org/ almost a year ago. WebIntent's general idea is to allow web services to register features with each others in a decoupled way.  One of the example that Paul uses often is editing an image to remove red-eye. 
 
