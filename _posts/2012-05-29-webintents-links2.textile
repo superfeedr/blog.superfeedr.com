@@ -1,0 +1,83 @@
+---
+layout: post
+title: WebIntents are links 2.0
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+You may have heard of "WebIntents":http://webintents.org/. At least, "here":http://blog.superfeedr.com/webintents/.
+We're proud to say that "msgboy":http://www.msgboy.com/ now supports WebIntents completely: it triggers intents (sharing stories), and handles them (subscribing). 
+
+h3. Sharing Stories
+
+_Sharing stories_ is a key feature of many readers. People just don't read for themselves only. Up until now, Msgboy offered our users the ability to share stories on Twitter and Facebook. This is good because these are obviously very popular outlets. Yet, some people use Google+, Status.net, Kippt and who knows what other services! In the future too, these services will likely not be as popular and some new ones will appear. We do not want to couple Msgboy too much with any specific service: *WebIntents is the solution*!
+
+!{width:90%}/images/sharing.png!
+
+bq. In short, webintents aims at binding to actions, rather than services. 
+
+Code-wise, that's quite simple: 
+<script src="https://gist.github.com/2827860.js?file=webintents.html"></script>
+
+If you're using Chrome, try it by yourself: <button onclick="share();">Share This Page</button>
+
+<script>
+function share() {
+    try {
+        var intent = new WebKitIntent("http://webintents.org/share", "text/uri-list", window.location.toString());
+        var onSuccess = function(data) {
+            // Successful sharing
+        };
+        var onError = function(data) { 
+            // User canceled sharing
+        };
+        window.navigator.webkitStartActivity(intent, onSuccess, onError);
+    }
+    catch(ReferenceError) {
+        window.alert("Dang, your browser doesn't seem to support Webintents yet :(")
+    }
+}
+</script>
+
+Currently, only Chrome applications can register as intent handlers. If you do not have any Chrome app that is able to handle this <em>Share</em> intent, you will be offered a couple choices from the "Chrome WebStore":https://chrome.google.com/webstore. 
+
+!{width:90%}/images/picking.png!
+
+Pick your favorite app, and share using it!
+
+
+h3. Subscribing
+
+Now, Msgboy is also an app that can registers the *subscribe intent*. You probably know the twitter 'follow' buttons, or the facebook 'subscribe' buttons. With WebIntents, you can now have a generic 'Subscribe' button, one that works with whatever service your users like and love, be it Twitter, Facebook, Msgboy or other apps!
+
+bq. Another huge benefit of this button is that it doesn't secretly sniffs all your analytics or track your users wherever they go on the web.
+
+If your web application has a Chrome application, you can register the intent by adding the following to the extension's manifest file:
+<script src="https://gist.github.com/2828171.js?file=manifest.json"></script>
+
+<script>
+function subscribe() {
+    try {
+        var intent = new WebKitIntent("http://webintents.org/subscribe", "application/atom+xml", "http://blog.superfeedr.com/atom.xml");
+        var onSuccess = function(data) {
+            // Successful sharing
+        };
+        var onError = function(data) { 
+            // User canceled sharing
+        };
+        window.navigator.webkitStartActivity(intent, onSuccess, onError);
+    }
+    catch(ReferenceError) {
+        window.alert("Dang, your browser doesn't seem to support Webintents yet :(")
+    }
+}
+</script>
+
+Now, when people click on a <button onclick="subscribe();">Subscribe</button>, they'll be able to use "Msgboy":http://www.msgboy.com/ (or any installed app that registered the Subscribe intent) to achieve that. That's quite elegant, isn't it?
+
+In terms of implementation, when the user clicks on the button, he will be redirected to the <code>href</code> value, which can then handle the intent on behalf of the user.
+
+We sincerely hope WebIntents become *ubiquitous*, supported by all <strike>modern</strike> browsers, as well as by all web application makers. They're *links 2.0*, and the faster we get there, the better for the web!
+
