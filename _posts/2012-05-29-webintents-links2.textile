@@ -79,5 +79,11 @@ Now, when people click on a <button onclick="subscribe();">Subscribe</button>, t
 
 In terms of implementation, when the user clicks on the button, he will be redirected to the <code>href</code> value, which can then handle the intent on behalf of the user.
 
+h4. One More things
+
+Intent registering applications can also register a <code>view</code> intent, which will be called by default to represent a specific Mime-Type. For example, Msgboy registers the view intent on the <code>application/xml+atom</code> and <code>application/xml+rss</code>, so that, if you have "msgboy":http://www.msgboy.com/ installed, you can use it to <a href="/atom.xml">view a feed's content</a>, and maybe subscribe to it.
+
 We sincerely hope WebIntents become *ubiquitous*, supported by all <strike>modern</strike> browsers, as well as by all web application makers. They're *links 2.0*, and the faster we get there, the better for the web!
+
+
 
