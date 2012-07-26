@@ -1,0 +1,47 @@
+---
+layout: post
+title: A better web
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+In the last couple weeks, there's been a lot of hubbub (again!) around "Twitter's latest move":https://dev.twitter.com/blog/delivering-consistent-twitter-experience with its ecosystem. Twitter is more and more of a media company and less and less of a communication company Generally, _on Twitter you're interracting more and more with twitter itself and less and less with your friends_. People claim that this decision is driven by the fact that Twitter's business model is ad based.
+
+As any business move, this leaves a void: a twitter-like tool aimed at communication only, one that would not be ad-based, which ideally be open-source so a company doesn't sit between us and our friends. You've probably read a lot about that. Follow "Dalton Caldwell":http://daltoncaldwell.com/ and "Dave Winer":http://scripting.com/ blogs for more on that.
+
+h3. An Open Twitter?
+
+As much as I'd love to see and use these new tools, I'm afraid there is still a long way to go, and even when the tools are there, it's likely that my friends will be slow to move to it, just because, for now at least, Twitter, Facebook or other 'closed' platforms just fit what they need. I too, will stay there, because when it comes to social networks, what matters to me the most is the 'social' aspect, not the software one.
+
+To me, an *open twitter is not the goal*. The goal is a better open web. One on which I can chose which tools I use, without forcing my friends to do the same decision (they should not even know care). An open web is also a web on which I can chose what phone I use, without impacting my social network decision (and the other way around).
+
+To get there, we need to either force the closed platforms to open up, or to just add a layer above or below them that would achieve this, without changing my use of them.
+
+h3. Opening Up
+
+Ditch the API, switch to multi-laterrally agreed upon protocols. Use similar data representation, and communication tools to transmit data from one another.
+
+* "RSS/Atom feeds":http://en.wikipedia.org/wiki/Atom_(standard) have been very widely adopted and are a very good model for timelines, activity streams and other tweet lists. Many many platform already have them (including Twitter and Facebook: they just need to promote them a bit more...).
+
+* The 'Subscribe' pattern exists in the form of "PubSubHubbub":https://code.google.com/p/pubsubhubbub/. However, we miss the ease of the 'Follow' buttons offered by these social network. I have great hopes that "WebIntents":http://webintents.org/ will be able to solve that problem very elegantly.
+
+Technically speaking, that's all we'd need I believe, and since many amazing platforms have already completely implemented that stack, like "Status.net":http://status.net/, "Tumblr":http://www.tumblr.com/, "Wordpress":http://wordpress.org/, "Flattr":https://flattr.com/... the benefit will be instantaneous.
+It's probably little work for the existing closed platforms to implement and I sincerely hope that getting them to adopt these protocols will be easier than moving hundreds of milions of users away from them.
+
+h3. Sitting on top
+
+You may say I'm a dreamer, since I believe we will soon be able to follow our Facebook friends on Twitter, or our Google+ circles on Twitter. But I think we, hackers, can _show them the way_. They tend to ignore it, but all these closed networks are built on top of an completely open platform: HTTP, HTML, Javascript... Better yet, they're accessible thru an amazing hacking box: the browser, which means that we could use our browsers as 'trojan' horses. This is what we did with the "indie butler":https://github.com/julien51/indie-butler-app.
+
+The browser can just 'hijack' our interractions with these closed networks, back up the data locally, and "serve it":https://github.com/julien51/indie-butler-relay from there. It could also alter my browser's behavior, so that when I go to facebook.com, it shows me what my friends on twitter.com tweeted, in the Facebook format (or the other way around).
+
+We created the butler during the "IndieWebCamp":http://indiewebcamp.com/. It was an amazing eye opening event and you should attend that in the future if you're even remotely interested in making the web better. The Butler is still extremely early stage, and we will improve it in the next couple weeks. I hope you get the idea of how it works!
+
+
+
+
+
+
+
+
