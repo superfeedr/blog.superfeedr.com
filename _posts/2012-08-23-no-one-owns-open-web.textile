@@ -19,7 +19,6 @@ The open stack is not perfect (nowhere near that actually), but it's there, and 
 
 Help us make this stack better, rather than trying to get your name written on yet another approach. The open web is not about you (or me), it's about moving forward.
 
-Also, "read Dave Winer's piece":http://scripting.com/stories/2012/08/22/protocolsDontMeanMuch.html
- about protocols. He's spot on.
+Also, "read Dave Winer's piece":http://scripting.com/stories/2012/08/22/protocolsDontMeanMuch.html about protocols. He's spot on.
 
 
