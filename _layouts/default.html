@@ -1,52 +1,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
-<head> 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
     <title>Superfeedr : {{ page.title }} </title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
-    
-    <!-- Stylesheets --> 
-    <link href="http://yui.yahooapis.com/3.1.1/build/cssreset/reset-min.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/superfeedr.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/shjs/sh_nedit.min.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/thickbox.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="/css/blog.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets -->
+    <link href="http://yui.yahooapis.com/3.1.1/build/cssreset/reset-min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://superfeedr.com/stylesheets/superfeedr.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://superfeedr.com/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <link href="http://superfeedr.com/stylesheets/shjs/sh_nedit.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://superfeedr.com/stylesheets/thickbox.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/css/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
-    
+
     <!--[if lt IE 8]>
 		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js">IE7_PNG_SUFFIX=".png";</script>
 		<link rel="stylesheet" type="text/css" href="css/ie.css" />
-	<![endif]--> 
+	<![endif]-->
 	<!--[if IE 6]>
 		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
-	<![endif]--> 
-</head> 
- 
-<body> 
-	<div id="bg"> 
-	<div id="wrapper"> 
-		<div id="logo"> 
+	<![endif]-->
+</head>
+
+<body>
+	<div id="bg">
+	<div id="wrapper">
+		<div id="logo">
 			<a href="http://superfeedr.com" class="home"><img alt="Superfeedr" src="http://superfeedr.com/images/superfeedr_complete.png" /></a>
-		</div> 
-		<ul id="navigation"> 
-		    <li><a href="http://superfeedr.com/publisher" alt="Got feeds? Push them in realtime">Publishers</a></li> 
-		    <li><a href="http://superfeedr.com/subscriber" alt="Want data? We have it for you">Subscribers</a></li> 
-		    <li><a href="http://superfeedr.com/documentation" alt="RTFM">Documentation</a></li> 
-		    <li><a href="http://superfeedr.com/about" alt="All you wanted to know. Almost">About</a></li> 
-		</ul> 
-		<div class="clear"></div> 
-	<div id="main_bg"> 
-        <div id="main_top"> 
-			<h1>{{ page.title }}</h1> 
-		</div> <!--main_top--> 
- 
-    		<div id="content"> 
-<div id="content_left"> 
+		</div>
+		<ul id="navigation">
+		    <li><a href="http://superfeedr.com/publisher" alt="Got feeds? Push them in realtime">Publishers</a></li>
+		    <li><a href="http://superfeedr.com/subscriber" alt="Want data? We have it for you">Subscribers</a></li>
+		    <li><a href="http://superfeedr.com/documentation" alt="RTFM">Documentation</a></li>
+		    <li><a href="http://superfeedr.com/about" alt="All you wanted to know. Almost">About</a></li>
+		</ul>
+		<div class="clear"></div>
+	<div id="main_bg">
+        <div id="main_top">
+			<h1>{{ page.title }}</h1>
+		</div> <!--main_top-->
+
+    		<div id="content">
+<div id="content_left">
     {{ content }}
-	</div> <!--content_left--> 
- 
-	<div id="content_right"> 
+	</div> <!--content_left-->
+
+	<div id="content_right">
         <h2>Superfeedr speaking</h2>
         <script>
         function subscribe() {
@@ -55,7 +55,7 @@
                 var onSuccess = function(data) {
                     // Successful sharing
                 };
-                var onError = function(data) { 
+                var onError = function(data) {
                     // User canceled sharing
                 };
                 window.navigator.webkitStartActivity(intent, onSuccess, onError);
@@ -65,10 +65,10 @@
             }
         }
         </script>
-        
+
             <p style="line-height:200%">We build a <a href="http://superfeedr.com">complex feed fetching and parsing infrastructure</a> so that you don't have to. </p>
-            
-            <p><button onclick="subscribe();">Subscribe</button> to our <a href="http://blog.superfeedr.com/atom.xml">Atom Feed</a>, <a href="http://twitter.com/superfeedr">follow us on Twitter</a>, or read the <a href="/archive.html">archive</a>.
+
+            <p><input type="button" onclick="subscribe();" value="Subscribe"> to our <a href="http://blog.superfeedr.com/atom.xml">Atom Feed</a>, <a href="http://twitter.com/superfeedr">follow us on Twitter</a>, or read the <a href="/archive.html">archive</a>.
             </p>
 
 
@@ -79,12 +79,12 @@
             <ul id="twitter_update_list"></ul>
             <a href="http://twitter.com/superfeedr" id="twitter-link" style="display:block;text-align:right;">follow me on Twitter</a>
         </div>
-</div>  
- 
-            <div class="clear"></div> 
-            </div> <!--content--> 
-            
-	    <div id="footer"> 
+</div>
+
+            <div class="clear"></div>
+            </div> <!--content-->
+
+	    <div id="footer">
             <ul id="footer_navigation">
                 <li><a href="http://superfeedr.com/documentation">Docs</a></li>
                 <li><a href="http://blog.superfeedr.com/frequently-asked-questions.html">Faq</a></li>
@@ -95,12 +95,12 @@
                 <li><a href="http://blog.superfeedr.com">Blog</a></li>
                 <li><a href="http://superfeedr.com/about">About</a></li>
             </ul>
-		</div> 
-		<div id="log" style="" ></div> 
-	</div> <!--main_bg--> 
-	</div><!--wrapper--> 
-	</div><!--bg--> 
-	<!-- UserVoice --> 
+		</div>
+		<div id="log" style="" ></div>
+	</div> <!--main_bg-->
+	</div><!--wrapper-->
+	</div><!--bg-->
+	<!-- UserVoice -->
     <div style="display:none" id="profile_links">
 	    <a href="http://ouvre-boite.com" rel="me" target="_blank">Ouvre-Boite</a>
 	    <a href="http://www.google.com/profiles/julien.genestoux" rel="me" target="_blank">Google Buzz</a>
@@ -109,21 +109,21 @@
 	    <a href="http://friendfeed.com/julien">Friendfeed</a>
 	    <a href="http://cliqset.com/julien">Cliqset</a>
 	</div>
-    <script type="text/javascript"> 
+    <script type="text/javascript">
     var uservoiceOptions = {
       /* required */
       key: 'superfeedr',
-      host: 'superfeedr.uservoice.com', 
+      host: 'superfeedr.uservoice.com',
       forum: '17481',
-      showTab: true,  
+      showTab: true,
       /* optional */
       alignment: 'left',
-      background_color:'#f00', 
+      background_color:'#f00',
       text_color: 'white',
       hover_color: '#06C',
       lang: 'en'
     };
- 
+
     function _loadUserVoice() {
       var s = document.createElement('script');
       s.setAttribute('type', 'text/javascript');
@@ -132,7 +132,7 @@
     }
     _loadSuper = window.onload;
     window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
-    </script> 
-    <!-- UserVoice (end) --> 
-</body> 
-</html> 
+    </script>
+    <!-- UserVoice (end) -->
+</body>
+</html>
