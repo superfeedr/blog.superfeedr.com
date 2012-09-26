@@ -1,0 +1,19 @@
+---
+layout: post
+title: Users don't care
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+We we try to convince people that the web would be better if we relied more on open protocols and platforms would do adopt these, we often get the deaded __but the people, are like the "honey badger":http://www.youtube.com/watch?v=4r7wHMg5Yjg, they don't care__. And that is *true*!
+
+It is true that people don't care whether they are using an open platform, open protocols, "PubSubHubbub":http://pubsubhubbub.superfeedr.com/ or protocols with even worse names, and that is precisely the point of the open web.
+
+The problem is that, right now, in our silo-ed web, people have to care. You want to follow "me":http://ouvre-boite.com/? Well, you first have to know what platform I use (Facebook, Twitter, Google Plus?), and then, you have to create an account with them. This is NOT not caring. This is doing work which shouldn't have to do.
+
+With the open, federated web, when you follow me, you follow me from wherever you are, wherever I am. That's the simple. The open web is a web that decouples the people and the actions from the platforms. And you do that with open protocols that allow you to do just that: "PubSubHubbub":https://code.google.com/p/pubsubhubbub/ (for pubsub), "Webfinger":http://code.google.com/p/webfinger/ (for discovery of people) and "WebIntents":http://webintents.org/ (for discovery of services).
+
+
+
