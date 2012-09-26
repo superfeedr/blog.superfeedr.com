@@ -13,7 +13,7 @@ It is true that people don't care whether they are using an open platform, open 
 
 The problem is that, right now, in our silo-ed web, people have to care. You want to follow "me":http://ouvre-boite.com/? Well, you first have to know what platform I use (Facebook, Twitter, Google Plus?), and then, you have to create an account with them. This is NOT not caring. This is doing work which shouldn't have to do.
 
-With the open, federated web, when you follow me, you follow me from wherever you are, wherever I am. That's that simple. The open web is a web that decouples the people and the actions from the platforms. And you do that with open protocols that allow you to do it: "PubSubHubbub":https://code.google.com/p/pubsubhubbub/ (for pubsub), "Webfinger":http://code.google.com/p/webfinger/ (for discovery of people) and "WebIntents":http://webintents.org/ (for discovery of services).
+With the open, federated web, when you follow me, you follow me from wherever you are, wherever I am. That's that simple. The open web is a web that decouples the people and the actions from the platforms. And you do that with open protocols that allow you to do it: "PubSubHubbub":https://code.google.com/p/pubsubhubbub/ (for messaging), "Webfinger":http://code.google.com/p/webfinger/ (for discovery of people) and "WebIntents":http://webintents.org/ (for discovery of services).
 
 
 
