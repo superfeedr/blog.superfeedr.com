@@ -48,27 +48,30 @@
 
 	<div id="content_right">
         <h2>Superfeedr speaking</h2>
-        <script>
-        function subscribe() {
-            try {
-                var intent = new WebKitIntent("http://webintents.org/subscribe", "application/atom+xml", "http://blog.superfeedr.com/atom.xml");
-                var onSuccess = function(data) {
-                    // Successful sharing
-                };
-                var onError = function(data) {
-                    // User canceled sharing
-                };
-                window.navigator.webkitStartActivity(intent, onSuccess, onError);
-            }
-            catch(ReferenceError) {
-                window.alert("Dang, your browser doesn't seem to support Webintents yet, switch to Chrome! :(")
-            }
+<script>
+      function subtomeSubscribe() {
+        var proto = 'https'
+        if (window.location.protocol != "https:")
+          proto = 'http'
+
+        var s = document.createElement('iframe');
+        var url = window.location.toString();
+        s.setAttribute('style', 'position: absolute; top: 0px; left: 0px; width:100%; height: 100%; border:0px;');
+        s.setAttribute('src', proto + '://www.subtome.com/subscribe.html?resource=' + window.location.toString());
+        var loaded = false;
+        s.onload = function() {
+          if(loaded) {
+            document.getElementsByTagName('body')[0].removeChild(s);
+          }
+          loaded = true;
         }
-        </script>
+        document.getElementsByTagName('body')[0].appendChild(s);
+      }
+  </script>
 
             <p style="line-height:200%">We build a <a href="http://superfeedr.com">complex feed fetching and parsing infrastructure</a> so that you don't have to. </p>
 
-            <p><input type="button" onclick="subscribe();" value="Subscribe"> to our <a href="http://blog.superfeedr.com/atom.xml">Atom Feed</a>, <a href="http://twitter.com/superfeedr">follow us on Twitter</a>, or read the <a href="/archive.html">archive</a>.
+            <p><input type="button" onclick="subtomeSubscribe();" value="Subscribe"> to our <a href="http://blog.superfeedr.com/atom.xml">Atom Feed</a>, <a href="http://twitter.com/superfeedr">follow us on Twitter</a>, or read the <a href="/archive.html">archive</a>.
             </p>
 
 
