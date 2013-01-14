@@ -1,0 +1,48 @@
+---
+layout: post
+title: Node.js Powered
+categories: []
+author_name: Julien
+author_uri: http://twitter.com/julien51
+author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+---
+
+Late, but not too late, the whole Superfeedr tream want to wish you a wonderful year 2013, may it be filled with joy and successes!
+We wanted to start the year by telling you a bit more about 2012.
+
+About a year ago, we introduced our first bits of code that use Node.js: a "simple wrapper for our XMPP API":http://blog.superfeedr.com/node-superfeedr/. We slowly started to fall in love with Node which had gotten more mature and stable over time. We used Javascript to build our "Msgboy":http://www.msgboy.com/index.html and got more and familiar with both the language and the framework.
+
+So, we slowly decided to rewrite all the Superfeedr backend (the website frontend still uses Ruby on Rails). As always, it took us a couple days (litterally) to write the core of it, and months to write all the corner cases. Back in November, everything was ready and deployed.
+
+h3. The good
+
+What we liked the most of Javascript was the fact that it's an asynchronous language 'by default'. There is no need for us to check whether the Redis library uses a reactor pattern of if the DNS resolution was blocking.
+
+But what really made the difference in the end, was the extraordinary Node.js community. It's alive, and kicking hard! As an example, between the time we started our rewrite and the time it finished, Node itself went from 0.8.5 to 0.8.15, and I'm not even mentionning all the npm modules.
+
+We also started to fall in love with the "small module" approach praised by Substack. At first, it felt like it would be dangerous to add dozens of dependencies for small tasks, but we found out that it would always be easier to replace one failing or broken component than a whole framework.
+
+h3. The not-so-good
+
+Node.js is 4 years old, and that's very very young. This means that it's still not easy to figure out the best tools. For example, we had a lot of trouble to understand the "actual memory footprint of our processes":http://stackoverflow.com/questions/13126808/whats-the-node-js-memory-breakdown. Garbage collecting surely gave us a lot of nightmares. It certainly works amazingly well, but the fact that it's hard to understand (at least for us) makes it hard for us to understand pain points and optimize them.
+
+Also, it is often really hard to find the right balance between CPU utilization and memory usage. If you try to squeeze in more operations in each loop of the event loop, this one becomes slower, and the memory footprint tends to grow... which makes garbage collecting more expensive.
+
+Another consequence of the relatively young age of Node.js is the fact that several APIs are still changing. We initially focused on using Streams a lot internally. We were lucky enough to eventually surrender as a new Streams API was announced.
+
+Of course the Javascript syntax is not as elegant, or at least not as uniform as the Ruby syntax and we kind of miss that too[1].
+
+h3. What it changes
+
+Our Ruby code base is now archived. It was an amazing ride, and EventMachine was an eye opener for us (good and bad!). We know other solutions exists, specifically with the advent of fibers, but it really seems that Node community is more active these days, and the ability to find talents as well as attract people who are willing to learn about it.
+
+It terms of performance, we also have seen a significant (about 25%) bump in terms of feeds processed by second per server. In other words, when we needed 12.8 seconds to process 10k feeds, we now only need 10 seconds. But that may also be due to some architectural changes that resulted from our Node migration, more than the language itself.
+
+fn1. I know about CoffeeScript.
+
+bq. If you liked this post, please feel free to <input type="button" onclick="subtomeSubscribe();" value="Subscribe">.
+
+
+
+
+
