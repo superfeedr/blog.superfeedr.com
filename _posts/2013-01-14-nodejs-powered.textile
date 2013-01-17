@@ -40,7 +40,6 @@ It terms of performance, we also have seen a significant (about 25%) bump in ter
 
 fn1. I know about CoffeeScript.
 
-bq. If you liked this post, please feel free to <input type="button" onclick="subtomeSubscribe();" value="Subscribe">.
 
 
 
