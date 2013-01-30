@@ -1,69 +1,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
-<head> 
-    <title>Superfeedr : {{ page.title }} </title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
-    
-    <!-- Stylesheets --> 
-    <link href="http://yui.yahooapis.com/3.1.1/build/cssreset/reset-min.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/superfeedr.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/shjs/sh_nedit.min.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="http://superfeedr.com/stylesheets/thickbox.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="/css/blog.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
-    
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Superfeedr : {{ page.title }} </title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+  <!-- Stylesheets -->
+  <link href="http://yui.yahooapis.com/3.1.1/build/cssreset/reset-min.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://superfeedr.com/stylesheets/superfeedr.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://superfeedr.com/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <link href="http://superfeedr.com/stylesheets/shjs/sh_nedit.min.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://superfeedr.com/stylesheets/thickbox.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/blog.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+
     <!--[if lt IE 8]>
 		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js">IE7_PNG_SUFFIX=".png";</script>
 		<link rel="stylesheet" type="text/css" href="css/ie.css" />
-	<![endif]--> 
+   <![endif]-->
 	<!--[if IE 6]>
 		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
-	<![endif]--> 
-</head> 
- 
-<body> 
-	<div id="bg"> 
-	<div id="wrapper"> 
-		<div id="logo"> 
-			<h1><a href="http://superfeedr.com" class="home"><img alt="Superfeedr" src="http://superfeedr.com/images/superfeedr_complete.png" /></a></h1> 
-		</div> 
-		<ul id="navigation"> 
-		    <li><a href="http://superfeedr.com/publisher" alt="Got feeds? Push them in realtime">Publishers</a></li> 
-		    <li><a href="http://superfeedr.com/subscriber" alt="Want data? We have it for you">Subscribers</a></li> 
-		    <li><a href="http://superfeedr.com/documentation" alt="RTFM">Documentation</a></li> 
-		    <li><a href="http://superfeedr.com/about" alt="All you wanted to know. Almost">About</a></li> 
-		</ul> 
-		<div class="clear"></div> 
-	<div id="main_bg"> 
-        <div id="main_top"> 
-			<h2>{{ page.title }}</h2> 
-		</div> <!--main_top--> 
- 
-    		<div id="content"> 
-    {{ content }}
+   <![endif]-->
+ </head>
 
-            <div class="clear"></div> 
-            </div> <!--content--> 
-            
-	    <div id="footer"> 
-            <ul id="footer_navigation">
-                <li><a href="http://superfeedr.com/documentation">Docs</a></li>
-                <li><a href="http://blog.superfeedr.com/frequently-asked-questions.html">Faq</a></li>
-                <li><a href="http://superfeedr.com/cost">Pricing</a></li>
-                <li><a href="http://superfeedr.com/terms">Terms</a></li>
-                <li><a href="http://groups.google.com/group/superfeedr">Community</a></li>
-                <li><a href="http://github.com/superfeedr">Code</a></li>
-                <li><a href="http://blog.superfeedr.com">Blog</a></li>
-                <li><a href="http://superfeedr.com/about">About</a></li>
-            </ul>
+ <body>
+   <div id="bg">
+     <div id="wrapper">
+      <div id="logo">
+       <h1><a href="http://superfeedr.com" class="home"><img alt="Superfeedr" src="http://superfeedr.com/images/superfeedr_complete.png" /></a></h1>
+     </div>
+     <ul id="navigation">
+      <li><a href="http://superfeedr.com/publisher" alt="Got feeds? Push them in realtime">Publishers</a></li>
+      <li><a href="http://superfeedr.com/subscriber" alt="Want data? We have it for you">Subscribers</a></li>
+      <li><a href="http://superfeedr.com/documentation" alt="RTFM">Documentation</a></li>
+      <li><a href="http://superfeedr.com/about" alt="All you wanted to know. Almost">About</a></li>
+    </ul>
+    <div class="clear"></div>
+    <div id="main_bg">
+      <div id="main_top">
+       <h2>{{ page.title }}</h2>
+     </div> <!--main_top-->
 
-		</div> 
-	</div> <!--main_bg--> 
-	</div><!--wrapper--> 
-	</div><!--bg--> 
-	<!-- UserVoice --> 
-</body> 
-</html> 
+     <div id="content">
+      {{ content }}
+
+      <div class="clear"></div>
+    </div> <!--content-->
+
+    <div id="footer">
+      <ul id="footer_navigation">
+        <li><a href="http://superfeedr.com/documentation">Docs</a></li>
+        <li><a href="http://blog.superfeedr.com/frequently-asked-questions.html">Faq</a></li>
+        <li><a href="http://superfeedr.com/cost">Pricing</a></li>
+        <li><a href="http://superfeedr.com/terms">Terms</a></li>
+        <li><a href="http://groups.google.com/group/superfeedr">Community</a></li>
+        <li><a href="http://github.com/superfeedr">Code</a></li>
+        <li><a href="http://blog.superfeedr.com">Blog</a></li>
+        <li><a href="http://superfeedr.com/about">About</a></li>
+      </ul>
+
+    </div>
+  </div> <!--main_bg-->
+</div><!--wrapper-->
+</div><!--bg-->
+<!-- UserVoice -->
+</body>
+</html>
 

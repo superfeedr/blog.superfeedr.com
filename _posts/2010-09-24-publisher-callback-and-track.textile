@@ -7,11 +7,15 @@ author_uri: http://twitter.com/julien51
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
+<blockquote>
+  <p>Our Track API evolved over time... Please make sure you refer to the <a href="http://superfeedr.com/documentation#track">track documentation</a> for the current status</p>
+</blockquote>
+
 Superfeedr's hosted hubs come up with a lot of nifty things. We recently introduced a few more : track feeds, fat pings and publisher callbacks.
 
 h3. Track feeds for hosted hubs
 
-Back in July, "we introduced track":http://blog.superfeedr.com/track/filter/xmpp/pubsubhubbub/track/. A nice and easy way to get realtime notifications _of keyword mention across all the content that goes thru Superfeedr_. Back on August, "we improved track":http://blog.superfeedr.com/a-better-track/, by adding the ability to track _boolean expressions_ and do some _geofiltering_. In September, we now allow track on hosted hubs. You want any mention of Apple on Tumblr? "check this feed":http://tumblr.superfeedr.com/track/apple.
+Back in July, "we introduced track":http://blog.superfeedr.com/track/filter/xmpp/pubsubhubbub/track/. A nice and easy way to get realtime notifications _of keyword mention across all the content that goes thru Superfeedr_. Back on August, "we improved track":http://blog.superfeedr.com/a-better-track/, by adding the ability to track _boolean expressions_ and do some _geofiltering_. In September, we now allow track on hosted hubs.
 
 h3. Fat pings
 
@@ -25,17 +29,17 @@ Many publishers want to make their content available... but a lot of them also *
 
 Of course, this simple callback lets the _publisher decide of their own policy regarding these_. For example, a publisher is likely to let everyone subscribe to individual feeds, but may want to control who subscribes to fire-hoses or track feeds for their hub. We also "prepared a small AppEngine template":http://github.com/superfeedr/superfeedr-publisher-callback for this.
 
-Additionally, these callbacks are smart, as _they will echo back the answer to the original subscriber_, who can then, take measures to see his subscriptions accepted. For example, a publisher may request for an API key to be submitted as part of the subscriptions parameters, Superfeedr will forward all the params posted to the hub, so *the publisher can safely grant access based on their business decisions and own choices*. 
+Additionally, these callbacks are smart, as _they will echo back the answer to the original subscriber_, who can then, take measures to see his subscriptions accepted. For example, a publisher may request for an API key to be submitted as part of the subscriptions parameters, Superfeedr will forward all the params posted to the hub, so *the publisher can safely grant access based on their business decisions and own choices*.
 
 h4. A PubSubHubbub-Auth pattern
 
-We believe that these subscription callbacks can be the basis for an *Authorization pattern* (at least for the _read_ part of it). Since the publisher can decide how they want to implement the subscription callback, the publisher may then ask the users if they allow for their content to be published. 
+We believe that these subscription callbacks can be the basis for an *Authorization pattern* (at least for the _read_ part of it). Since the publisher can decide how they want to implement the subscription callback, the publisher may then ask the users if they allow for their content to be published.
 Let's take an example :
 
  * "Google Buzz":http://www.google.com/buzz asks Superfeedr (the designated hub) for John's "Gowalla":http://gowalla.com/home feed,
  * Superfeedr asks Gowalla if it's ok to let Google Buzz access this content,
  * Gowalla asks John if it's ok to send his data to Google Buzz.
  * If yes, Gowalla tells Superfeedr to accept the subscription, if not, Gowalla tells Superfeedr to refuse the subscription.
- 
+
 Of course, this cannot be considered as a spec of any kind, but I surely hope we can discuss this with the Open Web community, at "FOO Camp":http://post.oreilly.com/rd/9z1zhtnou5rlkfrgj3bt8i6cr65o5nln7m2cr5a1c68, for example. Feel free to share your thoughts. It has the great advantage of letting the publisher and the users decide, rather than imposing them some kind of policy. It also requires that publishers trust the hub which they designate.
- 
+

@@ -9,7 +9,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 We live in the realtime web era. There are different appreciations of what realtime web is. To me, the best definition is that it means the *content is pushed* from a publisher to a subscriber, rather than have the subscriber poll the publisher over and over. Today there exists a bunch of different _realtime web technologies_. Let's review a few of them.
 
-h2. Realtime web in the browser 
+h2. Realtime web in the browser
 
 This is probably the most commonly observed technology. It goes from "Netvibes":http://netvibes.com/' page which updates by itself, to Twitter's new published tweets, via "Tumblr's":http://www.tumblr.com/dashboard  new items. Basically, your browser communicates with a service's server and this one is able to push updates to it. They use different techniques and it's not uncommon so see people naming for the other. You can also easily find providers for these solutions, like "BeaconPush":http://beaconpush.com/, "PusherApp":http://pusherapp.com/ or "Kwwika":http://kwwika.com/.
 
@@ -48,94 +48,14 @@ Of course, there is another way, once that was barely explored : "XMPP":http://x
 
 h2. Server to Server Realtime web
 
-According to me, this is the _highest mountain to climb_ in the realtime web sector. The objective here, is to allow information to flow from a service to another, rather than have everybody poll everybody else. 
+According to me, this is the _highest mountain to climb_ in the realtime web sector. The objective here, is to allow information to flow from a service to another, rather than have everybody poll everybody else.
 
 Tackling the *Server-to-Server* issue involves dealing with the _transportation_ problem and the _data format_ problem. Not only do service A and B need to emit and receive the same kind of signal, but they also need to speak the same language.
 
-For the transportation, there are very few protocols. XMPP and "PubSubHubbub":http://superfeedr.com/hubbub are the ones Superfeedr chose, because *they're both open*, which means that anyone else can implement them and we should be able to work together in a loosely coupled way (without business agreement). 
+For the transportation, there are very few protocols. XMPP and "PubSubHubbub":http://superfeedr.com/hubbub are the ones Superfeedr chose, because *they're both open*, which means that anyone else can implement them and we should be able to work together in a loosely coupled way (without business agreement).
 
 For the data, we chose *RSS and Atom feeds (XML)*, because almost *everybody out there has them*. Of course, some people also have their own JSON based APIs, but who said we should only speak one language?
 
 A lot of people wonder why they should start getting content from other services or even push their content away. _Many applications would rather focus on pushing down to the browser or build their own iPhone apps rather than push their content away_. We think it's wrong, because allowing your content to be pushed to other providers means that _these providers can then implement their own iPhone apps, Growl clients, or even web clients with your content and bring you more users or grow engagement for your existing users_.
-
-Below is a very simple example. As you know "Gowalla":http://gowalla.com/ pushes it's content in realtime with "PubSubHubbub":http://hub.gowalla.com/. I built a "small server":http://github.com/julien51/socket-sub that can subscribe to Gowalla's content, and then push that to browsers using websockets. I then built a simple HTML + Javascript page (integrated into this "Jekyll":http://github.com/mojombo/jekyll Blog!) which can consume the data pushed to the socket. It's simple, really. I could also build an app that pushes the content to iPhones or one that pushes to my Desktop app.
-
-<div id="map_canvas" style="display:block; width:500px; height: 400px"></div> 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
-<script type="text/javascript" src="http://s3.amazonaws.com/le_bazar_de_julien/xmlDOM/jquery.xmldom.js"></script> 
-<script> 
-$(document).ready(function() {
-
-    var lat      = 41.900297;
-    var lon      = 12.47077
-    var myLatlng = new google.maps.LatLng(lat, lon);
-
-    var myOptions = {
-        zoom: 3,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-    }
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-    var conn = {};
-
-    var point_buffer = new Array(); 
-    var live_points  = new Array();
-
-    // Displays the points in a 1Hz frequency. Faster than this, people wouldn't see the updates.
-    setInterval(function() {
-        var point = point_buffer.shift()
-        if(point) {
-            point.setMap(map);
-            map.panTo(point.getPosition());
-            live_points.push(point);
-            if(live_points.length > 20) {
-                var old_point = live_points.shift();
-                old_point.setVisible(false);
-                delete old_point;
-            }
-        }
-    }, 1000);
-
-    function startConnection() {
-        openConnection();
-    }
-    
-    function openConnection() {
-        if(!conn.readyState || conn.readyState > 1 ) {
-            conn = new WebSocket( "ws://node.superfeedr.com:27261");
-            conn.onopen = function () {
-                conn.send("http://superfeedr.com/track/gowalla&hub=hub.gowalla.com");
-            };
-            conn.onmessage = function( event ) {
-                if(point_buffer.length < 30 ) {
-                    var message = (typeof event.data === "string") ? event.data : JSON.parse( event.data );
-                    $.xmlDOM(message).find('feed > entry > point').each(function() {
-                        var latlon = $(this).text().split(" ");
-                        myLatLng = new google.maps.LatLng(parseFloat(latlon[0]), parseFloat(latlon[1]));
-                        point_buffer.push(new google.maps.Marker({ 
-                            position: myLatLng, 
-                            })
-                        );
-                    });
-                }
-            };
-
-            conn.onclose = function( event ) {
-            };
-        }
-    }
-    
-    if (!window.WebSocket) {
-        alert("Looks like your browser doesn't support WebSocket. You won't be able to see the awesome demo down the page.")
-    } else {
-        startConnection();
-    }
-});
-</script>
-<small>Please make sure you use a modern browser in its last versions, like Firefox, Safari or Chrome</small>
-
 
 This will conclude this loooong sunday post. I hope you haven't all been lost on the way, and if there was one thing that I want you to take out of this is : "start to push your content":http://superfeedr.com/publisher to other servers and "make sure you can also subscribe to content from other servers":http://superfeedr.com/subscriber. The web experience will just become insanely better.
