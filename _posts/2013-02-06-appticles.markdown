@@ -25,9 +25,9 @@ Although this stuff is pretty technical, from a publisher’s perspective, it me
 
 ``<link rel=”hub” href=”https://pubsubhubbub.appspot.com/” />``
 
-And whenever you add a new article in the feed, you should send a ping to the Hub with the feed URL. From here onwards, the Hub is taking care of pushing the new content to all of your subscribers (including Appticles). The good news is that if you’re website is based on [Wordpress](http://wordpress.org/extend/plugins/pubsubhubbub/), [Drupal](http://drupal.org/project/push_hub) or [Joomla](http://extensions.joomla.org/) it’s just a matter of installing a plugin to make it work, leaving the rest up to us.
+And whenever you add a new article in the feed, you should send a ping to the Hub with the feed URL. From here onwards, the Hub is taking care of pushing the new content to all of your subscribers (including Appticles). The good news is that if your website is based on [Wordpress](http://wordpress.org/extend/plugins/pubsubhubbub/), [Drupal](http://drupal.org/project/push_hub) or [Joomla](http://extensions.joomla.org/) it’s just a matter of installing a plugin to make it work, leaving the rest up to us.
 
-Even in the absence of the PuSH protocol (no Hub declaration in your RSS/ATOM feeds) we’re making sure your mobile web application is updated regularly. This obviously means that the infrastructure behind the scene is pretty complex and we couldn’t have done it without our trusted partner, [Superfeedr.com](http://superfeedr.com). They’ve built a *complex feed fetching and parsing infrastructure* so we didn't have to, allowing us focus on what we’re best at: providing your with awesome mobile HTML5 applications to help you grow your mobile readership.
+Even in the absence of the PuSH protocol (no Hub declaration in your RSS/ATOM feeds) we’re making sure your mobile web application is updated regularly. This obviously means that the infrastructure behind the scene is pretty complex and we couldn’t have done it without our trusted partner, [Superfeedr.com](http://superfeedr.com). They’ve built a *complex feed fetching and parsing infrastructure* so we didn't have to, allowing us focus on what we’re best at: providing you with awesome mobile HTML5 applications to help you grow your mobile readership.
 
 ![Appticles Integration](../images/appticles.jpg)
 
