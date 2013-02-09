@@ -13,7 +13,8 @@ Well, that's exactly what happened! One or our fellow users, who's working on so
 
 Luckily, that was easy for us, mostly because [Atom already defines](https://tools.ietf.org/html/rfc4287#section-4.2.11) a `<source>` element to include that. Here is an example:
 
-<script src="https://gist.github.com/julien51/4747363.js"></script>
+<script src="https://gist.github.com/julien51/4747363.js">
+</script>
 
 We include by default the feed's `id`, `title`, `updated` date, `author`, `information`, `categories` and `links` ... You could then use the link to subscribe to feeds that tend to match a certain keyword.
 
