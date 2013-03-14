@@ -107,12 +107,35 @@ For example, [this recipe](https://ifttt.com/recipes/83992) will push the conten
 
 [Notifixlite](notifixlite.appspot.com) is a simple RSS to IM service that [we](http://superfeedr.com/) created. Just subscribe to feeds from your chat client nad receive notifications when they update.
 
+
 ### Will Google be back?
 
 One of Google's argument being the end of Reader is the need for them to focus on less services. Google+ is probably one of the few things that Google wants to keep. When you think about it, **Google+, like Facebook and Twitter are some kind of reader**. You <del>subscribe</del> follow people or even brands, and then get to publish to your stream.
 
 Now, I asked some Googlers why they would not allow (with the right UI, of course) people to follow RSS feeds in their Google+. The response was that Google already had an RSS reader: Google Reader. Well, not anymore.
 Maybe one day, RSS will come back to Google via Google+ ?
+
+
+> **UPDATE** The readers below were added based on comments here and on social networks.
+
+#### Rolio
+
+[Rolio](https://www.rolio.com/) is a simple web based RSS reader. It works great, and self updates when new stories are available.
+
+#### Skimr
+
+[Skimr](http://www.skimr.co/) is probably becoming my new favorite web based readers: a very simple UI, extremely readable on mobile devices. 
+
+#### Tiny Tiny RSS
+
+[Tiny Tiny RSS](http://tt-rss.org/index.html) is a reader that you need to install on your own server...
+
+
+#### RSSMiner
+
+[RSSMiner](http://rssminer.net/) is a web based reader whose UI is very similar to Google Reader's. It's also quite fast. You can upvote and downvote each entry. [Code is on Github](https://github.com/shenfeng/rssminer).
+
+
 
 > *Want to see ways we could make RSS simpler to use? Click the button below and see how we could ease subscriptions.*
 
