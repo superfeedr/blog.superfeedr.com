@@ -42,7 +42,9 @@ In other words, it's the proof that your mom (or your sister really) could use a
 
 #### NewsBlur
 
-<img src="../images/newblur-stats.png" alt="Msgboy" style="float:right; margin: 10px"> [NewsBlur](http://www.newsblur.com/) is on the other side of the spectrum in terms of users: it's a very advanced web reader which has been here for a couple years. We love the insight it gives in stories.
+<img src="../images/newblur-stats.png" alt="Msgboy" style="float:right; margin: 10px"> 
+
+[NewsBlur](http://www.newsblur.com/) is on the other side of the spectrum in terms of users: it's a very advanced web reader which has been here for a couple years. We love the insight it gives in stories.
 
 Its business model is clear (freemium), which makes it a viable alternative in the long run. 
 
