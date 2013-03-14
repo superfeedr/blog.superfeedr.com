@@ -130,10 +130,15 @@ Maybe one day, RSS will come back to Google via Google+ ?
 
 [Tiny Tiny RSS](http://tt-rss.org/index.html) is a reader that you need to install on your own server...
 
-
 #### RSSMiner
 
 [RSSMiner](http://rssminer.net/) is a web based reader whose UI is very similar to Google Reader's. It's also quite fast. You can upvote and downvote each entry. [Code is on Github](https://github.com/shenfeng/rssminer).
+
+#### BazQux
+
+[BazQux](http://bazqux.com/) offers a UI very similar to Google. Reader's. You'll have to pay to keep using it after some time.
+
+
 
 
 
