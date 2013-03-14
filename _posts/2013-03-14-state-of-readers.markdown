@@ -24,6 +24,7 @@ It's obviously plugged to Superfeedr (realtime FTW), and will only store your da
 
 It's also [completely open source](https://github.com/superfeedr/msgboy) and you can import your data from Google Reader :)
 
+We hope to have a Firefox version very soon. Feel free to get in touch if you think you can help :) 
 
 ### Google Reader and the Google Reader based services
 
