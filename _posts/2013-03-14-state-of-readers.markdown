@@ -112,6 +112,7 @@ For example, [this recipe](https://ifttt.com/recipes/83992) will push the conten
 One of Google's argument being the end of Reader is the need for them to focus on less services. Google+ is probably one of the few things that Google wants to keep. When you think about it, **Google+, like Facebook and Twitter are some kind of reader**. You <del>subscribe</del> follow people or even brands, and then get to publish to your stream.
 
 Now, I asked some Googlers why they would not allow (with the right UI, of course) people to follow RSS feeds in their Google+. The response was that Google already had an RSS reader: Google Reader. Well, not anymore.
-
 Maybe one day, RSS will come back to Google via Google+ ?
+
+> *Want to see ways we could make RSS simpler to use? Click the button below and see how we could ease subscriptions.*
 
