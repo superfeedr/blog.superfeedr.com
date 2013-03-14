@@ -38,7 +38,7 @@ In the past couple weeks, we have seen dozens of new initiatives in this area. L
 
 [Bloglovin](http://www.bloglovin.com/) is probably the *only popular reader outside of the tech crowd*. It's UI is probably closer to the Tumblr dashboard and the popular tabs tells more about its userbase than anything else: fashion, scrapping, food....
 
-In other words, it's the proof that your mom (or your sister really) could use and enjoy a feed reader. 
+In other words, it's the proof that you do not need to be a tech nerd to use and enjoy a feed reader. 
 
 #### NewsBlur
 
