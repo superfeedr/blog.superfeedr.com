@@ -16,6 +16,8 @@ The initial reason for it was to get an exhaustive overview of the many readers 
 
 There are actually **a ton of readers** and I'll focus on the web ones, because the web is my thing.
 
+> **UPDATE** There is indeed a LOT of readers and I've been contacted by many people to add theres. Please, make sure you read the comments too as they include a bunch of other suggestions
+
 ### Msgboy
 
 <img src="../images/msgboy.png" alt="Msgboy" style="float:left; margin: 10px">
