@@ -138,8 +138,9 @@ Maybe one day, RSS will come back to Google via Google+ ?
 
 [BazQux](http://bazqux.com/) offers a UI very similar to Google. Reader's. You'll have to pay to keep using it after some time.
 
+#### Gregarius
 
-
+[Gregarius](http://sourceforge.net/projects/gregarius/). Another feed reader that you'll need to install (PHP) on your own server.
 
 
 > *Want to see ways we could make RSS simpler to use? Click the button below and see how we could ease subscriptions.*
