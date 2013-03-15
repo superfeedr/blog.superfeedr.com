@@ -15,6 +15,8 @@ We've heard a lot of people say that they *replaced their RSS reader with Twitte
 
 Subscribing to an **RSS feed is still very hard**. When I am on a site I like, I have to find the RSS link (which is often hidden), copy its url, open a new tab and paste the url in he right field. Finally, I can click on the 'subscribe' button. 
 
+> UPDATE; people on HackerNews said that subscribing to an RSS feed is easy. Check this video of how people react when they're asked [what a browser is](http://www.youtube.com/watch?v=o4MwTvtyrUQ).
+
 ### Meet SubToMe
 
 [SubToMe](https://www.subtome.com/) aims at simplifying that. It's a button, click on it: <input type="button" id='followThis' value="Follow this Blog" />
