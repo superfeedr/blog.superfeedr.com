@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing a free plan!
+title: Introducing a free Superfeedr plan!
 categories: []
 author_name: Julien
 author_uri: http://twitter.com/julien51
@@ -16,7 +16,7 @@ If your application gets less than 10,000 notifications from us per month, **it'
 
 For those who worry that free is exactly one of the reasons that Google Reader close, we tell that we have plenty of *amazing customers* who get a lot more notifications and who think our service is worth paying for :)
 
-We have more to come this week for all the people looking for a **replacement to the Google Reader API**: stay tuned!
+We have more to come this week for all the people looking for a **replacement to the Google Reader API**: stay tuned, click the subscribe button below!
 
 
 
