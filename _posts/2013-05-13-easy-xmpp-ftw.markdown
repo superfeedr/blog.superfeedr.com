@@ -1,6 +1,6 @@
 ---
 layout: post
-title: XMPP-FTW: XMPP & JSON for the Web
+title: XMPP-FTW XMPP and JSON for the Web
 categories: []
 author_name: Julien
 author_uri: http://twitter.com/julien51
@@ -21,14 +21,14 @@ XMPP-FTW is actually a proxy XMPP client which converts all the XML into a json 
 
 Recently, [Lloyd added support](http://www.evilprofessor.co.uk/615-xmpp-ftw-now-supports-superfeedr/) for the Superfeedr API and it's a great playground to get started. Here is a little HOW-TO that you can try in [the demo app](https://xmpp-ftw.jit.su/demo). (you could also run your own XMPP-FTW)
 
-1. Type `xmpp.login`, in the 'event name' box.
-2. Options should appear in the following grey box. Replace them with `{"jid": "demo@superfeedr.com","password": "demo"}`. Hit 'send'.
-3. Quickly, you should see an incoming event indicating that you're now connected to Superfeedr XMPP server!
-4. Type `xmpp.superfeedr.subscribe` 
-5. Complete the option box with `{ "feed": "http://push-pub.appspot.com/feed"}`
-6. You should see a response indicating that you're now subscribed to that feed. The response also includes its status, the last time we parsed the feed... etc
-7. In another browser tab, publish something new in that feed [using this app](http://push-pub.appspot.com/).
-7. You should see the incoming notification in XMPP-FTW!
+* Type `xmpp.login`, in the 'event name' box.
+* Options should appear in the following grey box. Replace them with `{"jid": "demo@superfeedr.com","password": "demo"}`. Hit 'send'.
+* Quickly, you should see an incoming event indicating that you're now connected to Superfeedr XMPP server!
+* Type `xmpp.superfeedr.subscribe` 
+* Complete the option box with `{ "feed": "http://push-pub.appspot.com/feed"}`
+* You should see a response indicating that you're now subscribed to that feed. The response also includes its status, the last time we parsed the feed... etc
+* In another browser tab, publish something new in that feed [using this app](http://push-pub.appspot.com/).
+* You should see the incoming notification in XMPP-FTW!
 
 That's that simple and you should quickly replace the example feed url with any feed url that you may be interested in susbcribing to.
 
