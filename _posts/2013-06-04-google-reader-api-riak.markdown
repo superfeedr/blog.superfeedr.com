@@ -11,8 +11,7 @@ When Google announced it was shutting down Reader on July 1st, we took a couple 
 
 Finding the *right tool to store* all this data was tricky and as we have finally deployed that backend store we wanted. We have also started backing up significant amounts of data.
 
-Requirements
-============
+# Requirements
 
 We [tried several times](http://blog.superfeedr.com/oss/open-source/database/nosql/kumofs-a-database-success-story/) to find the perfect datastore to store the content that goes thru Superfeedr, but the fact is the size of that store quickly adds up.
 
@@ -26,8 +25,7 @@ This takes us to eventually consistent stores. Consistency at any given time is 
 
 Finally, if we want to store 1000 entries for each feed, we can't do it in the same record, so we need some kind of schema where a <code>feed</code> record points to several <code>entry</code> records.
 
-Riak
-====
+# Riak
 
 We picked [Riak](http://basho.com/riak/). Not only there weren't too many choices out there, but we also heard a lot of great things about Riak and the community seems pretty strong.
 
@@ -39,8 +37,8 @@ Beyond that, setting up a cluster is also fairly easy. We used the [chef cookboo
 
 However, we also quickly bumped into problems because eventual consistency is *hard* and because Riak's default behavior with conflicting values (siblings) made things harder for us.
 
-Siblings
---------
+## Siblings
+
 
 Riak is eventually consistent, and is also distributed, which means it's fairly common that 2 clients will set a conflicting value to a single key. That's the dreaded and common **race-condition**. By default, Riak will keep the latest one, but that can be a problem.
 
@@ -48,8 +46,8 @@ Riak is eventually consistent, and is also distributed, which means it's fairly 
 
 Now, Riak is smart enough to keep multiple version of the same objects stored, as long as your client is smart enough to tie the knot next time it reads the object. In our case, that's fairly simple: when we get conflicting values, we just merge the 2 arrays, make it unique and save the result back.
 
-MapReduce and schemas
----------------------
+## MapReduce and schemas
+
 
 Riak has some **MapReduce** capabilities. The most common usage for it is to 'group' sequences of complex requests in one, rather than to run a piece of code on all objects stored in Riak.
 
@@ -57,8 +55,7 @@ For us, the most common use is to retrieve the full content of a feed. Basically
 
 However, it's also important to *not abuse* these requests because they put some of the load which ws historically on the client's side back to the server side. For example, it's probably not such a great idea to run mapReduce requests on thousands of keys at once, or which would do a complex computation.
 
-Deleting
---------
+## Deleting
 
 **Riak is very good to access objects by their keys directly. On the other end it's also very bad at 'listing' items**. It's good at handling objects one by one, but not so good to play with 'unknown' collections.
 
@@ -68,14 +65,11 @@ Since our backend storage will only store a limited (high, but limited) amount o
 
 The solution consisted in running a very expensive MapReduce job to list all the entries keys. Then, as the entries's keys includes the feedId (we use a feedId-EntryId form on purpose!), we groupped the entries by feed, compared the list of entries actualy kept and deleted the rest. This was long and painful (it took almost a full day to deal with all the accumulated data!) and taught us to be **extremely careful as to not 'lose' track** of items in Riak.
 
-
-Monitoring
-----------
+## Monitoring
 
 Monitoring is a key aspect to running any kind of server. Monitoring our Riak cluster is obviously key to controlling its performance and making sure it scales up nicely. We use [collectd](http://blog.superfeedr.com/oss/open-source/infrastructure/collectd/performance-monitoring-with-collectd/), but there was no collectd plugin for Riak, so we hooked it up [to a script](<script src="https://gist.github.com/julien51/5717367.js"></script>). We keep track of the object's sizes, the response times, the number of siblings... etc. Pretty handy to detect problems :) We also use [Riak Control](http://basho.com/riak-control/) to quickly learn more about our cluster.
 
-Next
-====
+# Next
 
 We are now storing more and more data and we should have backed up as much as we can before July 1st. In the next couple days we will work on our APIs for this data store. It's currently accessible thru our <code>retrieve</code> feature (both [XMPP](http://superfeedr.com/documentation#xmpp_retrieve) and [PubSubHubbub](http://superfeedr.com/documentation#pubsubhubbub_retrieve)), as well as our [Google Reader API](https://github.com/superfeedr/documentation/tree/master/google-reader-api). We will also support the [Open Reader API](http://rss-sync.github.io/Open-Reader-API/resources/). Please, get in touch if you'd like to test them.
 
