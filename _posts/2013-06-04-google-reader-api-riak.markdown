@@ -15,15 +15,15 @@ Finding the *right tool to store* all this data was tricky and as we have finall
 
 We [tried several times](http://blog.superfeedr.com/oss/open-source/database/nosql/kumofs-a-database-success-story/) to find the perfect datastore to store the content that goes thru Superfeedr, but the fact is the size of that store quickly adds up.
 
-The average size of an entry that we store is about 2KB. Google Reader stores 1000 items per feed. We want to be able to store about 50M feeds at that this point (we only store feeds for which we have susbcribers, not the publisher feeds). That's **93.13TB** worth of data. 
+ * The average size of an entry that we store is about 2KB. Google Reader stores 1000 items per feed. We want to be able to store about 50M feeds at that this point (we only store feeds for which we have susbcribers, not the publisher feeds). That's **93.13TB** worth of data. 
 
-Obviously, that data is growing fast too, so we needed a data store that is able to **scale horizontaly**: adding more servers increases the capacity. 
+ * Obviously, that data is growing fast too, so we needed a data store that is able to **scale horizontaly**: adding more servers increases the capacity. 
 
-Availabilty is also a key requirement as we'd rather serve 'stale' (by a couple seconds or even minutes) data than no data. We also need to be able to **constantly write** to the store as we can't *stop the web from happening*.
+ * Availabilty is also a key requirement as we'd rather serve 'stale' (by a couple seconds or even minutes) data than no data. We also need to be able to **constantly write** to the store as we can't *stop the web from happening*.
 
-This takes us to eventually consistent stores. Consistency at any given time is not a strict requirement as there is already a significant latency (couple seconds!) between the time a feed is updated and we know about it.
+ * This takes us to eventually consistent stores. Consistency at any given time is not a strict requirement as there is already a significant latency (couple seconds!) between the time a feed is updated and we know about it.
 
-Finally, if we want to store 1000 entries for each feed, we can't do it in the same record, so we need some kind of schema where a <code>feed</code> record points to several <code>entry</code> records.
+ * Finally, if we want to store 1000 entries for each feed, we can't do it in the same record, so we need some kind of schema where a <code>feed</code> record points to several <code>entry</code> records.
 
 ## Riak
 
