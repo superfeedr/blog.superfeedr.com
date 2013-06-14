@@ -29,7 +29,7 @@ SubToMe now has [french](https://github.com/superfeedr/subtome/tree/master/local
 
 ## Icing on the cake
 
-We moved SubToMe to [Cloudflare](https://www.cloudflare.com/)! They offer SSL on custome domains, a pretty ubiquituous CDN (latency FTW!), as well as an complete optimizer which we plan on using to speed up the serving of SubToMe. 
+We moved SubToMe to [Cloudflare](https://www.cloudflare.com/)! They offer SSL on custome domains, a pretty ubiquituous CDN (latency FTW!), as well as a complete optimizer which we plan on using to speed up the serving of SubToMe. 
 
 Finally, along the way, we made the SubToMe modal responsive so that you can easily use it on mobile devices or tablets!
 
