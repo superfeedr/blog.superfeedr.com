@@ -67,7 +67,7 @@ The solution consisted in running a very expensive MapReduce job to list all the
 
 ### Monitoring
 
-Monitoring is a key aspect to running any kind of server. Monitoring our Riak cluster is obviously key to controlling its performance and making sure it scales up nicely. We use [collectd](http://blog.superfeedr.com/oss/open-source/infrastructure/collectd/performance-monitoring-with-collectd/), but there was no collectd plugin for Riak, so we hooked it up [to a script](<script src="https://gist.github.com/julien51/5717367.js"></script>). We keep track of the object's sizes, the response times, the number of siblings... etc. Pretty handy to detect problems :) We also use [Riak Control](http://basho.com/riak-control/) to quickly learn more about our cluster.
+Monitoring is a key aspect to running any kind of server. Monitoring our Riak cluster is obviously key to controlling its performance and making sure it scales up nicely. We use [collectd](http://blog.superfeedr.com/oss/open-source/infrastructure/collectd/performance-monitoring-with-collectd/), but there was no collectd plugin for Riak, so we hooked it up [to a script](https://gist.github.com/julien51/5717367.js). We keep track of the object's sizes, the response times, the number of siblings... etc. Pretty handy to detect problems :) We also use [Riak Control](http://basho.com/riak-control/) to quickly learn more about our cluster.
 
 ## Next
 

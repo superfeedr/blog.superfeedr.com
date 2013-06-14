@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SubToMe: Angular, Localization and more!
+title: "SubToMe: Angular, Localization and more!"
 categories: []
 author_name: Julien
 author_uri: http://twitter.com/julien51
