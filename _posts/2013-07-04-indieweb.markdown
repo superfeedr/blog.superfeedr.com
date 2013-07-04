@@ -19,7 +19,7 @@ The next level is to configure [about.me](http://about.me/) or [tumblr](http://t
 
 If you're brave enough, you can then think about deploying your own software: a [wordpress.org](http://wordpress.org/) blog, a [storytlr](http://storytlr.org/), or an [Idno](http://idno.co/), and XMPP server, your own email server... etc.
 
-Don't be ashmed that it does not look as nice as some silos: *golden jails are still jails*, [mine](ouvre-boite.com) is ugly!
+Don't be ashmed that it does not look as nice as some silos: *golden jails are still jails*, [mine](http://ouvre-boite.com) is ugly!
 
 If you have any of these, think about adding a [SubToMe](http://tumblr.com/) button to make sure people can follow you easily It's an open and decentralized solution that builds on giants's shoulders (RSS).
 
