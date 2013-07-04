@@ -11,7 +11,7 @@ Today is Independence Day in the US: happy 4th of July. There will be fireworks 
 
 It's now fairly obvious that [the](https://www.facebook.com/) [giant](https://plus.google.com/) [silos](https://twitter.com/) that we use have a strong tendency to share a *bit* more of our data than what we'd want. We've trust them with our pictures, our statuses and relationships. They're in control and it's not always easy to even take our very own data out of their grips: let's take our independence!
 
-This starts with owning your presence online: **a domain name is cheaper than a phone number**, easier to remember and will stay with you for as long as you renew it. It also works from anywhere in the world as long as you have an interest access: *buy yours today*.
+This starts with owning your presence online: **a domain name is cheaper than a phone number**, easier to remember and will stay with you for as long as you renew it. It also works from anywhere in the world as long as you have an internet access: *buy yours today*.
 
 Once you have a domain, you need to put something behind it. The level 0 is to setup a redirect to another of your social presences, be it a twitter account, a facebook page... etc. Most registrars will alllow you to do that.
 
