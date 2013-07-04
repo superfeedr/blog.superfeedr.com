@@ -3,7 +3,7 @@ layout: post
 title: BlameStella and PubSubHubbub
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -11,7 +11,7 @@ For a lot of people, *PubSubHubbub* is something that should _mostly work with t
 
 !{float:left; margin:0px 10px 10px 0px;}http://www.blamestella.com/img/headerSmall.png!
 
-Today, I'd like to introduce you to "BlameStella":https://www.blamestella.com/. They're a company that does website monitoring. They will make sure that a website is up and will tell you where it is slow, if it is. Everyone who has ever created a web application knows how important it is to keep track of the speed of their website. BlameStella goes a little beyond, by telling you if it's a network issue, an app issue or a download issue. You can also see the headers and the content of the page. 
+Today, I'd like to introduce you to "BlameStella":https://www.blamestella.com/. They're a company that does website monitoring. They will make sure that a website is up and will tell you where it is slow, if it is. Everyone who has ever created a web application knows how important it is to keep track of the speed of their website. BlameStella goes a little beyond, by telling you if it's a network issue, an app issue or a download issue. You can also see the headers and the content of the page.
 
 But what makes Blame Stella even more interesting is that they have *Atom feeds* for the reports that they generate each time they poll your page. And guess what? These feeds have a "PubSubHubbub hub":http://stella.superfeedr.com/!
 

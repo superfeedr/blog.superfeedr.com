@@ -3,7 +3,7 @@ layout: post
 title: Reality checked
 categories: [meta]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,7 +13,7 @@ A little over a year we launched Notifixious. The idea behind it was to allow an
 
 Earlier this year, we did *an extensive analysis of our user base* and found out 2 patterns.
 
-# About *60% of our users would select email* to receive their notifications. On average they would subscribe to *1 single website* and most of the time it was a blog. These users have clearly been acquired through our "widget":http://notifixio.us/sources/widgets. We were very disappointed : email is not real-time and the email user-experience is usually bad : spam, phishing... etc. We asked those people why they chose email and the answer was clear : they are *scared by information overload* and have *no idea how to deal with an incoming stream* of notifications which is very _stressful_, because they *know* they wanted to receive these notifications. 
+# About *60% of our users would select email* to receive their notifications. On average they would subscribe to *1 single website* and most of the time it was a blog. These users have clearly been acquired through our "widget":http://notifixio.us/sources/widgets. We were very disappointed : email is not real-time and the email user-experience is usually bad : spam, phishing... etc. We asked those people why they chose email and the answer was clear : they are *scared by information overload* and have *no idea how to deal with an incoming stream* of notifications which is very _stressful_, because they *know* they wanted to receive these notifications.
 # A *dozen of our users* had, on the other hand, subscribed to more than 500 feeds. Oddly enough they were *all using our XMPP api or a jabber account* to receive these notifications. This behavior was very interesting compared to the first group. We contacted most of them and understood that they were actually using *notifixious as a middleware* for their own application or service. In a nutshell, they were using Notifixious as an on-demand feed parsing service. That was a very insightful discovery since *some of them even said they would pay* for our service. The idea to extract "Superfeedr":http://superfeedr.com out of Notifixious was born.
 
 We still haven't identified how to deal with the first group, except that *real-time services will need to find a way to avoid that information overload* (or at least the sensation of it). However, by observing and understanding the behavior of a -very- small set of users, we've been able to identify some of the value of our service.

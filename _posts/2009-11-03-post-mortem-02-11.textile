@@ -3,7 +3,7 @@ layout: post
 title: Post Mortem 02/11
 categories: [post-mortem, MySQL, Memcache]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,7 +13,7 @@ h3. Finding the issue
 
 Up until yesterday, our entry detection was was done by *storing in Memcached and MySQL an unique identifier by entry*. If the item was not present in Memcached, it would be inserted into MySQL, which has a unique index on these unique ids. The goal of that is that a check on Memcached is much cheaper than a check on MySQL. We had then a maintenance script that would clean up the entries that are old enough to not be considered new again.
 
-When we investigated a little further yesterday, we found that the it was actually *these INSERT queries on MySQL that were taking much longer than they should, and, worse, much more often than they should*. 
+When we investigated a little further yesterday, we found that the it was actually *these INSERT queries on MySQL that were taking much longer than they should, and, worse, much more often than they should*.
 
 Logically, we checked our Memcached and found out that our caching mechanism didn't work as expected: _whether the unique entry was present in the cache or not, we would send the entry to be saved in MySQL_. We fixed that. But the problem was still the same : way too many INSERTs in MySQL.
 
@@ -21,21 +21,21 @@ After checking Memcached into more details, we figured out that our keys were "d
 
 There was a problem with MySQL. Another proof of that is that the 2 issues we had in our cache system had been here for weeks.
 
-After checking the entries table, it had about *65 Million rows, 12GB Data and a 15GB Index*. Every time we insert a row, it has to check the keys. And since we're inserting about *100 new rows per seconds*, even small operations start to become too heavy, specially if they involve disk access (we don't have 15GB RAM on the MySQL host). 
+After checking the entries table, it had about *65 Million rows, 12GB Data and a 15GB Index*. Every time we insert a row, it has to check the keys. And since we're inserting about *100 new rows per seconds*, even small operations start to become too heavy, specially if they involve disk access (we don't have 15GB RAM on the MySQL host).
 
 We had to clean this table. It was easy to see that some feeds had more than 1M entries in MySQL. We started some queries to clean them up. It took 7hours and didn't complete. We needed to be back up faster than that.
 
 h3. Fixing the problem
 
-Here is what we did : we changed the way we store entries in MySQL. Instead of cleaning them only once they're too old, *we only keep in the cache a handful of entries : twice the size of the feed* actually, so that we don't store millions of useless entries, and we clean these entries each time we add some. 
+Here is what we did : we changed the way we store entries in MySQL. Instead of cleaning them only once they're too old, *we only keep in the cache a handful of entries : twice the size of the feed* actually, so that we don't store millions of useless entries, and we clean these entries each time we add some.
 
-The "reboot" process comes next : 
+The "reboot" process comes next :
 
 # We then truncated the entries table,
 # We stopped the notifications,
 # We restarted Memcached to clean any cached entries,
-# We forced all the feeds to be ran through our parser once to populate the entries table again. 
-# When that was done, we restarted the notifications, and Superfeedr was back up. 
+# We forced all the feeds to be ran through our parser once to populate the entries table again.
+# When that was done, we restarted the notifications, and Superfeedr was back up.
 
 There is a small risk for you to see duplicate entries (if the feed couldn't be parsed/fetched during the populating phase), but that should stay minimal.
 

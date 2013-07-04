@@ -3,7 +3,7 @@ layout: post
 title: "The Real-time Web and it's future"
 categories: [Real-time, statistics, market]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -21,14 +21,14 @@ h3. Real-time : the peer-to-peer architecture.
 
 For once, I agree with "Dave":http://twitter.com/davewiner : *the Real-Time web happens without waiting*. However, I'd complete that by saying that _without waiting applies to anything_ : people (us), but also (and more importantly) : *machines*.
 
-We *used to have clients talking to servers*, whether they were browsers talking to websites or web applications talking to other applications via their APIs. 
+We *used to have clients talking to servers*, whether they were browsers talking to websites or web applications talking to other applications via their APIs.
 I think the *real-time web is taking us to a world where we have a more "peer-to-peer" approach* : _everybody is a client and a server to everybody else_.
 
 * In a way, when you blog, you're a server, and your readers are your client. When you tweet, you're both a server and client.
 * When you poll RSS feeds, you're a client to the website that hosts these feeds, when you use Superfeedr, you become a server because you respond to our notifications (and we're a client because we send out these requests).
 * When you use Wikipedia, you're a client to whoever wrote the article you're reading. When you use Aardvark, you're both a client and a server (because you ask and answer equally).
 
-I'm quite happy with this quote from "John Borthwick":http://www.borthwick.com/weblog/about/, one of our investors, at "Betaworks":http://betaworks.com/ : 
+I'm quite happy with this quote from "John Borthwick":http://www.borthwick.com/weblog/about/, one of our investors, at "Betaworks":http://betaworks.com/ :
 
 bq. We believe things are becoming more connected. In the future, everything will consume APIs and publish APIs.
 

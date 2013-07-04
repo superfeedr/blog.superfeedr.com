@@ -3,7 +3,7 @@ layout: post
 title: Harper's friends
 categories: [use-case, friends, harper]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,6 +13,6 @@ There is *already a lot of fun stuff* that people are doing with "Superfeedr":ht
 
 All the polling content is done via Superfeedr and he uses the "PubSubHubbub API":http://superfeedr.com/hubbub to notify an "AppEngine":http://code.google.com/appengine/ app. I guess the fact that you can't run XMPP apps on appengine ("yet":http://googleappengine.blogspot.com/2009/02/roadmap-update.html) was one of the reasons he chose the web based API.
 
-One of the key reasons to use Superfeedr is that you don't have to deal with (or even care about) _building a polling infrastructure_. Believe it or not, but I can bet Harper would have spent easily 2 or 3 times the time he spent if he had to implement that, and he would probably not have had the same kind of results that we have (probably because that would be overkill). 
+One of the key reasons to use Superfeedr is that you don't have to deal with (or even care about) _building a polling infrastructure_. Believe it or not, but I can bet Harper would have spent easily 2 or 3 times the time he spent if he had to implement that, and he would probably not have had the same kind of results that we have (probably because that would be overkill).
 
 *Focus on what you do best and we will focus on what we do best*. This way, the world will be awesome.

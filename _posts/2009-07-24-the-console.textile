@@ -3,7 +3,7 @@ layout: post
 title: The Console
 categories: [console, debugging, xmpp]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,7 +13,7 @@ Basically, when logged in, you should see 'Your feeds' in the top bar. Click the
 
 !/images/console.png!
 
-The console is a tool that will enable you to see notifications directly pushed to your browser, exactly as they would be pushed to your XMPP client (technically, the console IS an XMPP client). 
+The console is a tool that will enable you to see notifications directly pushed to your browser, exactly as they would be pushed to your XMPP client (technically, the console IS an XMPP client).
 
 To see actual notifications happening, we've also created a "dummy atom feeds":http://superfeedr.com/dummy.xml. In the console interface, you should see a link that, when clicks, publishes a new entry in this dummy feed. A few seconds (or less) later, you should see the new notification in your console. Of course, _that works with any feed_, so you can as well add others.
 

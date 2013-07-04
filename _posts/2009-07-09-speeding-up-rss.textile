@@ -3,7 +3,7 @@ layout: post
 title: "Speeding Up RSS : what for?"
 categories: [RSS, Atom, Feeds, Push, Techcrunch]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,4 +13,4 @@ The comments, though are very interesting and they show what we've observed with
 
 "PubSubHubbub":http://blog.superfeedr.com/api/http/pubsubhubbub/pubsubhubbub/ has the potential to bring Push to the RSS and Atom technologies. So not only it will be faster, but it will be instantaneous, and when Feed updates will be instantaneous, nobody will pull anymore ("not even us":http://blog.superfeedr.com/gospel/something-stupid/) and the web will be better.
 
-Better? Publishers will not have to _handle massive loads anymore_ (like Twitter had to), and Subscribers (services) will _not have to poll over and over to get updates_. 
+Better? Publishers will not have to _handle massive loads anymore_ (like Twitter had to), and Subscribers (services) will _not have to poll over and over to get updates_.

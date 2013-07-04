@@ -3,7 +3,7 @@ layout: post
 title: The Non-Decision makers
 categories: [Entrepreneurship]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -17,7 +17,7 @@ h3. Why no is better than maybe
 
 In France, there is a saying that states that "as long as there is life, there is hope". I'd claim that *more than hope, I want certitudes*. _Entreprendre_ is all about _making an assumption and test-proving it_, making another one and test-proving it, making a third one and test-proving it. I say "test-proof" and not "proof", because in the end, *it doesn't matter whether you're right or wrong*. What matters is that, after the process, you _know_ and you have less and less assumptions to make.
 
-When somebody says "_maybe_", "_later_", "_we'll do it_"... you don't learn anything, because that _doesn't prove anything_. When *they say "No", you know something*. 
+When somebody says "_maybe_", "_later_", "_we'll do it_"... you don't learn anything, because that _doesn't prove anything_. When *they say "No", you know something*.
 
 h3. A few tips
 

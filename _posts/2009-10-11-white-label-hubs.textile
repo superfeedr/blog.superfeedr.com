@@ -3,7 +3,7 @@ layout: post
 title: "PubSubHubbub for Everybody"
 categories: [pubsubhubbub, API, publishers]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -15,7 +15,7 @@ If you go check this new iteration, you'll immediately notice the shiny orange b
 
 We're announcing today that Superfeedr now offers *white-label hubs*. What is that? If you read this blog, you know how crucial it is to *engage your content consumers with real-time data*, but building a hub is not the most easy thing to do. "Again":http://blog.superfeedr.com/gospel/something-stupid, we've done that for you, so that you don't have too.
 
-We're introducing to options : 
+We're introducing to options :
 
 * *A free version*, where your app's hub is accessible at http://appname.superfeedr.com and where you basically just need to add the 'discovery' tag to your feeds. Check out our "Wordpress":http://wordpress.superfeedr.com/ and "Identica":http://identica.superfeedr.com/ hubs.
 

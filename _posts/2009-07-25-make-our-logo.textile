@@ -3,11 +3,11 @@ layout: post
 title: Make Our Logo!
 categories: [logo, meta, open-source]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-A lot of "our friends complained":http://twitter.com/lauragatning/status/2181168813 about the fact that we didn't have a logo. That's a valid concern, but I really didn't have the skills (even far from it) that it takes. So what I basically asked a very "talented friend":http://www.lafraise.com/User/profile/id/660804 to make a concept. He did a great job and you can see it right below, with several different colors. 
+A lot of "our friends complained":http://twitter.com/lauragatning/status/2181168813 about the fact that we didn't have a logo. That's a valid concern, but I really didn't have the skills (even far from it) that it takes. So what I basically asked a very "talented friend":http://www.lafraise.com/User/profile/id/660804 to make a concept. He did a great job and you can see it right below, with several different colors.
 
 I am releasing it here because I know some of you might have great ideas to actually make it even nicer, and well, I'd love to be able to have feedback and improvements from our actual users.
 

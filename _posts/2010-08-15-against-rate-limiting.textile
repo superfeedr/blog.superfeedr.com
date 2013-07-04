@@ -3,7 +3,7 @@ layout: post
 title: The Case against Rate Limiting
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -25,7 +25,7 @@ h3. What can they do
 
 At Superfeedr, we believe there is room for a *better content distribution model*, where there is no need for rate limit : _pushing content_.
 
-You can rate limit polling, because it _does kill your servers_, but make sure that there is a way to get content in an non-throttled way. 
+You can rate limit polling, because it _does kill your servers_, but make sure that there is a way to get content in an non-throttled way.
 
 By doing this, you can also very easily know *what content was pushed to who at any time*, and you can certainly enforce your business and legal concerns. Additionally, hackers _are lazy_, they will always take the simplest route to achieve their goal and if you make sure your way of pushing content away is the simplest way to get your content, there is no doubt that it's the one they will adopt, rather than using black and grey techniques that you can't control.
 

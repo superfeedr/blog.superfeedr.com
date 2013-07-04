@@ -3,7 +3,7 @@ layout: post
 title: "Ping me I'm famous"
 categories: [ping, api, infrastructure, realtime]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -32,17 +32,17 @@ When we fetch this feed, to build the Redis-based ping cache, we see that it lin
 * @http://superfeedr.typepad.com/blog/index.rdf@
 * @http://superfeedr.typepad.com/blog/rss.xml@
 
-Similarly, we can now add to our cache the 2 extra feeds. As soon as we get a ping for any url, we will then assume that all of them have been updated! 
+Similarly, we can now add to our cache the 2 extra feeds. As soon as we get a ping for any url, we will then assume that all of them have been updated!
 
 h3. Fetching the feed.
 
-We have a *complex scheduling mechanism*. Contrary to the "Google Demo hub":http://pubsubhubbub.appspot.com/, "Superfeedr":http://superfeedr.com/ has an _aggressive polling strategy_ for which we roughly poll any feed we have under 15 minutes. This amount of feed does that _at every single second we have several thousands of feeds to fetch_. 
+We have a *complex scheduling mechanism*. Contrary to the "Google Demo hub":http://pubsubhubbub.appspot.com/, "Superfeedr":http://superfeedr.com/ has an _aggressive polling strategy_ for which we roughly poll any feed we have under 15 minutes. This amount of feed does that _at every single second we have several thousands of feeds to fetch_.
 
-Our scheduling algorithm works in a *non-deterministic way* : it picks feeds that -will soon- need to be fetched, but on a random order. Obviously we can't treat pings (for which the chance of update is hight) the same way as feeds that are just scheduled to be fetched (for which the chance of new entry is low). 
+Our scheduling algorithm works in a *non-deterministic way* : it picks feeds that -will soon- need to be fetched, but on a random order. Obviously we can't treat pings (for which the chance of update is hight) the same way as feeds that are just scheduled to be fetched (for which the chance of new entry is low).
 
 !{float:right; margin: 10px}http://www.rabbitmq.com/img/rabbitmqlogonostrap.png!
 
-For the pings, we use a *deterministic system*: a queue system where _what goes in first, goes out first_. Each of our dispatcher, are subscribed to the queue, and as soon as they get a message from it, they push it to some parsers. For the queue, we use "RabbitMQ":http://www.rabbitmq.com/, and the excellent "AMQP EventMachine":http://github.com/tmm1/amqp library does an awesome job :) 
+For the pings, we use a *deterministic system*: a queue system where _what goes in first, goes out first_. Each of our dispatcher, are subscribed to the queue, and as soon as they get a message from it, they push it to some parsers. For the queue, we use "RabbitMQ":http://www.rabbitmq.com/, and the excellent "AMQP EventMachine":http://github.com/tmm1/amqp library does an awesome job :)
 
 It's funny to see that our dispatchers are now *multi-modal components*: they are "XMPP Components":http://xmpp.org/extensions/xep-0114.html, send all of our HTTP notifications, and get messages from an AMQP queue. Each protocol is used at what it is best :)
 

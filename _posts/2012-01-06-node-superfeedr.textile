@@ -3,7 +3,7 @@ layout: post
 title: Node Superfeedr
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -11,7 +11,7 @@ It's long overdue, but we built a little node.js library to interact with Superf
 
 h3. A bit of theory
 
-We built this wrapper using our "XMPP API":http://superfeedr.com/documentation#xmpp_pubsub. This may sound surprising to a lot of you, as I have advised to a lot of people to use PubSubHubbub when they were building a web app. 
+We built this wrapper using our "XMPP API":http://superfeedr.com/documentation#xmpp_pubsub. This may sound surprising to a lot of you, as I have advised to a lot of people to use PubSubHubbub when they were building a web app.
 
 The main reason behind this is that _Node.js is the perfect framework to integrate an XMPP client_, transparently. For most people the syntax behind any node application is a bit odd with all these callbacks. It simply comes from the fact that Node.js is an implementation of the very famous reactor pattern. This means that *node.js can handle stateful protocols* (like XMPP) very well... Most of web framework do not offer this, because they map HTTP's stateless's approach.
 

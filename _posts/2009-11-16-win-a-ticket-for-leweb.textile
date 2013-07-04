@@ -3,7 +3,7 @@ layout: post
 title: Win a ticket for LeWeb!
 categories: [API, compp, rivers, Leweb]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -14,8 +14,8 @@ We're very excited to be part of "LeWeb's":http://www.leweb.net/  "startup compe
 The rivers will be _freely accessible streams of data_ out of Superfeedr. The first one (and the one that's in competition), is a *sample of our global stream, with at most 1 message every 3 seconds* : "http://rivers.superfeedr.com:8001":http://rivers.superfeedr.com:8001
 
 We built this river with the newly released "Compp":http://github.com/superfeedr/compp : a *small HTTP server* that allows you to do "Comet Streams":http://en.wikipedia.org/wiki/Comet_(programming) out of *XMPP traffic*. It's an _AtomStream_ : a never ending HTTP connection that contains ATOM entries[1].
- 
-There will be several judges for your apps, including "Astro":http://identi.ca/astro, me and a few other people. *The rule is : no rule*! Make something, _fun, useful, profitable, open-source, downloadable, web-based, or any combination of that_! You can use any platform, any other API (you're even encouraged to), any language (heard of "Go":http://golang.org/?). 
+
+There will be several judges for your apps, including "Astro":http://identi.ca/astro, me and a few other people. *The rule is : no rule*! Make something, _fun, useful, profitable, open-source, downloadable, web-based, or any combination of that_! You can use any platform, any other API (you're even encouraged to), any language (heard of "Go":http://golang.org/?).
 
 The only constraints are :
 
@@ -23,7 +23,7 @@ The only constraints are :
 * your app *must be visible* (dowloadable or web accessible) on December 4th at midnight PST.
 * you *must write a blog post or a doc page* explaining what it is, how it works and how to use it!
 
-We will let you know who is the winner on December 5th and hopefully, *you'll join me on the 9th*! 
+We will let you know who is the winner on December 5th and hopefully, *you'll join me on the 9th*!
 
 Let the best win!
 

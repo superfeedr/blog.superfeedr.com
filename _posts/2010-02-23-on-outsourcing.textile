@@ -3,7 +3,7 @@ layout: post
 title: On Outsourcing
 categories: [outsourcing, startups, validation]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -19,7 +19,7 @@ I think most people agree that the *biggest hurdle* for most startups out there 
 
 If you have that in mind, when you start a company, the first thing you want to take out of the way is the technical stuff, _you don't want to spend even minutes building stuff that somebody else already built_. As a matter of fact, if you start building stuff yourself, there is no chance that what you built in the early days is even going to last as much for a few months : *why doing and re-doing something that somebody did already*?
 
-Also, what matters too much, when you have nothing? When I hear people building small apps saying _"this feature matters too much"_, I can't help but think "matters to much to what?". The only think you should preserve at all cost is your *time*! Luckily you can't outsource that anyway. 
+Also, what matters too much, when you have nothing? When I hear people building small apps saying _"this feature matters too much"_, I can't help but think "matters to much to what?". The only think you should preserve at all cost is your *time*! Luckily you can't outsource that anyway.
 
 When your startup grows, when you've proven the whole market thing, then, yes, you can start to decide what matters most, what you can do better (then the others), and what you want to take internally, rather than leave outside.
 

@@ -3,13 +3,13 @@ layout: post
 title: Fun Numbers
 categories: [push, twitter]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It's hard to talk about numbers, because they're often subject to interpretation. I was crunching a few of them earlier today for some presentation that I'm working on and I found out that Superfeedr is currently *pushing away about 237 new entries per second*.
 
-On a daily basis, this is @237 * 3 600 * 24 = 20,476,800@. 
+On a daily basis, this is @237 * 3 600 * 24 = 20,476,800@.
 
 I would argue that a *tweet is the rough equivalent of an Atom entry* (much shorter usually.) Back in February, Twitter was pushing about "50 million tweets daily":http://blog.twitter.com/2010/02/measuring-tweets.html. Yes, we're at 40% of Twitter's scale in number of messages pushed.
 

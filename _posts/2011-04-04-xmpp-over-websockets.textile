@@ -3,7 +3,7 @@ layout: post
 title: XMPP over websockets.
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,4 +18,4 @@ Today, we're proud to release an "Ejabberd module that builds Websockets":https:
 I sincerely want to thank "Nathan":http://unclenaynay.com/ for his awesome work on this. Let us know what you think!
 
 
- 
+

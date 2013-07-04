@@ -3,12 +3,12 @@ layout: post
 title: Ruby 1.9.2
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 
-We're probably late to that game, but one of our goals for December was to switch to Ruby 1.9. We use a lot of Ruby at Superfeedr. Some people claim (and some of them are right) that Ruby has a poor performance compared to other languages in the same category. *It probably doesn't matter much if the global architecture allows for horizontal scaling*. That's how we built Superfeedr. 
+We're probably late to that game, but one of our goals for December was to switch to Ruby 1.9. We use a lot of Ruby at Superfeedr. Some people claim (and some of them are right) that Ruby has a poor performance compared to other languages in the same category. *It probably doesn't matter much if the global architecture allows for horizontal scaling*. That's how we built Superfeedr.
 
 !{width:150px;float:right}http://www.prestonlee.com/wp-content/uploads/2008/09/ruby.png!
 
@@ -20,7 +20,7 @@ To be fair, we were slightly scared of this and expected a few days of work to p
 
 One of the 2 issues we had was the fact that <code>Array::to_s</code> has a different implementation in 1.9. Replacing by <code>Array::join</code> is the way to fix it. Easy.
 
-The 2nd issue was much more complex. _Like everyone else, we struggled with Encodings_. Ruby 1.9 is much much better at dealing with encodings than 1.8. Yet, it also requires more work and is a lot more demanding, specially when your app actually ingests a lot of external data, for which you do not control the encoding. Luckily the "web has a lot of resources":http://yehudakatz.com/2010/05/05/ruby-1-9-encodings-a-primer-and-the-solution-for-rails/, and I particularly "liked James Gray's series":http://blog.grayproductions.net/articles/understanding_m17n. No matter what, *do not use <code>force_encoding</code>*, unless you exactly know and understand what you're doing. Also, don't forget that "you can use options when converting from one encoding to the other":http://blog.marc-seeger.de/2010/04/21/Dealing_with_invalid_encodings_in_Ruby_1_9 to avoid errors. Of course, when dealing with evented libraries (like we do), it's possible that the buffer on which you receive content will only deal with bytes, and not characters, so you want to be very careful with the data that you get from these buffers, as some characters may be truncated. 
+The 2nd issue was much more complex. _Like everyone else, we struggled with Encodings_. Ruby 1.9 is much much better at dealing with encodings than 1.8. Yet, it also requires more work and is a lot more demanding, specially when your app actually ingests a lot of external data, for which you do not control the encoding. Luckily the "web has a lot of resources":http://yehudakatz.com/2010/05/05/ruby-1-9-encodings-a-primer-and-the-solution-for-rails/, and I particularly "liked James Gray's series":http://blog.grayproductions.net/articles/understanding_m17n. No matter what, *do not use <code>force_encoding</code>*, unless you exactly know and understand what you're doing. Also, don't forget that "you can use options when converting from one encoding to the other":http://blog.marc-seeger.de/2010/04/21/Dealing_with_invalid_encodings_in_Ruby_1_9 to avoid errors. Of course, when dealing with evented libraries (like we do), it's possible that the buffer on which you receive content will only deal with bytes, and not characters, so you want to be very careful with the data that you get from these buffers, as some characters may be truncated.
 
 I didn't even mentioned it but, "RVM":http://rvm.beginrescueend.com/ is the way to go on your local development machines if you'd like to switch from a flavor to another.
 

@@ -3,13 +3,13 @@ layout: post
 title: UrbanAirship
 categories: [Use-Case, Python, PubSubHubbub]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We've had a few customer feedback and use-cases in the past. This week, I'd like to write about "UrbanAirship":http://urbanairship.com/. We've been in touch with "Scott":http://kveton.com/blog/ and "Michael":http://mtrichardson.com/ for a while now, and they "recently announced":http://blog.urbanairship.com/2010/02/16/urban-airship-secures-1-1-million-in-venture-capital-funding/ a Series A round.
 
-For this time, I have sent 5 questions over to Mike... here they are! 
+For this time, I have sent 5 questions over to Mike... here they are!
 
 !{float:right; margin:10px}/images/urbanairship.jpg!
 
@@ -17,7 +17,7 @@ h3. What's your product/service?
 
 Urban Airship provides an _easy way to deliver in app content and send messages to mobile customers_.  We've delivered over 130 million messages and talk to over 11 million phones.  Our key strategy is to make it incredibly easy and cheap to get going with *in-app purchase or push notifications*.  Our simple RESTful API makes it a breeze to integrate into an existing system and we support a lot of advanced features, such as arbitrary tags, aliased users, or broadcast messages.
 
-h3. How do you use Superfeedr for? 
+h3. How do you use Superfeedr for?
 
 We want to make it *really easy to integrate push notifications to existing services*.  One easy way to integrate messages into an existing flow is to hook up an RSS/Atom feed.  When that feeds gets updated, we wanted our customers to be able to send a broadcast message to all their users with those updates.  This makes some applications very easy to build.  So, now, developers can just hook up an RSS feed to their Urban Airship application and broadcast messages are delivered - no fuss required.
 

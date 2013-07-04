@@ -3,7 +3,7 @@ layout: post
 title: "LeWeb's Official Bloggers in RealTime"
 categories: [Real-time, leweb, use-case]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -20,7 +20,7 @@ To make it a little nicer, I *extracted* a few information from the "standard en
 h3. Result
 
 In _less than 2 hours_ (litteraly), I was able to create a _"pretty good republishing platform":http://www.leweb.net/blogs/_:
-* *No polling at all* by drupal 
+* *No polling at all* by drupal
 * Guarantee to have *real-time content*
 * *Standard schema* that allows content *filtering* and extraction of specific fields
 

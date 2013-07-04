@@ -3,7 +3,7 @@ layout: post
 title: The future of Web apps?
 categories: [dev, gospel, web-apps]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,5 +18,5 @@ The great thing about that is that web services (and developers) can focus on a 
 
 With this approach, you can really decouple more and more the data and the processing from the views. The APIs can very well be consumed by a webservice, but also by, say, an iPhone App, an Adobe Air App, or even external web services and we sites.
 
-This should sound familiar, doesn't it? It's very close from the MVC model that we all learnt to create desktop apps. 
+This should sound familiar, doesn't it? It's very close from the MVC model that we all learnt to create desktop apps.
 

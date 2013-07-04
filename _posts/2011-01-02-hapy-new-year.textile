@@ -3,7 +3,7 @@ layout: post
 title: Superfeedr 2010
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -26,9 +26,9 @@ Of course, we faced a lot of challenges and we're likely to face more (which is 
 
 h3. The People
 
-Superfeedr is a cloud service, but it's also being built by actual people. First, "Astro":http://identi.ca/astro has done a lot of great work, sharing a lot of his knowledge and expertise in XMPP, Ruby and other fields. _The web needs more Astros_. Secondly, we've been able to assemble a "dream":http://betaworks.com/ "team":http://blogmaverick.com/ of investors and advisors and we're barely harvesting the fruits of their help. 
+Superfeedr is a cloud service, but it's also being built by actual people. First, "Astro":http://identi.ca/astro has done a lot of great work, sharing a lot of his knowledge and expertise in XMPP, Ruby and other fields. _The web needs more Astros_. Secondly, we've been able to assemble a "dream":http://betaworks.com/ "team":http://blogmaverick.com/ of investors and advisors and we're barely harvesting the fruits of their help.
 
-Finally, our customers have built or enabled great applications. To this day, I'm still amazed that the content I publish on my blogs shows up instantly in Google Reader. Now, when I read a story, I feel that the author is still behind is screen, proof reading his article one last time. It's even more amazing when people interact at the minute I press "publish". Getting push iPhone notifications is also an amazing reward and I will never cease to be excited about them. 
+Finally, our customers have built or enabled great applications. To this day, I'm still amazed that the content I publish on my blogs shows up instantly in Google Reader. Now, when I read a story, I feel that the author is still behind is screen, proof reading his article one last time. It's even more amazing when people interact at the minute I press "publish". Getting push iPhone notifications is also an amazing reward and I will never cease to be excited about them.
 
 h3. The Money
 
@@ -40,7 +40,7 @@ It's no secret that we're deeply convinced that the web is changing. It's defini
 
 On a less bright note, we're obviously concerned by the growing power of closed platforms. We have the technology to federate the web and we need more good will from a few more actors to enable it. I don't think Twitter and Facebook would lose anything if they allowed me to DM my sister from Twitter on Facebook. Foursquare would not lose anything if they let me build apps that are notified upon my checkins, rather than force me to waste my resources polling for outdated content. At Superfeedr we've been convinced from very early on that the web's long tail is far greater than the few hits that we keep hearing about. In 2011, we will fight even more on the side of the open web army to break these walls.
 
-I personally wish you a wonderful year, full of joy and happiness as well as success in all your venture. 
+I personally wish you a wonderful year, full of joy and happiness as well as success in all your venture.
 
 
 

@@ -3,7 +3,7 @@ layout: post
 title: Unicorn
 categories: [webapp, pubsubhubbub, architecture, nnicorn]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,7 +18,7 @@ The migration was easy : we set up a new server from the ground, and, since we h
 
 h3. Recipe
 
-A 2GB server, with Ubuntu. A base of "Ruby Enterprise Edition":http://www.rubyenterpriseedition.com/, as for most of our Ruby programs. Nginx as the web server, and, Unicorn to serve the Rails app. 
+A 2GB server, with Ubuntu. A base of "Ruby Enterprise Edition":http://www.rubyenterpriseedition.com/, as for most of our Ruby programs. Nginx as the web server, and, Unicorn to serve the Rails app.
 
 Settings were quite easy too. We mostly copied what was available in the "Unicorn doc":http://unicorn.bogomips.org/Unicorn/Configurator.html. Here is for the NginX :
 <script src="http://gist.github.com/347898.js?file=gistfile1.txt"></script>

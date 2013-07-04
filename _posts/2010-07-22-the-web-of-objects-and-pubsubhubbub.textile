@@ -3,7 +3,7 @@ layout: post
 title: Internet of Things and PubSubHubbub
 categories: [meta]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -24,18 +24,18 @@ This all comes from this weird dream that I made, that I would be _friended on F
 
 You get the thing, right?
 
-Not that it's all interesting, but still, *once there is this stream, I can certainly subscribe to it*... and learn a bit more about my new object friend, like for example, _get a notification on my laptop when its battery dies_ while in my coat's pocket, or even find it if it's been stolen (wait, you can already pay for that). I can also learn a bit about myself : how much music do I listen to, and even send an email automatically to sjobs@apple.com for each dropped call! The iPhone looks easy, but imagine the same thing about my pants : 
+Not that it's all interesting, but still, *once there is this stream, I can certainly subscribe to it*... and learn a bit more about my new object friend, like for example, _get a notification on my laptop when its battery dies_ while in my coat's pocket, or even find it if it's been stolen (wait, you can already pay for that). I can also learn a bit about myself : how much music do I listen to, and even send an email automatically to sjobs@apple.com for each dropped call! The iPhone looks easy, but imagine the same thing about my pants :
 
 * Being washed
 * Being ironed (no idea who would do that)
 * Worn, for 12 hours
 * Worn, for 10 hours
 * Temperature dropping
-* Worn, for 12 more hours 
+* Worn, for 12 more hours
 * Worn 4 times: -gross!-
 
 Now, my pants would be smart enough to know when I need to actually wash them? Even better, let's imagine that my heating system can subscribe to my pants, so that when my pants are cold, the heating system goes on? How cool would that be (except for "those of us":http://twitter.com/mjmalone/status/18974105709 who don't wear pants.).
-What about my car subscribing to my home on foursquare? So that when the car checkins the house, the garage door opens. 
+What about my car subscribing to my home on foursquare? So that when the car checkins the house, the garage door opens.
 
 We've been talking about home automation for decades. No idea why this didn't really take off, but I'd bet that the fact that all these use proprietary protocols and data structure doesn't help. Luckily, *we now have a full protocol stack* for all this : "Atom":http://en.wikipedia.org/wiki/Atom_(standard), "ActivityStreams":http://activitystrea.ms/, "GeoRSS":http://www.georss.org/Main_Page to represent the data, HTTP for the communication, and "PubSubHubbub":http://code.google.com/p/pubsubhubbub/ for the subscription mechanism. Time for a shift!
 

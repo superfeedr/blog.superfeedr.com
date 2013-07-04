@@ -3,11 +3,11 @@ layout: post
 title: "Time vs. Space : how do we apprehend information?"
 categories: [real-time, gospel]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-There are several ways information comes to us, but they are either mostly either *geographical* or *temporal*. 
+There are several ways information comes to us, but they are either mostly either *geographical* or *temporal*.
 
 !{float:right;margin:3px; width: 50%}http://www.informationarchitects.jp/slash/iA_WebTrends_2007_2_1600x1024.gif!
 
@@ -17,7 +17,7 @@ We mostly use the this geographical approach because the *human brain also uses 
 
 !{float:right;margin:3px;}http://farm1.static.flickr.com/52/129125140_e110fd46c1_m.jpg!:http://www.flickr.com/photos/limowreck666/129125140/
 
-The *real-time web is all about using time, instead of links*. The connections between elements don't matter so much anymore. "Unrelated tweets stack up":http://twitter.com/public_timeline. *Our brain is not so good at stacking things*. It's even pretty bad at that, because in a stack _it's hard to find links between things_. One of the most common examples is names. How often have you been introduced to some people in a group, just to figure out 10 seconds later that you don't even remember anyone's name? 
+The *real-time web is all about using time, instead of links*. The connections between elements don't matter so much anymore. "Unrelated tweets stack up":http://twitter.com/public_timeline. *Our brain is not so good at stacking things*. It's even pretty bad at that, because in a stack _it's hard to find links between things_. One of the most common examples is names. How often have you been introduced to some people in a group, just to figure out 10 seconds later that you don't even remember anyone's name?
 
 Do you remember the _sequence memory game_ we used to play when we were kids? You hear a random number between 0 and 10, and must repeat it, then you hear a second number and must repeat both the first and the second... etc. It is usually very hard past 8 to 10 numbers. _It's modern counterpart is just remembering a phone number_.[2]
 

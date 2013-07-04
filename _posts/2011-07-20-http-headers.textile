@@ -3,7 +3,7 @@ layout: post
 title: HTTP Headers
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,7 +18,7 @@ This is not custom to Superfeedr, but you should give it special care, as it tel
 h2. X-Superfeedr-Credits
 
 This, I think is the most interesting one. It gives you your Superfeedr credit balance. It's quite convenient to track your usage of credits, so you know at any point what's your rate.
-It's also an easy way for you to make sure that we do not "cheat" and take more credits than we ought to. You just have to check that the balance decreases by one between 2 notifications. 
+It's also an easy way for you to make sure that we do not "cheat" and take more credits than we ought to. You just have to check that the balance decreases by one between 2 notifications.
 Finally, it's a simple way for you to make sure you haven't missed any notification, as, again, this value should keep decreasing by 1. If it doesn't, then you have missed a notification.
 
 h2. X-PubSubHubbub-Callback

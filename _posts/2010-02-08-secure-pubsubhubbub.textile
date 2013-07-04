@@ -3,7 +3,7 @@ layout: post
 title: "PubSubHubbub : security"
 categories: [PubSubHubbub, API, secure]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -21,5 +21,5 @@ If the 2 HMAC signature are the same, then, the subscriber knows for sure that t
 
 
 
- 
+
 

@@ -3,7 +3,7 @@ layout: post
 title: Memprof
 categories: [memprof, ruby, debugging, memory]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -35,4 +35,4 @@ In our case, we were surprised to see that the number of *Proc objects was prett
 
 We also found that it was allocating a lot of empty strings (default values), while we could have used a global @EMPTY_STRING@ variable... etc.
 
-Memprof is a very promising app. Even if you don't necessarily feel that you're app is leaking, it may be interesting to at least dump the heap once to see where it can be optimized. 
+Memprof is a very promising app. Even if you don't necessarily feel that you're app is leaking, it may be interesting to at least dump the heap once to see where it can be optimized.

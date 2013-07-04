@@ -3,7 +3,7 @@ layout: post
 title: How to make your Wordpress.org real-time
 categories: [meta]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,7 +18,7 @@ It shouldn't take more than 3 minutes to fill-in the registration form and confi
 
 h3. 2- Create a Hub
 
-Again, this is a small form and it shouldn't take more than a few minutes to get going. You can certainly tweak the design a little bit. It's basically a landing page for people building apps that will consume your content. _It is technical_, but end-users are not expected to see this page. 
+Again, this is a small form and it shouldn't take more than a few minutes to get going. You can certainly tweak the design a little bit. It's basically a landing page for people building apps that will consume your content. _It is technical_, but end-users are not expected to see this page.
 *Once this is done, you're all set on the Superfeedr side*, and you'll have to configure your blog.
 
 h3. 3- Setup the plugin

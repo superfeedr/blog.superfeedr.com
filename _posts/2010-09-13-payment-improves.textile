@@ -3,7 +3,7 @@ layout: post
 title: Payment Improved
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -15,7 +15,7 @@ This was actually the most frequent feedback : _how can I avoid using Paypal to 
 
 h3. Monthly payments, rather than upfront fees
 
-We found out that it wasn't really easy to deal with "packages". Some of our customers weren't feeling very confident to pay for our services _upfront_. At the same time, it was a requirement by our payment gateway that we only take payments for services that were delivered. So we changed this. *You will now be billed monthly*. We keep track of what you've consumed, and, once a month, we send the bill. 
+We found out that it wasn't really easy to deal with "packages". Some of our customers weren't feeling very confident to pay for our services _upfront_. At the same time, it was a requirement by our payment gateway that we only take payments for services that were delivered. So we changed this. *You will now be billed monthly*. We keep track of what you've consumed, and, once a month, we send the bill.
 
 h3. Our pricing is competitive... on high packages
 

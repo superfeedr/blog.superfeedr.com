@@ -3,7 +3,7 @@ layout: post
 title: Real-time search
 categories: [meta, real-time, search, foo]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -11,7 +11,7 @@ Yes, I am pissed off I am not at "Foo Camp":http://en.wikipedia.org/wiki/Foo_Cam
 
 "Real-time is not instantaneity":http://en.wikipedia.org/wiki/Real-time_computing. *Real-time means time-constrained*. That's it. That constraint can of course be low (up to the second if you want, even).
 
-Based on that, a real-time search engine would be a search engine that would be able to *guarantee that the results of your query happened within an X seconds/minutes/hours/days*. 
+Based on that, a real-time search engine would be a search engine that would be able to *guarantee that the results of your query happened within an X seconds/minutes/hours/days*.
 
 If I search for "'Foo' on twitter":http://search.twitter.com/search?q=foo, Twitter tells me that the constraint is 'now' (_See what's happening — right now._), I am guaranteed that the results have been posted 'now' : I'll leave the now definition to Twitter :D.
 

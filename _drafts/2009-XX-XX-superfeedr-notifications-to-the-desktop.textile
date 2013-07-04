@@ -3,7 +3,7 @@ layout: post
 title: "RSS updates pushed to your desktop application"
 categories: [real-time, desktop, API]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -14,7 +14,7 @@ bq. Tunnel HTTP over HTTP, in a structured, controllable, securable way. Let pro
 
 h3. Theory!
 
-That's rather simple actually and you'll be pretty surprised. 
+That's rather simple actually and you'll be pretty surprised.
 
 * Run a lightweight HTTP server in your app. Ideally your server will just have to parse the ATOM that superfeedr sends and you can use this in the rest of your app.
 
@@ -47,7 +47,7 @@ Create a config.ru file with the following :
 Finally, run the app with the following command (you might have to change _my-superfeedr-hook_ into something more personal):
 <code>hookout -a http://www.reversehttp.net/reversehttp -n my-superfeedr-hook -R config.ru start</code>
 
-Finally, reach your Superfeedr dashboard, and add new feeds, for the endpoint, put http://my-superfeedr-hook.www.reversehttp.net/ (again, change _my-superfeedr-hook_) 
+Finally, reach your Superfeedr dashboard, and add new feeds, for the endpoint, put http://my-superfeedr-hook.www.reversehttp.net/ (again, change _my-superfeedr-hook_)
 
 A few minutes later (when new entries are published in the feeds you subscribed to), you should see growl notifications :)
 

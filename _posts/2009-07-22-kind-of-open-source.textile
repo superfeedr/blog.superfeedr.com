@@ -3,7 +3,7 @@ layout: post
 title: Kind of Open Source
 categories: [OSS, gospel]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,4 +18,4 @@ _Superfeedr will work only with massive economies of scale_.
 
 We will eventually release huge parts (and "we already started":http://github.com/superfeedr) of our software as open source, as we will probably communicate and ask advices on as much as we can that relates to Superfeedr. If you'd like to give a look at our deck, send us your email as a "direct message":http://twitter.com/direct_messages/create/superfeedr. Also, follow us on Twitter, because I will ("thanks to @jineshmehta":http://twitter.com/jineshmehta/statuses/2777183409) release there the master file of our logo. I hope you can then make it even nicer. (BTW, "red, or green?":http://twitter.com/superfeedr/status/2772907149)
 
-You are the brains of our service, giving the ideas, suggesting the directions. We are just the -small- hands selecting, organizing and implementing ideas. 
+You are the brains of our service, giving the ideas, suggesting the directions. We are just the -small- hands selecting, organizing and implementing ideas.

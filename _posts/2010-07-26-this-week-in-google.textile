@@ -1,15 +1,15 @@
 ---
 layout: post
 title: This week in Google - Episode 52
-categories: 
+categories:
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 If you're not listening to any of "Leo":http://twit.tv/'s shows, you're certainly missing a few of the best online shows of these days. Leo and his hosts get the web and the "last episode to date":http://twit.tv/twig52 of "ThisWeekInGoogle":http://twit.tv/twig (happy birthday) is just the best proof.
 
-"Jyri":http://twitter.com/Jyri was on last week's show and he did a great job explaining Superfeedr, but this is really one of the many awesome topics in this podcast. Don't miss the part on _data privacy_, the part on _data resyndication_. I think they are spot on. 
+"Jyri":http://twitter.com/Jyri was on last week's show and he did a great job explaining Superfeedr, but this is really one of the many awesome topics in this podcast. Don't miss the part on _data privacy_, the part on _data resyndication_. I think they are spot on.
 
 Watch "it in video":http://twit.cachefly.net/video/twig/twig0052/twig0052_h264b_864x480_500.mp4, or "subscribe in iTunes":http://itunes.apple.com/podcast/this-week-in-google/id326120877.
 

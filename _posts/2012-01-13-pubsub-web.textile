@@ -3,7 +3,7 @@ layout: post
 title: Publish Subscribe for the web
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,7 +13,7 @@ h3. A brief history of the web.
 
 h4. READ
 
-I'm 29, but I was lucky enough to be among the very first web addicts. When I remember most of the websites from that time, I am pretty embarrassed by how ugly they were, but also (worse) by how useless they were. I'm sorry to say, but _at the time, the web was not making anyone's life better_. The only thing it did was replacing shinny paper based magazines with ugly looking screens. I now fail to see how I could consider this as an improvement. 
+I'm 29, but I was lucky enough to be among the very first web addicts. When I remember most of the websites from that time, I am pretty embarrassed by how ugly they were, but also (worse) by how useless they were. I'm sorry to say, but _at the time, the web was not making anyone's life better_. The only thing it did was replacing shinny paper based magazines with ugly looking screens. I now fail to see how I could consider this as an improvement.
 
 A lot of people wrote this, but *the web was mostly READ ONLY*. In other words, aside from a very few things, the only activity one could ever do was read. This is _why we have pages, bookmarks, site indices_... etc. At this time, search engines appeared, because people needed to a way to find the content they wanted to read. Similarly e-commerce was born, because quickly, many companies exposed the traditional product lists on the web so that their prospects could read them.
 This behavior is baked deep into the protocol that we use to access the web, in the form of *GET requests*.
@@ -25,15 +25,15 @@ It's also at that time that API started to appear. Developers were able to progr
 
 h4. SUBSCRIBE
 
-People were now able to read and write the web. Increasingly they were interested by what other people they knew wrote, because, after all, that is who they used to interact with in the real world. _It slowly put people in broad light_, as opposed to big media outlets. The logical next step was to map our physical friendships to the web. That's the social networks wave. The real new activity here is this *bounding*: expressing interest in someone to later read the content they wrote. Whether you call that _subscribing_, _following_, _friending_ or _circling_, it's all the same pattern. 
+People were now able to read and write the web. Increasingly they were interested by what other people they knew wrote, because, after all, that is who they used to interact with in the real world. _It slowly put people in broad light_, as opposed to big media outlets. The logical next step was to map our physical friendships to the web. That's the social networks wave. The real new activity here is this *bounding*: expressing interest in someone to later read the content they wrote. Whether you call that _subscribing_, _following_, _friending_ or _circling_, it's all the same pattern.
 
 Interestingly enough this is *more than just social*. Several very successful ecommerce services offer the same kind of pattern and allow you to subscribe to their deals mailing lists. Coincidentally, we now access the web more through mobile devices than through our computer, which means that context (place and time) is increasingly important, and some services are able to provide us a better experience by subscribing us to our context. What's interesting is that *despite the obviousness and the ubiquity of this subscribe pattern, there is no such verb into the HTTP protocol*.
 
 h3. Hooks and Callbacks
 
-The little story above is nice, but, even if we don't have this "subscribe" verb, it looks like we do already have all the services working just fine, so why would we need something to do it? 
+The little story above is nice, but, even if we don't have this "subscribe" verb, it looks like we do already have all the services working just fine, so why would we need something to do it?
 
-The first answer is obviously *standards*. By having a standard way to doing so, we could probably _decouple that action from specific services_. If that happens, it means that we could start using generic clients to subscribe to all kinds of things online. Do you use a different browser for Facebook and Groupon? By pushing down the stack the subscription pattern, we can *abstract it*! Hopefully we can even bake this in browsers in one way or another. 
+The first answer is obviously *standards*. By having a standard way to doing so, we could probably _decouple that action from specific services_. If that happens, it means that we could start using generic clients to subscribe to all kinds of things online. Do you use a different browser for Facebook and Groupon? By pushing down the stack the subscription pattern, we can *abstract it*! Hopefully we can even bake this in browsers in one way or another.
 
 Another reason is that I hope and believe that this will open the door for a *new way of creating web applications*. Several programming languages also have a Publish Subscribe pattern. These languages and frameworks are usually very _efficient and elegant for decoupled systems_. Many modern web technologies like Node.js, but also datastores like Redis's PubSub have made it much easier to write complex workflows.
 Plugging complete web applications will certainly make creating complex systems much easier. Most web developers don't think much about electricity, cooling or even IO, with the advent of fully managed platforms. *Layering common functionnalities and building on top is an amazing enabler*.
@@ -44,7 +44,7 @@ h3. Getting involved!
 
 Some of the smartest web engineers have fought for years to *bring this subscribe approach to the web stack*, through start-ups, the use of other non-http protocols, by bending HTTP, or by writing HTTP-based protocols for specific sub-cases. None of these approaches became as ubiquitous as the pattern itself.
 
-But today, there is some kind of momentum as the web's data is becoming harder and harder to ingest for everybody (machines and humans). This is why I'm trying to *push the W3C to sit down and take some time to think about all this*. I have created a "Community Group":http://www.w3.org/community/groups/#pubsub there and I hope that slowly, but surely people will express their needs, and why having this would make the web better. There are number of topics and use cases that need to be covered, I hope and believe we will cover them all. 
+But today, there is some kind of momentum as the web's data is becoming harder and harder to ingest for everybody (machines and humans). This is why I'm trying to *push the W3C to sit down and take some time to think about all this*. I have created a "Community Group":http://www.w3.org/community/groups/#pubsub there and I hope that slowly, but surely people will express their needs, and why having this would make the web better. There are number of topics and use cases that need to be covered, I hope and believe we will cover them all.
 
 Please, join us.
 

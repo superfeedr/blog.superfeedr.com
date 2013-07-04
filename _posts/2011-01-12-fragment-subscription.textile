@@ -3,25 +3,25 @@ layout: post
 title: Fragment Subscription
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-Last month, we introduced "arbitrary content PubSubHubbub subscription":http://blog.superfeedr.com/arbitrary-content-pubsubhubbub/, which allowed you to *subscribe to any kind of web resource*, including HTML web pages (but also JSON, YAML, VCard and many many more). 
+Last month, we introduced "arbitrary content PubSubHubbub subscription":http://blog.superfeedr.com/arbitrary-content-pubsubhubbub/, which allowed you to *subscribe to any kind of web resource*, including HTML web pages (but also JSON, YAML, VCard and many many more).
 
 HTML is a rich format, which means that an HTML page contains a lot of data and that some of this data may not be content to which one wants to subscribe. For example, you can find the navigation, but also ads, tracking codes or counter of any kinds. If you subscribed to a page like this, whenever any element would change, you would receive notifications which is certainly not what you want.
 
 Today, we're introducing what we call *fragment subscriptions*. Basically, _you can subscribe to a fragment in any page, using a fragment in the URL_.
 
-See "this page":http://www.nytimes.com/weather? It's shows the weather in New York, but it's pretty complex. Subscribing to it may not yield the result that you expect : updates when the weather changes. Yet, that data is in that page and you should be able to subscribe just to the fragment you care about. 
+See "this page":http://www.nytimes.com/weather? It's shows the weather in New York, but it's pretty complex. Subscribing to it may not yield the result that you expect : updates when the weather changes. Yet, that data is in that page and you should be able to subscribe just to the fragment you care about.
 
 You're probably familiar with HTML. Often times, in order to separate the content from the presentation, web developers will use "Stylesheets":http://en.wikipedia.org/wiki/Cascading_Style_Sheets to define the look and feel of their data. These stylesheets use a simple language to identify each element in a web page and define its style. In the example above, the weather is accessible at <code>.wCurrent .summary</code>. Right now, it shows <em>30°F (-1°C) Cloudy</em> (brrr).
 
-h4.How to subscribe to a fragment? 
+h4.How to subscribe to a fragment?
 
 Using a fragment! You've probably seen them in URLs already. They're the part after <code>#</code>. For example in <code>http://blog.superfeedr.com/arbitrary-content-pubsubhubbub/#post</code>, the fragment is <code>post</code> and if you're browser is smart, when you put that in the address bar, it should just align the top of your browser with the post, rather than the top of the page.
 
-Coming back to our weather example, if you subscribed to <code>http://www.nytimes.com/weather#.wCurrent .summary</code>, then, we would send you the content at the CSS path <code>.wCurrent .summary</code>. Simple! The only tweak is to escape the CSS fragment, so, in practice, you would have to subscribe to <code>http://www.nytimes.com/weather#.wCurrent%20.summary</code>, but that works just fine. 
+Coming back to our weather example, if you subscribed to <code>http://www.nytimes.com/weather#.wCurrent .summary</code>, then, we would send you the content at the CSS path <code>.wCurrent .summary</code>. Simple! The only tweak is to escape the CSS fragment, so, in practice, you would have to subscribe to <code>http://www.nytimes.com/weather#.wCurrent%20.summary</code>, but that works just fine.
 
 As always, feedback appreciated!
 

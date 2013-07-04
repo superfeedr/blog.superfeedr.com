@@ -3,7 +3,7 @@ layout: post
 title: EventVue's Chatter
 categories: [pubsubhubbub, API, PHP, eventvue, use-case]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,7 +13,7 @@ Meeting the right people at conferences is *always very difficult*. Even if you'
 
 When we started Superfeedr, "Josh":http://twitter.com/joshfraser helped us a lot by providing a good use-case. We said it in the past, but Superfeedr is yours, and you can thank him for his feedback. We're now thrilled that EventVue uses Superfeedr for its "chatter" functionality.
 
-The _chatter_ is a stream that contains any message that was posted by people at a given conference : they write on their _blogs_, they _tweet_, they post to _Youtube_, _Flickr_... it all ends up there. It's like *Twitter Lists on steroids*. 
+The _chatter_ is a stream that contains any message that was posted by people at a given conference : they write on their _blogs_, they _tweet_, they post to _Youtube_, _Flickr_... it all ends up there. It's like *Twitter Lists on steroids*.
 
 EventVue uses "PHP":http://php.net/index.php and the "PubSubHubbub API":http://superfeedr.com/documentation#pubsubhubbub. I'll just let Josh saying what he likes about Superfeedr :
 

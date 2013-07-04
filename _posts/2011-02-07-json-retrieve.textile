@@ -3,7 +3,7 @@ layout: post
 title: JSON retrieve
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -19,11 +19,11 @@ It's a shame, but for some reason, I missed the fact that our SSL certificates h
 
 h3. Higher pricing levels
 
-Our beloved customers use Superfeedr more and more, and we're happy to say that a few of them grew beyond our current pricing levels. Luckily for us, we're able to save more $$$s when people use us more and we'd like to thank these customer for being so faithful, so we introduced to extra layers to our pricing : 
+Our beloved customers use Superfeedr more and more, and we're happy to say that a few of them grew beyond our current pricing levels. Luckily for us, we're able to save more $$$s when people use us more and we'd like to thank these customer for being so faithful, so we introduced to extra layers to our pricing :
 
 * $1 for 5,000 notifications between 3,700,000 and 15,700,000
 * $1 for 6,000 notifications between 15,700,000 and 51,700,000
-* *$1 for 7,000 notifications* above 51,700,000! 
+* *$1 for 7,000 notifications* above 51,700,000!
 
 Use our "simulation tool":http://superfeedr.com/orders/new to see what's going on woth your level of pricing!
 

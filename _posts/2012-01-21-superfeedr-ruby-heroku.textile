@@ -3,7 +3,7 @@ layout: post
 title: Sinatra, Heroku and Superfeedr
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -28,12 +28,12 @@ Create the repo:
 <code>
     git commit -m "init"
 </code>
-    
+
 Create the application on Heroku:
 <code>
     heroku create --stack cedar
 </code>
-    
+
 Add the hostname as an environment variable. It is used by the rack middleware to build the callback urls:
 <code>
     heroku config:add  HOST=<YOUR APP DOMAIN>
@@ -89,12 +89,12 @@ First, let's install the gems.
     bundle install
 </code>
 <code>
-    git add Gemfile.lock 
+    git add Gemfile.lock
 </code>
 <code>
     git commit -m "adding Gemfile.lock" -a
 </code>
-    
+
 And push the code
 <code>
     git push heroku master

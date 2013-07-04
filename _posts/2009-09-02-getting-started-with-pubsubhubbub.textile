@@ -3,7 +3,7 @@ layout: post
 title: Getting Started with PubSubHubbub
 categories: [pubsubhubbub, API]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -28,8 +28,8 @@ The PubSubHubbub API will allow you to receive notifications from us when we ide
 h4. Subscription
 
 The subscription process is not obvious, because the hub needs to verify your intent. Here is how it works.
-Our hub is located at "http://superfeedr.com/hubbub":http://superfeedr.com/hubbub 
-# Send an *authenticated* (with your superfeedr login/password) *POST request* to our URL with the following parameters : 
+Our hub is located at "http://superfeedr.com/hubbub":http://superfeedr.com/hubbub
+# Send an *authenticated* (with your superfeedr login/password) *POST request* to our URL with the following parameters :
     - _hub.mode_ = subscribe|unsubscribe
     - _hub.verify_ = sync
     - _hub.callback_ = http://domain.tld/your/callback
@@ -44,7 +44,7 @@ To debug the process, you can use "this hurl to send subscriptions requests":htt
 
 h4. Receive Notifications
 
-Your application must "deal" with the notifications. Notifications are POST requests sent to you callback URL, the new entries are in the request body. You then have to use an XML parser to fetch that body. Since we use standard ATOM, any parser that can deal with ATOM will be great. 
+Your application must "deal" with the notifications. Notifications are POST requests sent to you callback URL, the new entries are in the request body. You then have to use an XML parser to fetch that body. Since we use standard ATOM, any parser that can deal with ATOM will be great.
 
 If you're using a web application framework like Rails, Django, Merb or Symfony, it should be quite easy to register a "route" connected to the right Controller, in charge of parsing this body.
 

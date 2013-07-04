@@ -3,7 +3,7 @@ layout: post
 title: Node XMPP Server
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -13,7 +13,7 @@ h3. A node KO treat
 
 !{float:left; margin: 5px}http://nodejs.org/logos/nodejs.png!
 
-In the context of the "msgboy":http://msgboy.com (request your invite now!), we had to setup a new XMPP server. After fighting with "ejabberd":http://www.ejabberd.im/, we installed "Prosody":http://prosody.im/, but we also quickly concluded that we would need a lot of customization, as well as the ability to tweak our server(s) to fit our exact needs. 
+In the context of the "msgboy":http://msgboy.com (request your invite now!), we had to setup a new XMPP server. After fighting with "ejabberd":http://www.ejabberd.im/, we installed "Prosody":http://prosody.im/, but we also quickly concluded that we would need a lot of customization, as well as the ability to tweak our server(s) to fit our exact needs.
 
 Since "astro":http://spaceboyz.net/~astro/ had been doing an *amazing work* with his "node-xmpp":https://github.com/astro/node-xmpp library to build _Client_, _Components_ and even _Server to Server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That's what we worked on the past couple days, and "it's now on Github":https://github.com/superfeedr/node-xmpp!
 
@@ -26,13 +26,13 @@ If you're brave enough and want to get started, install our branch of node-xmpp 
 
 Now, take your favorite XMPP client (we used Psi, but you need to make sure it will accept to transmit PLAIN text passwords over an unencrypted connection) and connect to the server as user@zipline.local. Use <code>password</code> for the password.
 
-Now, that was -relatively- easy, and quite useless so far, as you could do that with any XMPP server out there. The real interest of this one is that we wanted to give full control back to the developer to customize their server as much as they needed. Take a look at the <code>examples/c2s.js</code> file for the code that runs this specific server: 
+Now, that was -relatively- easy, and quite useless so far, as you could do that with any XMPP server out there. The real interest of this one is that we wanted to give full control back to the developer to customize their server as much as they needed. Take a look at the <code>examples/c2s.js</code> file for the code that runs this specific server:
 
 * Auth is simple: the c2s module will just callback with a username and a password. Your code should then decide whether you want to authorize or not connection, based on your database, or any other piece of application that you want.
 
 * You can define modules supported by your server from the most popular XEPs, using <code>node-xmpp</code>'s mixins. The modules should be at the heart of any implementations, as we want to keep the c2s code itself very bare.
 
-* There are currently 4 events that you can listen to on the C2S module itself : <code>connect, disconnect, authenticate, stanza</code>, which are relatively self explanatory.  The <code>connect</code> event should be used to register mixins to user connections. The <code>stanza</code> event should probably be left empty (unlike in the example), as all meaningful stanzas should probably be treated in mixins. 
+* There are currently 4 events that you can listen to on the C2S module itself : <code>connect, disconnect, authenticate, stanza</code>, which are relatively self explanatory.  The <code>connect</code> event should be used to register mixins to user connections. The <code>stanza</code> event should probably be left empty (unlike in the example), as all meaningful stanzas should probably be treated in mixins.
 
 h3. Clustering!
 

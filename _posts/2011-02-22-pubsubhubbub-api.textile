@@ -3,7 +3,7 @@ layout: post
 title: PubSubHubbub for APIs
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -11,7 +11,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 h3. Identify the resource
 
-It's the first step : what are people polling the most on your service? It could be the weather in a given geographic area, it could be the price of an item in your catalog, it could be the profile information of a user in your system... etc. 
+It's the first step : what are people polling the most on your service? It could be the weather in a given geographic area, it could be the price of an item in your catalog, it could be the profile information of a user in your system... etc.
 Once you have identified this resource, you need to make sure you can track when the change in this resource happens. Generally, it's hard to use something that changes constantly, like a stock price. In such cases, you want to define levels that will trigger notifications, for example.
 
 h3. Discovery
@@ -23,9 +23,9 @@ You now need to add an HTTP header to your API responses which mentions this hub
 
 h3. Securing subscriptions
 
-People can now start to subscribe to your content. Odds are that your API is protected, so you may not want anyone to subscribe to the content :) In your hub's settings, you'll see that you can define a _Subscription callback_. This callback is actually an HTTP url on which *we will echo all subscriptions to your content*, including the HTTP headers and any additional parameter provided by the subscriber. 
+People can now start to subscribe to your content. Odds are that your API is protected, so you may not want anyone to subscribe to the content :) In your hub's settings, you'll see that you can define a _Subscription callback_. This callback is actually an HTTP url on which *we will echo all subscriptions to your content*, including the HTTP headers and any additional parameter provided by the subscriber.
 
-*Based on the HTTP status code* that your callback returns, we will accept or refuse subscription on your behalf, and we will also show any error message back to the subscriber. If your app requires authentication with OAuth, you can just refuse subscriptions that do not provide any. 
+*Based on the HTTP status code* that your callback returns, we will accept or refuse subscription on your behalf, and we will also show any error message back to the subscriber. If your app requires authentication with OAuth, you can just refuse subscriptions that do not provide any.
 
 Once you accept the subscription, we will notify that subscriber when the content is updated. Also, _subscriptions have an expiration date_, which means that subscribers will need to re-initiate subscriptions after some time. This is quite handy to remove disrespectful subscribers.
 
@@ -37,6 +37,6 @@ This is the last step. Superfeedr needs to know about the updated content, so we
 
 * *Light pings* : If the number of pings you make is much higher than the number of subscriptions to your content, then, you're better off with light pings : you tell Superfeedr *which url has been updated and we will poll it* right away. Of course, you can also indicate which credentials we should use (including OAuth and OAuth2 headers), so your content is always protected.
 
-After that, not only will you see a decrease in your bandwidth consumption, as well as server load, but you will also start to see innovative applications as it's *now much much easier to consume your content* from your API!  
+After that, not only will you see a decrease in your bandwidth consumption, as well as server load, but you will also start to see innovative applications as it's *now much much easier to consume your content* from your API!
 
 

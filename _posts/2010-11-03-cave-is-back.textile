@@ -3,7 +3,7 @@ layout: post
 title: Cave is Back
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -17,7 +17,7 @@ h4. With XMPP
 
 It's as simple as sending an <iq> like the following :
 
-Send this : 
+Send this :
 
 <script src="https://gist.github.com/660918.js?file=retrieve.xml"></script>
 
@@ -37,7 +37,7 @@ Check the "PubSubHubbub doc":http://superfeedr.com/documentation#pubsubhubbub_re
 !{width:300px;float:right;}http://www.uncrate.com/men/images/2009/02/miz-man-cave.jpg!
 
 This was a long time feature request and we think it's _overdue_, but that should help you build apps that do not need to poll feeds at all, as you can just get the historical content of a feed. Also, if you have a doubt about your endpoint being down for a few minutes, you can just get the status of the feeds and compare with what you got.
-We will *currently return at most 10 entries* for each feed. We may have less as we're still filling in the cave (it will take a few more weeks to have all feeds completely). 
+We will *currently return at most 10 entries* for each feed. We may have less as we're still filling in the cave (it will take a few more weeks to have all feeds completely).
 
 h3. Digest notifications
 

@@ -3,7 +3,7 @@ layout: post
 title: Scale with Chef
 categories: [chef, deployment, infrastructure, configuration]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -19,9 +19,9 @@ h3. Theory
 
 You should really check out this -long- presentation from "Ezra":http://brainspl.at and "Adam":http://twitter.com/adamhjk
 
-<embed src="http://blip.tv/play/AYGMpxGLqzQ" type="application/x-shockwave-flash" width="480" height="290" allowscriptaccess="always" allowfullscreen="true"></embed> 
+<embed src="http://blip.tv/play/AYGMpxGLqzQ" type="application/x-shockwave-flash" width="480" height="290" allowscriptaccess="always" allowfullscreen="true"></embed>
 
-They say that _scaling usually has 3 steps_ : 
+They say that _scaling usually has 3 steps_ :
 * *bootstrapping* : it is the act of 'acquiring' resources. Basically starting servers at a given IP, with a base (naked OS), and hopefully a way to connect (ssh).
 * *configuration* : the goal here is to change a "vanilla" server into something operational.
 * *command and control* : once the server is configured and running, you still need to send him specific instructions and have feedback on how it performs.
@@ -42,7 +42,7 @@ h4. Cookbooks
 
 On the chef server, you would define a set of *cookbooks*. Cookbooks are *collections of related recipes*. For example, a cookbook can deal with installing the "build-essentials" packages, the apache server or git... etc. For each cookbook, you would have a set of recipes. For example, the git cookbook, may have recipes such as : install client and install server.
 
-Technically the cookbooks can be used by different users and/or for different machines in your architecture. Actually, you *want* them to be as generic as they can. 
+Technically the cookbooks can be used by different users and/or for different machines in your architecture. Actually, you *want* them to be as generic as they can.
 
 h4. Roles
 
@@ -56,15 +56,15 @@ Got it? Of course, this clearly a "crash-course", you can find a lot more inform
 
 h3. Where to start?
 
-# I'd start *first with setting up a Chef Server*. The Chef server will provide you with a few things, including a web application that can be used to see all your cookbooks, roles, and nodes at a glance. 
-# Once that's done, *setup a chef repository*, that would basically contain the code of your cookbooks. Then, add a few cookbooks, define a first role and assign it some recipes, as well as attributes. Writing cookbooks shouldn't be too hard, but you should first try to see if someone has written one. Check "opscode repository":http://github.com/opscode/chef/tree/master and all the "associated branches":http://github.com/opscode/chef/network. With a little luck, *you won't have to write anything but define attributes*. 
+# I'd start *first with setting up a Chef Server*. The Chef server will provide you with a few things, including a web application that can be used to see all your cookbooks, roles, and nodes at a glance.
+# Once that's done, *setup a chef repository*, that would basically contain the code of your cookbooks. Then, add a few cookbooks, define a first role and assign it some recipes, as well as attributes. Writing cookbooks shouldn't be too hard, but you should first try to see if someone has written one. Check "opscode repository":http://github.com/opscode/chef/tree/master and all the "associated branches":http://github.com/opscode/chef/network. With a little luck, *you won't have to write anything but define attributes*.
 When you have a few cookbooks, clone that chef repo on your chef server and run @rake deploy@ anytime you want to update the configuration.
 # Then, create a bootstrap script, "like this one":http://gist.github.com/160263, which installs the bricks for a chef client on your node.
 # Finally, start a new node on your favorite cloud provider (Slicehost:"http://slicehost.com", "Linode":http://linode.com, "EC2":http://aws.amazon.com/ec2/), copy the boostrap (@scp@ should make it) script and run it.
 
-The great thing with this "spec" approach is that you can (and should) kill instances all the time and re-configure clean ones in minutes. 
+The great thing with this "spec" approach is that you can (and should) kill instances all the time and re-configure clean ones in minutes.
 
-Hosting in the cloud really means that *you don't know (or at least shouldn't care) about the nodes* on which your app is running. 
+Hosting in the cloud really means that *you don't know (or at least shouldn't care) about the nodes* on which your app is running.
 
 I've heard people like "37signals":http://37signals.com/, "EngineYard":http://www.engineyard.com/ or even "Twitter":http://twitter.com are using Chef to scale and deploy their architectures, that can only be a good sign ;)
 

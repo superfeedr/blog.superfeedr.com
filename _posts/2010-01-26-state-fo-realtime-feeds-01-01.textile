@@ -3,16 +3,16 @@ layout: post
 title: "State of Real-Time feeds"
 categories: [Real-time, statistics, market]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-It's this time again : the time for the _very_ controversial numbers about realtime feeds. Before anything else, I'd like to indicate that it would be great for other services to publish similar numbers. We know "who":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-implemented-pubsubhubbub/ "implemented":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/:http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/ *PubSubHubbub*, I guess some of them implemented *RSSCloud* and *SUP* too. 
+It's this time again : the time for the _very_ controversial numbers about realtime feeds. Before anything else, I'd like to indicate that it would be great for other services to publish similar numbers. We know "who":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-implemented-pubsubhubbub/ "implemented":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/:http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/ *PubSubHubbub*, I guess some of them implemented *RSSCloud* and *SUP* too.
 
 Since we have so much debate in the past about the methodology:
 
-* Superfeedr has many feeds in management. Some of them are for the "hubs we host":http://superfeedr.com/hubbub. *We don't count the feeds from the hubs we host*, because they would obviously inflate the PubSubHubbub number a lot. 
-* For each feed, since we try to avoid polling it too, we use any available technique to get in realtime, se we're able to tell whether it's PubSubHubbub, RSSCloud, or SUP. We just counted these. 
+* Superfeedr has many feeds in management. Some of them are for the "hubs we host":http://superfeedr.com/hubbub. *We don't count the feeds from the hubs we host*, because they would obviously inflate the PubSubHubbub number a lot.
+* For each feed, since we try to avoid polling it too, we use any available technique to get in realtime, se we're able to tell whether it's PubSubHubbub, RSSCloud, or SUP. We just counted these.
 * Some feeds implemented 2 or more protocols (the best example would be wordpress.com blog that have a feedburner feed), we counted them in both categories.
 
 A few notes on the result set before. We have *multiplied by 6 the number of feeds we managed* since the last time we count, which should make our set a little more representative. As a matter of fact we gained a lot of feeds that are not blogs.
@@ -55,6 +55,6 @@ You can immediately see that the *proportion of feeds we're polling increased* c
 
 We are now *continuously measuring* the proportions, which should make these posts way more regular. I look forward to the next month!
 
-In conclusion, I'd like to remind you that "we implemented many other ways":http://superfeedr.com/technology of getting feed updates, including some specific APIs, "XML-RPC Ping":http://blog.superfeedr.com/Ping/PubSubHubbub/Real-time/XML-RPC/XMPP/XMLRPC-Ping-to-PubSubHubbub/ and other techniques. If you use Superfeedr, you will benefit from these and get feeds in realtime! 
+In conclusion, I'd like to remind you that "we implemented many other ways":http://superfeedr.com/technology of getting feed updates, including some specific APIs, "XML-RPC Ping":http://blog.superfeedr.com/Ping/PubSubHubbub/Real-time/XML-RPC/XMPP/XMLRPC-Ping-to-PubSubHubbub/ and other techniques. If you use Superfeedr, you will benefit from these and get feeds in realtime!
 
 fn1. At that time we had not implemented SUP.

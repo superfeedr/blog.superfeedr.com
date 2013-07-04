@@ -3,7 +3,7 @@ layout: post
 title: A Better track
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -29,16 +29,16 @@ h3. Filters
 
 Sometimes, instead of all the data coming from Superfeedr, you may want to filter it.
 
-* *By feed* : You want all the entries in a given feed that matches a given query. 
+* *By feed* : You want all the entries in a given feed that matches a given query.
 
 * *By publisher/hub* : You want all the entries from a given publisher that matches a given query.
 
 * *A location* : all the content within a radius of a given location. This could be combined with a query.
 
-* *DOM based* : "our schema is XML":http://superfeedr.com/documentation. Some people may want to subscribe to all entries that have a category "Apple" and include a link that has a rel="reply". 
+* *DOM based* : "our schema is XML":http://superfeedr.com/documentation. Some people may want to subscribe to all entries that have a category "Apple" and include a link that has a rel="reply".
 
 I don't have any ETA for this, but that will certainly be our focus from now on. Please tell us if you have specific needs.
 
 h3. More data
 
-We're working on *extending the amount of data that flows thru Superfeedr*. Our subscribers add more content every day, and we're trying to work with big publishers to let you filter thru this data as well. If you're a publisher and want to have your data accessible thru our track feature, like Posterous, Tumblr, SixApart, Gowalla, HuffPost, GawkerMedia and more than "900 other publisher":http://superfeedr.com/publisher, please, get in touch! 
+We're working on *extending the amount of data that flows thru Superfeedr*. Our subscribers add more content every day, and we're trying to work with big publishers to let you filter thru this data as well. If you're a publisher and want to have your data accessible thru our track feature, like Posterous, Tumblr, SixApart, Gowalla, HuffPost, GawkerMedia and more than "900 other publisher":http://superfeedr.com/publisher, please, get in touch!

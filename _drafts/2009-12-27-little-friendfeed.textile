@@ -3,13 +3,13 @@ layout: post
 title: "A little friendfeed on your blog"
 categories: [friendfeed, blog, superfeedr]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 You probably know the principle of Friendfeed : as a user, you can aggregate all your content from several other web application into the same page, so that your friends can follow your "web activity" pretty conveniently and interact with you very easily.
 
-Luckily, most web applications now have RSS/Atom feeds for your profile, which means you can easily plug them into Superfeedr. 
+Luckily, most web applications now have RSS/Atom feeds for your profile, which means you can easily plug them into Superfeedr.
 
 Blogs are still the best interface to "communicate" with your readers and maybe post content, so "re-publishing" your content from flickr, twitter, delicious, youtube or facebook to your blog would totally make sense!
 

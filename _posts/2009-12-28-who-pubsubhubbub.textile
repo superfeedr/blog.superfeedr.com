@@ -3,14 +3,14 @@ layout: post
 title: "Who Implemented PubSubHubbub"
 categories: [PubSubHubbub, Feeds, real-time, stats]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-"PubSubHubbub":http://code.google.com/p/pubsubhubbub/ is now more or less _6 months old_. We have daily talks with people who wonder whether they should implement it in their feeds. 
-Obviously, it matters for publishers to know who will subscribe to their feeds if "they use a hub":http://superfeedr.com/publisher for their feeds. 
+"PubSubHubbub":http://code.google.com/p/pubsubhubbub/ is now more or less _6 months old_. We have daily talks with people who wonder whether they should implement it in their feeds.
+Obviously, it matters for publishers to know who will subscribe to their feeds if "they use a hub":http://superfeedr.com/publisher for their feeds.
 
-Our monthly list market numbers show a pretty interesting image in terms of how many feeds are PubSubHubub enabled. Here is some more "qualitative" data to assess who implemented the "subscriber" side of the protocol ("get started with PubSubHubbub":http://blog.superfeedr.com/API/pubsubhubbub/getting-started-with-pubsubhubbub/). 
+Our monthly list market numbers show a pretty interesting image in terms of how many feeds are PubSubHubub enabled. Here is some more "qualitative" data to assess who implemented the "subscriber" side of the protocol ("get started with PubSubHubbub":http://blog.superfeedr.com/API/pubsubhubbub/getting-started-with-pubsubhubbub/).
 
 Since we now host several official ("Posterous":http://posterous.superfeedr.com/, "Tumblr":http://tumblr.superfeedr.com/, "Backtype":http://backtype.superfeedr.com/, "enjoysthings":http://enjoysthings.superfeedr.com/... more to come!) hubs and a few unofficial ("identica":http://identica.superfeedr.com/, "wordpress":http://wordpress.superfeedr.com/)... We can then know quite easily which services have subscribed to these hubs for some feeds published by these guys.
 

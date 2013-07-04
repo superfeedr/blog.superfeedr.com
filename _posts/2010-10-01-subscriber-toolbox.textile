@@ -3,7 +3,7 @@ layout: post
 title: Susbcriber Toolbox
 categories: [meta]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -27,7 +27,7 @@ The venerable XMPP console is still here, with a few bug fixes and improved perf
 
 h3. Feed Export
 
-*No lock-ins*. We really value your freedom and what happy users more than "locked" users. You can export all the subscriptions. To prevent obvious traffic jams, you will have to export them by pages of 100. 
+*No lock-ins*. We really value your freedom and what happy users more than "locked" users. You can export all the subscriptions. To prevent obvious traffic jams, you will have to export them by pages of 100.
 
 Of course, we're committed to improve this, as always, your feedback is greatly appreciated. "Go log-in your subscriber account":http://superfeedr.com/subscriber and let us know what you think!
 

@@ -3,7 +3,7 @@ layout: post
 title: Introducing the Msgboy
 categories: [meta]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -21,7 +21,7 @@ The msgboy also includes a dashboard that helps you visualize all the data that 
 
 We used a lot of the _open protocols, and HTML5 magic_ and the msgboy is already a good internet citizen. We also put the "msgboy's source on github":https://github.com/superfeedr/msgboy, so anyone can help us make it better. Of course, it gets its data pushed thru Superfeedr directly.
 
-It's *still extremely early*, but we already love our new baby. We are slowly opening up to friends and family, so "please help us spread the word":http://beta.msgboy.com/ to get faster access to it. 
+It's *still extremely early*, but we already love our new baby. We are slowly opening up to friends and family, so "please help us spread the word":http://beta.msgboy.com/ to get faster access to it.
 
 Also, I want to take this to very deeply thank the amazing team at "Andyet":http://andyet.net/ for their very hard work. This team knows what realtime is, and I will never recommend enough to work with them.
 

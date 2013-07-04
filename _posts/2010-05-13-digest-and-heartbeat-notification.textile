@@ -3,15 +3,15 @@ layout: post
 title: Digest and Heartbeat notifications
 categories: [pubsubhubbub, pubsub, digest, heartbeat]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-One of the most common problem of all Publish-Subscribe pattern is that they *fail silently*. 
+One of the most common problem of all Publish-Subscribe pattern is that they *fail silently*.
 
 Since the subscriber will always wait for the publisher (or the hub) to send him data, when a subscriber doesn't receive new data _it will assume that none was sent_. Unfortunately, there could be other reasons : the publisher may be gone (or the hub), the subscription may be lost (or have expired), the connection between the 2 might have been flaky for some time... etc.
 
-Here is a new feature which should help subscribers gain confidence : *digest notifications*. They server 2 purposes : 
+Here is a new feature which should help subscribers gain confidence : *digest notifications*. They server 2 purposes :
 
 * *Heartbeat* : guarantee the subscriber that at least once day, we'll notify it. No matter what happens, the subscriber will get a notification. It might be empty (if no entry was ever published on that feed).
 
@@ -31,7 +31,7 @@ h4. PubSubHubbub API
 
 Upon subscription, just provide an extra HTTP Post param like this @superfeedr.digest=true@.
 
-Please note that you'll need to re-subscribe any existing subscription for the digest to be taken into account. 
+Please note that you'll need to re-subscribe any existing subscription for the digest to be taken into account.
 
 h3. What next?
 
@@ -45,7 +45,7 @@ If this is a digest, the XMPP notification will include a digest flag in the @st
 
 h4. PubSubHubbub API
 
-The notification will just have a digest attribute within the @feed@ node of the body. This attribute belongs to the superfeedr namespace. 
+The notification will just have a digest attribute within the @feed@ node of the body. This attribute belongs to the superfeedr namespace.
 
 <script src="http://gist.github.com/399630.js?file=gistfile1.xml"></script>
 

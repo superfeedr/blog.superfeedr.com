@@ -3,12 +3,12 @@ layout: post
 title: "State of the Realtime Web : the Publishers"
 categories: [realtime, publishers, twitter, facebook, pubsubhubbub]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 
-The _realtime web_ is almost as hyped a word as _geolocation_. It actually groups a lot of different realities and doesn't have the same meaning and implementation from service A to service B. Let's first focus on publishers. 
+The _realtime web_ is almost as hyped a word as _geolocation_. It actually groups a lot of different realities and doesn't have the same meaning and implementation from service A to service B. Let's first focus on publishers.
 
 The first thing we should all acknowledge is that _every publisher can and should be part of the realtime web movement_. We'd all be in a better position if we *stopped assuming that Realtime web is the same as Twitter ecosystem*.
 
@@ -22,7 +22,7 @@ These are obviously subject to debate, let me know if you disagree in the commen
 
 *Content* : a piece of data available on the internet. A blog post, a job offer, a product description... etc. Some people call that a resource. This brings us to the fact that most content should have a URL (Universal Resource Location).
 
-*Publisher* : an application that publishes content on the internet. In more words : an application that makes pieces of content available at a given URL. 
+*Publisher* : an application that publishes content on the internet. In more words : an application that makes pieces of content available at a given URL.
 
 *Pushing* : an action by a publisher which consist of actually distributing the published content. Distribution involves sending the content away.
 
@@ -37,8 +37,8 @@ h3. Twitter
 
 !{float:right; width:200px; margin: 0px 0px 15px 10px}http://www.crunchbase.com/assets/images/resized/0000/2755/2755v30-max-250x250.png!
 Twitter opened the pandora box. By pushing their content, *they allowed a whole new breed of applications which would consume the firehose in realtime and show it to their users*. I know several people who were consuming Twitter only thru "Friendfeed":http://friendfeed.com/'s interface. At the same time, this proved like a very important monetization scheme for Twitter : search engines like Google have a very hard time crawling the whole web, yet alone high frequency publishing services like Twitter, so "they paid a lot to get access":http://techcrunch.com/2009/10/21/that-didnt-take-long-twitter-is-coming-to-google/ to this firehose.
-Yet, *Twitter failed at establishing an open and standard protocol* that could be used by other publishers to represent and distribute their data in a similar fashion. Worse, if you want Twitter's data in realtime, you need to have a specific business relationship, which, in a lot of ways is the opposite to being open. 
-Their main motivation is still very present, and their -Chirp- "User Stream":http://apiwiki.twitter.com/User-Stream-Implementation-Suggestions is just another iteration which aims at making desktop clients like "Seesmic":http://seesmic.com/ or "Tweetdeck":http://tweetdeck.com/ much more efficient by pushing (in a proprietary manner again) them all the data for a given user. 
+Yet, *Twitter failed at establishing an open and standard protocol* that could be used by other publishers to represent and distribute their data in a similar fashion. Worse, if you want Twitter's data in realtime, you need to have a specific business relationship, which, in a lot of ways is the opposite to being open.
+Their main motivation is still very present, and their -Chirp- "User Stream":http://apiwiki.twitter.com/User-Stream-Implementation-Suggestions is just another iteration which aims at making desktop clients like "Seesmic":http://seesmic.com/ or "Tweetdeck":http://tweetdeck.com/ much more efficient by pushing (in a proprietary manner again) them all the data for a given user.
 
 h3. Facebook
 
@@ -53,7 +53,7 @@ The worst thing about all this is that *Facebook does push* a hell of a lot of d
 
 h3. The rest of the world of realtime publishers
 
-By reading the 2 previous paragraphs, you may think I'm some kind of socialist and I hate business relationships. Well, I'm french, so that could explain it, but I'd argue that *business relationships are also walled-gardens*. Anytime you have a one-to-one, it's about the 2, not about the others, right? If you married your spouse, it's not to have -sex- dinner every night with a different person, is it? 
+By reading the 2 previous paragraphs, you may think I'm some kind of socialist and I hate business relationships. Well, I'm french, so that could explain it, but I'd argue that *business relationships are also walled-gardens*. Anytime you have a one-to-one, it's about the 2, not about the others, right? If you married your spouse, it's not to have -sex- dinner every night with a different person, is it?
 
 *In many ways, the relationships that Twitter and Facebook have with a very small subset of other application is de-facto excluding the rest of the world, and the rest of the future world.*
 
@@ -63,13 +63,13 @@ Interestingly enough _both Twitter and Facebook hide behind their APIs_. Having 
 
 Luckily we have this protocol. We even have several (that's the beauty of it : people fight for the shared wealth!). At Superfeedr, we placed our bets on "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub and "XMPP PubSub":http://superfeedr.com/documentation#xmpp_pubsub.
 
-Most of the smaller (but much numerous) _publishers have chosen the protocol approach_. Whether it's because they genuinely believe that it's the good approach, or because they're actually too small to force their API down other people's throats is irrelevant. What matters is that now, *all the main blogging platforms : Wordpress, SixApart, Blogger, Tumblr, Posterous are using the same protocol : PubSubHubbub*. Some other smaller social networks, like Cliqset or Status.net and Gowalla are using it as well. Even a few newspapers! 
+Most of the smaller (but much numerous) _publishers have chosen the protocol approach_. Whether it's because they genuinely believe that it's the good approach, or because they're actually too small to force their API down other people's throats is irrelevant. What matters is that now, *all the main blogging platforms : Wordpress, SixApart, Blogger, Tumblr, Posterous are using the same protocol : PubSubHubbub*. Some other smaller social networks, like Cliqset or Status.net and Gowalla are using it as well. Even a few newspapers!
 
 Combined, this is probably bigger than Twitter or Facebook's data. _Soon, it will be much much bigger, because so many publishers don't push their content yet_...
 
 h2. The non realtime publishers
 
-This is the last category of site, and still the vast majority. When looking at "Alexa's top 50":http://www.alexa.com/topsites/global, it's obvious. Yahoo!, Windows Live, Baidu, Wikipedia, Amazon, Ebay, LinkedIn, Flickr, Craigslist, RapidShare... 
+This is the last category of site, and still the vast majority. When looking at "Alexa's top 50":http://www.alexa.com/topsites/global, it's obvious. Yahoo!, Windows Live, Baidu, Wikipedia, Amazon, Ebay, LinkedIn, Flickr, Craigslist, RapidShare...
 
 _Where are the e-commerce website sharing their catalogs in realtime with the price comparison search engines?_
 

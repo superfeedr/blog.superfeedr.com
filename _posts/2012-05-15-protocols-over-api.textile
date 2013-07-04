@@ -3,7 +3,7 @@ layout: post
 title: Protocols over APIs
 categories: []
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
@@ -18,13 +18,13 @@ That is obviously not always possible... and is probably not the right solution 
 
 Another solution is to favor protocols over APIs. To over-simplify things, an *API is just a combination of uni-laterally decided upon protocol and an endpoint*. _The Twitter API is the twitter protocol used against twitter.com_. Got it? This is what Status.net understood when they decided to write a compatible API... for which you would just have to change the endpoint from twitter.com to status.net. That worked until Twitter changed its API.
 
-Now, if developers relied more on protocols, that means that when a providers disappears or deprecates a service, developers could just change the endpoint, without changing anything in their code to make sure everything keeps working. Re-using code is the most satisfying feeling for many developers. 
+Now, if developers relied more on protocols, that means that when a providers disappears or deprecates a service, developers could just change the endpoint, without changing anything in their code to make sure everything keeps working. Re-using code is the most satisfying feeling for many developers.
 
 Want an example? Last week, I got tired of "myopenid.net":http://myopenid.com/ inability to stay up. I used them as a provider for "my personal openid endpoint":http://ouvre-boite.com/. Changing the provider was as simple as changing the <code>openid2.provider</code> href in the HTML and I was done.
 
 When you decide to work with a given's service API, please tell them *you want their API to become a protocol*, something for which _you are a stake holder_, that you can help improve. Also, if there is *any open protocol or any schema* that does what this API aims at doing, please convince them that it's way to go, that this will make the web better and that will make your code more useful to more people :)
 
-At Superfeedr, we're obviously big promoters of protocols ("XMPP":http://superfeedr.com/documentation/#xmpp_pubsub, "PubSubHubbub":http://superfeedr.com/documentation/#pubsubhubbub, ATOM, ActivityStreams) over APIs, and we obviously kept the same philosophy for "Msgboy":http://msgboy.com/. 
+At Superfeedr, we're obviously big promoters of protocols ("XMPP":http://superfeedr.com/documentation/#xmpp_pubsub, "PubSubHubbub":http://superfeedr.com/documentation/#pubsubhubbub, ATOM, ActivityStreams) over APIs, and we obviously kept the same philosophy for "Msgboy":http://msgboy.com/.
 
 _Addendum: what makes me even sadder about this story is that "Brad Fitz":http://bradfitz.com/, who wrote the "Social Graph API":https://developers.google.com/social-graph/ is the one who told me first about protocols being better than API..; and guess what? The Social Graph API has been deprecated as well. :(_
 

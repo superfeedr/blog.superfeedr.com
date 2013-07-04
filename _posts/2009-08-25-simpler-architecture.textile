@@ -3,13 +3,13 @@ layout: post
 title: A new Architecture
 categories: [api, xmpp, pubsubhubbub, architecture]
 author_name: Julien
-author_uri: http://twitter.com/julien51
+author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 No post for almost 2 weeks : we've been incredibly busy. We had a lot of instability in the past 10 days, in conjonction (but not related) to significant "API changes":/api/pubsubhubbub/xmpp/API-changes/. We'd like to apologize for the few times when you had problems accessing our service. We've done our best to limit these downtime periods and most of the time they only affected subscription/unsubscriptions : *notifications were still going on, as usual*.
 
-In that period, the number of feeds in our system increased by 50%, most of them through the "PubSubHubbub API":http://superfeedr.com/hubbub. This significant growth in the HTTP traffic made light on the weaknesses of our HTTP architecture. The HTTP API had a direct access to the MySQL database. _This was quite bad design from us, as both the XMPP and HTTP were accessing this database and basically doing the same thing : subscribing and unsubscribing users to feeds_. 
+In that period, the number of feeds in our system increased by 50%, most of them through the "PubSubHubbub API":http://superfeedr.com/hubbub. This significant growth in the HTTP traffic made light on the weaknesses of our HTTP architecture. The HTTP API had a direct access to the MySQL database. _This was quite bad design from us, as both the XMPP and HTTP were accessing this database and basically doing the same thing : subscribing and unsubscribing users to feeds_.
 
 As I am a true "DRY":http://bit.ly/3lJOzV lover, I just hated the fact that we had to create and maintain 2 components doing exactly the same thing and I've been looking for ways to change that.
 
@@ -37,12 +37,12 @@ h4. The web app : Strophe
 
 h4. PubSubHubbub : Proxying
 
-"PubSubHubbub":http://code.google.com/p/pubsubhubbub/ is an HTTP API. That was a little trickier, because obviously, running javascript on the server side doesn't make much sense. However, like any HTTP API, we can of course "proxy" it from Rails. That is what we did. 
-Here is what happens when you subscribe or unsubscribe with the PubSubHubbub API : 
+"PubSubHubbub":http://code.google.com/p/pubsubhubbub/ is an HTTP API. That was a little trickier, because obviously, running javascript on the server side doesn't make much sense. However, like any HTTP API, we can of course "proxy" it from Rails. That is what we did.
+Here is what happens when you subscribe or unsubscribe with the PubSubHubbub API :
 # *on the server*, it starts an XMPP Bosh session with your credentials
-# it sends the corresponding XMPP query, 
-# it translate the XMPP response 
-# it returns it to you as an HTTP response. 
+# it sends the corresponding XMPP query,
+# it translate the XMPP response
+# it returns it to you as an HTTP response.
 
 Of course, there is a performance cost to that, but it's not that big, as our HTTP server is "geographically"" very close to the XMPP app. Also, at the first PubSubHubbub query that you make, we store the connection into a "Memcached":http://www.danga.com/memcached/ server, which allows faster processing on the following requests. In terms of results, we can server any PubSubHubbub query in something like 200ms to 500ms. It is slow, but don't forget that we also "check acceptance of the subscription/unsusbcription":http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.1.html#verifysub (by sending an HTTP GET request) on your side, and that accounts for the biggest part of that time, actually.
 
