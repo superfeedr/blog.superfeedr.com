@@ -37,7 +37,7 @@ All in all, these are pretty good results. The 6 **supporters** are also the 6 m
 
 Readers are not the only apps consuming your feeds. Did you know that search engines consume them too? For example, Matt Cutts [said that Google uses PuSH](http://www.youtube.com/watch?v=4LsB19wTt0Q) to detect original content faster.
 
-There are also apps like [IFTTT](https://ifttt.com/dashboard) or [UrbanAirship](http://urbanairship.com/) who support the protocol to propagate updates fatser to their users.
+There are also apps like [IFTTT](https://ifttt.com/dashboard) or [UrbanAirship](http://urbanairship.com/) who support the protocol to propagate updates faster to their users.
 
 It's simpler than most people think and we would be thrilled to [host your hub](http://superfeedr.com/publisher), for free.
 
