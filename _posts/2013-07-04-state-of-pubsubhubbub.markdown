@@ -39,5 +39,5 @@ Readers are not the only apps consuming your feeds. Did you know that search eng
 
 There are also apps like [IFTTT](https://ifttt.com/dashboard) or [UrbanAirship](http://urbanairship.com/) who support the protocol to propagate updates fatser to their users.
 
-It's simpler than most people think and we would be thrilled to [host your hub](http://superfeedr.com/publisher) (for free!)
+It's simpler than most people think and we would be thrilled to [host your hub](http://superfeedr.com/publisher), for free.
 
