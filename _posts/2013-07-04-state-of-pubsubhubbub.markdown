@@ -21,6 +21,7 @@ If you're reader is missing from that list, please let us know in the comments, 
 * [The Old Reader](http://theoldreader.com/): supported
 * [Flipboard](http://flipboard.com/): supported
 * [Commafeed](https://www.commafeed.com): supported
+* [BazQux](https://www.bazqux.com/): supported
 
 ### Not (yet!) support PubSuHubbub
 
