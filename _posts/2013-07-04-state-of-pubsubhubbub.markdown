@@ -11,7 +11,7 @@ Now that [PubSubHubbub evolved toward 0.4](http://blog.superfeedr.com/pubsubhubb
 
 We've picked the most popular web based readers from [this list](http://alternativeto.net/software/google-reader/) and we tested PubSubHubbub support on a feed that supports it, thru the Superfeedr [PubSubHubbub Community hub](http://pubsubhubbub.superfeedr.com/) (open to everyone!).
 
-If you're reader is missing from that list, please let us know in the comments, subscribe to [that feed](http://push-pub.appspot.com/feed) and let us know in the comments when that's done. We'll tell you if your reader supports *PubSubHubbub*.
+If your reader is missing from that list, please let us know in the comments, subscribe to [that feed](http://push-pub.appspot.com/feed) and let us know in the comments when that's done. We'll tell you if your reader supports *PubSubHubbub*.
 
 ### Supporting PubSubHubbub
 
