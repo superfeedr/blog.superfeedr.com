@@ -9,7 +9,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 Let's put our money where our mouth is. Last week, we wrote about the "need to favor protocols over APIs":http://blog.superfeedr.com/protocols-over-api/. This obviously also applies to schemas.
 
-Recently a customer of ours asked about the iTunes Store feeds. As we "normalize":http://superfeedr.com/documentation#schema (mostly to ATOM and a couple other namespaces), some of the data that this user needed was missing, as this data was part of the <code>http://itunes.apple.com/rss</code> namespace.
+Recently a customer of ours asked about the iTunes Store feeds. As we "normalize":http://documentation.superfeedr.com/schema.html (mostly to ATOM and a couple other namespaces), some of the data that this user needed was missing, as this data was part of the <code>http://itunes.apple.com/rss</code> namespace.
 
 We could certainly start supporting this protocol, but we quickly found out that some of the data would be redundant with the ActivityStreams schema that we already implement. This "iTunes feed":http://itunes.apple.com/us/rss/topalbums/genre=1/limit=300/xml, for example is a list of albums, and albums are objects, so this feed could certainly be mapped in some kind of ActivityStreams schema. Obviously it is not 'complete' AS, as there is no activity, but at least one can use the same code to identify the objects, whether they're albums, pictures, or places!
 

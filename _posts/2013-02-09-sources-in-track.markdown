@@ -18,7 +18,7 @@ Luckily, that was easy for us, mostly because [Atom already defines](https://too
 
 We include by default the feed's `id`, `title`, `updated` date, `author`, `information`, `categories` and `links` ... You could then use the link to subscribe to feeds that tend to match a certain keyword.
 
-We have also obviously added that to the [JSON mapping of our schema](http://superfeedr.com/documentation#json_schema) too.
+We have also obviously added that to the [JSON mapping of our schema](http://documentation.superfeedr.com/schema.html#json) too.
 
 Keep the feedback and feature requests coming, we're here to help make the web better! Also, again, get in touch if you'd like to access our track feature for free.
 

@@ -7,7 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-Most you already know about our [track API](http://superfeedr.com/documentation#track). It allows you to subscribe
+Most you already know about our [track API](http://documentation.superfeedr.com/misc.html#track). It allows you to subscribe
 to keywords and keywords combinations, instead of actual feeds. For example, say you want to be notified for any mention of 'Superfeedr'? Just subscribe [to this feed](http://superfeedr.com/track?include=superfeedr).
 
 Today, we're launching **stemming** support. Several of our track customers complained in the past that Superfeedr was not able to send them stories that mention "stories" when they susbcribed to "story". Rather than matching the word identically, we will match any expression that shares the same "stem" or root.

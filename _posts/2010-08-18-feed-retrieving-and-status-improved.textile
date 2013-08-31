@@ -24,14 +24,14 @@ We believe notifications can be richer. Not only we send you any new entry in th
 * *@<entries_count_since_last_maintenance>@* (provided only upon notification) : The number of new entries in the feed since we last ran the maintenance script. This is a very good indicator of the verboseness of a feed. You may want to remove feeds that are too verbose.
 * *@<title>@* (provided only upon notification) : the feed title.
 
-Obviously you can get this data thru both "XMPP":http://superfeedr.com/documentation#xmpp_pubsub and "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub notifications.
+Obviously you can get this data thru both "XMPP":http://documentation.superfeedr.com/subscribers.html#xmpppubsub and "PubSubHubbub":http://documentation.superfeedr.com/subscribers.html#webhooks notifications.
 
 h3. Retrieving a feed status
 
 If at any point, you want to get this information, it is also possible and quite simple, but note that some data may not be up to date. However, don't abuse it, as we will take one credit away from your account for each request: we don't want you to poll us!
 
-* *PubSubHubbub* : use @hub.mode=retrieve@ and a @GET@ to the hub. See more details in the "PubSubHubbub documentation":http://superfeedr.com/documentation#pubsubhubbub_retrieve.
-* *XMPP PubSubHubbub* : use the *items* command per the XEP-060 spec. Check our "XMPP doc":http://superfeedr.com/documentation#xmpp_retrieve for more info.
+* *PubSubHubbub* : use @hub.mode=retrieve@ and a @GET@ to the hub. See more details in the "PubSubHubbub documentation":http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithpubsubhubbub.
+* *XMPP PubSubHubbub* : use the *items* command per the XEP-060 spec. Check our "XMPP doc":http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithxmpp for more info.
 
 Like always, feedback and comments are much appreciated!
 

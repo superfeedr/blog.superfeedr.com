@@ -11,7 +11,7 @@ This is the second week ("first week is here":http://blog.superfeedr.com/feature
 
 h3. JSON when retrieving a feed status
 
-This was a request by the folks at "SocialFlow":http://www.socialflow.com/. Nothing fancy : you can "subscribe to feeds and get JSON":http://superfeedr.com/documentation#json_schema pushed to you, so why wouldn't you be able to "retrieve a feed's":http://superfeedr.com/documentation#pubsubhubbub_retrieve status on get JSON? Since we didn't have a good answer to this, we implemented JSON feed retrieval :) Just submit an <code>Accept</code> header with <code>application/json</code>.
+This was a request by the folks at "SocialFlow":http://www.socialflow.com/. Nothing fancy : you can "subscribe to feeds and get JSON":http://documentation.superfeedr.com/schema.html#json pushed to you, so why wouldn't you be able to "retrieve a feed's":http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithpubsubhubbub status on get JSON? Since we didn't have a good answer to this, we implemented JSON feed retrieval :) Just submit an <code>Accept</code> header with <code>application/json</code>.
 
 h3. Fixed SSL certificates
 

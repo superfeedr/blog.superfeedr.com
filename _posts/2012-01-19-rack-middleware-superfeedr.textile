@@ -9,7 +9,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 I am a bit ashamed that this comes so late... but it's always better late than never: we have a "rack middleware for Superfeedr":http://rubygems.org/gems/rack-superfeedr.
 
-What it does is simple: *subscribe*, *unsubscribe* and help you *handle notifications* by hiding all the "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub -complexity- magic. Since it's Rack, it should work with any Ruby web framework that supports Rack, including Rails and Sinatra.
+What it does is simple: *subscribe*, *unsubscribe* and help you *handle notifications* by hiding all the "PubSubHubbub":http://documentation.superfeedr.com/subscribers.html#webhooks -complexity- magic. Since it's Rack, it should work with any Ruby web framework that supports Rack, including Rails and Sinatra.
 
 <script src="https://gist.github.com/1644799.js?file=superfeedr-sinatra.rb"></script>
 

@@ -20,8 +20,8 @@ The first step is to _add_ the Superfeedr addon to your existing application. Li
 
 The next step is the most important step: picking up the right API to use:
 
-* The "XMPP PubSub":http://superfeedr.com/documentation#xmpp_pubsub may require you to run an extra Dyno (process), and XMPP may not have good libraries for your language of choice.
-* The "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub API uses webhooks, which means that your development machine will need to be 'accessible' from outside the firewall.
+* The "XMPP PubSub":http://documentation.superfeedr.com/subscribers.html#xmpppubsub may require you to run an extra Dyno (process), and XMPP may not have good libraries for your language of choice.
+* The "PubSubHubbub":http://documentation.superfeedr.com/subscribers.html#webhooks API uses webhooks, which means that your development machine will need to be 'accessible' from outside the firewall.
 
 Then, you can start implementing! When making calls to Superfeedr, make sure you use <code>SUPERFEEDR_LOGIN</code> and <code>SUPERFEEDR_PASSWORD</code> as your credentials. (you can also set these environment variables to your local development machine)
 

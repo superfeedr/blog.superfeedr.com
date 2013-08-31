@@ -8,7 +8,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 <blockquote>
-  <p>Our Track API evolved over time... Please make sure you refer to the <a href="http://superfeedr.com/documentation#track">track documentation</a> for the current status</p>
+  <p>Our Track API evolved over time... Please make sure you refer to the <a href="http://documentation.superfeedr.com/misc.html#track">track documentation</a> for the current status</p>
 </blockquote>
 
 
@@ -26,5 +26,5 @@ h3. Scoping
 
 We love geo stuff and can't wait to see more feeds actually geo-tagged, so we're paving the way : you can already start to geo-filter searches : want to know about wildfires around your place? Just give us a latitude and longitude, as well as a radius, and we'll be happy to filter out anything that's outside of this. The radius is in kilometers (metric system FTW!). Check "this example":http://superfeedr.com/track?include=mushrooms&lat=37.7718&lon=-122.445717&within=5.
 
-Of course, there is more to be done, but check "our documentation":http://superfeedr.com/documentation#track if you'd like to start tracking some data. We're working on adding more stuff... and if you're a crazy *XPath expert* and know how to build fast matching, I want to chat with you, because Superfeedr's got work for you too.
+Of course, there is more to be done, but check "our documentation":http://documentation.superfeedr.com/misc.html#track if you'd like to start tracking some data. We're working on adding more stuff... and if you're a crazy *XPath expert* and know how to build fast matching, I want to chat with you, because Superfeedr's got work for you too.
 

@@ -15,7 +15,7 @@ h3. How-to
 
 "Drupal":http://drupal.org/ doesn't seem to have a PubSubHubbub subscriber library (yet?[1]). However it has an XML-RPC interface. The goal was then to translate PubSubHubbub notifications into XML-RPC. For that I created a very simple "Google App Engine":http://code.google.com/appengine/ application. It basically handles notifications and turn them into XML-RPC calls. _20 lines of code._
 
-To make it a little nicer, I *extracted* a few information from the "standard entry schema":http://superfeedr.com/documentation#entry_schema : author name and link, as well as categories. With the *categories*, I did some filtering to make sure we only publish stories that either mention LeWeb or explictly declare that as a tag.
+To make it a little nicer, I *extracted* a few information from the "standard entry schema":http://documentation.superfeedr.com/schema.html#entry : author name and link, as well as categories. With the *categories*, I did some filtering to make sure we only publish stories that either mention LeWeb or explictly declare that as a tag.
 
 h3. Result
 

@@ -9,7 +9,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 !{float:left; padding:10px}http://github.com/images/error/angry_unicorn.png!
 
-In the past few weeks, our web server have really been pushed to limits that we weren't expecting to reach so quickly. We're now receiving between *150 and 300 requests* per second. Some of them are "PubSubHubbub subscriptions":http://superfeedr.com/documentation#pubsubhubbub, but the bulk of it is pings that we receive for the various hubs that we host.
+In the past few weeks, our web server have really been pushed to limits that we weren't expecting to reach so quickly. We're now receiving between *150 and 300 requests* per second. Some of them are "PubSubHubbub subscriptions":http://documentation.superfeedr.com/subscribers.html#webhooks, but the bulk of it is pings that we receive for the various hubs that we host.
 
 This brought a whole lot of issues in the past weeks. Issues that we decided to address by *splitting the web server and the app server*. Up until now, we were using "Passenger":http://www.modrails.com/ and "Nginx":http://nginx.org/. We now use the new cool kid in the field: "Unicorn":http://unicorn.bogomips.org/ to serve the app.
 

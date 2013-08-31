@@ -17,7 +17,7 @@ We tried to keep this JSON format consistent with the JSON version of ActivitySt
 
 <script src="https://gist.github.com/667892.js?file=superfeedr.json"></script>
 
-Now, as everybody knows XMPP relies on XML, and it just felt really weird to send JSON payloads inside XML to people because they would struggle parsing XML, so it's currently limited to the "PubSubHubbub API":http://superfeedr.com/documentation#pubsubhubbub. Rather than extending PubSubHubbub with another extra param, we re-used "HTTP's Accept Header":http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. When you subscribe, just add a HTTP header to your subscription with the JSON mime-type : <code>Accept: application/json</code>. We will then push you a JSON version of the feeds.
+Now, as everybody knows XMPP relies on XML, and it just felt really weird to send JSON payloads inside XML to people because they would struggle parsing XML, so it's currently limited to the "PubSubHubbub API":http://documentation.superfeedr.com/subscribers.html#webhooks. Rather than extending PubSubHubbub with another extra param, we re-used "HTTP's Accept Header":http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. When you subscribe, just add a HTTP header to your subscription with the JSON mime-type : <code>Accept: application/json</code>. We will then push you a JSON version of the feeds.
 
 This feature is still mostly experimental, and we're expecting a lot of feedback and comments to improve it in the coming weeks.
 

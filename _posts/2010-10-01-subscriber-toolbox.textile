@@ -13,7 +13,7 @@ Like always, please remember *that all these tools actually use our API and only
 
 h3. A PubSubHubbub Console
 
-With this tool, *you can easily build and debug your callback url*. It lets you choose a feed url, and point to your callback to perform subscriptions and unsubscriptions, and shows the result in details, so you can fix your callback URL accordingly. It should be your first stop if you're building a "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub based application.
+With this tool, *you can easily build and debug your callback url*. It lets you choose a feed url, and point to your callback to perform subscriptions and unsubscriptions, and shows the result in details, so you can fix your callback URL accordingly. It should be your first stop if you're building a "PubSubHubbub":http://documentation.superfeedr.com/subscribers.html#webhooks based application.
 It can also be *used to retrieve the status of a given subscription, as PubSubHubbub is idem-potent*. Which means that if you want to know whether you're subscribed to a feed you just have to actually make a subscription request. If it succeeds, it means that you're subscribed. If it fails, it means that you aren't!
 
 h3. A Feed Status Retrieval tool

@@ -61,7 +61,7 @@ Interestingly enough _both Twitter and Facebook hide behind their APIs_. Having 
 
 *If we want to build the realtime web, like we built emails or even HTML sites, we need a protocol. We need a way for services to interact safely with one another as peers, not as client and servers.*
 
-Luckily we have this protocol. We even have several (that's the beauty of it : people fight for the shared wealth!). At Superfeedr, we placed our bets on "PubSubHubbub":http://superfeedr.com/documentation#pubsubhubbub and "XMPP PubSub":http://superfeedr.com/documentation#xmpp_pubsub.
+Luckily we have this protocol. We even have several (that's the beauty of it : people fight for the shared wealth!). At Superfeedr, we placed our bets on "PubSubHubbub":http://documentation.superfeedr.com/subscribers.html#webhooks and "XMPP PubSub":http://documentation.superfeedr.com/subscribers.html#xmpppubsub.
 
 Most of the smaller (but much numerous) _publishers have chosen the protocol approach_. Whether it's because they genuinely believe that it's the good approach, or because they're actually too small to force their API down other people's throats is irrelevant. What matters is that now, *all the main blogging platforms : Wordpress, SixApart, Blogger, Tumblr, Posterous are using the same protocol : PubSubHubbub*. Some other smaller social networks, like Cliqset or Status.net and Gowalla are using it as well. Even a few newspapers!
 

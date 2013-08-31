@@ -71,7 +71,7 @@ Monitoring is a key aspect to running any kind of server. Monitoring our Riak cl
 
 ## Next
 
-We are now storing more and more data and we should have backed up as much as we can before July 1st. In the next couple days we will work on our APIs for this data store. It's currently accessible thru our <code>retrieve</code> feature (both [XMPP](http://superfeedr.com/documentation#xmpp_retrieve) and [PubSubHubbub](http://superfeedr.com/documentation#pubsubhubbub_retrieve)), as well as our [Google Reader API](https://github.com/superfeedr/documentation/tree/master/google-reader-api). We will also support the [Open Reader API](http://rss-sync.github.io/Open-Reader-API/resources/). Please, get in touch if you'd like to test them.
+We are now storing more and more data and we should have backed up as much as we can before July 1st. In the next couple days we will work on our APIs for this data store. It's currently accessible thru our <code>retrieve</code> feature (both [XMPP](http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithxmpp) and [PubSubHubbub](http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithpubsubhubbub)), as well as our [Google Reader API](https://github.com/superfeedr/documentation/tree/master/google-reader-api). We will also support the [Open Reader API](http://rss-sync.github.io/Open-Reader-API/resources/). Please, get in touch if you'd like to test them.
 
 
 

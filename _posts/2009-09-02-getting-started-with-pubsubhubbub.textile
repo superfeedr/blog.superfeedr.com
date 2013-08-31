@@ -11,7 +11,7 @@ To my knowledge, Superfeedr is the only non-google PubSubHubbub out there. Let's
 
 h3. Why using PubSubHubbub?
 
-Superfeedr "provides 2 API":http://superfeedr.com/documentation. Here are some reasons why you'd be better off *using the PubSubHubbub API*:
+Superfeedr "provides 2 API":http://documentation.superfeedr.com/. Here are some reasons why you'd be better off *using the PubSubHubbub API*:
 * You don't want to run a background job
 * You have an existing Web application
 * You already use PubSubHubbub with another hub.
@@ -63,4 +63,4 @@ The great advantage about using a standard protocol, is that you can re-use any 
 
 You can also find several "PubSubHubbub repositories on github":http://github.com/search?langOverride=&q=pubsubhubbub, some of them claim to implement the subscriber part of the protocol.
 
-Finally, please take the time to read our "PubSubHubbub documentation":http://superfeedr.com/documentation#pubsubhubbub as this blog post is just a "getting started" guide.
+Finally, please take the time to read our "PubSubHubbub documentation":http://documentation.superfeedr.com/subscribers.html#webhooks as this blog post is just a "getting started" guide.

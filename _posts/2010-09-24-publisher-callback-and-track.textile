@@ -8,7 +8,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 <blockquote>
-  <p>Our Track API evolved over time... Please make sure you refer to the <a href="http://superfeedr.com/documentation#track">track documentation</a> for the current status</p>
+  <p>Our Track API evolved over time... Please make sure you refer to the <a href="http://documentation.superfeedr.com/misc.html#track">track documentation</a> for the current status</p>
 </blockquote>
 
 Superfeedr's hosted hubs come up with a lot of nifty things. We recently introduced a few more : track feeds, fat pings and publisher callbacks.

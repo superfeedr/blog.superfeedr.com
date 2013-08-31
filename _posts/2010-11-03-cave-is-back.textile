@@ -26,13 +26,13 @@ The server should then reply with something like this :
 <script src="https://gist.github.com/660917.js?file=retrieve_response.xml"></script>
 
 
-Check the "XMPP doc":http://superfeedr.com/documentation#xmpp_retrieve for more details.
+Check the "XMPP doc":http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithxmpp for more details.
 
 h4. With PubSubHubbub
 
 Just send a <code>GET</code> request to the hub <code>http://superfeedr.com/hubbub</code>, with <code>hub.mode=retrieve</code> and <code>hub.topic</code> being the url of the feed you'd like to retrieve. Of course, you will need your superfeedr credentials.
 
-Check the "PubSubHubbub doc":http://superfeedr.com/documentation#pubsubhubbub_retrieve for more details.
+Check the "PubSubHubbub doc":http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithpubsubhubbub for more details.
 
 !{width:300px;float:right;}http://www.uncrate.com/men/images/2009/02/miz-man-cave.jpg!
 

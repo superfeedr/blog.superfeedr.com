@@ -15,7 +15,7 @@ When we started Superfeedr, "Josh":http://twitter.com/joshfraser helped us a lot
 
 The _chatter_ is a stream that contains any message that was posted by people at a given conference : they write on their _blogs_, they _tweet_, they post to _Youtube_, _Flickr_... it all ends up there. It's like *Twitter Lists on steroids*.
 
-EventVue uses "PHP":http://php.net/index.php and the "PubSubHubbub API":http://superfeedr.com/documentation#pubsubhubbub. I'll just let Josh saying what he likes about Superfeedr :
+EventVue uses "PHP":http://php.net/index.php and the "PubSubHubbub API":http://documentation.superfeedr.com/subscribers.html#webhooks. I'll just let Josh saying what he likes about Superfeedr :
 
 bq. _We're really grateful to Superfeedr for the service they provide. Polling thousands of feeds was beginning to be a huge distraction from working on our core product. Superfeedr allowed us to stay focused on the features that matter while still being confident that our feeds will arrive in a timely and reliable manner._
 
