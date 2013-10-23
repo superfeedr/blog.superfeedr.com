@@ -7,7 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-bq. This article has been cross posted to other platforms, including [Svbtle](http://julien.svbtle.com/logged-out-users-follow-buttons).
+> This article has been cross posted to other platforms, including [Svbtle](http://julien.svbtle.com/logged-out-users-follow-buttons).
 
 Here is a new episode of my quest to understand and improve the [follow button pattern](http://julien.svbtle.com/follow-buttons-everywhere) on the web. 
 
