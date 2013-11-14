@@ -11,7 +11,7 @@ It's this time again : the time for the _very_ controversial numbers about realt
 
 Since we have so much debate in the past about the methodology:
 
-* Superfeedr has many feeds in management. Some of them are for the "hubs we host":http://superfeedr.com/hubbub. *We don't count the feeds from the hubs we host*, because they would obviously inflate the PubSubHubbub number a lot.
+* Superfeedr has many feeds in management. Some of them are for the "hubs we host":http://push.superfeedr.com/. *We don't count the feeds from the hubs we host*, because they would obviously inflate the PubSubHubbub number a lot.
 * For each feed, since we try to avoid polling it too, we use any available technique to get in realtime, se we're able to tell whether it's PubSubHubbub, RSSCloud, or SUP. We just counted these.
 * Some feeds implemented 2 or more protocols (the best example would be wordpress.com blog that have a feedburner feed), we counted them in both categories.
 

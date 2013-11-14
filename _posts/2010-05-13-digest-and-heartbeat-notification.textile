@@ -51,7 +51,7 @@ The notification will just have a digest attribute within the @feed@ node of the
 
 h3. Credits
 
-This extension works for both the "public hosted hubs":http://superfeedr.com/publisher and the default "pubsubhubbub hub":http://superfeedr.com/hubbub (works with any feed).
+This extension works for both the "public hosted hubs":http://superfeedr.com/publisher and the default "pubsubhubbub hub":http://push.superfeedr.com/ (works with any feed).
 
 Superfeedr is still in Beta, but when we'll get out of it, we will start counting credits for each notification we send (not for the hosted hubs). *The digest notification will count as 1 credit too*.
 

@@ -28,7 +28,7 @@ The PubSubHubbub API will allow you to receive notifications from us when we ide
 h4. Subscription
 
 The subscription process is not obvious, because the hub needs to verify your intent. Here is how it works.
-Our hub is located at "http://superfeedr.com/hubbub":http://superfeedr.com/hubbub
+Our hub is located at "http://push.superfeedr.com/":http://push.superfeedr.com/
 # Send an *authenticated* (with your superfeedr login/password) *POST request* to our URL with the following parameters :
     - _hub.mode_ = subscribe|unsubscribe
     - _hub.verify_ = sync

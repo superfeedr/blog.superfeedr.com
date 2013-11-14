@@ -9,7 +9,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 No post for almost 2 weeks : we've been incredibly busy. We had a lot of instability in the past 10 days, in conjonction (but not related) to significant "API changes":/api/pubsubhubbub/xmpp/API-changes/. We'd like to apologize for the few times when you had problems accessing our service. We've done our best to limit these downtime periods and most of the time they only affected subscription/unsubscriptions : *notifications were still going on, as usual*.
 
-In that period, the number of feeds in our system increased by 50%, most of them through the "PubSubHubbub API":http://superfeedr.com/hubbub. This significant growth in the HTTP traffic made light on the weaknesses of our HTTP architecture. The HTTP API had a direct access to the MySQL database. _This was quite bad design from us, as both the XMPP and HTTP were accessing this database and basically doing the same thing : subscribing and unsubscribing users to feeds_.
+In that period, the number of feeds in our system increased by 50%, most of them through the "PubSubHubbub API":http://push.superfeedr.com/. This significant growth in the HTTP traffic made light on the weaknesses of our HTTP architecture. The HTTP API had a direct access to the MySQL database. _This was quite bad design from us, as both the XMPP and HTTP were accessing this database and basically doing the same thing : subscribing and unsubscribing users to feeds_.
 
 As I am a true "DRY":http://bit.ly/3lJOzV lover, I just hated the fact that we had to create and maintain 2 components doing exactly the same thing and I've been looking for ways to change that.
 

@@ -17,7 +17,7 @@ In the past few weeks, we started to see a ton of subscriptions from Google to a
 
 h3. Huh, and the rest of us?
 
-It simply means that if you have a "Posterous":http://posterous.com/ Blog, a "Tumblr":http://www.tumblr.com/ Blog, or if you have a feed for which "superfeedr host the hub":http://superfeedr.com/hubbub, you can (and should!) add that to your "Google Profile":http://www.google.com/profiles so that the next story you publish is available into Buzz almost instantly and your friends can see, comment and like it :)
+It simply means that if you have a "Posterous":http://posterous.com/ Blog, a "Tumblr":http://www.tumblr.com/ Blog, or if you have a feed for which "superfeedr host the hub":http://push.superfeedr.com/, you can (and should!) add that to your "Google Profile":http://www.google.com/profiles so that the next story you publish is available into Buzz almost instantly and your friends can see, comment and like it :)
 
 Obviously, PubSubHubbub (between services) and XMPP (behind the firewall) will be the base layers for the realtime and social web. Whatever your app is, you need to make it realtime by "supporting PubSubHubbub":http://superfeedr.com/publisher in your feeds!
 

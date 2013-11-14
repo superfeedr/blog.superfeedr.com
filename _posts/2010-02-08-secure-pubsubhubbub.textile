@@ -11,7 +11,7 @@ One of the great advantages of our "XMPP API":http://documentation.superfeedr.co
 
 The "protocol":http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.2.html defines a strategy for that and we implement it at Superfeedr. Here is how it works :
 
-1. The user subscribes to the hub url and provides a @hub.secret@ value. To make that secure, the subscriber should use the http*s* url to the hub. (All "our hubs":http://superfeedr.com/hubbub have an http and https url).
+1. The user subscribes to the hub url and provides a @hub.secret@ value. To make that secure, the subscriber should use the http*s* url to the hub. (All "our hubs":http://push.superfeedr.com/ have an http and https url).
 
 2. Upon notification, the hub will *compute an HMAC signature* with the supplied @hub.secret@, as well as will the body of the notification, and will include this signature in the headers of its notification.
 

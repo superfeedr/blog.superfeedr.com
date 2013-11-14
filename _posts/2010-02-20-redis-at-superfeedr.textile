@@ -17,7 +17,7 @@ h2. How it is/was
 
 Let me start first to say that _we're not dumping MySQL + Memcache altogether_. We identified one type of data for which it wasn't appropriate anymore : the feed entries.
 
-One of the key things "the hub":http://superfeedr.com/hubbub does is diff-ing : identify new entries from old entries in the feed.
+One of the key things "the hub":http://push.superfeedr.com/ does is diff-ing : identify new entries from old entries in the feed.
 
 We do this by storing some kind of data when for each entry, in each feed. We use a _hash of the entry id_ in our schema. The problem is that a feed can have several dozen of entries, and we obviously need to keep track of them all, plus some older ones, because you don't want entries to "re-appear" in a feed (if a more recent entry has been deleted).  When you have say *1M feeds, and you need to store 50 entries per feed on average, that's 50M entries*. And every time we fetched a feed, we need to compare the existing entries to see if we've seen them already[1]. And we fetched all our feeds _at most_ every 15 minutes : that's a lot of queries.
 

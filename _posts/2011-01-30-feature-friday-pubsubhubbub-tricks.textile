@@ -11,7 +11,7 @@ It's a new year and we decided to take even more feedback from our users to make
 
 h3. Identify callback and Feed upon notifications
 
-The "PubSubHubbub":http://superfeedr.com/hubbub mechanism for unsubscribe requires that you use _the exact feed and callback urls_ that you used for subscriptions. For a lot of reasons, you may not have kept the exact pair that you used. Sometimes you normalized the URIs, sometimes you added the port... etc. A user requested that, with our PubSubHubbub API, when we notify you, we indicate the exact pair.
+The "PubSubHubbub":http://push.superfeedr.com/ mechanism for unsubscribe requires that you use _the exact feed and callback urls_ that you used for subscriptions. For a lot of reasons, you may not have kept the exact pair that you used. Sometimes you normalized the URIs, sometimes you added the port... etc. A user requested that, with our PubSubHubbub API, when we notify you, we indicate the exact pair.
 
 We *added two HTTP headers to our PubSubHubbub notifications* : <code>X-PubSubHubbub-Callback</code> and <code>X-PubSubHubbub-Topic</code>. They're pretty self-explanatory! Our special headers also include <code>X-Superfeedr-Credits</code> and <code>X-Superfeedr-PubSubHubbub-Expire</code> that you can use on your end.
 

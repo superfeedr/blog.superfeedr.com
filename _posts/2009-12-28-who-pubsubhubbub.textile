@@ -32,7 +32,7 @@ In no particular order, here are the main services for which we have callbacks :
 * "Lazyfeed":http://www.lazyfeed.com/
 * "Superfeedr":http://superfeedr.com/ (obviously :))
 
-We have *about 200 different domains with registered callbacks*, but we couldn't really identify the service to which they relate. Also, these numbers do not take the subscriptions to "Superfeedr's hub":http://superfeedr.com/hubbub into account. Just the hubs we're hosting.
+We have *about 200 different domains with registered callbacks*, but we couldn't really identify the service to which they relate. Also, these numbers do not take the subscriptions to "Superfeedr's hub":http://push.superfeedr.com/into account. Just the hubs we're hosting.
 
 There may be a few other (please tell us in the comments), but we can't confirm that they subscribed to any of the hubs we host though.
 

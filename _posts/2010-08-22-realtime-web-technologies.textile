@@ -52,7 +52,7 @@ According to me, this is the _highest mountain to climb_ in the realtime web sec
 
 Tackling the *Server-to-Server* issue involves dealing with the _transportation_ problem and the _data format_ problem. Not only do service A and B need to emit and receive the same kind of signal, but they also need to speak the same language.
 
-For the transportation, there are very few protocols. XMPP and "PubSubHubbub":http://superfeedr.com/hubbub are the ones Superfeedr chose, because *they're both open*, which means that anyone else can implement them and we should be able to work together in a loosely coupled way (without business agreement).
+For the transportation, there are very few protocols. XMPP and "PubSubHubbub":http://push.superfeedr.com/ are the ones Superfeedr chose, because *they're both open*, which means that anyone else can implement them and we should be able to work together in a loosely coupled way (without business agreement).
 
 For the data, we chose *RSS and Atom feeds (XML)*, because almost *everybody out there has them*. Of course, some people also have their own JSON based APIs, but who said we should only speak one language?
 

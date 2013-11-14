@@ -30,7 +30,7 @@ Check the "XMPP doc":http://documentation.superfeedr.com/subscribers.html#retrie
 
 h4. With PubSubHubbub
 
-Just send a <code>GET</code> request to the hub <code>http://superfeedr.com/hubbub</code>, with <code>hub.mode=retrieve</code> and <code>hub.topic</code> being the url of the feed you'd like to retrieve. Of course, you will need your superfeedr credentials.
+Just send a <code>GET</code> request to the hub <code>http://push.superfeedr.com/</code>, with <code>hub.mode=retrieve</code> and <code>hub.topic</code> being the url of the feed you'd like to retrieve. Of course, you will need your superfeedr credentials.
 
 Check the "PubSubHubbub doc":http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithpubsubhubbub for more details.
 
