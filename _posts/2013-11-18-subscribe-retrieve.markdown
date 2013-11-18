@@ -18,7 +18,8 @@ One of the goals of our most recent deployment was to bring the users closer to 
 
 It's as easy as adding a simple <code>retrieve</code> parameter to your POST request. 
 
-<script src="https://gist.github.com/julien51/7531368.js"></script>
+<script src="https://gist.github.com/julien51/7531368.js">
+</script>
 
 Of course, the data will be returned as JSON if you've added the <code>format=json</code> or the <code>Accept: application/json</code>
 
