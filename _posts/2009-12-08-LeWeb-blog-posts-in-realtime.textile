@@ -5,6 +5,7 @@ categories: [Real-time, leweb, use-case]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /OSS/collectd/infrastructure/open-source/performance-monitoring-with-collectd/
 ---
 
 !{float:left;margin:0px 10px 10px 0px;}http://www.leweb.net/sites/all/themes/leweb-leweb/logo.png!When we've been selected to be part of "LeWeb's competition":http://www.leweb.net/ this year, we thought it was a great opportunity for us to *demo Superfeedr with a simple use case* : _how can we agregate all the content published by the Official Bloggers in real-time on the main LeWeb's site?_

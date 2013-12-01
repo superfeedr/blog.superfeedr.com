@@ -5,6 +5,7 @@ categories: [api, xmpp, pubsubhubbub]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /API/PubSubHubbub/secure/secure-pubsubhubbub/
 ---
 
 With more and more users, we get more and more feedback and we're slowly but surely improving our service to take into account all that feedback. As a consequence, every once in a while we need to push a new codebase with slight changes in the API. Hopefully these changes should be "backward compatible":http://en.wikipedia.org/wiki/Backward_compatibility, which means *they shouldn't affect any of the existing applications*.

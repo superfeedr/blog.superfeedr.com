@@ -5,6 +5,7 @@ categories: [Real-time, statistics, market]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /Extension/PubSubHubbub/Spec/publisher-callback-extension/
 ---
 
 *Real-time is the new hotness*. At Superfeedr, we're lucky enough to have many feeds we're fetching, some of them being "PubSubHubbub":http://code.google.com/p/pubsubhubbub/ enabled, some of them being "RSSCloud":http://rsscloud.org/ and other being none of that. *We're in a good position to assess how many feeds are using which technology*. Being french, I appreciate showing you this -pie- camembert chart, which shows how we get the data for the feeds in our database.

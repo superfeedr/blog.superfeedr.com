@@ -5,6 +5,7 @@ categories: [OSS, open-source, infrastructure, collectd]
 author_name: Astro
 author_uri: http://identi.ca/astro
 author_email_md5: 0120a25badc6b1e50f6890527dca7042
+alias: /OSS/collectd/infrastructure/open-source/performance-monitoring-with-collectd/
 ---
 
 One challenge we face when working in the Cloud is knowing *when to "scale up":http://blog.superfeedr.com/chef/configuration/deployment/infrastructure/scale-with-chef/.* That means we need some obvious figures telling us we need more resources.
@@ -23,4 +24,4 @@ To make use of the collected data you've got the "rrdtool plugin":http://collect
 
 Because we do not only want to watch host resources but also the quality of our processes we have developed the "ruby-collectd":http://github.com/astro/ruby-collectd/ library. Basically, you just define a collectd server on application startup and sprinkle your code with statements like @Stats.counter(:job_done).count! 1@
 
-ruby-collectd does not require collectd, so you don't need to install it locally just for watching your own application. 
+ruby-collectd does not require collectd, so you don't need to install it locally just for watching your own application.

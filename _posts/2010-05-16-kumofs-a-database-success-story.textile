@@ -5,6 +5,7 @@ categories: [OSS, open-source, Database, NoSQL]
 author_name: Astro
 author_uri: http://spaceboyz.net/~astro/
 author_email_md5: 0120a25badc6b1e50f6890527dca7042
+alias: /API/PubSubHubbub/secure/secure-pubsubhubbub/
 ---
 
 "Superfeedr is growing":http://blog.superfeedr.com/push/twitter/number-of-the-day/, and we want to *add value for our clients*. "Our newest feature":http://blog.superfeedr.com/digest/heartbeat/pubsub/pubsubhubbub/digest-and-heartbeat-notification/ requires us to store a lot of data, so we went out to look for appropriate solutions in the NoSQL ecosystem. The first decision was "Riak":http://riak.basho.com/, featuring persistent storage on disk and a very tunable clustering layer.

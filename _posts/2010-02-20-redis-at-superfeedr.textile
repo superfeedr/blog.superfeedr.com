@@ -5,6 +5,7 @@ categories: [redis, mysql, memcache, datastore, performance]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /datastore/memcache/mysql/performance/redis/redis-at-superfeedr/
 ---
 
 A lot of the problems we had to tackle in the last months were directly related to the _data stores_ we used, as well as the _schema_ of the objects we stored.
