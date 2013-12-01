@@ -7,7 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-Exactly like "last month":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/, here is a _list of domains for which we have callback urls_ : *they implemented PubSubHubbub*!
+Exactly like "last month":/pubsubhubbub/feeds/real-time/stats/who-implemented-pubsubhubbub/, here is a _list of domains for which we have callback urls_ : *they implemented PubSubHubbub*!
 
 Let's start with the new kids in the room, who were not in the list last month, again, in absolutely no particular order:
 - "netvibes":http://www.netvibes.com/
@@ -23,6 +23,6 @@ Let's start with the new kids in the room, who were not in the list last month, 
 - "nababu.org":http://nababu.org
 - "pitchfork.com":http://pitchfork.com/
 
-Obviously, all the "big guys from last time":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/ are still here :)
+Obviously, all the "big guys from last time":/pubsubhubbub/feeds/real-time/stats/who-implemented-pubsubhubbub are still here :)
 
 In total, we now have 177 different domains with callback urls. This is very exciting!

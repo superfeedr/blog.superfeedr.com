@@ -105,7 +105,7 @@ For example, [this recipe](https://ifttt.com/recipes/83992) will push the conten
  
 #### Notifixlite
 
-[Notifixlite](notifixlite.appspot.com) is a simple RSS to IM service that [we](http://superfeedr.com/) created. Just subscribe to feeds from your chat client nad receive notifications when they update.
+[Notifixlite](http://notifixlite.appspot.com) is a simple RSS to IM service that [we](http://superfeedr.com/) created. Just subscribe to feeds from your chat client nad receive notifications when they update.
 
 
 ### Will Google be back?

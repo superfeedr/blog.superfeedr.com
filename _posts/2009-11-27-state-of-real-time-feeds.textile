@@ -7,7 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-As "promised last month":http://blog.superfeedr.com/Real-time/market/statistics/state-of-realtime-feeds/, here is a small update on the *real-time feeds market*.
+As "promised last month":/real-time/statistics/market/state-of-real-time-feeds/, here is a small update on the *real-time feeds market*.
 
 First, I'd like to insist on the method we use to collect these statistics. For each feed, we always _try to determine what is the best way_ to get its content and push it to our users in the _timeliest manner_.
 If you were building a similar infrastructure to ours, assuming you'd support "PubSubHubbub":http://push.superfeedr.com/, "RSSCloud":http://blog.superfeedr.com/rsscloud/api/pubsubhubbub/RSSCloud/ and "SUP":http://blog.superfeedr.com/sup/pubsubhubbub/xmpp/real-time/SUP-over-pubsubhubb-and-xmpp/ [1], here is the breakdown that you would get.

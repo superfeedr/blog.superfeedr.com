@@ -5,6 +5,7 @@ categories: [Entrepreneurship]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: [/Entrepreneurship/the-non-decision-makers/]
 ---
 
 Superfeedr is a very exciting venture. Yet, I am *incredibly frustrated when I am waiting for someone else to make a decision*, answer an email or write some code. You know who they are : _these partners, customers, providers, lawyers, venture capitalists_, etc... all these people you deal with and who take forever to make a decision. I claim *they are the worst ennemies for entrepreneurs*.

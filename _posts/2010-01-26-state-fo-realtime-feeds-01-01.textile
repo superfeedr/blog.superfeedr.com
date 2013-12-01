@@ -51,10 +51,10 @@ A few notes on the result set before. We have *multiplied by 6 the number of fee
 !{float:left; display:block;}/images/push-rsscloud-sup-01-10.png!
 
 
-You can immediately see that the *proportion of feeds we're polling increased* compared to the last measure. This is the _consequence of less PubSubHubbub feeds_. Back in november, "we counted the PubSubHubbub feeds":http://blog.superfeedr.com/Real-time/market/statistics/state-of-real-time-feeds/ we were hosting. *That was a mistake*, we changed that this time and _will not count them in the future either_. The RSSCloud proportion grew in comparison, since PubSubHubbub numbers were inflated.
+You can immediately see that the *proportion of feeds we're polling increased* compared to the last measure. This is the _consequence of less PubSubHubbub feeds_. Back in november, "we counted the PubSubHubbub feeds":/real-time/statistics/market/state-of-real-time-feeds/ we were hosting. *That was a mistake*, we changed that this time and _will not count them in the future either_. The RSSCloud proportion grew in comparison, since PubSubHubbub numbers were inflated.
 
 We are now *continuously measuring* the proportions, which should make these posts way more regular. I look forward to the next month!
 
-In conclusion, I'd like to remind you that "we implemented many other ways":http://superfeedr.com/technology of getting feed updates, including some specific APIs, "XML-RPC Ping":http://blog.superfeedr.com/Ping/PubSubHubbub/Real-time/XML-RPC/XMPP/XMLRPC-Ping-to-PubSubHubbub/ and other techniques. If you use Superfeedr, you will benefit from these and get feeds in realtime!
+In conclusion, I'd like to remind you that "we implemented many other ways":http://superfeedr.com/technology of getting feed updates, including some specific APIs, "XML-RPC Ping":/xml-rpc/ping/pubsubhubbub/xmpp/real-time/XMLRPC-Ping-to-PubSubHubbub/ and other techniques. If you use Superfeedr, you will benefit from these and get feeds in realtime!
 
 fn1. At that time we had not implemented SUP.

@@ -5,6 +5,7 @@ categories: [PubSubHubbub, Twitter, API, feeds, streaming]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /API/PubSubHubbub/Twitter/feeds/streaming/a-hub-for-twitter
 ---
 
 If you claim to be some kind of social app but don't use *PubSubHubbub*, I think you're missing out the opportunity to support a *de-facto standard for service to service communication*.

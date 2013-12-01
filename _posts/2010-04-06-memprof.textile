@@ -5,6 +5,7 @@ categories: [memprof, ruby, debugging, memory]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /debugging/memory/memprof/ruby/memprof/
 ---
 
 We use a lot of Ruby at Superfeedr. Even though we have some lower level languages for a few layers in our stack, we're willing to *trade some performance for the ease of development, testing and maintenance* that Ruby offers. Also, our distributed architecture allows us to run more processes very transparently if some of them are too slow. My friend Joe "tells it better":http://stu.mp/2008/04/its-not-the-language-stupid.html.

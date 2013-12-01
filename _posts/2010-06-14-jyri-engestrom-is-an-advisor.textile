@@ -5,6 +5,7 @@ categories: [superfeedr, startup]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /startup/superfeedr/jyri-engestrom-is-an-advisor/
 ---
 
 Despite the huge size of the web industry, the inside circle is like a _small family_. One of the great parts about this is that there is always somebody, be it another (successful) entrepreneur, a great hacker or an experienced manager who can help you on issues that you face daily as an entrepreneur.

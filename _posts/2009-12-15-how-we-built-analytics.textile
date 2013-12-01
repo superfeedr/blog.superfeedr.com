@@ -5,6 +5,7 @@ categories: [analytics, pubsubhubbub, publisher, tutorial, mongodb]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: [/analytics/mongodb/publisher/pubsubhubbub/tutorial/how-we-built-analytics]
 ---
 
 We weren't quite sure how to build "these analytics":http://blog.superfeedr.com/Real-time/analytics/pubsubhubbub/analytics-launched. We slowly established a set of requirements and constraints

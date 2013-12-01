@@ -5,6 +5,7 @@ categories: [API, Atom, schema]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /API/Atom/schema/atom-schema/
 ---
 
 We deployed yesterday a new code for our parsers, and it now includes a more "complete schema":http://documentation.superfeedr.com/schema.html that will allow you to do a lot more things with superfeedr!

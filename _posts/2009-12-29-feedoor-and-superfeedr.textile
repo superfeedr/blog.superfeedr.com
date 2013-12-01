@@ -5,6 +5,7 @@ categories: [PubSubHubbub, use-case, feedoor, API, Perl]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /API/Perl/PubSubHubbub/feedoor/use-case/feedoor-and-superfeedr/
 ---
 
 Earlier this month "Mamod":http://twitter.com/Mamod sent me a notice saying that they enabled real-time feeds management to any website or blog (See "Arabcrunch":http://arabcrunch.com/2009/12/feedoor-enables-real-time-feeds-management-to-any-website-or-blog.html) used through "Feedoor":http://www.feedoor.com/.

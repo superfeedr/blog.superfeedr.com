@@ -5,6 +5,7 @@ categories: [SUP, PubSubHubbub, XMPP, Real-time]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /PubSubHubbub/Real-time/SUP/XMPP/SUP-over-pubsubhubb-and-xmpp/
 ---
 
 The "Simple Update Protocol":http://code.google.com/p/simpleupdateprotocol/ is one of the _very first protocols that was built to help feed polling_. It makes it easy to find the *most appropriate time to fetch a feed*.

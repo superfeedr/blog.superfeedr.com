@@ -5,6 +5,7 @@ categories: [PubSubHubbub, gospel, googleio]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /pubsubhubbub/gospel/googleio/make-your-application-real-time-with-pubsubhubbub
 ---
 
 -Earlier in May- Last month, I was given the opportunity by my friend "Brett":http://www.onebigfluke.com/ to "present PubSubHubbub at Google IO":http://code.google.com/events/io/2010/sessions/real-time-apps-pubsubhubbub.html on stage with him. It was a great experience, and if you want to learn a bit more about PubSubHubbub and Superfeedr, I'd suggest you take the time to look at it!

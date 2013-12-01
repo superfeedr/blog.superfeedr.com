@@ -5,7 +5,7 @@ categories: [PubSubHubbub, Spec, Extension]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-alias: /Extension/PubSubHubbub/Spec/publisher-callback-extension/
+alias: [/PubSubHubbub/Spec/Extension/publisher-callback-extension, /Extension/PubSubHubbub/Spec/publisher-callback-extension/]
 ---
 
 Superfeedr now hosts "several hubs":http://push.superfeedr.com/. We had discussion with a lot of data publishers, including blog platforms, but also social network and regular "media" sites.

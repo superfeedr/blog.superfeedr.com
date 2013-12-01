@@ -5,6 +5,7 @@ categories: [blog, meta, superfeedr, ecosystem]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /blog/ecosystem/meta/superfeedr/be-my-guest/
 ---
 
 We use "Jekyll":http://github.com/mojombo/jekyll as our blog engine, and we use "github":http://github.com to host said blog. As a matter of fact, our blog is a *regular git repository*. This as several consequences, including the fact that it's quite easy for us to add "remote" contributions. If you want to write about Superfeedr related stuff : your experience with Superfeedr, but also the technologies that we use ("XMPP":http://www.google.com/search?q=xmpp+site:blog.superfeedr.com, "PubSubHubbub":http://www.google.com/search?q=PubSubHubbub+site:blog.superfeedr.com, "Chef":http://www.google.com/search?q=chef+site:blog.superfeedr.com, "Collectd":http://www.google.com/search?q=collectd+site:blog.superfeedr.com...), or even your _thoughts on the real-time web_; this space is yours.

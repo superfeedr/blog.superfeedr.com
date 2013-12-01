@@ -5,7 +5,7 @@ categories: [PubSubHubbub, API, secure]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-alias: /API/PubSubHubbub/secure/secure-pubsubhubbub/
+alias: /API/PubSubHubbub/secure/secure-pubsubhubbub
 ---
 
 One of the great advantages of our "XMPP API":http://documentation.superfeedr.com/subscribers.html#xmpppubsub is that there is no need for the subscriber to know whether the content he gets is actually from Superfeedr. "PubSubHubbub":http://documentation.superfeedr.com/subscribers.html#webhooks doesn't benefit from that, since it relies on HTTP callbacks which makes it hard to know where a notification comes from. A subscriber could obviously check the IP(s) as well as the UserAgent, but the first one will break when we add servers and the second one is pretty easy to spoof.

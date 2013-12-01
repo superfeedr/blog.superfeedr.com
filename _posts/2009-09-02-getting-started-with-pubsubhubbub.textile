@@ -5,6 +5,7 @@ categories: [pubsubhubbub, API]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /pubsubhubbub/API/getting-started-with-pubsubhubbub/
 ---
 
 To my knowledge, Superfeedr is the only non-google PubSubHubbub out there. Let's see why and how to use it.

@@ -5,6 +5,7 @@ categories: [real-time, notification, RSS, iPhone]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /real-time/notification/RSS/iPhone/real-time-rss-notification-on-iphone/
 ---
 
 I have always been a great fan of the iPhone (I had mine on June 29th 2007 : iPhone D-day), but I haven't found many applications that were making good use of the "notification" feature that Apple added in its last iPhone OS, until today.
