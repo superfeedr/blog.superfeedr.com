@@ -5,6 +5,7 @@ categories: [pubsubhubbub, pubsub, digest, heartbeat]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /digest/heartbeat/pubsub/pubsubhubbub/digest-and-heartbeat-notification/
 ---
 
 One of the most common problem of all Publish-Subscribe pattern is that they *fail silently*.
