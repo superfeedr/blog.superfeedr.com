@@ -5,6 +5,7 @@ categories: [activity, streams, pubsubhubbub]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+alias: /activity/pubsubhubbub/streams/activity-streams/
 ---
 
 There is no doubt that feeds and social networks go along together very well. I even argued that "building a social application without feeds and PubSubHubbub was a mistake":http://blog.superfeedr.com/open/pubsubhubbub/social/xmpp/a-social-network/. Today, we're announcing that Superfeedr is now able to parse "ActivityStreams":http://activitystrea.ms/ data! We decided to add this to our schema (like we did a "few weeks ago for GeoRSS":http://www.readwriteweb.com/archives/superfeedr_now_adds_location_to_feeds_automaticall.php).
