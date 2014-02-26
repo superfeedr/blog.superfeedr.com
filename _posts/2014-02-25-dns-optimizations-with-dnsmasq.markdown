@@ -36,5 +36,5 @@ With dnsmasq installed and 127.0.0.1 as the first line of `/etc/resolv.conf`, we
 
 The resolution time went down to 0 for 3605 requests, affecting the average pretty significantly (between 30% and 50%).
 
-In practice, we get a **hit rate of about 50%** in our production environment, which is quite high and saves us a significant wall time. A 50% hit rate on our local caches is also a 50% miss rate, we'll see <input type="button" onclick="(function(btn){var z=document.createElement('script');document.subtomeBtn=btn;z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})(this);return false;" value="tomorrow" /> how we can improve our DNS resolution performance... 
+In practice, we get a **hit rate of about 50%** in our production environment, which is quite high and saves us a significant wall time. A 50% hit rate on our local caches is also a 50% miss rate, we'll see [next](/dns-optimizations-with-unbound/) how we can improve further our DNS resolution performance... 
 
