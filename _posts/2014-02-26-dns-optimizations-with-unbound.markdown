@@ -38,7 +38,7 @@ Here is a quick script to check what your TTL is. `300` seconds is a rather comm
 <script src="https://gist.github.com/julien51/9231364.js">
 </script>
 
-Of course, you should also make sure that whatever authoriative nameserver you're using is responsive! If you're looking for an awesome provider, we suggest you check our friends at [DNSimple](https://dnsimple.com/r/1fd305c2e2ca74) <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>
+Of course, you should also make sure that whatever authoriative nameserver you're using is responsive! If you're looking for an awesome provider, we suggest you check our friends at [DNSimple](https://dnsimple.com/r/1fd305c2e2ca74) <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
 
 <p><small id="fn:1">1. This link has a referral code attached, which means if you become a DNSimple customer, we both get 1 additional month worth of free service.</small></p>
 
