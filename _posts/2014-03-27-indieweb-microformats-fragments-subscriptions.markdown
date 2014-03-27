@@ -39,6 +39,6 @@ Here's [an example of a notification](https://www.runscope.com/public/0fdddd34-7
 
 As you can see the notification includes the HTML content that has an `h-entry` class. Of course, I could have used a more complex CSS expression if I wanted a more specific item.
 
-For this, and because Barnaby's blog is not (yet?) PubSubHubbub enabled, you'll need a [Superfeedr subscriber account](http://superfeedr.com/subscriber), but next, we'll show you how you can also **enable PubSubHubbub on your IndieWeb site** so that anyone can subscribe to your microformatted content (as well as your RSS/Atom feeds) :)
+For this, and because Barnaby's blog is not (yet?) PubSubHubbub enabled, you'll need a [Superfeedr subscriber account](http://superfeedr.com/subscriber), but next, we'll show you how you can also **enable PubSubHubbub on your IndieWeb site** so that anyone can subscribe to your microformatted content in your [indieReader](http://waterpigs.co.uk/notes/4T3FSd/) (as well as your RSS/Atom feeds) :)
 
 
