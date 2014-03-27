@@ -16,7 +16,7 @@ Let's pick [Barnaby's blog](http://waterpigs.co.uk/notes/). His site has a nice 
 
 For the sake of this example, I have indeed subscribed to Barnaby's site and used a [Runscope](https://www.runscope.com) [capture](https://www.runscope.com/docs/request-capture) to log the requests. It's as easy as this:
 
-<pre class="embedcurl" title="Subscribe to microformats">curl -X POST -ujulien:paSsWOrD https://push.superfeedr.com -d'hub.mode=subscribe' -d'hub.callback=https://n6ygb81xcek3.runscope.net' -d'hub.topic=http://waterpigs.co.uk/notes/#.h-entry' 
+<pre width="800" class="embedcurl" title="Subscribe to microformats">curl -X POST -ujulien:paSsWOrD https://push.superfeedr.com -d'hub.mode=subscribe' -d'hub.callback=https://n6ygb81xcek3.runscope.net' -d'hub.topic=http://waterpigs.co.uk/notes/#.h-entry' 
 </pre>
 
 Here's [an example of a notification](https://www.runscope.com/public/0fdddd34-7063-4132-b3a5-42fe7ad743c1/b763d319-f012-4e31-a3cf-95f3aaa88007) (click on *View Request* ) that was sent to the webhook.
@@ -29,6 +29,7 @@ Here's [an example of a notification](https://www.runscope.com/public/0fdddd34-7
 <script>
     var opts = {
       width:800,
+      height:400,
       elementId: "runscopeShared",
       teamId: "0fdddd34-7063-4132-b3a5-42fe7ad743c1",
       shareToken: "b763d319-f012-4e31-a3cf-95f3aaa88007",
