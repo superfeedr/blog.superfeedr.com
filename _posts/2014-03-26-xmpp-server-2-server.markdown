@@ -16,34 +16,37 @@ At some point every XMPP developer face the issue, that adapting XMPP to your lo
 
 The latest master branch of [node-xmpp-server](https://github.com/node-xmpp/node-xmpp-server) includes an implementation of the S2S feature. Let's start with an example to see how easy the usage is:
 
-    'use strict';
-    
-    // import node-xmpp server and the router
-    var xmpp = require('node-xmpp-server'),
-        r = new xmpp.Router();
+{% highlight javascript %}  
+'use strict';
 
-    // register handler for own domain
-    r.register('nodexmpp.com', function (stanza) {
+// import node-xmpp server and the router
+var xmpp = require('node-xmpp-server'),
+    r = new xmpp.Router();
 
-        // output the recieved message
-        console.log('GOT YA << ' + stanza.toString())
+// register handler for own domain
+r.register('nodexmpp.com', function (stanza) {
 
-        // send back the message to the sender
-        if (stanza.attrs.type !== 'error') {
-            var me = stanza.attrs.to
-            stanza.attrs.to = stanza.attrs.from
-            stanza.attrs.from = me
-            r.send(stanza)
-        }
-    });
+    // output the recieved message
+    console.log('GOT YA << ' + stanza.toString())
 
-    // parse raw xml message with ltx
-    var ltx = require('ltx');
-    var rawmsg = '<message to=\'mu@example.com\' from=\'juliet@nodexmpp.com/balcony\' type=\'chat\' xml:lang=\'en\'><body>Wherefore art thou, mu?</body></message>';
-    var msg = ltx.parse(rawmsg);
+    // send back the message to the sender
+    if (stanza.attrs.type !== 'error') {
+        var me = stanza.attrs.to
+        stanza.attrs.to = stanza.attrs.from
+        stanza.attrs.from = me
+        r.send(stanza)
+    }
+});
 
-    // send a message to mu@example.com
-    r.send(msg);
+// parse raw xml message with ltx
+var ltx = require('ltx');
+var rawmsg = '<message to=\'mu@example.com\' from=\'juliet@nodexmpp.com/balcony\' type=\'chat\' xml:lang=\'en\'><body>Wherefore art thou, mu?</body></message>';
+var msg = ltx.parse(rawmsg);
+
+// send a message to mu@example.com
+r.send(msg);
+{% endhighlight %}
+
 
 It takes less than 20 lines of nodejs code to implement a full version xmpp S2S component. The above sample does not include TLS, but `node-xmpp-server` implements [TLS, too](https://github.com/node-xmpp/node-xmpp-server/blob/master/examples/s2s_echo_tls.js). 
 
@@ -54,7 +57,9 @@ The latest version of `node-xmpp-server` implements the following specifications
 
 During development we tested `node-xmpp-server` against Prosody. To get it running, you need to change the prodsody configuration to:
 
-    s2s_require_encryption = false
+{% highlight lua %}  
+s2s_require_encryption = false
+{% endhighlight %}
 
 Be aware that this does not mean the connection between Prosody and `node-xmpp-server` is not encrypted the communication. `node-xmpp-server` establishes a secure TLS connection between the servers if possible. Prosody requires all servers that ship with server dialback instead certificate authentication to deactivate s2s_require_encryption. We do not recommend deactivating `s2s_require_encryption` in general, though. Instead you may try to use the [mod_s2s_never_encrypt_blacklist](https://code.google.com/p/prosody-modules/wiki/mod_s2s_never_encrypt_blacklist). Further information is available at [Prosody](https://prosody.im/doc/s2s).
 
