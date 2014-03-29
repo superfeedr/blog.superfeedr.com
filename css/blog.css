@@ -44,3 +44,18 @@ blockquote {
     margin-left:10px;
     border-left: 3px solid #E6E6E6;
 }
+
+.invisible {
+  display: none;
+}
+
+.meta {
+  color:#666;
+  font-size:0.9em;
+  margin-bottom: 20px
+}
+
+.meta img {
+  float:left;
+  margin: -2px 3px 3px 0px;
+}

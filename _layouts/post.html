@@ -1,11 +1,14 @@
 ---
 layout: default
 ---
-<div id="post">
-    <h2>{{page.title}}</h2>
-    <div style="color:#666; font-size:0.9em; margin-bottom: 20px"><img style="float:left; margin: -2px 3px 3px 0px" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" >By <a href="{{ page.author_uri}}">{{ page.author_name }}</a>, on {{ page.date | date_to_string }}</div>
-{{ content }}
-</div>
+<article class="h-entry" id="post">
+    <h2 class="p-name">{{page.title}}</h2>
+    <span class="invisible u-uid">blog.superfeedr.com:{{ page.id }}</span>
+    <div class="meta"><img src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" >By <a class="p-author h-card" href="{{ page.author_uri}}">{{ page.author_name }}</a>, on <span class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</span></div>
+    <div class="e-content">
+        {{ content }}
+    </div>
+</article>
 
 <blockquote>
   <p>Liked this post? <input type="button" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()" value="Follow this blog!" /> to get more or read the <a href="/archive.html">archive</a>.</p>
