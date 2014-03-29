@@ -49,13 +49,13 @@ blockquote {
   display: none;
 }
 
-.meta {
+.postmeta {
   color:#666;
   font-size:0.9em;
   margin-bottom: 20px
 }
 
-.meta img {
+.postmeta img {
   float:left;
   margin: -2px 3px 3px 0px;
 }
