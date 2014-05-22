@@ -12,6 +12,7 @@ The indieweb community has been pretty active in the past couple months. One of 
 
 We strongly believe in the web's diversity at Superfeedr and having movements like IndieWebCamp obviously helps fight the abuses of giant silos as well as their weaknesses when it comes to mass surveillance, security breaches... etc. 
 
-Now, we're also convinced at Superfeedr that RSS feeds could very well be named **Indie Feeds**. RSS is all about interroperability: it's probably only second to HTML when it comes to *decoupling dataformats*. All types of application publish feeds and all types of application consume them, in a decentralized web. 
+Now, we're also convinced at Superfeedr that RSS feeds could very well be named **Indie Feeds**. RSS is all about interroperability: it's probably only second to HTML when it comes to *decoupling dataformats*. All types of application publish feeds and all types of application consume them, in a *decentralized* web. 
 
-Today, if you want to **share your online presence** with people who may be interested in it, RSS is probably the way to go: *RSS is *indiefeed*.
+Today, if you want to **share your online presence** with people who may be interested in it, RSS is probably the way to go: *RSS is indiefeed* and we can't wait to see indie-readers bloom!
+
