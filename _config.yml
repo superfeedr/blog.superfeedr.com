@@ -1,2 +1,2 @@
 permalink: /:categories/:title
-pygments: true
+highlighter: pygments
