@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-Each superfeedr account, whether you're a subscriber or a publisher gets an analytics section where you can view interesting data about your account: the number of feeds, the number of subscriptions and the credits balance haven been displayed [since the begining](http://blog.superfeedr.com/real-time/analytics/pubsubhubbub/analytics-launched/.
+Each superfeedr account, whether you're a subscriber or a publisher gets an analytics section where you can view interesting data about your account: the number of feeds, the number of subscriptions and the credits balance haven been displayed [since the begining](http://blog.superfeedr.com/real-time/analytics/pubsubhubbub/analytics-launched/).
 
 ![Notifications](/images/notifications-from-hub.png)
 
