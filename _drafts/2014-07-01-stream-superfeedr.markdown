@@ -19,7 +19,8 @@ Today, we're moving forward by adding HTTP streaming support to our cave. In Eng
 Translating in curl language that would be something like that:
 
 {% highlight bash %}  
-curl "http://stream.superfeedr.com/?hub.mode=retrieve&wait=true&hub.topic=http://push-pub.appspot.com/feed" -udemo:6f74cbf1c5d30fd0c668f2ac0592204c -D-
+curl "http://stream.superfeedr.com/?hub.mode=retrieve&wait=true&hub.topic=http://push-pub.appspot.com/feed" 
+-udemo:6f74cbf1c5d30fd0c668f2ac0592204c -D-
 {% endhighlight %}
 <small>You're more than welcome to try that in your shell</small>
 
