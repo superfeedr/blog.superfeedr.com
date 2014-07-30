@@ -1,8 +1,6 @@
 ---
-layout: nil
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- New Digg check : 91e798b4288645588f593f30fc09aaea -->
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Superfeedr Blog : Real-time cloudy thoughts from a super-hero</title>
     <link href="http://blog.superfeedr.com/atom.xml" rel="self" type="application/atom+xml"/>
