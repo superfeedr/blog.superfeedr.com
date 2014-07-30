@@ -17,7 +17,7 @@ The third (and final) constraint is that we must be **using the subtome.com doma
 ### We needed a platform to host static files, with our domain and SSL.
 
 
-When thinking about static files in a very scalable and fully managed way, the almost immediate answer is [AWS S3](http://aws.amazon.com/s3/). That's what we initially tried... create a <code>www.subtome.com</code> bucket, create the right CNAME, upload and hope for profit. The problem is that this does not match the SSL requirement. Amazon offers SSL, but only on their <code>*.aws.amazon.com</code> domain. 
+When thinking about static files in a very scalable and fully managed way, the almost immediate answer is [AWS S3](http://aws.amazon.com/s3/). That's what we initially tried... create a <code>www.subtome.com</code> bucket, create the right CNAME, upload and hope for profit. The problem is that this does not match the SSL requirement. Amazon offers SSL, but only on their <code>xxx.aws.amazon.com</code> domain. 
 
 In despair, we started considering running a small box somewhere, put Nginx on top, get an SSL cert and run it like in the old days: hoping that I'll always find the courage to do the basic ops this box will eventually need.
 

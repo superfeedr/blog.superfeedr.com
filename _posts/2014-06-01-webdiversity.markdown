@@ -8,7 +8,8 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 
 
 <blockquote class="twitter-tweet" lang="en"><p>In the 90s, everyone used car analogies to discuss technology. In 2014, it’s all food analogies.</p>&mdash; Tom Dale (@tomdale) <a href="https://twitter.com/tomdale/statuses/473080163513929728">June 1, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8">
+</script>
 
 Luckily, food is not the only option. Let's talk about animals. We call the web an **ecosystem** after all, so let's see what **biodiversity** means in this context and how it is key to both how our animals are built and how they work together. The past couple months have shown how weak the web is and how quickly what we can take for granted is actually closer to extinction.
 
@@ -25,7 +26,8 @@ The web currently suffers from a similar threat. The diversity of experiences on
 Additionally, the largest players of the ecosystem, tend to grow more and more at the expense of their ecosystem, working less and less with smaller players, not interracting with them as much as they should, closing APIs, almost "duplicating" content from other players into their own systems. 
 
 <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/mattcutts">@mattcutts</a> I think I have spotted one, Matt. Note the similarities in the content text: <a href="http://t.co/uHux3rK57f">pic.twitter.com/uHux3rK57f</a></p>&mdash; dan barker (@danbarker) <a href="https://twitter.com/danbarker/statuses/439125570115223552">February 27, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8">
+</script>
 
 This **lack of diversity** leads to a **lack of creativity** and eventually to a **lack of competition**. If everything is the same, why use another product?
 
