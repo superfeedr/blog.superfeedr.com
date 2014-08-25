@@ -16,6 +16,11 @@
 
   <!-- Webmentions -->
   <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <!-- CSP -->
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+
  </head>
 
  <body class="blog">
@@ -65,7 +70,11 @@
   } catch(err) {}
   //--><!]]>
 </script>
-<script src="https://www.embedcurl.com/embedcurl.min.js" async></script>
+
+{% for js_file in page.js_includes %}
+  <script src="{{ js_file }}" async></script>
+{% endfor %}
+
 
 </body>
 </html>

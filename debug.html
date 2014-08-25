@@ -3,13 +3,3 @@ layout: default
 title: Debug Page
 ---
 
-This SubToMe button will use Feedly by default:
-
-<script>
-  window.subtome = {
-    suggestedUrl: "http://www.feedly.com/home#subscription/feed/{feed}",
-    suggestedName: "Feedly"
-  }
-</script>
-
-<input type="button" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" value="Subscribe">
