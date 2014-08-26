@@ -67,7 +67,7 @@ There are 2 things to remember when using Superfeedr's server sent events: IE an
 
 Even though the EventSource spec has been published a couple years ago and [every other major browser supports it](http://caniuse.com/#feat=eventsource), **Internet Explorer lacks support**. There are, however existing shims which mimick this API on the browser side. This page, for example, includes [Remy Sharp's](https://github.com/remy/polyfills/blob/master/EventSource.js) so you can view the example, even with IE!
 
-Another caveat is that as far as we know, you can change the HTTP headers when using EventSource, which means you have to submit an <code>authorization</code> **query string param** with the value that you would have inserted using HTTP Basic Auth: a base64 encoded concatenation of your superfeedr login and a token which allows for the *retrieve* right.
+Another caveat is that as far as we know, you cannot change the HTTP headers when using EventSource, which means you have to submit an <code>authorization</code> **query string param** with the value that you would have inserted using HTTP Basic Auth: a base64 encoded concatenation of your superfeedr login and a token which allows for the *retrieve* right.
 
 Read more about Server Sent Events:
 
