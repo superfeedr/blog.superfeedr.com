@@ -70,6 +70,7 @@ Even though the EventSource spec has been published a couple years ago and [ever
 Another caveat is that as far as we know, you can change the HTTP headers when using EventSource, which means you have to submit an <code>authorization</code> **query string param** with the value that you would have inserted using HTTP Basic Auth: a base64 encoded concatenation of your superfeedr login and a token which allows for the *retrieve* right.
 
 Read more about Server Sent Events:
+
 * [On HTML5Rocks](http://www.html5rocks.com/en/tutorials/eventsource/basics/)
 * [MDN's article](https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events)
 
