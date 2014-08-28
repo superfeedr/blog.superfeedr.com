@@ -25,7 +25,7 @@ The list below is dynamically loaded using **Server Sent Events**. It loads the 
 
 The code is rather simple:
 {% highlight javascript%}// First, we create the event source object, using the right URL.
-var url = "https://stream.superfeedr.com/";
+var url = "https://stream.superfeedr.com/?";
 url += "&hub.mode=retrieve";
 url += "&hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed";
 url += "&authorization=anVsaWVuOjJkNTVjNDhjMDY5MmIzZWFkMjA4NDFiMGViZDVlYzM5";
