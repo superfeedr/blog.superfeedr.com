@@ -1,80 +1,95 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Superfeedr : {{ page.title }} </title>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta charset="UTF-8">
   <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
 
-  <!-- Stylesheets -->
-  <link href="/css/superfeedr.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="/css/blog.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="/css/pygments.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
 
-  <!-- Feed -->
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/code.css" rel="stylesheet" />
+
+  <title>Superfeedr : {{ page.title }} </title>
+
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
-
-  <!-- Webmentions -->
   <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
 
-  <!-- CSP -->
   <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
 
-
- </head>
-
- <body class="blog">
-   <div id="bg">
-     <div id="wrapper">
-      <div id="logo">
-       <a href="http://superfeedr.com" class="home"><img alt="Superfeedr" src="/images/superfeedr_complete.png" /></a>
-     </div>
-     <ul id="navigation">
-      <li><a href="http://documentation.superfeedr.com" alt="RTFM">Documentation</a></li>
-      <li><a href="http://superfeedr.com/about" alt="All you wanted to know. Almost">About</a></li>
-    </ul>
-    <div class="clear"></div>
-    <div id="main_bg">
-      <div id="main_top">
-       <h1>{{ page.title }}</h1>
-     </div> <!--main_top-->
-
-     <div id="content">
-        {{ content }}
-    </div> <!--content-->
-
-    <div id="footer">
-      <ul id="footer_navigation">
-        <li><a href="http://documentation.superfeedr.com">Docs</a></li>
-        <li><a href="https://github.com/superfeedr/documentation/issues">Support</a></li>
-        <li><a href="http://blog.superfeedr.com">Blog</a></li>
-        <li><a href="https://superfeedr.com/cost">Pricing</a></li>
-        <li><a href="https://superfeedr.com/terms">Terms</a></li>
-      </ul>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://staging.superfeedr.com/about" class="nav-link nav-link-current">About</a></li>
+          <li class="nav-item"><a href="http://staging.superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://staging.superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://staging.superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://staging.superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="log" style="" ></div>
-  </div> <!--main_bg-->
-</div><!--wrapper-->
-</div><!--bg-->
-<script type="text/javascript">
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        {{ content }}
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  {% for js_file in page.js_includes %}
+  <script src="{{ js_file }}" async></script>
+  {% endfor %}
+
+
+  <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
+  </script>
+  <script type="text/javascript">
   <!--//--><![CDATA[//><!--
   try {
-      var pageTracker = _gat._getTracker('UA-9285763-1');
-      pageTracker._setDomainName("superfeedr.com");
-      pageTracker._initData();
-      pageTracker._trackPageview();
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
   } catch(err) {}
   //--><!]]>
-</script>
-
-{% for js_file in page.js_includes %}
-  <script src="{{ js_file }}" async></script>
-{% endfor %}
-
+  </script>
 
 </body>
 </html>
+
+
+

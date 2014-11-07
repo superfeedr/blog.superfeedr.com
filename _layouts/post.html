@@ -1,28 +1,29 @@
 ---
 layout: default
 ---
-<article class="h-entry" id="post">
-    <h2 class="p-name"><a class="u-url" href="{{page.url}}">{{page.title}}</a></h2>
 
-    <span class="invisible u-uid">blog.superfeedr.com:{{ page.id }}</span>
+<article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="{{page.url}}">{{page.title}}</a></h3>
 
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:{{ page.id }}</span>
 
-    <div class="postmeta">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" > <a href="{{ page.author_uri}}" rel="author">{{ page.author_name }}</a></span>, on <span class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</span></div>
-    <div class="e-content">
-        {{ content }}
-    </div>
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" > <a href="{{ page.author_uri}}" rel="author">{{ page.author_name }}</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="{{ page.date | date_to_xmlschema }}"><time>{{ page.date | date_to_string }}</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    {{ content }}
+  </div>
 </article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
 
-<blockquote>
-  <p>Liked this post? <input type="button" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()" value="Follow this blog!" /> to get more or read the <a href="/archive.html">archive</a>.</p>
-</blockquote>
-
-
-<div id="comments">
-
-    <h2>Comments</h2>
-
-    <script id="webmention-hosted">
+   <script id="webmention-hosted">
     (function () {
         var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
         url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;

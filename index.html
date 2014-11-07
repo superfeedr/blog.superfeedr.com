@@ -1,20 +1,24 @@
 ---
 layout: default
-title: Real-time cloudy thoughts from a super-hero
+title: Blog
 ---
 
-<p style="font-size: 1.2em; padding: 20px 0px; text-align:center">We build a <a href="http://superfeedr.com">complex feed fetching and parsing infrastructure</a> so that you don't have to. We believe the web should be more open and that feeds are a key component of that ecosystem. <br /><input type="button" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" value="Subscribe"> or read the <a href="/archive.html">archive</a>.
-
-</p>
-
-
-
 {% for post in site.posts limit:10 %}
-<article class="h-entry hentry">
-    <h3 class="p-name"><a class="u-url" href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p class="excerpt p-summary">
-        {{ post.content | strip_html | truncatewords:50 }} &nbsp;  <a href="{{ post.url }}/">Read more</a>
-    </p>
-    <small class="meta">{{ post.date | date:"%B %d, %Y" }} | <a href='{{ post.url }}/#disqus_thread'>View Comments</a> </small>
+
+<article class="blog-article h-entry hentry">
+	<h3 class="entry-title p-name"><a class="u-url" href="{{ post.url }}">{{ post.title }}</a></h3>
+	<div class="excerpt p-summary entry-content">
+		<p> {{ post.content | strip_html | truncatewords:50 }} &nbsp;</p>
+	</div>
+	<div class="entry-meta">
+		<ul class="entry-meta--primary">
+			<li class="entry-meta--item"><time>{{ post.date | date:"%B %d, %Y" }}</time></li>
+			<li class="entry-meta--item"><a href='{{ post.url }}/#disqus_thread'>View Comments</a></li>
+		</ul>
+		<div class="entry-meta--secondary">
+			<a href="{{ post.url }}/"  class="entry-read-more">Read More &rarr;</a>
+		</div>
+	</div>
 </article>
+
 {% endfor %}
