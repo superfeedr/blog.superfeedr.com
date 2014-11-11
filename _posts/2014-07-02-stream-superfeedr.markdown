@@ -19,10 +19,10 @@ Today, we're moving forward by adding **HTTP streaming** support to the RSS stor
 
 Translating in curl language that would be something like that:
 
-<pre class="embedcurl" width="800">curl "http://stream.superfeedr.com/?hub.mode=retrieve&wait=stream&hub.topic=http://push-pub.appspot.com/feed" 
+<pre class="embedcurl" width="100%">curl "http://stream.superfeedr.com/?hub.mode=retrieve&wait=stream&hub.topic=http://push-pub.appspot.com/feed" 
 -udemo:6f74cbf1c5d30fd0c668f2ac0592204c</pre>
 
-<small>You're more than welcome to try that in your shell</small>
+<small>You're more than welcome to try that in your shell.</small>
 
 You'll see that the connection is then *hanging*. You can easily [update the feed by filling this form](http://push-pub.appspot.com/) and you should see the *new entry appear* in your shell.
 
@@ -44,11 +44,11 @@ One of the benefits of using Fanout is that they provide multiple options when [
 
 Basically, the first request will look like this:
 
-<pre class="embedcurl" width="800">curl -udemo:6f74cbf1c5d30fd0c668f2ac0592204c "https://stream.superfeedr.com?hub.mode=retrieve&wait=stream&hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed"</pre>
+<pre class="embedcurl" width="100%">curl -udemo:6f74cbf1c5d30fd0c668f2ac0592204c "https://stream.superfeedr.com?hub.mode=retrieve&wait=stream&hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed"</pre>
 
 The response will come immediately with the current content of the feed. From there, you should extract the <code>id</code> element of the latest entry. At the time of writing this post, it is <code>http://push-pub.appspot.com/feed/5637036128075776</code>. We will re-use this element as the value for the <code>after</code> query parameter:
 
-<pre class="embedcurl" width="800">curl -udemo:6f74cbf1c5d30fd0c668f2ac0592204c "https://stream.superfeedr.com?format=json&hub.mode=retrieve&wait=poll&after=hhttp%3A%2F%2Fpush-pub.appspot.com%2Ffeed%2F5637036128075776&hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed"</pre>
+<pre class="embedcurl" width="100%">curl -udemo:6f74cbf1c5d30fd0c668f2ac0592204c "https://stream.superfeedr.com?format=json&hub.mode=retrieve&wait=poll&after=hhttp%3A%2F%2Fpush-pub.appspot.com%2Ffeed%2F5637036128075776&hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed"</pre>
 
 If one (or more) new entry has been added during the small lag between the 2 queries, it will be served right away. However, in the more likely event that nothing was served, the connection will wait for a new item to be added to the feed. This technique will **guarantee that no item is ever missed**, even with a single concurrent HTTP request.
 

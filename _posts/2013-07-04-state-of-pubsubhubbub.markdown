@@ -23,6 +23,7 @@ If your reader is missing from that list, please let us know in the comments, su
 * [Commafeed](https://www.commafeed.com): supported
 * [BazQux](https://www.bazqux.com/): supported
 
+
 ### Not (yet!) support PubSuHubbub
 
 * [NetVibes](http://www.netvibes.com/): this is sad because they used to support PubSubHubbub a couple years ago.
