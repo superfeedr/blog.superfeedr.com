@@ -23,21 +23,22 @@ layout: default
 <div class="blog-comments">
   <h3>Comments</h3>
 
-   <script id="webmention-hosted">
-    (function () {
-        var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
-        url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
-        url = url && url[0] ? url[0].href : false;
-        sn.type = "text/javascript"; sn.async = true;
-        sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
-        s.parentNode.insertBefore(sn, s);
-    }());
-    </script>
-
     <div id="disqus_thread">
     </div>
+
     <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
     <noscript>
         <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
     </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
 </div>
