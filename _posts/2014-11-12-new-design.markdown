@@ -11,7 +11,7 @@ Today's an historic day: we are [landing on a comet](http://rosetta.esa.int/)! I
 
 We're very proud to release this new version of our main HTML applications: it's the biggest change in years and we tried to answer all [your needs and requests](/survey-redesign/).
 
-<img src="/images/new-design.png" alt="new design" title="New Design" style="width:500px">
+<img src="/images/new-design.png" alt="new design" title="New Design" style="width:100%">
 
 ### Subscriptions
 
