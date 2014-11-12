@@ -11,6 +11,8 @@ Today's an historic day: we are [landing on a comet](http://rosetta.esa.int/)! I
 
 We're very proud to release this new version of our main HTML applications: it's the biggest change in years and we tried to answer all [your needs and requests](/survey-redesign/).
 
+<img src="/images/new-design.png" alt="new design" title="New Design" style="width:500px">
+
 ### Subscriptions
 
 It's now easier than ever to **list** all your subscriptions, **search** for specific ones, but also **get a feed's details**. You can also easily subscribe and unsubscribe from feeds on this new application. It all uses our public *PubSubHubbub API* so anything this does can be done in your very own application!
@@ -27,8 +29,9 @@ They both are angular application. We're especially proud ouf the XMPP console w
 
 Even though the docs are great, their layout was very different from Superfeedr's main site design. The same went for this very blog. The new design brings an incresed consistency which makes things much clearer for our users:
 
-* [Superfeedr Documentation](http://blog.superfeedr.com/)
-* [Superfeedr Blog](http://documentation.superfeedr.com/)
+* [Superfeedr Documentation](http://documentation.superfeedr.com/)
+* [Superfeedr Blog](http://blog.superfeedr.com/)
+
 
 There are *many other things to say about this redesign*... and there are probably small bugs here and there. We'd love to hear what you think. And, before you ask it, this incredible work was done by Chris and Lucas at [Van Patten Media](https://www.vanpattenmedia.com/). Their skills are incredible and it's been an honor to work with them! 
 
