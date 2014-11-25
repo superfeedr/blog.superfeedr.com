@@ -13,7 +13,7 @@ We also introduced a [Jquery plugin for Superfeedr](http://blog.superfeedr.com/j
 
 ### Streaming RSS
 
-Today, we're moving forward by adding **HTTP streaming** support to the RSS stored in Superfeedr. In English, this mean, you can ask Superfeedr something like this:
+Today, we're moving forward by adding **HTTP streaming** support to the RSS stored in Superfeedr. In English, this means, you can ask Superfeedr something like this:
 
 > Please, give me the last 5 items from that feed, but keep the connection open and give me any new item that's coming for as long as I'm listening.
 
