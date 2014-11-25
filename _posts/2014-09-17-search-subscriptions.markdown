@@ -23,14 +23,14 @@ Our docs already include the [list of fieds you can use](http://documentation.su
 
 Try it yourself!
 
-{% highlight bash %}  
+{% prism javascript %}  
 $ curl -D- -X GET https://push.superfeedr.com/ \
 -u'demo:e5cab21156449745c2c0c4f77f6e3b69' \
 -d'hub.mode=list' \
 -d'search[feed][inurl]=nytimes'
-{% endhighlight %}  
+{% endprism %}  
 This should yield something like this:
-{% highlight javascript %}  
+{% prism javascript %}  
 [
     {
         "subscription": {
@@ -44,7 +44,7 @@ This should yield something like this:
         }
     }
 ]
-{% endhighlight %}  
+{% endprism %}  
 
 Obviously, we'll be [self-dogfooding](http://indiewebcamp.com/selfdogfood) this in our brand new dashboard, which is coming soon now!
 

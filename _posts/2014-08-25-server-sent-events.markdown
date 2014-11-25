@@ -24,7 +24,7 @@ The list below is dynamically loaded using **Server Sent Events**. It loads the 
 <ul id="sse-feed">Loading...</ul>
 
 The code is rather simple:
-{% highlight javascript%}// First, we create the event source object, using the right URL.
+{% prism javascript%}// First, we create the event source object, using the right URL.
 var url = "https://stream.superfeedr.com/?";
 url += "&hub.mode=retrieve";
 url += "&hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed";
@@ -57,7 +57,7 @@ source.addEventListener("notification", function(e) {
     // We add the element to the UI.
   });
 });
-{% endhighlight%}
+{% endprism%}
 
 The browser will take care of the HTTP connection, reconnect to the server if needed. 
 

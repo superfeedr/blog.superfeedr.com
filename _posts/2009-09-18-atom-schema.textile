@@ -18,7 +18,7 @@ h3. Links
 
 The biggest addition is the fact that <code><entry></code> elements now include all the <code><links></code> of the original entry, including attachments. Of course, to differentiate between them you can use the _<code>"rel"</code> value_, as well as <code>"type"</code> which gives you the _mime type_. For example, here is what you'd receive for this flick RSS feed :
 
-{% highlight javascript %}  
+{% prism javascript %}  
 <entry xmlns="http://www.w3.org/2005/Atom">
 	<title>IMAG0346</title>
 	<id>tag:flickr.com,2005:/photo/3931639648</id>
@@ -40,7 +40,7 @@ The biggest addition is the fact that <code><entry></code> elements now include 
 		<email/>
 	</author>
 </entry>
-{% endhighlight %}
+{% endprism %}
 
 As you can see, there are 2 <code><link></code> elements, *one for the entry* (the page that contains the image), and *one for the image itself*. These links are various and may include links to the _comments section, to the RSS feed of comments, to any attachment, to related articles_... etc.
 

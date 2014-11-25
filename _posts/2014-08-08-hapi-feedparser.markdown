@@ -29,7 +29,7 @@ I met with [Dan](http://yabfog.com/blog/) at [Reboot RSS](https://github.com/Reb
 
 The Superfeedr-hapi plugin does not do parsing. It will just issue subscriptions and receive data (through webhooks). It becomes then easy to plug node-feedparser like that:
 
-{% highlight javascript %}  
+{% prism javascript %}  
 server.plugins.superfeedr.events.on('notification', function(feed_id, payload, url, request) {
   feedparser = new FeedParser({feedurl: url});
   feedparser.write(payload);
@@ -37,7 +37,7 @@ server.plugins.superfeedr.events.on('notification', function(feed_id, payload, u
     fs.appendFile('river.html', Mustache.render('<li><a href="{{meta.link}}"><{{meta.title}}></a> {{pubdate}} - <a href="{{link}}">{{title}}</a></li>\n', data));
   });
 });
-{% endhighlight %}
+{% endprism %}
 
 Each time a new event is sent from Superfeedr, a feedparser instance parses that data and triggers the `data` event for every entry, it then saves them to a `river.html` file.
 

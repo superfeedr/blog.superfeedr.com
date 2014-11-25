@@ -1,3 +1,11 @@
+pre {
+	background: none repeat scroll 0% 0% #212121;
+	color: #FFF;
+	padding: 0px;
+}
+
+
+
 .webmention-author img {
 	max-width: 50px;
 }

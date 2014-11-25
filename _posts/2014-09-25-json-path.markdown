@@ -17,7 +17,7 @@ Let's assume my awesome application displays user profiles from [Github](https:/
 
 Github has a nice API to retrieve a user's profile. (some fields removed)
 
-{% highlight javascript %}  
+{% prism javascript %}  
 $ curl https://api.github.com/users/julien51
 {
   "login": "julien51",
@@ -27,7 +27,7 @@ $ curl https://api.github.com/users/julien51
   "followers": 156,
   "following": 127
 }
-{% endhighlight %}  
+{% endprism %}  
 
 If you subscribe to <code>https://api.github.com/users/julien51</code> using Superfeedr, you'll get a new notification for each update to this user profile. You'll get a notification when the avatar is updated, but you'll also get a notification when somebody starts to follow me or when I [create a gist](https://gist.github.com/)... even though my awesome application does not really care about that.
 
@@ -45,7 +45,7 @@ If you're looking for more information about JSONPath you should read more on [S
 
 Another great example comes from [Pieter Colpaert](http://pieter.pm/). [irail.be](https://irail.be/) has the times of all trains in Belgium in all stations. When you pick the page of a station, like the one for [Gent-Sint-Pieters](https://irail.be/stations/NMBS/008892007), you get the list of trains. By fetching this page with a `application/json` header, you get a JSON representation of the upcoming trains.
 
-{% highlight javascript %}  
+{% prism javascript %}  
 {
     "@context": {
         "delay": "http://semweb.mmlab.be/ns/rplod/delay",
@@ -89,11 +89,11 @@ Another great example comes from [Pieter Colpaert](http://pieter.pm/). [irail.be
         }
     ]
 }
-{% endhighlight %}  
+{% endprism %}  
 
 Now, I'm not interested in all trains leaving this station, just the trains to [Knokke](https://en.wikipedia.org/wiki/Knokke), because it's friday and I want to enjoy a weekend by the sea. I can use this JSONPath: `$..@graph[?(@.headsign=="Knokke")]` to get all the children of the `@graph` element with a `headsign` of "Knokke". This would yield something like this:
 
-{% highlight javascript %}  
+{% prism javascript %}  
 [{
   "@id": "http://irail.be/stations/NMBS/008892007/departures/201409261001e93879f9830d734825c817aa195c4141",
   "delay": "0",
@@ -103,7 +103,7 @@ Now, I'm not interested in all trains leaving this station, just the trains to [
   "headsign": "Knokke",
   "routeLabel": "IC 1530"
 }]
-{% endhighlight %}  
+{% endprism %}  
 
 And there, I have the info I need for the next train. It then becomes incredibly more actionable if I use Superfeedr to subscribe to that specific bit of content using this `https://irail.be/stations/NMBS/008892007#%24..%40graph%5B%3F(%40.headsign%3D%3D%22Knokke%22)%5D` [^1]. I now have a webhook for when a new train from Gent-Sint-Pieters to Knokke is about to leave! Also, the payload of the webhook includes all the info I need: the departure time, the platform and any potential delay. You can inspect a couple past notificationsr recived on [this requestbin](http://requestb.in/12j1ps91?inspect).
 

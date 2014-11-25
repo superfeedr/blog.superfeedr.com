@@ -16,7 +16,7 @@ At some point every XMPP developer faces the issue, that adapting XMPP to your l
 
 The latest master branch of [node-xmpp-server](https://github.com/node-xmpp/node-xmpp-server) includes an implementation of the S2S feature. Let's start with an example to see how easy the usage is:
 
-{% highlight javascript %}  
+{% prism javascript %}  
 'use strict';
 
 // import node-xmpp server and the router
@@ -45,7 +45,7 @@ var msg = ltx.parse(rawmsg);
 
 // send a message to mu@example.com
 r.send(msg);
-{% endhighlight %}
+{% endprism %}
 
 
 It takes less than 20 lines of nodejs code to implement a full version xmpp S2S component. The above sample does not include TLS, but `node-xmpp-server` implements [TLS, too](https://github.com/node-xmpp/node-xmpp-server/blob/master/examples/s2s_echo_tls.js). 
@@ -57,9 +57,9 @@ The latest version of `node-xmpp-server` implements the following specifications
 
 During development we tested `node-xmpp-server` against Prosody. To get it running, you need to change the prodsody configuration to:
 
-{% highlight lua %}  
+{% prism javascript %}  
 s2s_require_encryption = false
-{% endhighlight %}
+{% endprism %}
 
 Be aware that this does not mean the connection between Prosody and `node-xmpp-server` is not encrypted the communication. `node-xmpp-server` establishes a secure TLS connection between the servers if possible. Prosody requires all servers that ship with server dialback instead certificate authentication to deactivate `s2s_require_encryption`. We do not recommend deactivating `s2s_require_encryption` in production, though. Instead you may try to use the [mod_s2s_never_encrypt_blacklist](https://code.google.com/p/prosody-modules/wiki/mod_s2s_never_encrypt_blacklist). Further information is available at [Prosody](https://prosody.im/doc/s2s).
 

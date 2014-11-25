@@ -18,7 +18,7 @@ Our PuSH API always had the ability to paginate over results results when [listi
 When listing subscription via our HTTP API, by default, we only return the feed url and its title. When debugging subscriptions, our customers will usually then issue another request for each feed to get its status. It's a bit of a waste of time and resources. From today, *you can get both the subscription details, and the feed's status*, using the simple <code>detailed=true</code> query string.
 The status information is also consistent with our schema so you get the same information for each feed that you get upon notification.
 
-{% highlight javascript %}  
+{% prism javascript %}  
 {
   "subscriptions": [{
     "subscription": {
@@ -87,7 +87,7 @@ The status information is also consistent with our schema so you get the same in
     "byPage": 3
   }
 }
-{% endhighlight %}  
+{% endprism %}  
 
 Additionally, we're also including a <code>meta</code> element which includes the total number of elements matched by your query (when searching or not), the current page and the number of items per page, so you can easily paginate through all results.
 
