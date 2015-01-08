@@ -5,6 +5,8 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+js_includes: ["http://code.jquery.com/jquery-1.10.1.min.js",
+"https://raw.githubusercontent.com/superfeedr/superfeedr-jquery/master/superfeedr.jquery.js"]
 ---
 
 Today, we're happy to introduce the first [Superfeedr Jquery plugin](http://plugins.jquery.com/superfeedr/). It's simple piece of *syntactic* sugar that was aked by one of our customers but makes it really simple to **integrate an RSS feed into a page**!
@@ -18,30 +20,41 @@ The list of posts below is loaded using the following script (check the source! 
 <ul id="feed">
 </ul>
 
-<script src="https://gist.github.com/julien51/8567755.js">
-</script>
+{% prism javascript %}  
+$(document).ready(function() {
+  $.superfeedr.options.login = 'superfeedr';
+  $.superfeedr.options.key = '1a8c661804873703802212503e75d3c2';
 
-<script src="http://code.jquery.com/jquery-1.10.1.min.js">
-</script>
-<script src="https://raw2.github.com/superfeedr/superfeedr-jquery/master/superfeedr.jquery.js">
-</script>
+  var feed = new $.superfeedr.Feed('http://blog.superfeedr.com/atom.xml');
+
+  feed.load({count: 5}, function(result) {
+    if (!result.error) {
+      var container = $("#feed");
+      for (var i = 0; result.feed.items.length > i ; i++) {
+        var entry = result.feed.items[i];
+        $("#feed").append($('<li>' + entry.title + '</li>'))
+      }
+    }
+  });
+});
+{% endprism %}
 
 <script type="text/javascript">
-$.superfeedr.options.login = 'superfeedr';
-$.superfeedr.options.key = '1a8c661804873703802212503e75d3c2';
+$(document).ready(function() {
+  $.superfeedr.options.login = 'superfeedr';
+  $.superfeedr.options.key = '1a8c661804873703802212503e75d3c2';
 
-var feed = new $.superfeedr.Feed('http://blog.superfeedr.com/atom.xml');
+  var feed = new $.superfeedr.Feed('http://blog.superfeedr.com/atom.xml');
 
-feed.load({count: 5}, function(result) {
-  if (!result.error) {
-    var container = document.getElementById("feed");
-    for (var i = 0; result.feed.items.length > i ; i++) {
-      var entry = result.feed.items[i];
-      var div = document.createElement("li");
-      div.appendChild(document.createTextNode(entry.title));
-      container.appendChild(div);
+  feed.load({count: 5}, function(result) {
+    if (!result.error) {
+      var container = $("#feed");
+      for (var i = 0; result.feed.items.length > i ; i++) {
+        var entry = result.feed.items[i];
+        $("#feed").append($('<li>' + entry.title + '</li>'))
+      }
     }
-  }
+  });
 });
 </script>
 
