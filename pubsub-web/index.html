@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Publish Subscribe for the web </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsub-web">Publish Subscribe for the web</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsub-web</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2012-01-13T00:00:00+01:00"><time>13 Jan 2012</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Everybody tries to make the web better. Here&#8217;s my attempt.</p>
+<h3>A brief history of the web.</h3>
+<h4><span class="caps">READ</span></h4>
+<p>I&#8217;m 29, but I was lucky enough to be among the very first web addicts. When I remember most of the websites from that time, I am pretty embarrassed by how ugly they were, but also (worse) by how useless they were. I&#8217;m sorry to say, but <em>at the time, the web was not making anyone&#8217;s life better</em>. The only thing it did was replacing shinny paper based magazines with ugly looking screens. I now fail to see how I could consider this as an improvement.</p>
+<p>A lot of people wrote this, but <strong>the web was mostly <span class="caps">READ</span> <span class="caps">ONLY</span></strong>. In other words, aside from a very few things, the only activity one could ever do was read. This is <em>why we have pages, bookmarks, site indices</em>&#8230; etc. At this time, search engines appeared, because people needed to a way to find the content they wanted to read. Similarly e-commerce was born, because quickly, many companies exposed the traditional product lists on the web so that their prospects could read them.<br />
+This behavior is baked deep into the protocol that we use to access the web, in the form of <strong><span class="caps">GET</span> requests</strong>.</p>
+<h4><span class="caps">WRITE</span></h4>
+<p>A bit more than 10 years ago, a massive shift happened: we started to <em>write to the web</em>. That was interesting. <em>For once, the web was offering something new</em> as very few people were actually able to write in newspapers and magazines! Blogging was the very first step of this and quickly the web sites that allowed us to do write saw the massive spike in traffic: wikipedia, youtube, flickr outgrew the old portals that ISPs were forcing down their user&#8217;s throats.<br />
+It&#8217;s also at that time that <span class="caps">API</span> started to appear. Developers were able to program services that would write to 3rd party websites, instead of actual people. Writing is also baked deep into our protocols in the form of <strong><span class="caps">POST</span> requests</strong>.</p>
+<h4><span class="caps">SUBSCRIBE</span></h4>
+<p>People were now able to read and write the web. Increasingly they were interested by what other people they knew wrote, because, after all, that is who they used to interact with in the real world. <em>It slowly put people in broad light</em>, as opposed to big media outlets. The logical next step was to map our physical friendships to the web. That&#8217;s the social networks wave. The real new activity here is this <strong>bounding</strong>: expressing interest in someone to later read the content they wrote. Whether you call that <em>subscribing</em>, <em>following</em>, <em>friending</em> or <em>circling</em>, it&#8217;s all the same pattern.</p>
+<p>Interestingly enough this is <strong>more than just social</strong>. Several very successful ecommerce services offer the same kind of pattern and allow you to subscribe to their deals mailing lists. Coincidentally, we now access the web more through mobile devices than through our computer, which means that context (place and time) is increasingly important, and some services are able to provide us a better experience by subscribing us to our context. What&#8217;s interesting is that <strong>despite the obviousness and the ubiquity of this subscribe pattern, there is no such verb into the <span class="caps">HTTP</span> protocol</strong>.</p>
+<h3>Hooks and Callbacks</h3>
+<p>The little story above is nice, but, even if we don&#8217;t have this &#8220;subscribe&#8221; verb, it looks like we do already have all the services working just fine, so why would we need something to do it?</p>
+<p>The first answer is obviously <strong>standards</strong>. By having a standard way to doing so, we could probably <em>decouple that action from specific services</em>. If that happens, it means that we could start using generic clients to subscribe to all kinds of things online. Do you use a different browser for Facebook and Groupon? By pushing down the stack the subscription pattern, we can <strong>abstract it</strong>! Hopefully we can even bake this in browsers in one way or another.</p>
+<p>Another reason is that I hope and believe that this will open the door for a <strong>new way of creating web applications</strong>. Several programming languages also have a Publish Subscribe pattern. These languages and frameworks are usually very <em>efficient and elegant for decoupled systems</em>. Many modern web technologies like Node.js, but also datastores like Redis&#8217;s PubSub have made it much easier to write complex workflows.<br />
+Plugging complete web applications will certainly make creating complex systems much easier. Most web developers don&#8217;t think much about electricity, cooling or even IO, with the advent of fully managed platforms. <strong>Layering common functionnalities and building on top is an amazing enabler</strong>.</p>
+<p>For example, not only could we (humans and machines) &#8220;subscribe&#8221;, and combine that with other actions, like write. We could even imagine machines subscribing to other machines&#8217;s action to let the user decide which workflow he wants. Does this remind you of <a href="http://blog.superfeedr.com/webintents/">WebIntents</a>? it should, as web intents are a way to subscribe to a user&#8217;s actions. I told you this publish/subscribe pattern is everywhere!</p>
+<h3>Getting involved!</h3>
+<p>Some of the smartest web engineers have fought for years to <strong>bring this subscribe approach to the web stack</strong>, through start-ups, the use of other non-http protocols, by bending <span class="caps">HTTP</span>, or by writing <span class="caps">HTTP</span>-based protocols for specific sub-cases. None of these approaches became as ubiquitous as the pattern itself.</p>
+<p>But today, there is some kind of momentum as the web&#8217;s data is becoming harder and harder to ingest for everybody (machines and humans). This is why I&#8217;m trying to <strong>push the W3C to sit down and take some time to think about all this</strong>. I have created a <a href="http://www.w3.org/community/groups/#pubsub">Community Group</a> there and I hope that slowly, but surely people will express their needs, and why having this would make the web better. There are number of topics and use cases that need to be covered, I hope and believe we will cover them all.</p>
+<p>Please, join us.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

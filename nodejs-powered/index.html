@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Node.js Powered </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/nodejs-powered">Node.js Powered</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/nodejs-powered</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-01-14T00:00:00+01:00"><time>14 Jan 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Late, but not too late, the whole Superfeedr tream want to wish you a wonderful year 2013, may it be filled with joy and successes!<br />
+We wanted to start the year by telling you a bit more about 2012.</p>
+<p>About a year ago, we introduced our first bits of code that use Node.js: a <a href="http://blog.superfeedr.com/node-superfeedr/">simple wrapper for our <span class="caps">XMPP</span> <span class="caps">API</span></a>. We slowly started to fall in love with Node which had gotten more mature and stable over time. We used Javascript to build our <a href="http://www.msgboy.com/index.html">Msgboy</a> and got more and familiar with both the language and the framework.</p>
+<p>So, we slowly decided to rewrite all the Superfeedr backend (the website frontend still uses Ruby on Rails). As always, it took us a couple days (litterally) to write the core of it, and months to write all the corner cases. Back in November, everything was ready and deployed.</p>
+<h3>The good</h3>
+<p>What we liked the most of Javascript was the fact that it&#8217;s an asynchronous language &#8216;by default&#8217;. There is no need for us to check whether the Redis library uses a reactor pattern of if the <span class="caps">DNS</span> resolution was blocking.</p>
+<p>But what really made the difference in the end, was the extraordinary Node.js community. It&#8217;s alive, and kicking hard! As an example, between the time we started our rewrite and the time it finished, Node itself went from 0.8.5 to 0.8.15, and I&#8217;m not even mentionning all the npm modules.</p>
+<p>We also started to fall in love with the &#8220;small module&#8221; approach praised by Substack. At first, it felt like it would be dangerous to add dozens of dependencies for small tasks, but we found out that it would always be easier to replace one failing or broken component than a whole framework.</p>
+<h3>The not-so-good</h3>
+<p>Node.js is 4 years old, and that&#8217;s very very young. This means that it&#8217;s still not easy to figure out the best tools. For example, we had a lot of trouble to understand the <a href="http://stackoverflow.com/questions/13126808/whats-the-node-js-memory-breakdown">actual memory footprint of our processes</a>. Garbage collecting surely gave us a lot of nightmares. It certainly works amazingly well, but the fact that it&#8217;s hard to understand (at least for us) makes it hard for us to understand pain points and optimize them.</p>
+<p>Also, it is often really hard to find the right balance between <span class="caps">CPU</span> utilization and memory usage. If you try to squeeze in more operations in each loop of the event loop, this one becomes slower, and the memory footprint tends to grow&#8230; which makes garbage collecting more expensive.</p>
+<p>Another consequence of the relatively young age of Node.js is the fact that several APIs are still changing. We initially focused on using Streams a lot internally. We were lucky enough to eventually surrender as a new Streams <span class="caps">API</span> was announced.</p>
+<p>Of course the Javascript syntax is not as elegant, or at least not as uniform as the Ruby syntax and we kind of miss that too<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>.</p>
+<h3>What it changes</h3>
+<p>Our Ruby code base is now archived. It was an amazing ride, and EventMachine was an eye opener for us (good and bad!). We know other solutions exists, specifically with the advent of fibers, but it really seems that Node community is more active these days, and the ability to find talents as well as attract people who are willing to learn about it.</p>
+<p>It terms of performance, we also have seen a significant (about 25%) bump in terms of feeds processed by second per server. In other words, when we needed 12.8 seconds to process 10k feeds, we now only need 10 seconds. But that may also be due to some architectural changes that resulted from our Node migration, more than the language itself.</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> I know about CoffeeScript.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

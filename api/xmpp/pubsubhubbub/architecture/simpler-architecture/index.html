@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : A new Architecture </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/api/xmpp/pubsubhubbub/architecture/simpler-architecture">A new Architecture</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/api/xmpp/pubsubhubbub/architecture/simpler-architecture</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-08-25T00:00:00+02:00"><time>25 Aug 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>No post for almost 2 weeks : we&#8217;ve been incredibly busy. We had a lot of instability in the past 10 days, in conjonction (but not related) to significant <a href="/api/xmpp/pubsubhubbub/API-changes/"><span class="caps">API</span> changes</a>. We&#8217;d like to apologize for the few times when you had problems accessing our service. We&#8217;ve done our best to limit these downtime periods and most of the time they only affected subscription/unsubscriptions : <strong>notifications were still going on, as usual</strong>.</p>
+<p>In that period, the number of feeds in our system increased by 50%, most of them through the <a href="http://push.superfeedr.com/">PubSubHubbub <span class="caps">API</span></a>. This significant growth in the <span class="caps">HTTP</span> traffic made light on the weaknesses of our <span class="caps">HTTP</span> architecture. The <span class="caps">HTTP</span> <span class="caps">API</span> had a direct access to the MySQL database. <em>This was quite bad design from us, as both the <span class="caps">XMPP</span> and <span class="caps">HTTP</span> were accessing this database and basically doing the same thing : subscribing and unsubscribing users to feeds</em>.</p>
+<p>As I am a true <a href="http://bit.ly/3lJOzV"><span class="caps">DRY</span></a> lover, I just hated the fact that we had to create and maintain 2 components doing exactly the same thing and I&#8217;ve been looking for ways to change that.</p>
+<p>Here is how our architecture looked like until this morning:</p>
+<p><img src="/images/before.png" alt="" /></p>
+<ul>
+	<li>The <span class="caps">XMPP</span> App would deal with all subscriptions and unsubscriptions, as well as notifications from users using the <span class="caps">XMPP</span> <span class="caps">API</span>. Nothing changed there.</li>
+</ul>
+<ul>
+	<li>The Web app would do the same with both the website (you can add/remove feeds through our website) and the PubSubHubbub <span class="caps">API</span>. It was a plain vanilla Rails application.</li>
+</ul>
+<ul>
+	<li>It was simple to understand, but not so clean and probably not very easy to maintain, since we have so much duplicate information. I was also &#8220;scared&#8221; by the scaling issues we might have had to face on both sides, but I knew that our <span class="caps">XMPP</span> app can scale pretty easily as <a href="http://xmpp.org/extensions/xep-0114.html"><span class="caps">XMPP</span> components</a> are load balanced by default by <a href="http://www.ejabberd.im/">EJabberd</a>, which means that we can scale horizontally in a mater of minutes (<a href="http://blog.superfeedr.com/chef/configuration/deployment/infrastructure/scale-with-chef/">Chef is great</a>!).</li>
+</ul>
+<p>Here is how it looks like now:</p>
+<p><img src="/images/after.png" alt="" /></p>
+<p>At first sight it looks more complex, and you&#8217;re probably right, but it&#8217;s also more coherent and much much much dryer. What changed? Basically, <strong>both the web app and the PubSubHubbub <span class="caps">API</span> became <span class="caps">XMPP</span> clients</strong>, as they now both access the <span class="caps">XMPP</span> App to add/remove/list subscriptions. In both cases, this is <a href="http://xmpp.org/extensions/xep-0206.html"><span class="caps">BOSH</span></a> magic.</p>
+<p>Bosh is and <span class="caps">HTTP</span> extension that allows bi-directional streams &#8211; very much like <a href="http://blog.leahculver.com/2009/07/a-is-for-ajax-and-c-is-for-comet.html">comet</a> -. <span class="caps">XMPP</span> has a <span class="caps">BOSH</span> extension, that has been implemented in eJabberd. Once you&#8217;ve got this stream, <em>it&#8217;s pretty easy to transmit <span class="caps">XMPP</span> traffic over <span class="caps">HTTP</span></em>. A key feature is that these connection are &#8220;stored&#8221; on the <span class="caps">HTTP</span> side of the <span class="caps">XMPP</span> server. It means that as long as your client remembers the session id of this stream, you can re-connect to the <span class="caps">XMPP</span> server and take the connection where it was left.</p>
+<h4>The web app : Strophe</h4>
+<p><a href="http://code.stanziq.com/strophe/">Strophe</a> is a very well done Javascript library for <span class="caps">XMPP</span>. My friend <a href="http://metajack.im/">Jack</a> wrote it and it&#8217;s awesome. Among its key advantages : a simple syntax, very close to <a href="http://jquery.com/">Jquery</a>, and an &#8220;attach&#8221; feature that allows the application server (Rails in our case), to start the <span class="caps">BOSH</span> stream and then hand it over to Javascript so that user credentials are never sent back to the client. That is exactly what we used for the web application. You can now list, unsubscribe, and subscribe to feeds through a simple interface that uses our <span class="caps">XMPP</span> <span class="caps">API</span>. How cool is that?</p>
+<h4>PubSubHubbub : Proxying</h4>
+<p><a href="http://code.google.com/p/pubsubhubbub/">PubSubHubbub</a> is an <span class="caps">HTTP</span> <span class="caps">API</span>. That was a little trickier, because obviously, running javascript on the server side doesn&#8217;t make much sense. However, like any <span class="caps">HTTP</span> <span class="caps">API</span>, we can of course &#8220;proxy&#8221; it from Rails. That is what we did.<br />
+Here is what happens when you subscribe or unsubscribe with the PubSubHubbub <span class="caps">API</span> :</p>
+<ol>
+	<li><strong>on the server</strong>, it starts an <span class="caps">XMPP</span> Bosh session with your credentials</li>
+	<li>it sends the corresponding <span class="caps">XMPP</span> query,</li>
+	<li>it translate the <span class="caps">XMPP</span> response</li>
+	<li>it returns it to you as an <span class="caps">HTTP</span> response.</li>
+</ol>
+<p>Of course, there is a performance cost to that, but it&#8217;s not that big, as our <span class="caps">HTTP</span> server is &quot;geographically&quot;&quot; very close to the <span class="caps">XMPP</span> app. Also, at the first PubSubHubbub query that you make, we store the connection into a <a href="http://www.danga.com/memcached/">Memcached</a> server, which allows faster processing on the following requests. In terms of results, we can server any PubSubHubbub query in something like 200ms to 500ms. It is slow, but don&#8217;t forget that we also <a href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.1.html#verifysub">check acceptance of the subscription/unsusbcription</a> (by sending an <span class="caps">HTTP</span> <span class="caps">GET</span> request) on your side, and that accounts for the biggest part of that time, actually.</p>
+<p>We <a href="http://blog.superfeedr.com/dev/gospel/web-apps/the-future-of-web-apps/">wrote it earlier</a>, but we&#8217;re true believers in the fact that web apps are about to see a massive shift in their architecture, and we think that <span class="caps">XMPP</span> based apps, where the browser is just an <span class="caps">XMPP</span> client are going to be a significant part of that trend. We hope <a href="http://superfeedr.com">Superfeedr</a> will be an example that parents will show their kids, when they teach them about web apps ;) (Other cool examples include <a href="http://collecta.com/">Collecta</a> or <a href="https://presentlyapp.com/">Present.ly</a> &#8230;)</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

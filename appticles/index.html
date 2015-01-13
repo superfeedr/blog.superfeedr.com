@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Appticles </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/appticles">Appticles</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/appticles</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-02-06T00:00:00+01:00"><time>06 Feb 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <blockquote>
+  <p><a href="http://appticles.com">Appticles.com</a> is a mobile content delivery and monetization platform for small and medium publishers completely based around the concept of Open Web and HTML5 and it is being developed by <a href="http://webcrumbz.co/">Webcrumbz.co</a>. They’re using Superfeedr as you’ll see below and we opened the door of this blog to them!</p>
+</blockquote>
+
+<h3 id="weve-integrated-with-superfeedr-and-we-love-it">We’ve integrated with Superfeedr and we love it!</h3>
+
+<p>Ever since we started working with RSS/ATOM feeds from our publishers, it became obvious for us that we needed a simple and robust solution to keep the content flowing, allowing their mobile readers to always enjoy the latest news/articles on their mobile web application.  </p>
+
+<p>We dug a bit around the <a href="https://code.google.com/p/pubsubhubbub/">Pubsubhubbub</a> real-time web protocol as it seemed the right solution for our situation. In essence, the main purpose was to provide near-instant notifications of feeds updates, which would represent a consistent improvement on the typical situation where we had to periodically poll the feeds at some arbitrary interval.</p>
+
+<p>In essence, PuSH can be described as: 
+* A simple publish/subscribe protocol
+* Turns Atom and RSS feeds into real-time streams
+* Web-scale, low-latency messaging
+* Three participants: Publisher, Subscriber, Hubs. </p>
+
+<p>Although this stuff is pretty technical, from a publisher’s perspective, it means that you have to have this on the header of your RSS feed:</p>
+
+<p><code>&lt;link rel=”hub” href=”https://pubsubhubbub.appspot.com/” /&gt;</code></p>
+
+<p>And whenever you add a new article in the feed, you should send a ping to the Hub with the feed URL. From here onwards, the Hub is taking care of pushing the new content to all of your subscribers (including Appticles). The good news is that if your website is based on <a href="http://wordpress.org/extend/plugins/pubsubhubbub/">Wordpress</a>, <a href="http://drupal.org/project/push_hub">Drupal</a> or <a href="http://extensions.joomla.org/">Joomla</a> it’s just a matter of installing a plugin to make it work, leaving the rest up to us.</p>
+
+<p>Even in the absence of the PuSH protocol (no Hub declaration in your RSS/ATOM feeds) we’re making sure your mobile web application is updated regularly. This obviously means that the infrastructure behind the scene is pretty complex and we couldn’t have done it without our trusted partner, <a href="http://superfeedr.com">Superfeedr.com</a>. They’ve built a <em>complex feed fetching and parsing infrastructure</em> so we didn’t have to, allowing us focus on what we’re best at: providing you with awesome mobile HTML5 applications to help you grow your mobile readership.</p>
+
+<p><img src="../images/appticles.jpg" alt="Appticles Integration" /></p>
+
+<p>Going into technicalities, our integration with Superfeedr.com had 2 phases: subscribing/unsubscribing and parsing the new content when we’re notified.</p>
+
+<h3 id="subscribingunsubscribing">Subscribing/Unsubscribing</h3>
+
+<p>In the above scheme our platform, Appticles.com, is a subscriber. This means that for every feed a publisher is adding into the platform to create its mobile HTML5 application we have to do the following operations to subscribe to that feed:</p>
+
+<ul>
+  <li>Detect the Hub declaration in the feed</li>
+  <li>Send a subscribe request to the feed’s Hub or to Superfeedr.com if we can’t find any Hub declaration in your feed.</li>
+  <li>The Hub sends back a request to verify the subscription and we have to answer accordingly.</li>
+</ul>
+
+<p>Unsubscribing from a feed is done in a similar way, whenever a feed is deleted from our platform. A couple of inspirational integrations that we’ve used are: a simple <a href="https://github.com/adrinavarro/Superfeedr.php">PHP Superfeedr subscriber</a> library which got us started,  a basic <a href="http://codesnipp.it/javascript/node.js-basic-pubsubhubbub-librarymiddleware">NodeJs Pubsubhubbub</a> library and the <a href="https://github.com/urbanairship/pubsubsuperfeedr">PubSubSuperfeedr Python</a> library from Urban Airship that we actually integrated in our platform.</p>
+
+<h3 id="parsing-the-content">Parsing the content</h3>
+
+<p>After the subscription has been made we’re ready to receive new content. Because our mobile HTML5 applications have a specific way of displaying the news/articles we have to export the content in a certain format, which is done through our parsing daemon.  </p>
+
+<p>So far so good, everything runs smoothly and we’re happy we’ve found a great partner in Superfeedr.com. You may ask why we chose them instead of others? To be honest, that was mainly because it was impossible for us to escape Julien’s helpful comments every time we’ve posted some question about Pubsubhubbub on Stackoverflow. </p>
+
+<p>Also, he was there every time we needed him over e-mail or Twitter, which made the integration super easy and fun.</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

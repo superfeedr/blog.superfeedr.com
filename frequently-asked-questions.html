@@ -1,0 +1,80 @@
+<h2>General</h2>
+<h3>
+How does Superfeedr deal with Encodings? </h3>
+<p>
+	 One of the other benefits of using Superfeedr is that the data pushed to you will always be UTF-8 and you won't have to deal with encoding issues. We will make sure we encode everything correctly into UTF-8 with the following rules : first we'll trust the HTTP headers of the content we poll, then, we'll look at the encoding of the XML documents (if applicable), finally we will try to guess the best encoding if both of the previous methods failed. If the document is not UTF8, then, we will encode to UTF-8.
+</p>
+<h3>
+How expensive is Superfeedr for subscribers? </h3>
+<p>
+	 If you use <i>Superfeedr when subscribing to any of the hubs we host (like Tumblr, Posterous, Foxnews, Getglue... etc), it's free</i>. You can get all that content by subscribing to their hubs, as you would do for any other hub. Technically, your code should not even be aware of the fact that this hub is using superfeedr :)
+</p>
+<p>
+	 If you use <i>Superfeedr as a subscriber for all your feeds</i>, if you want to benefit from our normalization, from JSON, from our digest notification feature, or if you want to retrieve the past content of a feed, then, we will charge you for each notification we send. You can <a href="http://superfeedr.com/orders/new">find details on this page</a>. In any case, remember that user Superfeedr i<b>s always cheaper </b>than building your own polling infrastructure!
+</p>
+<h3>
+Duplicate entries/notifications : why do they happen? </h3>
+<p>
+	 We do all we can to avoid these, but you should make sure your app deals with them. As you know we use a very distributed architecture, which means that even our datastores are replicated. There is always a risk that replication to "too slow" sometimes, and that 2 parsers might run almost at the same time and see the same entry twice.
+</p>
+<p>
+	 However, if you see recurring duplicate entries for a given feed, you may want to check that you haven&#39;t subscribed twice to this feed, with different endpoints. We send notifications for each {feed url | endpoint} pair.
+</p>
+<h3>
+The "next fetch date" for some of my feeds seems inconsistent? </h3>
+<p>
+	 When you add a feed that we're not monitoring yet, we have to assigned it a next fetch date. To make sure this feed gets fetched as soon as possible, we assign it a date in the past (<span style="font-size:13px;border-collapse:collapse">2012-01-15T22:25:05+00:00 to be precise).<span style="border-collapse:separate;font-size:small"> Hopefully, if you wait a few seconds, you should soon see a more accurate next fetch date.
+</p>
+<h3>
+How do you (and I) handle redirections in the feeds to which I subscribed? </h3>
+<p>
+	 Redirections should be transparent to you. When you give us a feed url, whether it is a permanent redirection, or a temporary redirection, we will follow it to get the final content. The only limitation is that we won't follow more than 5 redirections. You should make sure, however that you give us atomic (final) urls when you can.
+</p>
+<h3>How redundant is your architecture?</h3>
+<p>
+	 We know that for most of our customers applications, feed parsing is critical. That is why Superfeedr relies on a very redundant architecture. Indeed, all of its components (from the database to the "parsers" have been replicated accross different datacenters (in different states). We are currently relying on Slicehost and they make a perfect job for us.
+</p>
+<h3>Why do you call 15 minutes Real-time?</h3>
+<p>
+	 Because real-time in computer science is not synonymous of "instantaneous". Wikipedia <a href="http://en.wikipedia.org/wiki/Real-time_computing">says</a> that<i><b>real-time computing</b> (RTC) is the study of <a href="http://en.wikipedia.org/wiki/Computer_hardware" title="Computer hardware">hardware</a> and <a href="http://en.wikipedia.org/wiki/Computer_software" title="Computer software">software</a> systems that are subject to a "real-time constraint"—i.e., operational deadlines from event to system response.</i><br>
+	 So, technically real-time means that we can guarantee delivery of new entries within 15 minutes of their publication. <br>
+	 Over time, our goal is to actually decrease this limit to 10, 5, 3 or even 1 minute, and we're already working on that.
+</p>
+<h3>
+What is the small <img src="http://superfeedr.com/images/icons/arrow_in.png" border="0" style="border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;border-style:initial;border-color:initial"> icon in the "next fetch" columns for some feeds in my dashboard? </h3>
+<p>
+	 This icon shows that a given feed doesn&#39;t need to be fetched as it is pushed to us (via PubSubHubbub, <a href="http://blog.superfeedr.com/rsscloud/api/pubsubhubbub/RSSCloud/">RSSCloud</a>, XML-RPC or <a href="http://blog.superfeedr.com/sup/pubsubhubbub/xmpp/real-time/SUP-over-pubsubhubb-and-xmpp/">SUP</a>), or because we use a specific API to get its content intantaneously.
+</p>
+<p>
+	 However, please remember that in any situation, we will always failover to regular polling to make sure you get all the content no-matter what. The only difference is that polling will be much much less frequent.
+</p>
+<h2>PubSubHubbub</h2>
+<h3>
+The notification is empty with PubSubHubbub. Why? </h3>
+<p>
+	 The notification include the new entries in the BODY. It is a POST request. However many HTML parsers in most of the high level language usually prepare this data and parse it into hashes (assuming it&#39;s coming from a form.) In the case of the PubSubHubbub notification, the notification cannot be parsed as a &#39;form&#39; POST, so you need to access the raw data in the body.
+</p>
+<h3>
+What's the difference between sync and async in PubSubHubbub API? </h3>
+<p>
+	 The verification can be performed within the subscrption request cycle (that's sync) or outside of it (the hub terminates the subscription request and then, verifies the intent). Some hosting provider (like Heroku) will limit the number of concurrent connection, so you have to chose async with them.
+</p>
+<h3>What's the difference between the default hub and other hubs that Superfeedr hosts?</h3>
+<p>
+	 Superfeedr hosts several hubs for several publishers, including Tumblr, Posterous and many others. These hubs work exactly like you expect and as defined in the spec. Then, we have the default which works with any feed, as well as with the track feeds. It uses the exact same protocol, API. The only different is that you have to use HTTP Basic Auth to susbcribe to these feeds. This means that you can&#39;t use the feeds that get their updates with the default hub on applications like Google Reader (as Google Reader does not have a Superfeedr account!)
+</p>
+<h2>XMPP</h2>
+<h3>
+How come Superfeedr doesn't work with my IM client (Adium, Gajim, ...)? </h3>
+<p>
+	 Superfeedr uses XMPP, which is also known has Jabber. However, XMPP is much richer than just the chat application and defines a lot of extensions and chat is just one example of what XMPP does. Unfortunately, there is no <a href="http://xmpp.org/software/clients.shtml">XMPP client</a> which supports PubSub (<a href="http://xmpp.org/extensions/xep-0060.html">XEP 060</a>) at the moment. However, with the <a href="http://psi-im.org/">Psi client</a>, you'll be able to see all the incoming traffic and even be able to send some stanzas (if you're not afraid of writing some XML).
+</p>
+<h3>What XMPP libraries is there in my language?</h3>
+<p>
+	 XMPP is a proven protocol with libraries in almost any language. Check<a href="http://xmpp.org/software/libraries.shtml"> this page to find out about XMPP libraires</a> in your favorite language. However, if you want to keep it simple, you can probably use one of <a href="http://github.com/superfeedr">our API wrappers</a> (they're OSS) so that you don't have to re-invent the wheel ;)
+</p>
+<h3>
+Do I need to have an XMPP server running to use Superfeedr? Do I need to 'learn' XMPP? </h3>
+<p>
+	 No! Of course not... You only need to <a href="http://superfeedr.com/signup">register</a> to actually start using superfeedr. Then, you can even use one of <a href="http://github.com/superfeedr">our wrappers</a> so that you won't even see a single XMPP stanza.
+</p>

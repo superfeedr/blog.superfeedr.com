@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : We just moved </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/linode">We just moved</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/linode</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-10-17T00:00:00+02:00"><time>17 Oct 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>We&#8217;ve been using <a href="http://slicehost.com">Slicehost</a> since the beginning of the Superfeedr adventure. We <strong>loved</strong> their approach, the simplicity of the service and even the quality of the support. At the time, when we compared with <a href="http://aws.amazon.com/ec2/">EC2</a>, the performance/$ was even better specially since it included some kind of bandwidth bundled with the slices.</p>
+<p>Yet, after a few months, we started having issues with Slicehost. Some of them pretty bad (including network issues, or dead hosts). We understand that this can (and will) happen with any platform out there, but at the same time the <em>quality of the praised support went down</em>, really down. The pricing didn&#8217;t evolve either, making them not competitive anymore. Finally, pretty much nothing has changed in terms of features for the whole time we were there. We asked for backup for bigger slices, it never came. The web interface is dead slow too and was never fixed.</p>
+<p><em>Disclaimer : All links to Linode have a tracking code&#8230; so that if you open an account with them, we get a little discount on our next servers!</em></p>
+<p><img src="http://www.linode.com/images/linode_logo_gray.png" style="float:left; margin: 10px; width: 200px;" alt="" /></p>
+<p>After a few weeks of hesitation, we decided to move last month. Finding a good platform wasn&#8217;t easy. <strong>There is a ton of choice</strong> and tweeting about them will bring you a lot of offers from different providers. We settled on <a href="http://www.linode.com/?r=d77ef4af57d4b6276d6a5d398fa0614e8debc006">Linode</a>, which keeps the <em>slice/node</em> approach simplicity that we liked so much at Slicehost. The move happened over the last 2 weeks, with no service interruption. We had a few delays for some feeds a few times, we killed the web app twice for a few minutes (<span class="caps">DNS</span>&#8230;), but we&#8217;re now settled and will turn off the last servers (<span class="caps">XMPP</span> servers mostly) in the coming days.</p>
+<p>If you&#8217;re considering a similar move, here is our feedback about <a href="http://www.linode.com/?r=d77ef4af57d4b6276d6a5d398fa0614e8debc006">Linode</a>.</p>
+<h3>The good</h3>
+<h4>Much cheaper</h4>
+<p>On smaller slices, <em>it&#8217;s roughly twice as cheap to use Linode than Slicehost</em>. We use a lot of small instances (our parsers). For $20, Slicehost gives you 256MB of <span class="caps">RAM</span>, 10GB of storage and 150GB of bandwidth. For $20, you get 512MB of <span class="caps">RAM</span> (<ins>100%), 16GB (</ins>60%) of storage and 200GB (+33%) of bandwidth. The <span class="caps">CPU</span> perf is not easy to compare at all<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>, but in the tests we ran, we did get better performance for our code (about 20%). We decided to not take this into account because it could mean that the host we tried wasn&#8217;t loaded at all and we benefited from available <span class="caps">CPU</span> cycles, but after deploying our whole stack, it seems to be on-par. <strong>We expect to save about 40% on our server bill, for similar performance.</strong></p>
+<h4>More features</h4>
+<p>One of the issues we had with Slicehost is that we pay for a lot of hard drive that we don&#8217;t use. Linode offers some kind of customization so you can make machines with more <span class="caps">RAM</span>, or more bandwidth if you need to.</p>
+<h4>A much faster interface</h4>
+<p>And a new one coming! The slicehost interface is painfully slow and still shows many Rails errors&#8230; The current Linode interface is snappier, but it&#8217;s not beautiful. However, the <a href="https://manager.linode.com/linodes?r=d77ef4af57d4b6276d6a5d398fa0614e8debc006">upcoming one</a> is seriously looking good.</p>
+<h4>The support is responsive</h4>
+<p>This is my last point, because it&#8217;s obviously the less tested. We had 2 issues and opened 2 tickets. Both issues were dealt with within 90 minutes. The first issue was entirely my fault (fucked up the networking settings of a machine) and the support person helped me fix it without being arrogant and disrespectful (in comparison to the way I&#8217;ve been treated so many times by Slicehost, on their chat system mostly).  The other issue was a Linode problem. It took them 2 attempts to fix it (by moving our linode to a different host). I was quite anxious to not have any &#8220;realtime&#8221; support like the chat that slicehost offers, but the <a href="http://www.linode.com/irc/"><span class="caps">IRC</span> chan</a> seems relatively active and they were responsive to emails (within business hours though).</p>
+<h3>The not so good</h3>
+<h4>Enabling Private IPs is a mess</h4>
+<p>A big mess. So much that we fucked it up (see the support part). It&#8217;s also hard to automate with <a href="http://www.opscode.com/chef">Chef</a>, because it involves a reboot of the machine and we usually have our app running when chef finishes to run :/ It was so easy to do the same thing with Slicehost and we will miss this.</p>
+<h4>The Chef integration is not there yet</h4>
+<p>As much as I was scared by <a href="http://wiki.opscode.com/display/chef/Knife">knife</a> initially, I started to get used to it but it doesn&#8217;t have Linode support for boostrapping. <a href="http://github.com/opscode/chef">I know it&#8217;s up to me</a>. It&#8217;s on my &#8220;to-contribute&#8221; list now.</p>
+<h4>Resizing and cloning are not as convenient</h4>
+<p>I never understood the magic that was at use with Slicehost, where you can clone &#8216;live&#8217; machines, or resize them in a few minutes, but Linode doesn&#8217;t have any of these features : cloning requires a full stop of the instance, and resizing seems to be very very slow (it took almost 1 hour to resize one of our instances). Luckily we don&#8217;t do that very often, but I can see how this can be a burden.</p>
+<p>There is probably a lot more to learn about Linode, but one thing that <em>makes me confident at using them is that they&#8217;re getting better</em>. They opened several datacenters in the past months, introduced their <a href="http://www.linode.com/stackscripts/">Stackscripts</a>, cut down prices, <a href="http://www.linode.com/backups/">introduced backups</a>, and are currently working on a new interfaces. All this happened in the last 12 months. Not much happened at Slicehost in the meantime.</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> Why the hell isn&#8217;t there a nice and convenient way to compare apple to apples in terms of <span class="caps">CPU</span> for cloud providers?</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

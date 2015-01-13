@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : PubSubHubbub for APIs </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsubhubbub-api">PubSubHubbub for APIs</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsubhubbub-api</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2011-02-22T00:00:00+01:00"><time>22 Feb 2011</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p><strong>PubSubHubbub</strong> <em>was initially created for feeds</em>, because the polls/update ratio is usually quite high for them. Unfortunately, this ratio is also often times very high for APIs. Generally, we push people into implementing feeds rather than APIs for their content, as feeds are standard, and once a developer has created an app that is able to consume and <span class="caps">RSS</span> feed from Flickr, it is able to consume a feed from Tumblr, a feed from ReadWriteWeb or a feed from Craigslist. <strong>Feeds are the web&#8217;s lingua franca</strong>! Yet, in some cases, having a custom <span class="caps">JSON</span> <span class="caps">API</span> just makes more sense. Here is <strong>how to support PubSubHubbub with your <span class="caps">API</span></strong>.</p>
+<h3>Identify the resource</h3>
+<p>It&#8217;s the first step : what are people polling the most on your service? It could be the weather in a given geographic area, it could be the price of an item in your catalog, it could be the profile information of a user in your system&#8230; etc.<br />
+Once you have identified this resource, you need to make sure you can track when the change in this resource happens. Generally, it&#8217;s hard to use something that changes constantly, like a stock price. In such cases, you want to define levels that will trigger notifications, for example.</p>
+<h3>Discovery</h3>
+<p><strong>PubSubHubbub</strong> is a layer on top of your existing <span class="caps">API</span>, but you need to programmatically indicate anyone polling your <span class="caps">API</span> that the content their polling is available for them in a push fashion. First, <a href="http://superfeedr.com/publisher">create a publisher account</a> with Superfeedr, then, <strong>follow the instructions to create your hub</strong>. For the sake of clarity, let&#8217;s assume you&#8217;ve chosen <code>publisher.superfeedr.com</code>.<br />
+You now need to add an <span class="caps">HTTP</span> header to your <span class="caps">API</span> responses which mentions this hub. The header you want to use is <code>Link</code> and you actually want to add 2 : one for the hub itself and one of the resource, like this :<br />
+<code>Link:&lt;http://publisher.superfeedr.com/&gt;;rel="hub"</code><br />
+<code>Link:&lt;http://service.tld/api/resource&gt;;rel="self"</code></p>
+<h3>Securing subscriptions</h3>
+<p>People can now start to subscribe to your content. Odds are that your <span class="caps">API</span> is protected, so you may not want anyone to subscribe to the content :) In your hub&#8217;s settings, you&#8217;ll see that you can define a <em>Subscription callback</em>. This callback is actually an <span class="caps">HTTP</span> url on which <strong>we will echo all subscriptions to your content</strong>, including the <span class="caps">HTTP</span> headers and any additional parameter provided by the subscriber.</p>
+<p><strong>Based on the <span class="caps">HTTP</span> status code</strong> that your callback returns, we will accept or refuse subscription on your behalf, and we will also show any error message back to the subscriber. If your app requires authentication with OAuth, you can just refuse subscriptions that do not provide any.</p>
+<p>Once you accept the subscription, we will notify that subscriber when the content is updated. Also, <em>subscriptions have an expiration date</em>, which means that subscribers will need to re-initiate subscriptions after some time. This is quite handy to remove disrespectful subscribers.</p>
+<h3>Notifications</h3>
+<p>This is the last step. Superfeedr needs to know about the updated content, so we can notify your content subscribers, and for us to know that your content has been updated, <em>you need to ping us</em>. There are several ways to do so :</p>
+<ul>
+	<li><strong>Fat pings</strong> : rather than have us poll you, you directly fat ping the content to <code>https://publisher.superfeedr.com</code>. We will parse the content and push it forward to your subscribers. We usually recommend it when the ping/subscription ratio is quite high. In other words, if at least one subscriber is subscribed to most of the pings you send, it&#8217;s better to fat ping us. However, we ask that you <em>sign these requests</em> to avoid forgery.</li>
+</ul>
+<ul>
+	<li><strong>Light pings</strong> : If the number of pings you make is much higher than the number of subscriptions to your content, then, you&#8217;re better off with light pings : you tell Superfeedr <strong>which url has been updated and we will poll it</strong> right away. Of course, you can also indicate which credentials we should use (including OAuth and OAuth2 headers), so your content is always protected.</li>
+</ul>
+<p>After that, not only will you see a decrease in your bandwidth consumption, as well as server load, but you will also start to see innovative applications as it&#8217;s <strong>now much much easier to consume your content</strong> from your <span class="caps">API</span>!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

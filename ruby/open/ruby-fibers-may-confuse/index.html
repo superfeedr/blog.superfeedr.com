@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Ruby Fibers may confuse </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/ruby/open/ruby-fibers-may-confuse">Ruby Fibers may confuse</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/ruby/open/ruby-fibers-may-confuse</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/0120a25badc6b1e50f6890527dca7042?s=20" > <a href="http://spaceboyz.net/~astro/" rel="author">Astro</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-04-14T00:00:00+02:00"><time>14 Apr 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Like many others, we use <a href="http://rubyeventmachine.com/">Ruby EventMachine</a> to make most use of <span class="caps">CPU</span> time in the cloud. Instead of blocking and waiting for responses from remote systems, we just memorize what is to be done and return to the main loop, taking care other things that are currently going on. The asynchronous programming model is callback-based and makes otherwise pretty Ruby code look a bit unwieldy:</p>
+<pre><code>server.get(key) do |content|
+  content.modify!
+  server.set(key, content) do
+    proceed_doing_stuff
+  end
+end</code></pre>
+<p><em>Call with Current Continuation</em> (<strong>callcc</strong>) and the advent of <strong>Fibers</strong> in Ruby 1.9 to the rescue. They can help us make the code look pretty again:</p>
+<pre><code>content = server.get(key)
+content.modify!
+server.set(key, content)
+proceed_doing_stuff</code></pre>
+<p>This works because <code>server.get</code> and <code>server.set</code> can obtain the remaining code as a reference (like the callback block before): the <em>Current Continuation</em>. The semantics are only subtly different, we can regard these simply as two ways to express code.</p>
+<p>This article is not a praise on the pretty syntax and features of Ruby. Remember what we gain with the asynchronous programming model: not only raw performance by avoiding threads and locking, but also the convenience of always running in a single thread and not having the current state made inconsistent by getting preempted by other code.</p>
+<p>Now what are Fibers introducing? We still run only one high-performing Ruby thread, but we gain <strong>cooperative multi-tasking</strong>. The situations a coder may find him/herself in are quite controllable through these &#8220;well-definable&#8221; preemption points. Still, to illustrate take a look at this stupid but trivial example:</p>
+<pre><code>received, sent = get_stats
+content = server.get(key)
+received += content.size
+content.modify!
+server.set(key, content)
+sent += content.size
+set_stats received, sent
+proceed_doing_stuff</code></pre>
+<p>This is the code from above, extended with very simple statistics collection. The statistics are global state, but we&#8217;re safe because we don&#8217;t use threads. Are we?</p>
+<p><img src="/images/shared-mutable-state.jpg" style="width:40%;float:right;margin:5px;" alt="" /><br />
+No. All the issues come back to life that are difficult with writing threaded code. During <code>server.get</code> and <code>server.set</code> the Fiber has been yielded and resumed, and another Fiber may have modified the stats in the meanwhile. This could have been caused by the very same code, just handling another server from your connection pool.</p>
+<p>By using callback blocks instead of Fibers the problem is still there but the code looks <strong>explicitly asynchronous</strong>. They tell the reader: <em>&#8220;I am running somewhat later, please pay attention to any shared state!&#8221;</em></p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

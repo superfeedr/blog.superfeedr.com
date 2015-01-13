@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : RSS: let's not do the same mistakes </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/rss-mistakes">RSS: let's not do the same mistakes</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/rss-mistakes</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-07-17T00:00:00+02:00"><time>17 Jul 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>With Google Reader gone and the recent privacy scandals, millions of faithful readers are now looking for alternatives <strong>to follow</strong> content. Meanwhile, hundreds of thousands of publishers are anxious about gaining subscribers - and control over the subscriptions which have been delegated to Twitter, Facebook or Google+. Luckily, dozens of new readers have been announced or launched.</p>
+
+<h3 id="copycats-wont-grow-the-pie">Copycats won’t grow the pie</h3>
+
+<p>RSS is dead has been the motto of several tech publications (none of whom actually deleted their feeds… but that’s another story!). The truth is these people were right in the sense that RSS has seen <em>very little innovation</em>, because one player was incredibly dominant and no-one could really distinguish from it. Now, that player is gone, but if we only use new readers who provide the same experience, we’re probably not going to see this ecosystem explode again.</p>
+
+<p>Yet, there are so many ways to consume feeds: <em>Email subscriptions</em> have been massively pushed by Wordpress for example, <a href="https://ifttt.com/recipes/search?q=RSS">RSS recipes on IFTTT</a> also provide innovative alternatives. Did you know that <a href="https://flipboard.com/">Flipboard</a> also relies heavily on RSS to show you content in a beautiful magazine format?</p>
+
+<p>These are non-google-reader-like experiences: let’s get more of these to make the e<strong>cosystem stronger and more resilient</strong>.</p>
+
+<h3 id="subscribing-is-hard">Subscribing is hard</h3>
+
+<p>Most popular blogs have links to both a Twitter account and an RSS feed. Say I want to subscribe using both tools:</p>
+
+<ul>
+  <li>
+    <p>For Twitter, it’s as easy as clicking the Twitter icon and hitting the follow button: done.</p>
+  </li>
+  <li>
+    <p>For RSS, I have first to “guess” (or rather hope) that there is a feed, since browsers now hide the infamous orange icon. I can then select the url of that tab and copy it. Then, open a new tab, go to the reader I chose to use and paste the url. Hopefully, that reader is smart enough to actually find the feed url from this page’s url. If not, I’m screwed anyway and I’ll have to look into the HTML code of the page! </p>
+  </li>
+</ul>
+
+<p>The latter is <strong>too complex</strong>. Once you factor in that many people have no idea what a feed is, what a url is, or even how to open a new tab. (which is evident after <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ">you’ve seen this</a>), it’s quickly clear that only nerds can be expected to use feed readers in their current form.</p>
+
+<p>What if we could provide a simple <em>follow</em> button that does the hard job of getting the right content and smartly sending it to their favorite feed-reading tool? We would probably see more adoption for readers, more subscribers to blogs or news sites, and a generally <strong>more informed internet</strong>.</p>
+
+<p>As a matter of fact, this button exists, and it’s called <a href="https://www.subtome.com/#/">SubToMe</a>. It’s easy to install and works with most feed readers in a very simple and elegant way. If you have a blog, give it a try! (you can click on it at the bottom of this post too!)</p>
+
+<h3 id="polling-xml-sucks">Polling XML sucks</h3>
+
+<p>Finally, (and this is the nerdiest part!), we can improve the way feed readers get content for their subscribers. </p>
+
+<p>The “level 0” solution is to periodically <em>fetch each feed, parse it, diff it and hopefully find something new</em>. This is a huge waste of resources for the publishers and the subscribers as updates are not that frequent for most sites anyway. Unfortunately, decreasing the frequency also means a delay in content and is not acceptable either.</p>
+
+<p>Open web solutions exist, like <a href="http://en.wikipedia.org/wiki/PubSubHubbub">PubSubHubbub</a> or <a href="https://en.wikipedia.org/wiki/RSS_Cloud">RSSCloud</a>: they just allow for updates to be pushed from the publisher to the subscriber in an elegant way without wasting resources.</p>
+
+<p>The cherry on the cake? <a href="http://blog.superfeedr.com/pubsubhubbub-0-4/">PubSubHubbub evolved</a> and is now able to work with any kind of data (not just RSS or Atom), <strong>opening the door to a JSON based syndication format</strong>. Of course, this will only happen if all publishers (big and small) agree on a common format to avoid the waste of creating custom consuming application for each of them.</p>
+
+<p>Do you see other traps for the RSS ecosystem?</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

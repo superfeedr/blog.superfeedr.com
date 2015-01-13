@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : PubSubHubbub is not a license </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/not-a-license">PubSubHubbub is not a license</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/not-a-license</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-11-17T00:00:00+01:00"><time>17 Nov 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Today, <a href="http://www.readwriteweb.com/archives/twitter_to_sell_50_of_all_tweets_for_360kyear_thro.php"><span class="caps">GNIP</span> and Twitter announced a deal where <span class="caps">GNIP</span> will be able to resell some of the Twitter data</a>. Twitter repeated several times that they didn&#8217;t want to use PubSubHubbub and <strong>prefered closed and proprietary solutions</strong>. I believe that, from the beginning, we were not clear enough that <strong>PubSubHubbub</strong> was <del>just</del> a technical protocol. It&#8217;s a mistake that I&#8217;m trying to repair now.</p>
+<ul>
+	<li>If you&#8217;re a subscriber, implementing PubSubHubbub doesn&#8217;t mean that you will have access to any content and have the right to use this content in any way.</li>
+	<li>Similarly, if you&#8217;re a publisher, making your content (or some of your content) available as PubSubHubbub doesn&#8217;t mean that you will grant any kind of license to your content and that you will allow anyone to do anything with it_.</li>
+</ul>
+<h3>What is PubSubHubbub?</h3>
+<p>It is just a <strong>technical protocol</strong>, which means that it only defines technical means of interaction between 2 services. It&#8217;s an <a href="http://en.wikipedia.org/wiki/Open_standard">open protocol</a>, which means that <strong>nobody owns it and nobody can ask you to stop using it</strong>, or can claim ownership over it. It also means that you can participate and try it make it better.</p>
+<p>If (and only if!) the publisher agrees that the subscriber gets this content to do something specific, then, yes, they <del>can</del> should use PubSubHubbub for the technical aspects.</p>
+<h3>It is not a license!</h3>
+<p>The <a href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html">technical specification</a> <strong>does not specify</strong> if the publisher should make all its data available to anyone at any conditions. For example, one can imagine that a publisher only grants access to specific subscribers for specific resources. We could also imagine that a publisher charges for its content and will only allow subscriptions from subscribers who paid a fee. Finally, PubSubHubbub can also be used internally for private data that is not intended to ever leave a given private/closed network.</p>
+<p>In any case, making your feed available via PubSubHubbub doesn&#8217;t mean that you have to make all of your content available as PubSubHubbub, and it doesn&#8217;t mean that you allow subscribers to do anything but subscribing. If you want to prevent them from re-publishing, you can certainly get them to agree to specific terms of usage which indicate this.</p>
+<p>The net-neutrality debate has been raging, but it could almost be considered as an example of this : the technical and business layers are distinct and <strong>technical concerns should not govern business/legal concerns</strong>.</p>
+<p>At Superfeedr, we do this by having a specific setting that <strong>allows any publisher to accept or deny a subscription</strong>. We do host some very private hubs that nobody can access, but a single identified 3rd party application.</p>
+<h3>Examples</h3>
+<p>If you use Superfeedr subscriber&#8217;s services, you will have to pay for the notifications we send you. Yet, we use PubSubHubbub. <strong>It&#8217;s an open protocol, and we charge for its usage. Other PubSubHubbub providers could do this</strong>. Getting data thru the Superfeedr pipes doesn&#8217;t mean that you own the data or can even republish it. The publisher&#8217;s terms of service still apply!</p>
+<p>You can also certainly define feeds with specific levels of access, and have different pricing for each of them. You can also define what subscriber can or can&#8217;t do with your content&#8230; etc.</p>
+<p>If you only remembered one thing, it should be this one : PubSubHubbub solves a technical issue, nothing less, nothing more.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

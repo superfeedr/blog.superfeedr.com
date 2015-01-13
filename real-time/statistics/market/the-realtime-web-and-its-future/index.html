@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : The Real-time Web and it's future </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/real-time/statistics/market/the-realtime-web-and-its-future">The Real-time Web and it's future</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/real-time/statistics/market/the-realtime-web-and-its-future</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-12-04T00:00:00+01:00"><time>04 Dec 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p><img src="http://www.readwriteweb.com/images/real_time_web.png" style="float:left; margin:10px;" alt="" />Marshall have been kind enough, when he wrote the <a href="http://www.readwriteweb.com/">ReadWriteWeb</a> <a href="http://bit.ly/rtwreport">report on the Real-time</a> to ask for my opinion. I want to complete my thoughts as well as give a few hint on this report.<br />
+First : go buy the report. If you&#8217;re vaguely interested in the <em>web-economy</em> you should have done that already.</p>
+<h3>On the report itself</h3>
+<p>Newspapers are dying because of the internet. They&#8217;re not fast enough to write about things. Even though blog are less affected, they have exactly the same issue. The fight between <a href="http://www.readwriteweb.com/">ReadWriteWeb</a>, <a href="http://www.techcrunch.com/">Techcrunch</a>, <a href="http://gigaom.com/">GigaOM</a> or <a href="http://mashable.com/">Mashable</a> to get exclusivity is just a proof that they can&#8217;t spend a lot of time writing articles and they also need to write a lot.<br />
+There clearly seem to be a <a href="http://trends.google.com/websites?q=techcrunch.com%2C+readwriteweb.com%2C+mashable.com%2C+gigaom.com&amp;geo=all&amp;date=2009&amp;sort=1">premium for the most frequent publisher</a> (less deep though :/)</p>
+<p>On top of that, people like me (and probably you, too) have a lot of trouble catching up with all that. That is why <strong>reports like this really matter</strong>. They bring back <strong>&#8220;investigation&#8221; journalism</strong> to blog and that&#8217;s great.</p>
+<h3>Real-time : the peer-to-peer architecture.</h3>
+<p>For once, I agree with <a href="http://twitter.com/davewiner">Dave</a> : <strong>the Real-Time web happens without waiting</strong>. However, I&#8217;d complete that by saying that <em>without waiting applies to anything</em> : people (us), but also (and more importantly) : <strong>machines</strong>.</p>
+<p>We <strong>used to have clients talking to servers</strong>, whether they were browsers talking to websites or web applications talking to other applications via their APIs.<br />
+I think the <strong>real-time web is taking us to a world where we have a more &#8220;peer-to-peer&#8221; approach</strong> : <em>everybody is a client and a server to everybody else</em>.</p>
+<ul>
+	<li>In a way, when you blog, you&#8217;re a server, and your readers are your client. When you tweet, you&#8217;re both a server and client.</li>
+	<li>When you poll <span class="caps">RSS</span> feeds, you&#8217;re a client to the website that hosts these feeds, when you use Superfeedr, you become a server because you respond to our notifications (and we&#8217;re a client because we send out these requests).</li>
+	<li>When you use Wikipedia, you&#8217;re a client to whoever wrote the article you&#8217;re reading. When you use Aardvark, you&#8217;re both a client and a server (because you ask and answer equally).</li>
+</ul>
+<p>I&#8217;m quite happy with this quote from <a href="http://www.borthwick.com/weblog/about/">John Borthwick</a>, one of our investors, at <a href="http://betaworks.com/">Betaworks</a> :</p>
+<blockquote>
+<p>We believe things are becoming more connected. In the future, everything will consume APIs and publish APIs.</p>
+</blockquote>
+<p>In a nutshell, this report is probably what&#8217;s best today to catch-up with all the real-time web. It also contains a great list of people you should follow (not only on Twitter) and who are making the real-time web happen.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : The Case against Rate Limiting </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/against-rate-limiting">The Case against Rate Limiting</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/against-rate-limiting</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-08-15T00:00:00+02:00"><time>15 Aug 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>At Superfeedr, we do a lot of polling, and we do it in aggressive ways sometimes. We obviously try anything we can to be nice with servers, by implementing <a href="http://en.wikipedia.org/wiki/HTTP_ETag">ETags</a>, <a href="http://webee.technion.ac.il/labs/comnet/netcourse/CIE/RFC/1945/58.htm">If-Modified-Since</a> headers, but also (and more importantly), by avoiding to make any request that doesn&#8217;t need to be made (using <a href="http://blog.superfeedr.com/api/http/pubsubhubbub/pubsubhubbub/">PubSubHubbub</a>, <a href="http://blog.superfeedr.com/rsscloud/api/PubSubHubbub/RSSCloud/">RSSCloud</a>, <a href="http://blog.superfeedr.com/XML-RPC/Ping/PubSubHubbub/XMPP/Real-time/XMLRPC-Ping-to-PubSubHubbub/"><span class="caps">XML</span>-<span class="caps">RPC</span></a> pings&#8230; etc). We also do back-off when we see errors from a given url/domain, to avoid making an existing issue worse. Finally, <strong>we do not hide ourselves</strong>. The <a href="http://documentation.superfeedr.com/misc.html#listofips">list of IPs</a> we use is public and our User-Agents<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup> are very explicit. Yet, some people block us and we think it&#8217;s sad.</p>
+<h3>Why it is bad</h3>
+<p>The first thing is that many of the people who are <strong>blocked are probably legitimate users</strong>. By also implementing a blind traffic shaper, you prevent new, innovative services to come up and build thing that would probably bring your content to a whole new level. <em>The web can make your content better, richer, smarter, and more interesting for your users</em>. If you start rate limiting everyone, you basically put a big red flag on your service and everyone who wants to build something knows that at some point, whatever they&#8217;re building will be blocked by your service and may have to shut down. Not really a safe environment to foster innovation!</p>
+<p>The worst thing about that is that <em>bad guys_, spammers, spamdexers, MFAs, and other will actually find ways to get your content. No matter how hard you try, they will find ways to access your content and do anything with it, whether it&#8217;s <a href="http://www.siliconvalleywatcher.com/mt/archives/2005/10/craigslist_batt">scrapping</a></em>1.php, using <a href="http://www.torproject.org/">Tor networks</a>, botnets&#8230; etc. Additionally, as they use black hat techniques, it&#8217;s probably going to be very hard for you to enforce any rule or Terms of Service. It&#8217;s the jungle! <strong>There are already black and grey markets for data</strong> from Twitter, Craigslist, Facebook and many many other <em>protected</em> content.</p>
+<h3>Why do they do it</h3>
+<p>I understand that I&#8217;m in the <em>white knight position</em> here. There are business and legal concerns that should be enforced. I&#8217;m not going to go into much details, but Twitter <del>is selling</del> sold their firehose access; it must not be very simple to actually grant access for free to a bunch of services. Facebook has enough privacy issues that they don&#8217;t want 3rd party apps to access content that they shouldn&#8217;t have asked in the first place :D.</p>
+<p>There may also be technical reasons. Doing thousands of requests per second on a service is costly, in terms of resources. Sites have been taken down by other crawling them. Rate limiting can be considered an as a simple solution to not degrading the whole app experience to the benefit of a single 3rd party app. It&#8217;s legit, but it&#8217;s the wrong approach. <strong>As economists told us reducing supply very rarely reduces the demand!</strong></p>
+<h3>What can they do</h3>
+<p>At Superfeedr, we believe there is room for a <strong>better content distribution model</strong>, where there is no need for rate limit : <em>pushing content</em>.</p>
+<p>You can rate limit polling, because it <em>does kill your servers</em>, but make sure that there is a way to get content in an non-throttled way.</p>
+<p>By doing this, you can also very easily know <strong>what content was pushed to who at any time</strong>, and you can certainly enforce your business and legal concerns. Additionally, hackers <em>are lazy</em>, they will always take the simplest route to achieve their goal and if you make sure your way of pushing content away is the simplest way to get your content, there is no doubt that it&#8217;s the one they will adopt, rather than using black and grey techniques that you can&#8217;t control.</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> Superfeedr: Superparser/1.0 http://superfeedr.com &#8211; Please read this http://blog.superfeedr.com/publishers.html or get in touch if we&#8217;re polling too hard</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

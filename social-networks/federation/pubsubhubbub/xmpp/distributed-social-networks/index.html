@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Distributed and Federated Social Networks </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/social-networks/federation/pubsubhubbub/xmpp/distributed-social-networks">Distributed and Federated Social Networks</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/social-networks/federation/pubsubhubbub/xmpp/distributed-social-networks</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-12-21T00:00:00+01:00"><time>21 Dec 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>There <a href="http://staynalive.com/articles/2009/12/19/developers-its-time-to-open-up-twitters-api/">is</a> <a href="http://code-bear.com/bearlog/2009/12/20/responding-to-jesses-call-to-open-twitters-api/">a lot</a> of debate around on <a href="http://groups.google.com/group/opentwitter">OpenTwitter</a>, <a href="http://bit.ly/4voQKK">OpenFriendFeed</a> <a href="http://bit.ly/8J9SIv">OpenFacebook</a>.  these days. The <a href="http://www.avc.com/a_vc/2009/12/open-apis-and-open-standards.html">de-facto standard</a> which is now Twitter&#8217;s <span class="caps">API</span> is a good news. Yet, social Networks have 2 big features : <strong>publish content</strong> (it seems that Twitter&#8217;s <span class="caps">API</span> is the reference now), and <strong>consume content</strong> from your friends. This second part seems much harder and I think <strong>PubSubHubbub</strong> and <strong><span class="caps">XMPP</span></strong> can provide this <span class="caps">API</span>.</p>
+<p>Whatever the social network, user profiles usually have a link (Atom or <span class="caps">RSS</span>) which represents a user&#8217;s stream of activities. Whether it&#8217;s <a href="http://www.flickr.com/photos/juliengenestoux">Flickr</a>, <a href="http://delicious.com/julien51">Delicious</a>, <a href="http://twitter.com/julien51">Twitter</a>, or even your blog (yes, it&#8217;s a social network in a way), <em>all our online activities are represented as feeds</em>.</p>
+<p>The next step is to make these feeds &#8220;real-time&#8221; so that the consuming applications shouldn&#8217;t need to poll thousands of feeds or services. <em>To consume my friends information, I shouldn&#8217;t even need to be part of the network on which they publish</em>. <strong>PubSubHubbub enables that</strong>.</p>
+<p>I like consuming my friend&#8217;s feed via Facebook. Yet, a lot of my friend&#8217;s content is not there : their tweets, the pictures they post on Flickr, etc&#8230; and some of my friends are not even on Facebook.</p>
+<p>I wish somebody (<a href="http://tweetdeck.com/">Tweetdeck</a>, <a href="http://seesmic.com/">Seesmic</a>, <a href="http://brizzly.com/">Brizzly</a>&#8230; can you hear me?) would have a <strong>built-in PubSubHubbub subscriber</strong>. Then they would allow me to paste one of my friend&#8217;s profile page on <a href="http://www.last.fm/user/julien51">Last.fm</a> or Foursquare (or allow me to select directly pages on specific services). From that page, they would <em>auto-discover the feed</em>, and <em>then its hub and subscribe to it</em>. Finally, when my friends update their social network (provided that this one uses PubSubHubbub to make its feeds real-time, but <a href="http://superfeedr.com/publisher">we can help</a>), I would receive instantly the update into my <strong>Social Network consuming app</strong>.</p>
+<p>When publishing my content, I shouldn&#8217;t have to publish it on 36 different services just to make sure all my friends will get it. It should go wherever my friends will consume it!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

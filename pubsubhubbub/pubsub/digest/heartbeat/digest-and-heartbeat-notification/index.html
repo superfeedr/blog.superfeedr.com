@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Digest and Heartbeat notifications </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsubhubbub/pubsub/digest/heartbeat/digest-and-heartbeat-notification">Digest and Heartbeat notifications</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsubhubbub/pubsub/digest/heartbeat/digest-and-heartbeat-notification</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-05-13T00:00:00+02:00"><time>13 May 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>One of the most common problem of all Publish-Subscribe pattern is that they <strong>fail silently</strong>.</p>
+<p>Since the subscriber will always wait for the publisher (or the hub) to send him data, when a subscriber doesn&#8217;t receive new data <em>it will assume that none was sent</em>. Unfortunately, there could be other reasons : the publisher may be gone (or the hub), the subscription may be lost (or have expired), the connection between the 2 might have been flaky for some time&#8230; etc.</p>
+<p>Here is a new feature which should help subscribers gain confidence : <strong>digest notifications</strong>. They server 2 purposes :</p>
+<ul>
+	<li><strong>Heartbeat</strong> : guarantee the subscriber that at least once day, we&#8217;ll notify it. No matter what happens, the subscriber will get a notification. It might be empty (if no entry was ever published on that feed).</li>
+</ul>
+<ul>
+	<li><strong>Digest</strong> : the notification will include at most 10 entries (the last 10 entries published in it). This will allow the subscriber to check whether he got all the notifications or if he missed one.</li>
+</ul>
+<h3>Subscribing</h3>
+<h4><span class="caps">XMPP</span> <span class="caps">API</span></h4>
+<p>It&#8217;s as easy as adding a <code>digest=true</code> element in the subscribe element of the subscribe stanza. This element belongs to the <em>superfeedr namespace</em> for compatibility with any <span class="caps">XMPP</span> client.</p>
+<script src="http://gist.github.com/399627.js?file=gistfile1.xml"></script><p>Also, remember that you can setup your <span class="caps">XMPP</span> settings so you can get notifications every time we fetch a feed on your behalf, whether there were new entries or not. (see your Settings)</p>
+<h4>PubSubHubbub <span class="caps">API</span></h4>
+<p>Upon subscription, just provide an extra <span class="caps">HTTP</span> Post param like this <code>superfeedr.digest=true</code>.</p>
+<p>Please note that you&#8217;ll need to re-subscribe any existing subscription for the digest to be taken into account.</p>
+<h3>What next?</h3>
+<p>Once you&#8217;re subscribed with a digest, you can expect a notification at least once every 24 hours. Please, note that this won&#8217;t be a fixed time of the day, and will not be 24 hours after your subscription.</p>
+<h4><span class="caps">XMPP</span> <span class="caps">API</span></h4>
+<p>If this is a digest, the <span class="caps">XMPP</span> notification will include a digest flag in the <code>status</code> node.</p>
+<script src="http://gist.github.com/399628.js?file=gistfile1.xml"></script><h4>PubSubHubbub <span class="caps">API</span></h4>
+<p>The notification will just have a digest attribute within the <code>feed</code> node of the body. This attribute belongs to the superfeedr namespace.</p>
+<script src="http://gist.github.com/399630.js?file=gistfile1.xml"></script><h3>Credits</h3>
+<p>This extension works for both the <a href="http://superfeedr.com/publisher">public hosted hubs</a> and the default <a href="http://push.superfeedr.com/">pubsubhubbub hub</a> (works with any feed).</p>
+<p>Superfeedr is still in Beta, but when we&#8217;ll get out of it, we will start counting credits for each notification we send (not for the hosted hubs). <strong>The digest notification will count as 1 credit too</strong>.</p>
+<p>As some of you requested (and may have guessed), we will <strong>soon</strong> allow a &#8220;<span class="caps">GET</span>&#8221; on both APIs so you can retrieve the content of any feed at any time. We&#8217;re still finalizing a few details to make sure we&#8217;re doing things right and are not being polled on behalf of publishers!</p>
+<p><small>This is still an alpha feature. Please bear with us for a small period as we make sure this all scales as expected. As you may guess it&#8217;s not easy to store 20M entries daily.</small></p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

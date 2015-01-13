@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : A Social Network? </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsubhubbub/xmpp/open/social/a-social-network">A Social Network?</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsubhubbub/xmpp/open/social/a-social-network</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-04-13T00:00:00+02:00"><time>13 Apr 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>There are <strong>two</strong> steps to <strong>open-data epiphany</strong> : support the <a href="http://openstack.blogspot.com/">OpenStack</a> for your users data is the first step. I would argue though that this is not enough : if I tell you that all your data is available for you (or apps that want to get it &#8211; with your authorization -) to take it, it&#8217;s great, but it&#8217;s less than ideal if you have data in tens of different apps.</p>
+<p><em>It&#8217;s like putting a treasure on Mars and tell you : hey, if you get there, it&#8217;s yours, if you can come and get it</em></p>
+<p>The second step is to actually tell you : <strong>your data is available for you (or these apps), and I will push it to you (them)</strong>, so it&#8217;s available in <strong>theory and in practice</strong>. And that is what protocols like <a href="http://documentation.superfeedr.com/subscribers.html#webhooks">PubSubHubbub</a> and <a href="http://onesocialweb.org/"><span class="caps">XMPP</span></a> are for : not only the data is available, but it&#8217;s sent away.</p>
+<p>It&#8217;s pretty <em>common to oppose openness and business</em>. A lot of services see openness as a threat to their growth/profitability, and generally will see openness and general wellness of their business as incompatible. <strong>This is wrong, I believe that sending data away is a an amazing driver for growth</strong>.</p>
+<p>Here is a simple use case. Let&#8217;s say I plug <a href="http://gowalla.com/">Gowalla</a> into my <a href="http://www.google.com/profiles">Google profile</a>. Everytime I check in somewhere, it will show up in Google Buzz. My google buzz friends will see this, and may even sign-in for Gowalla if they like what they see.</p>
+<p>My point is that, by letting your users &#8216;own&#8217; their data, you will turn them into evangelists for your service. If I like what I do with your social app (be it <a href="http://www.flickr.com/">posting pictures</a>, <a href="http://www.youtube.com/">watching videos</a>, <a href="http://delicious.com/">sharing links</a>), then, please, let me show it to my friends, let me leave a footprint of this activity anywhere on the web. <strong>The more (legit!) data you send away, the more users will come.</strong></p>
+<p>This does not mean that you have to send any information without my consent, but please, at least ask me if I want to share my information and if I say yes, let me do it.</p>
+<p>Time for a shameless plug: <a href="http://superfeedr.com/publisher">Superfeedr hosts hubs</a>, we can host one for you. If you want to give a shot at opening your data, please, get in touch!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

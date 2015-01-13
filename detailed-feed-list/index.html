@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Detailed Subscription List </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/detailed-feed-list">Detailed Subscription List</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/detailed-feed-list</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2014-11-06T00:00:00+01:00"><time>06 Nov 2014</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>As we’re closing on the redesign of <a href="https://superfeedr.com/">Superfeedr</a>, we found that there was a bunch of simple improvements we could bring to the API to bring <strong>increase consistency and usability</strong>.</p>
+
+<h3 id="subscriptions-pagination">Subscriptions pagination</h3>
+
+<p>Our PuSH API always had the ability to paginate over results results when <a href="http://documentation.superfeedr.com/subscribers.html#listing-subscriptions-with-pubsubhubbub">listing subscriptions</a>. However, the page size was fixed to 20. Today we’re introducing the ability to change that from <em>anywhere between 1 and 500</em>. This way you can get all search results in one page provided that your <a href="/search-subscriptions/">search criteria</a> is narrow enough.</p>
+
+<h3 id="subscription-and-feed-details">Subscription and feed details</h3>
+
+<p>When listing subscription via our HTTP API, by default, we only return the feed url and its title. When debugging subscriptions, our customers will usually then issue another request for each feed to get its status. It’s a bit of a waste of time and resources. From today, <em>you can get both the subscription details, and the feed’s status</em>, using the simple <code>detailed=true</code> query string.
+The status information is also consistent with our schema so you get the same information for each feed that you get upon notification.</p>
+
+<pre data-line=""><code class="language-javascript">{
+  &quot;subscriptions&quot;: [{
+    &quot;subscription&quot;: {
+      &quot;format&quot;: &quot;json&quot;,
+      &quot;endpoint&quot;: &quot;http://my.webhook.com/path&quot;,
+      &quot;secret&quot;: null,
+      &quot;feed&quot;: {
+        &quot;status&quot;: {
+          &quot;code&quot;: 200,
+          &quot;feed&quot;: &quot;http://feeds.macbidouille.com/macbidouille/&quot;,
+          &quot;http&quot;: &quot;Fetched (ring) 200 1800 and parsed 0/50 entries&quot;,
+          &quot;lastParse&quot;: 1415276972,
+          &quot;period&quot;: 1800,
+          &quot;lastMaintenanceAt&quot;: 1415201154,
+          &quot;nextFetch&quot;: 1415278772,
+          &quot;lastFetch&quot;: 1415276972,
+          &quot;entriesCountSinceLastMaintenance&quot;: 0
+        },
+        &quot;title&quot;: &quot;MacBidouille.com&quot;
+      }
+    }
+  }, {
+    &quot;subscription&quot;: {
+      &quot;format&quot;: null,
+      &quot;endpoint&quot;: &quot;http://requestb.in/12j1ps91&quot;,
+      &quot;secret&quot;: null,
+      &quot;feed&quot;: {
+        &quot;status&quot;: {
+          &quot;code&quot;: 200,
+          &quot;feed&quot;: &quot;https://irail.be/stations/NMBS/008892007#%24..%40graph%5B%3F(%40.headsign%3D%3D%22Knokke%22)%5D&quot;,
+          &quot;http&quot;: &quot;Fetched (ring) 200 900 and parsed arbitrary content&quot;,
+          &quot;lastParse&quot;: 1238451905,
+          &quot;period&quot;: 900,
+          &quot;lastMaintenanceAt&quot;: 1415270282,
+          &quot;nextFetch&quot;: 1415277469,
+          &quot;lastFetch&quot;: 1415276568,
+          &quot;entriesCountSinceLastMaintenance&quot;: 0
+        },
+        &quot;title&quot;: null
+      }
+    }
+  }, {
+    &quot;subscription&quot;: {
+      &quot;format&quot;: &quot;atom&quot;,
+      &quot;endpoint&quot;: &quot;http://my.webhook.com/path&quot;,
+      &quot;secret&quot;: null,
+      &quot;feed&quot;: {
+        &quot;status&quot;: {
+          &quot;code&quot;: 0,
+          &quot;feed&quot;: &quot;http://sakura.altervusta.org/feed/&quot;,
+          &quot;http&quot;: &quot;Fetched (ring) 0 86400&quot;,
+          &quot;lastParse&quot;: 1238451905,
+          &quot;period&quot;: 86400,
+          &quot;lastMaintenanceAt&quot;: 1415142346,
+          &quot;nextFetch&quot;: 1415314120,
+          &quot;lastFetch&quot;: 1415227720,
+          &quot;entriesCountSinceLastMaintenance&quot;: 0
+        },
+        &quot;title&quot;: null
+      }
+    }
+  }],
+  &quot;meta&quot;: {
+    &quot;total&quot;: 12,
+    &quot;page&quot;: 0,
+    &quot;byPage&quot;: 3
+  }
+}</code></pre>
+
+<p>Additionally, we’re also including a <code>meta</code> element which includes the total number of elements matched by your query (when searching or not), the current page and the number of items per page, so you can easily paginate through all results.</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

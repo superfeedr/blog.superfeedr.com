@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Track v2 </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/track-v2">Track v2</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/track-v2</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-08-11T00:00:00+02:00"><time>11 Aug 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <blockquote>
+  <p>Our Track <span class="caps">API</span> evolved over time&#8230; Please make sure you refer to the <a href="http://documentation.superfeedr.com/misc.html#track">track documentation</a> for the current status</p>
+</blockquote>
+<p>It&#8217;s been up for a few days&#8230; just enough time for us to iron anything that you could have gone wrong, but the version 2.0 of our track is live. Internally, we call it trackr, because it&#8217;s now Ruby (like red diamonds). It uses a handful of Redis, <span class="caps">XMPP</span>, Ruby and a few other awesome things. Please ask if you want more details on how it&#8217;s built. What does it bring?</p>
+<h3>Operands</h3>
+<p>The first thing is the end of the awesome bug which would create matches for &#8220;super hamster&#8221; when <a href="http://twitter.com/mperham">somebody</a> subscribed to <em>perham</em>. It could have been a feature, but for now, we&#8217;ll stick to something more natural!</p>
+<p>It brings the <span class="caps">AND</span> operator. Looking for info about the <a href="http://superfeedr.com/track?include=apple,store">Apple Store</a>, about <a href="http://superfeedr.com/track?include=san,francisco">San Francisco</a>? That&#8217;s easy. You can also exclude terms. <a href="http://superfeedr.com/track?include=apple&amp;exclude=iphone,ipad,ipod">Apple-iphone-ipad-ipod</a> should help you screen Apple&#8217;s ex-core business.</p>
+<p>The OR is by essence quite easy : subscribe to 2 feeds matching whatever you need. For once, we&#8217;re pushing the complexity down to you, but we think it makes sense.</p>
+<h3>Scoping</h3>
+<p>We love geo stuff and can&#8217;t wait to see more feeds actually geo-tagged, so we&#8217;re paving the way : you can already start to geo-filter searches : want to know about wildfires around your place? Just give us a latitude and longitude, as well as a radius, and we&#8217;ll be happy to filter out anything that&#8217;s outside of this. The radius is in kilometers (metric system <span class="caps">FTW</span>!). Check <a href="http://superfeedr.com/track?include=mushrooms&amp;lat=37.7718&amp;lon=-122.445717&amp;within=5">this example</a>.</p>
+<p>Of course, there is more to be done, but check <a href="http://documentation.superfeedr.com/misc.html#track">our documentation</a> if you&#8217;d like to start tracking some data. We&#8217;re working on adding more stuff&#8230; and if you&#8217;re a crazy <strong>XPath expert</strong> and know how to build fast matching, I want to chat with you, because Superfeedr&#8217;s got work for you too.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

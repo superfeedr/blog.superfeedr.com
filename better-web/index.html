@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : A better web </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/better-web">A better web</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/better-web</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2012-07-26T00:00:00+02:00"><time>26 Jul 2012</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>In the last couple weeks, there&#8217;s been a lot of hubbub (again!) around <a href="https://dev.twitter.com/blog/delivering-consistent-twitter-experience">Twitter&#8217;s latest move</a> with its ecosystem. Twitter is more and more of a media company and less and less of a communication company Generally, <em>on Twitter you&#8217;re interracting more and more with twitter itself and less and less with your friends</em>. People claim that this decision is driven by the fact that Twitter&#8217;s business model is ad based.</p>
+<p>As any business move, this leaves a void: a twitter-like tool aimed at communication only, one that would not be ad-based, which ideally be open-source so a company doesn&#8217;t sit between us and our friends. You&#8217;ve probably read a lot about that. Follow <a href="http://daltoncaldwell.com/">Dalton Caldwell</a> and <a href="http://scripting.com/">Dave Winer</a> blogs for more on that.</p>
+<h3>An Open Twitter?</h3>
+<p>As much as I&#8217;d love to see and use these new tools, I&#8217;m afraid there is still a long way to go, and even when the tools are there, it&#8217;s likely that my friends will be slow to move to it, just because, for now at least, Twitter, Facebook or other &#8216;closed&#8217; platforms just fit what they need. I too, will stay there, because when it comes to social networks, what matters to me the most is the &#8216;social&#8217; aspect, not the software one.</p>
+<p>To me, an <strong>open twitter is not the goal</strong>. The goal is a better open web. One on which I can chose which tools I use, without forcing my friends to do the same decision (they should not even know care). An open web is also a web on which I can chose what phone I use, without impacting my social network decision (and the other way around).</p>
+<p>To get there, we need to either force the closed platforms to open up, or to just add a layer above or below them that would achieve this, without changing my use of them.</p>
+<h3>Opening Up</h3>
+<p>Ditch the <span class="caps">API</span>, switch to multi-laterrally agreed upon protocols. Use similar data representation, and communication tools to transmit data from one another.</p>
+<ul>
+	<li><a href="http://en.wikipedia.org/wiki/Atom_(standard)"><span class="caps">RSS</span>/Atom feeds</a> have been very widely adopted and are a very good model for timelines, activity streams and other tweet lists. Many many platform already have them (including Twitter and Facebook: they just need to promote them a bit more&#8230;).</li>
+</ul>
+<ul>
+	<li>The &#8216;Subscribe&#8217; pattern exists in the form of <a href="https://code.google.com/p/pubsubhubbub/">PubSubHubbub</a>. However, we miss the ease of the &#8216;Follow&#8217; buttons offered by these social network. I have great hopes that <a href="http://webintents.org/">WebIntents</a> will be able to solve that problem very elegantly.</li>
+</ul>
+<p>Technically speaking, that&#8217;s all we&#8217;d need I believe, and since many amazing platforms have already completely implemented that stack, like <a href="http://status.net/">Status.net</a>, <a href="http://www.tumblr.com/">Tumblr</a>, <a href="http://wordpress.org/">Wordpress</a>, <a href="https://flattr.com/">Flattr</a>&#8230; the benefit will be instantaneous.<br />
+It&#8217;s probably little work for the existing closed platforms to implement and I sincerely hope that getting them to adopt these protocols will be easier than moving hundreds of milions of users away from them.</p>
+<h3>Sitting on top</h3>
+<p>You may say I&#8217;m a dreamer, since I believe we will soon be able to follow our Facebook friends on Twitter, or our Google+ circles on Twitter. But I think we, hackers, can <em>show them the way</em>. They tend to ignore it, but all these closed networks are built on top of an completely open platform: <span class="caps">HTTP</span>, <span class="caps">HTML</span>, Javascript&#8230; Better yet, they&#8217;re accessible thru an amazing hacking box: the browser, which means that we could use our browsers as &#8216;trojan&#8217; horses. This is what we did with the <a href="https://github.com/julien51/indie-butler-app">indie butler</a>.</p>
+<p>The browser can just &#8216;hijack&#8217; our interractions with these closed networks, back up the data locally, and <a href="https://github.com/julien51/indie-butler-relay">serve it</a> from there. It could also alter my browser&#8217;s behavior, so that when I go to facebook.com, it shows me what my friends on twitter.com tweeted, in the Facebook format (or the other way around).</p>
+<p>We created the butler during the <a href="http://indiewebcamp.com/">IndieWebCamp</a>. It was an amazing eye opening event and you should attend that in the future if you&#8217;re even remotely interested in making the web better. The Butler is still extremely early stage, and we will improve it in the next couple weeks. I hope you get the idea of how it works!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Funny Feeds </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/feeds/rss/atom/funny-feeds">Funny Feeds</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/feeds/rss/atom/funny-feeds</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-11-06T00:00:00+01:00"><time>06 Nov 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Our business cards say : &#8220;<em>We make something stupid so that nobody else has to do it</em>&#8221;. And it&#8217;s true : we do a lot of things so that nobody else has to. While debugging some code last weekend, I checked at some feeds that we had trouble dealing with. If you use <a href="http://superfeedr.com">Superfeedr</a>, you won&#8217;t have to deal with that, and that&#8217;s good, because these things can break your feed parsing module.</p>
+<h3>Never Ending <span class="caps">HTTP</span> responses</h3>
+<p>This was actually one of the very first things our parsers encountered. Want to see an example : check out the <a href="http://updates.sixapart.com/atom-stream.xml">six-apart Atom stream</a>. Technically, <em>this is perfectly legit</em>, except that if our parser starts to get content from there, well, it will eat more and more content, and will eventually die of indigestion. When we had only a handful of servers, we had the problem with some hacker implementing a similar thing on his servers (with no content, just an un-endind <span class="caps">HTTP</span> connection). This ended-up <strong>keeping our parsers busy</strong> to such an extent that they wouldn&#8217;t parse anything else.</p>
+<p>It was an easy fix : <strong>timeout on active <span class="caps">HTTP</span> connections</strong>.</p>
+<h3>6847 entries feed.</h3>
+<p>You read that correctly. That is <em>6847 entries</em>, in one <a href="http://www.kocosports.com/absolutenm/rss.asp?z=3">feed</a> (that&#8217;s fluctuating though), and it <em>weights about 2MB</em>. As such that&#8217;s not really a problem. We fetch this feed in more or less 5 seconds. However, to identify new entries, we need to <strong>compare each of them</strong> with a &#8220;cached&#8221; version. Comparing 5, 10 or even 100 entries is not a big deal. Comparing several thousands can actually take up to a few seconds (we store these entries into Memcache). Eventually, this feed was taking forever (20, 30 seconds or even a few minutes) to be fetched and parsed. We built our parsers such as if a feed takes <strong>too long to be processed, it&#8217;s dropped</strong>. This feed was eventually never fully processed.</p>
+<p>We increased the allowance on the feed processing. That was not enough : many feeds could not be fetched anyway, we were just spending more time on them. We finally decided to <strong>limit the number of legit new entries in a given feed to 500</strong>.</p>
+<h3>Permanent redirections</h3>
+<p>That is a much harder one. The <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"><span class="caps">HTTP</span> protocol</a> has stuff like redirections. A redirection is just a way for a server to say &#8220;what was here is now there&#8221;. There are 2 types of redirections : Temporary and Permanent. When it&#8217;s temporary, we don&#8217;t even keep track of it : our parser follows the redirection and gets the content where it is. When it&#8217;s permanent, it&#8217;s different. We follow the redirection, but we also <strong>save the new feed url and assign it to the subscribers of the initial feed</strong>. We still keep the &#8216;old&#8217; feed, just in case the <em>permanent is not really permanent</em> (and because we hate deleting stuff), but we reduce the polling frequency to a minimum. Some feeds, however make our life hard in this case. This <a href="http://vmware.simplefeed.net/rss">feed from VMWare</a> is an example. If you open it, you&#8217;ll see that it permanently redirects to a url <a href="http://feeds.vmware.com/rss?f=8b93e6a0-01de-11de-2fb2-0030486070c6">like this one</a>  and if you load it again, you&#8217;ll see that it permanently redirects to another feed&#8230; and so on. In other word, this <strong>feed permanently redirects to different urls</strong>.</p>
+<p>We <strong>haven&#8217;t found a good solution for that yet</strong>. We hate to do it, but we basically clean these redirections once in a while to avoid having thousands of them.</p>
+<p>As you can see, building a polling infrastructure is full of traps. There is not a day where we don&#8217;t find new challenges. It is very interesting and we like that. However, there is absolutely <strong>no valid reason for another person to spend time and money solving the same problem</strong>.</p>
+<p>That doesn&#8217;t mean either that the solution we come up with are the best; and that is why we&#8217;re sharing them here! <em>Your ideas are our food</em>&#8230;</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

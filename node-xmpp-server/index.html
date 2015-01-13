@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Node XMPP Server </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/node-xmpp-server">Node XMPP Server</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/node-xmpp-server</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2011-08-26T00:00:00+02:00"><time>26 Aug 2011</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>At Superfeedr, we&#8217;ve always been <strong>great fans of node.js</strong>. We believe the ability to use the <em>same language on both servers and clients</em> will breed a whole new generation of web developers that can do amazing work on both ends. Last year already, we released node.js code a couple hours ahead of <a href="http://nodeknockout.com/">NodeKO</a>, and this year, we&#8217;re doing it again.</p>
+<h3>A node KO treat</h3>
+<p><img src="http://nodejs.org/logos/nodejs.png" style="float:left; margin: 5px;" alt="" /></p>
+<p>In the context of the <a href="http://msgboy.com">msgboy</a> (request your invite now!), we had to setup a new <span class="caps">XMPP</span> server. After fighting with <a href="http://www.ejabberd.im/">ejabberd</a>, we installed <a href="http://prosody.im/">Prosody</a>, but we also quickly concluded that we would need a lot of customization, as well as the ability to tweak our server(s) to fit our exact needs.</p>
+<p>Since <a href="http://spaceboyz.net/~astro/">astro</a> had been doing an <strong>amazing work</strong> with his <a href="https://github.com/astro/node-xmpp">node-xmpp</a> library to build <em>Client</em>, <em>Components</em> and even <em>Server to Server</em> modules, the logical next step was to try to build a <em>Client to Server</em> module so that we could have a full blown server. That&#8217;s what we worked on the past couple days, and <a href="https://github.com/superfeedr/node-xmpp">it&#8217;s now on Github</a>!</p>
+<blockquote>
+<p>Beware though&#8230; as it&#8217;s extremely early and some key features are not yet supported. Our biggest challenge is trying to fix a weird <span class="caps">TLS</span> bug. Please help if you can!</p>
+</blockquote>
+<h3>Let&#8217;s get dirty</h3>
+<p>If you&#8217;re brave enough and want to get started, install our branch of node-xmpp from source. You should then be able to run a server by typing<br />
+<code>$ node examples/c2s.js</code></p>
+<p>Now, take your favorite <span class="caps">XMPP</span> client (we used Psi, but you need to make sure it will accept to transmit <span class="caps">PLAIN</span> text passwords over an unencrypted connection) and connect to the server as user@zipline.local. Use <code>password</code> for the password.</p>
+<p>Now, that was <del>relatively</del> easy, and quite useless so far, as you could do that with any <span class="caps">XMPP</span> server out there. The real interest of this one is that we wanted to give full control back to the developer to customize their server as much as they needed. Take a look at the <code>examples/c2s.js</code> file for the code that runs this specific server:</p>
+<ul>
+	<li>Auth is simple: the c2s module will just callback with a username and a password. Your code should then decide whether you want to authorize or not connection, based on your database, or any other piece of application that you want.</li>
+</ul>
+<ul>
+	<li>You can define modules supported by your server from the most popular XEPs, using <code>node-xmpp</code>&#8217;s mixins. The modules should be at the heart of any implementations, as we want to keep the c2s code itself very bare.</li>
+</ul>
+<ul>
+	<li>There are currently 4 events that you can listen to on the C2S module itself : <code>connect, disconnect, authenticate, stanza</code>, which are relatively self explanatory.  The <code>connect</code> event should be used to register mixins to user connections. The <code>stanza</code> event should probably be left empty (unlike in the example), as all meaningful stanzas should probably be treated in mixins.</li>
+</ul>
+<h3>Clustering!</h3>
+<p>Also, you get all the JS magic that lets you rewrite any code without much hassle. One of the key aspects of most <span class="caps">XMPP</span> servers is their -in-ability to be deployed in clusters to handle more users. For those who want to dive in that direction, Redis&#8217;s PubSub provides an elegant solution. Combining this with some sharding on the jids should probably go a long way! You can see in the basic example below that we rewrote the routing mechanism to use Redis and run multiple instances of the same server in a cluster.</p>
+<script src="https://gist.github.com/1174490.js?file=cluster.js"></script>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

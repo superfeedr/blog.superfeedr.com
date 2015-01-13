@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Superfeedr Blog : Real-time cloudy thoughts from a super-hero</title>
+    <link href="http://blog.superfeedr.com/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="http://blog.superfeedr.com/" rel="alternate" type="text/html"/>
+    <link rel="hub" href="http://pubsubhubbub.superfeedr.com/" />
+    <updated>2015-01-13T10:44:47+01:00</updated>
+    <id>http://blog.superfeedr.com/</id>
+
+    
+    <entry>
+        <title>Podcast is RSS</title>
+        
+        <link href="http://blog.superfeedr.com/podcast-is-rss"/>
+        <published>2015-01-15T00:00:00+01:00</published>
+        <updated>2015-01-15T00:00:00+01:00</updated>
+        <id>blog.superfeedr.com:/podcast-is-rss</id>
+        <content type="html">&lt;p&gt;2014 was the biggest year for &lt;strong&gt;Podcasts&lt;/strong&gt; to date. Of course, this came from massively popular shows: &lt;a href=&quot;http://www.thisamericanlife.org/podcast&quot;&gt;This American Life&lt;/a&gt; and &lt;a href=&quot;http://serialpodcast.org/&quot;&gt;Serial&lt;/a&gt; come to mind, but more importantly, it came from the incredibly long tail of smaller or even niche podcasts thousands of indie people create out there. Platforms like &lt;a href=&quot;https://soundcloud.com/&quot;&gt;Soundcloud&lt;/a&gt; are  to Podcasts what Tumblr is to blogs.&lt;/p&gt;
+
+&lt;p&gt;Podcasts are also incredibly popular because they are perfectly fit to the smartphone form factor. Not only the un-removable iTunes is a podcast player on &lt;em&gt;every&lt;/em&gt; iOS device, but other popular applications like &lt;a href=&quot;http://www.marco.org/&quot;&gt;Marco&lt;/a&gt;’s &lt;a href=&quot;https://overcast.fm/&quot;&gt;Overcast&lt;/a&gt; are showing that there’s room in the shade of Apple. On Android too there are a lot of amazing apps like &lt;a href=&quot;https://player.fm/&quot;&gt;Player.fm&lt;/a&gt; or the oldtimers like &lt;a href=&quot;https://www.stitcher.com/&quot;&gt;Stitcher&lt;/a&gt; (or &lt;a href=&quot;https://play.google.com/store/apps/details?id=mobi.upod.app&quot;&gt;uPod&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The amazing feat about podcasts is that &lt;em&gt;almost everyone&lt;/em&gt; knows about them and understands what they are… even though &lt;em&gt;almost no-one&lt;/em&gt; knows that a podcasts is an RSS feed with media elements (the soundtrack mostly!).&lt;/p&gt;
+
+&lt;p&gt;For example, here’s the latest entry of our beloved &lt;a href=&quot;http://www.radiolab.org/&quot;&gt;Radiolab&lt;/a&gt;’s podcasts:&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;item&amp;gt;
+  &amp;lt;title&amp;gt;Radiolab Presents: Invisibilia&amp;lt;/title&amp;gt;
+  &amp;lt;link&amp;gt;http://feeds.wnyc.org/~r/radiolab/~3/CzhLHp0z_p4/&amp;lt;/link&amp;gt;
+  &amp;lt;description&amp;gt;The lines between boy and girl can be blurry but NPR&amp;#39;s Invisibilia introduces us to someone with a very new idea of how blurry they can be.&amp;amp;lt;img src=&amp;quot;//feeds.feedburner.com/~r/radiolab/~4/CzhLHp0z_p4&amp;quot; height=&amp;quot;1&amp;quot; width=&amp;quot;1&amp;quot; alt=&amp;quot;&amp;quot;/&amp;amp;gt;&amp;lt;/description&amp;gt;
+  &amp;lt;pubDate&amp;gt;Fri, 09 Jan 2015 17:26:17 -0500&amp;lt;/pubDate&amp;gt;
+  &amp;lt;guid isPermaLink=&amp;quot;false&amp;quot;&amp;gt;http://www.radiolab.org/story/invisibilia/&amp;lt;/guid&amp;gt;
+  &amp;lt;category&amp;gt;gender&amp;lt;/category&amp;gt;
+  &amp;lt;category&amp;gt;invisibilia&amp;lt;/category&amp;gt;
+  &amp;lt;category&amp;gt;psychology&amp;lt;/category&amp;gt;
+  &amp;lt;category&amp;gt;science&amp;lt;/category&amp;gt;
+  &amp;lt;category&amp;gt;storytelling&amp;lt;/category&amp;gt;
+  &amp;lt;media:content url=&amp;quot;http://feeds.wnyc.org/~r/radiolab/~5/q91CLJH0xHc/radiolab_podcast15invisibilia.mp3&amp;quot; type=&amp;quot;audio/mpeg&amp;quot; /&amp;gt;
+  &amp;lt;media:description type=&amp;quot;plain&amp;quot;&amp;gt;Radiolab Presents: Invisibilia&amp;lt;/media:description&amp;gt;
+  &amp;lt;media:thumbnail url=&amp;quot;https://media2.wnyc.org/i/130/130/c/80/1/invisibiliasquare.jpg&amp;quot; width=&amp;quot;130&amp;quot; height=&amp;quot;130&amp;quot; /&amp;gt;
+  &amp;lt;itunes:duration&amp;gt;31:43&amp;lt;/itunes:duration&amp;gt;
+  &amp;lt;itunes:summary&amp;gt;Former Radiolab producer Lulu Miller and NPR reporter Alix Spiegel come to the studio to give us a sneak peak of their new show, Invisibilia. Invisibilia has an upcoming episode about categories, so Alix tells us a story about two very basic categories: boy and girl. We&amp;#39;ve heard lots of stories about the sometimes blurry boundaries between boy and girl, but Alix introduces us to someone who experiences those categories in a way that was totally, completely new to us.&amp;lt;/itunes:summary&amp;gt;
+  &amp;lt;description&amp;gt;The&amp;amp;amp;nbsp;lines between&amp;amp;amp;nbsp;boy and girl can be blurry but NPR&amp;#39;s Invisibilia&amp;amp;amp;nbsp;introduces us to someone&amp;amp;amp;nbsp;with a&amp;amp;amp;nbsp;very&amp;amp;amp;nbsp;new idea of how blurry they can be.&amp;lt;/description&amp;gt;
+  &amp;lt;dc:creator xmlns:dc=&amp;quot;http://purl.org/dc/elements/1.1/&amp;quot;&amp;gt;WNYC, New York Public Radio&amp;lt;/dc:creator&amp;gt;
+  &amp;lt;itunes:explicit&amp;gt;no&amp;lt;/itunes:explicit&amp;gt;
+  &amp;lt;itunes:subtitle&amp;gt;The lines between boy and girl can be blurry but NPR&amp;#39;s Invisibilia introduces us to someone with a very new idea of how blurry they can be.&amp;lt;/itunes:subtitle&amp;gt;
+  &amp;lt;itunes:author&amp;gt;WNYC, New York Public Radio&amp;lt;/itunes:author&amp;gt;
+  &amp;lt;itunes:keywords&amp;gt;Science,Technology,Philosophy,Education,radiolab,jad,abumrad,krulwich,Radio,Lab&amp;lt;/itunes:keywords&amp;gt;
+  &amp;lt;feedburner:origLink&amp;gt;http://www.radiolab.org/story/invisibilia/&amp;lt;/feedburner:origLink&amp;gt;
+  &amp;lt;enclosure url=&amp;quot;http://feeds.wnyc.org/~r/radiolab/~5/q91CLJH0xHc/radiolab_podcast15invisibilia.mp3&amp;quot; length=&amp;quot;0&amp;quot; type=&amp;quot;audio/mpeg&amp;quot; /&amp;gt;
+  &amp;lt;feedburner:origEnclosureLink&amp;gt;http://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/radiolab_podcast/radiolab_podcast15invisibilia.mp3&amp;lt;/feedburner:origEnclosureLink&amp;gt;
+&amp;lt;/item&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In a way, the &lt;strong&gt;podcast ecosystem succeeded&lt;/strong&gt; where the rest of the RSS ecosystem failed: it was able to break through the glass ceiling of tech-aware crowd. My take is that this is almost only due to the fact that the word “&lt;strong&gt;Podcast&lt;/strong&gt;” exists. &lt;/p&gt;
+
+&lt;p&gt;However, next time you hear someone tell you “RSS is dead”, just ask them about the latest podcast episode they listened to :)&lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>New Year, new hires</title>
+        
+        <link href="http://blog.superfeedr.com/new-year-new-hires"/>
+        <published>2015-01-08T00:00:00+01:00</published>
+        <updated>2015-01-08T00:00:00+01:00</updated>
+        <id>blog.superfeedr.com:/new-year-new-hires</id>
+        <content type="html">&lt;p&gt;Happy new year! 2014 has been a &lt;strong&gt;fantastic year&lt;/strong&gt; for Superfeedr with a lot of new customers consuming our &lt;a href=&quot;https://superfeedr.com/subscriber&quot;&gt;feed APIs&lt;/a&gt;, a &lt;a href=&quot;http://blog.superfeedr.com/new-design/&quot;&gt;complete redesign&lt;/a&gt;, as well as a lot of great backend changes to help us scale further and further every month. &lt;/p&gt;
+
+&lt;p&gt;We’re incredibly excited about 2015 and we can’t wait to show you some of the things we’ve been working on for quite a while now!&lt;/p&gt;
+
+&lt;h2 id=&quot;new-hires&quot;&gt;New hires!&lt;/h2&gt;
+
+&lt;p&gt;One of our goals for the first part of 2015 is to improve our offering when it comes platforms. &lt;strong&gt;Superfeedr is just an API&lt;/strong&gt;, so it’s pretty agnostic, but when people start to build &lt;em&gt;Android&lt;/em&gt; or &lt;em&gt;iOS&lt;/em&gt; apps, accessing the API can sometimes be a significant amount of work and we want to simplify this.&lt;/p&gt;
+
+&lt;p&gt;From day 1, we relied on the community to submit &lt;a href=&quot;https://github.com/superfeedr/&quot;&gt;API wrappers&lt;/a&gt; rather than build them ourselves. &lt;strong&gt;Each language and framework has its assumptions, semantics and idioms, assuming we could do a great job beyond the 2 or 3 we use regularly would be a lie.&lt;/strong&gt; Both iOS (Obj-C or Swift) and Android (Java) are platforms we’re not enough familiar with to provide better tools and we’re looking for amazing Open Source developers to work with us on each of these.&lt;/p&gt;
+
+&lt;p&gt;For each platform, the job will involve &lt;em&gt;building&lt;/em&gt; and &lt;em&gt;releasing&lt;/em&gt; “native” libraries (which hide the complexity of the API), as well as &lt;a href=&quot;http://documentation.superfeedr.com/&quot;&gt;write documentation&lt;/a&gt;, detailed tutorials and even, if applicable, demos. As we are &lt;em&gt;blind&lt;/em&gt; when it comes to things we could do to ease this work, we expect these developers to provide feedback as to what we could improve on our side and what additional feature could be helpful.&lt;/p&gt;
+
+&lt;p&gt;There is no need to be the #1 expert on either of these platforms: you have to be willing to learn and be in the mindset of an &lt;strong&gt;indie developer&lt;/strong&gt; who wants to build an app on iOS and Android! It’s even better if you &lt;em&gt;already&lt;/em&gt; think about building an app that would benefit from Superfeedr! These are also obviously paid missions!&lt;/p&gt;
+
+&lt;p&gt;Please, get in touch!&lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Replaying Notifications</title>
+        
+        <link href="http://blog.superfeedr.com/replaying-notifications"/>
+        <published>2014-12-22T00:00:00+01:00</published>
+        <updated>2014-12-22T00:00:00+01:00</updated>
+        <id>blog.superfeedr.com:/replaying-notifications</id>
+        <content type="html">&lt;p&gt;Debugging webhook patterns is tricky because they’re mostly asynchronous: the &lt;em&gt;subscribing&lt;/em&gt; (which listens to the webhook) side usually does not control the &lt;em&gt;publishing&lt;/em&gt; side (which triggers the webhook).&lt;/p&gt;
+
+&lt;p&gt;To help with that, we usually recommend our customers to check &lt;a href=&quot;http://push-pub.appspot.com/&quot;&gt;this very simple publishing application&lt;/a&gt; and &lt;a href=&quot;http://push-pub.appspot.com/feed&quot;&gt;its feed&lt;/a&gt;. They provide a simple mechanism to update a feed and check the incoming notification. However, the data in the feed is not nearly as rich as &lt;a href=&quot;http://documentation.superfeedr.com/schema.html&quot;&gt;our schema allows&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Today, we’re introducing &lt;a href=&quot;http://documentation.superfeedr.com/subscribers.html#replaying-notifications&quot;&gt;replay notifications&lt;/a&gt;. It’s a simple API call which will replay one of your subscriptions’s notifications. It’s fairly simple:&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;$ curl -X GET -ujulien:token 
+ https://push.superfeedr.com/
+ -d&amp;#39;hub.mode=replay&amp;#39;
+ -d&amp;#39;hub.topic=http://push-pub.appspot.com/feed&amp;#39;
+ -d&amp;#39;hub.callback=http://requestb.in/owdkpgow&amp;#39;
+
+HTTP/1.1 204 No Content
+Date: Mon, 22 Dec 2014 15:56:13 GMT
+Connection: close&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As always, our goal is to simplify your life if your application relies on RSS feeds. If there is anything we can do, feel free to let us know in the comments.&lt;/p&gt;
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>More Feed Metadata</title>
+        
+        <link href="http://blog.superfeedr.com/more-metadata"/>
+        <published>2014-12-08T00:00:00+01:00</published>
+        <updated>2014-12-08T00:00:00+01:00</updated>
+        <id>blog.superfeedr.com:/more-metadata</id>
+        <content type="html">&lt;p&gt;All RSS/Atom feeds aren’t born equal. As we process more and more we start to have a better understanding of them and one of our goals is to &lt;strong&gt;share more of the knowledge with our customers&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We’ve been working on extracting more &lt;em&gt;meta-information&lt;/em&gt; from these feeds and today, we want to highlight 3 interesting example that you should probably be using in your applications.&lt;/p&gt;
+
+&lt;h2 id=&quot;velocity&quot;&gt;Velocity&lt;/h2&gt;
+
+&lt;p&gt;When assessing a feed, it can be important to know its velocity: how many times it updates per day. This can obviously give you an idea of the cost involved in using them, but also maybe of their relevance. If a feed updates too often, it’s probably hard to consume in its whole by humans, but if it barely updates, it’s also unlikely to generate reading habits. At Superfeedr, we calculate it as an weighted average over time of updates per day.&lt;/p&gt;
+
+&lt;p&gt;Here are a couple examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gigaom.com/feed/&quot;&gt;Giga Om’s feed&lt;/a&gt; has a velocity of 24.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://news.ycombinator.com/rss&quot;&gt;Hacker News&lt;/a&gt; has a velocity of 116.&lt;/li&gt;
+  &lt;li&gt;This blog’s feed has a velocity of 0.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.etsy.com/api/push/listings/latest.atom&quot;&gt;Etsy’s full catalog feed&lt;/a&gt; has a velocity of 157,928.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;porn-score&quot;&gt;Porn score&lt;/h2&gt;
+
+&lt;p&gt;As for every other thing on the web, &lt;strong&gt;porn in feeds is pretty popular&lt;/strong&gt;. To be honest, porn sites are also often times at the vanguard of many new technologies (white or black!). Many of our users wanted to filter out obvious porn sites from their subscriptions. Our goal was not to strip individual entries who could provide NSFW stories, but feeds which consistently publish this kind of content.&lt;/p&gt;
+
+&lt;p&gt;We use our &lt;a href=&quot;http://documentation.superfeedr.com/misc.html#track&quot;&gt;track feature&lt;/a&gt; to subscribe to terms often present along with porn content, and we compute a rank between 0 and 1 to indicate how likely it is that a feed is porn. &lt;/p&gt;
+
+&lt;p&gt;At this point, you should consider this like most types of filters: &lt;strong&gt;incomplete&lt;/strong&gt; (we do not handle well the feeds with no textual content by only images for example), and risk-prone. We have identifed a few sources which, even though they use “porn words” are not atcually porn. We have implemented ways around this, but please, do not consider our approach to be exempt of &lt;strong&gt;false-positives&lt;/strong&gt; and &lt;strong&gt;false-negatives&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Whenever the porn rank is missing you can assume it’s 0 (we may not have computed it yet).&lt;/p&gt;
+
+&lt;h2 id=&quot;bozo-score&quot;&gt;Bozo score&lt;/h2&gt;
+
+&lt;p&gt;Another very annoying set of feeds are feeds which appear valid (or at least not invalid enough to be discarded as faulty), but who still show very incoherent behaviors or meta information which would be semantically wrong.&lt;/p&gt;
+
+&lt;p&gt;The most obvious example would the be case of feeds that auto-generate random unique ids for their entries. Take a look at &lt;a href=&quot;http://twool.vsw.jp/feed/mmwtmy1bftex.xml&quot;&gt;this feed&lt;/a&gt; for example: open it in a new tab and refresh: you’ll see a new entry &lt;em&gt;every single time you referesh it&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;The Bozo rank is named after &lt;a href=&quot;http://www.tbray.org/ongoing/When/200x/2004/01/11/PostelPilgrim&quot;&gt;Tim Bray’s Bozo factor&lt;/a&gt;. It’s not exactly the same issue, but we think we can extend the definition :)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There’s just no nice way to say this: Anyone who can’t make a syndication feed that’s well-formed XML is an incompetent fool. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The rank is a number between 0 (no bozo at all) and 1. Whenever the porn rank is missing you can assume it’s 0 (we may not have computed it yet).&lt;/p&gt;
+
+&lt;h2 id=&quot;track-feeds&quot;&gt;Track feeds&lt;/h2&gt;
+
+&lt;p&gt;Starting today, all new track subscription will filter out any feed whose bozo rank is greater than 0.5 as well as any source with a porn rank higher than 0.3 If you still want to include these, feel free to include a &lt;code&gt;porn=ok&lt;/code&gt; or &lt;code&gt;bozo=ok&lt;/code&gt; query string to your track feeds and you’ll get these.&lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>New Design</title>
+        
+        <link href="http://blog.superfeedr.com/new-design"/>
+        <published>2014-11-12T00:00:00+01:00</published>
+        <updated>2014-11-12T00:00:00+01:00</updated>
+        <id>blog.superfeedr.com:/new-design</id>
+        <content type="html">&lt;p&gt;Today’s an historic day: we are &lt;a href=&quot;http://rosetta.esa.int/&quot;&gt;landing on a comet&lt;/a&gt;! It’s also a big day for &lt;a href=&quot;https://superfeedr.com/&quot;&gt;Superfeedr&lt;/a&gt;: our new design is going live.&lt;/p&gt;
+
+&lt;p&gt;We’re very proud to release this new version of our main HTML applications: it’s the biggest change in years and we tried to answer all &lt;a href=&quot;/survey-redesign/&quot;&gt;your needs and requests&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/new-design.png&quot; alt=&quot;new design&quot; title=&quot;New Design&quot; style=&quot;width:100%&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;subscriptions&quot;&gt;Subscriptions&lt;/h3&gt;
+
+&lt;p&gt;It’s now easier than ever to &lt;strong&gt;list&lt;/strong&gt; all your subscriptions, &lt;strong&gt;search&lt;/strong&gt; for specific ones, but also &lt;strong&gt;get a feed’s details&lt;/strong&gt;. You can also easily subscribe and unsubscribe from feeds on this new application. It all uses our public &lt;em&gt;PubSubHubbub API&lt;/em&gt; so anything this does can be done in your very own application!&lt;/p&gt;
+
+&lt;p&gt;The subscriptions page is an angular application hooked directly to our API using the &lt;a href=&quot;https://github.com/superfeedr/angular-superfeedr&quot;&gt;Superfeedr Angular provider&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;better-consoles&quot;&gt;Better Consoles&lt;/h3&gt;
+
+&lt;p&gt;We only hear praises about or docs and this is a great first step, but many of our users also noted that it was not always simple to build requests. We heard them and worked on 2 new consoles which now allow you to manually build requests, see exactly how they look like, as well as inspect responses from Superfeedr. &lt;/p&gt;
+
+&lt;p&gt;They both are angular application. We’re especially proud ouf the XMPP console which is a full XMPP client, in the browser, with syntax formatting and highlighting for a more readable XML! It makes great use of &lt;a href=&quot;https://github.com/node-xmpp&quot;&gt;Node-XMPP&lt;/a&gt; and &lt;a href=&quot;http://browserify.org/&quot;&gt;Browserify&lt;/a&gt;… but we’ll provide more details in the coming days!&lt;/p&gt;
+
+&lt;h3 id=&quot;consistent-design-and-experience&quot;&gt;Consistent design and experience&lt;/h3&gt;
+
+&lt;p&gt;Even though the docs are great, their layout was very different from Superfeedr’s main site design. The same went for this very blog. The new design brings an incresed consistency which makes things much clearer for our users:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://documentation.superfeedr.com/&quot;&gt;Superfeedr Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.superfeedr.com/&quot;&gt;Superfeedr Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are &lt;em&gt;many other things to say about this redesign&lt;/em&gt;… and there are probably small bugs here and there. We’d love to hear what you think. And, before you ask it, this incredible work was done by Chris and Lucas at &lt;a href=&quot;https://www.vanpattenmedia.com/&quot;&gt;Van Patten Media&lt;/a&gt;. Their skills are incredible and it’s been an honor to work with them! &lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Detailed Subscription List</title>
+        
+        <link href="http://blog.superfeedr.com/detailed-feed-list"/>
+        <published>2014-11-06T00:00:00+01:00</published>
+        <updated>2014-11-06T00:00:00+01:00</updated>
+        <id>blog.superfeedr.com:/detailed-feed-list</id>
+        <content type="html">&lt;p&gt;As we’re closing on the redesign of &lt;a href=&quot;https://superfeedr.com/&quot;&gt;Superfeedr&lt;/a&gt;, we found that there was a bunch of simple improvements we could bring to the API to bring &lt;strong&gt;increase consistency and usability&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;subscriptions-pagination&quot;&gt;Subscriptions pagination&lt;/h3&gt;
+
+&lt;p&gt;Our PuSH API always had the ability to paginate over results results when &lt;a href=&quot;http://documentation.superfeedr.com/subscribers.html#listing-subscriptions-with-pubsubhubbub&quot;&gt;listing subscriptions&lt;/a&gt;. However, the page size was fixed to 20. Today we’re introducing the ability to change that from &lt;em&gt;anywhere between 1 and 500&lt;/em&gt;. This way you can get all search results in one page provided that your &lt;a href=&quot;/search-subscriptions/&quot;&gt;search criteria&lt;/a&gt; is narrow enough.&lt;/p&gt;
+
+&lt;h3 id=&quot;subscription-and-feed-details&quot;&gt;Subscription and feed details&lt;/h3&gt;
+
+&lt;p&gt;When listing subscription via our HTTP API, by default, we only return the feed url and its title. When debugging subscriptions, our customers will usually then issue another request for each feed to get its status. It’s a bit of a waste of time and resources. From today, &lt;em&gt;you can get both the subscription details, and the feed’s status&lt;/em&gt;, using the simple &lt;code&gt;detailed=true&lt;/code&gt; query string.
+The status information is also consistent with our schema so you get the same information for each feed that you get upon notification.&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;{
+  &amp;quot;subscriptions&amp;quot;: [{
+    &amp;quot;subscription&amp;quot;: {
+      &amp;quot;format&amp;quot;: &amp;quot;json&amp;quot;,
+      &amp;quot;endpoint&amp;quot;: &amp;quot;http://my.webhook.com/path&amp;quot;,
+      &amp;quot;secret&amp;quot;: null,
+      &amp;quot;feed&amp;quot;: {
+        &amp;quot;status&amp;quot;: {
+          &amp;quot;code&amp;quot;: 200,
+          &amp;quot;feed&amp;quot;: &amp;quot;http://feeds.macbidouille.com/macbidouille/&amp;quot;,
+          &amp;quot;http&amp;quot;: &amp;quot;Fetched (ring) 200 1800 and parsed 0/50 entries&amp;quot;,
+          &amp;quot;lastParse&amp;quot;: 1415276972,
+          &amp;quot;period&amp;quot;: 1800,
+          &amp;quot;lastMaintenanceAt&amp;quot;: 1415201154,
+          &amp;quot;nextFetch&amp;quot;: 1415278772,
+          &amp;quot;lastFetch&amp;quot;: 1415276972,
+          &amp;quot;entriesCountSinceLastMaintenance&amp;quot;: 0
+        },
+        &amp;quot;title&amp;quot;: &amp;quot;MacBidouille.com&amp;quot;
+      }
+    }
+  }, {
+    &amp;quot;subscription&amp;quot;: {
+      &amp;quot;format&amp;quot;: null,
+      &amp;quot;endpoint&amp;quot;: &amp;quot;http://requestb.in/12j1ps91&amp;quot;,
+      &amp;quot;secret&amp;quot;: null,
+      &amp;quot;feed&amp;quot;: {
+        &amp;quot;status&amp;quot;: {
+          &amp;quot;code&amp;quot;: 200,
+          &amp;quot;feed&amp;quot;: &amp;quot;https://irail.be/stations/NMBS/008892007#%24..%40graph%5B%3F(%40.headsign%3D%3D%22Knokke%22)%5D&amp;quot;,
+          &amp;quot;http&amp;quot;: &amp;quot;Fetched (ring) 200 900 and parsed arbitrary content&amp;quot;,
+          &amp;quot;lastParse&amp;quot;: 1238451905,
+          &amp;quot;period&amp;quot;: 900,
+          &amp;quot;lastMaintenanceAt&amp;quot;: 1415270282,
+          &amp;quot;nextFetch&amp;quot;: 1415277469,
+          &amp;quot;lastFetch&amp;quot;: 1415276568,
+          &amp;quot;entriesCountSinceLastMaintenance&amp;quot;: 0
+        },
+        &amp;quot;title&amp;quot;: null
+      }
+    }
+  }, {
+    &amp;quot;subscription&amp;quot;: {
+      &amp;quot;format&amp;quot;: &amp;quot;atom&amp;quot;,
+      &amp;quot;endpoint&amp;quot;: &amp;quot;http://my.webhook.com/path&amp;quot;,
+      &amp;quot;secret&amp;quot;: null,
+      &amp;quot;feed&amp;quot;: {
+        &amp;quot;status&amp;quot;: {
+          &amp;quot;code&amp;quot;: 0,
+          &amp;quot;feed&amp;quot;: &amp;quot;http://sakura.altervusta.org/feed/&amp;quot;,
+          &amp;quot;http&amp;quot;: &amp;quot;Fetched (ring) 0 86400&amp;quot;,
+          &amp;quot;lastParse&amp;quot;: 1238451905,
+          &amp;quot;period&amp;quot;: 86400,
+          &amp;quot;lastMaintenanceAt&amp;quot;: 1415142346,
+          &amp;quot;nextFetch&amp;quot;: 1415314120,
+          &amp;quot;lastFetch&amp;quot;: 1415227720,
+          &amp;quot;entriesCountSinceLastMaintenance&amp;quot;: 0
+        },
+        &amp;quot;title&amp;quot;: null
+      }
+    }
+  }],
+  &amp;quot;meta&amp;quot;: {
+    &amp;quot;total&amp;quot;: 12,
+    &amp;quot;page&amp;quot;: 0,
+    &amp;quot;byPage&amp;quot;: 3
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, we’re also including a &lt;code&gt;meta&lt;/code&gt; element which includes the total number of elements matched by your query (when searching or not), the current page and the number of items per page, so you can easily paginate through all results.&lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Bitcoin Webhook</title>
+        
+        <link href="http://blog.superfeedr.com/bitcoin-webhook"/>
+        <published>2014-10-14T00:00:00+02:00</published>
+        <updated>2014-10-14T00:00:00+02:00</updated>
+        <id>blog.superfeedr.com:/bitcoin-webhook</id>
+        <content type="html">&lt;p&gt;At this point, you have certainly heard about &lt;a href=&quot;https://bitcoin.org/&quot;&gt;Bitcoin&lt;/a&gt;. It’s the most famous crypto-currency which relies on a shared ledger to determine every account’s balance.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://en.bitcoin.it/w/images/en/c/cb/BC_Logotype.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The network is made of clients that run the bitcoin protocol. Everyone can participate, but if you run a web app, it’s not trivial to also run a bitcoin client in order to look at transactions. &lt;/p&gt;
+
+&lt;p&gt;Several services, including the popular &lt;a href=&quot;https://blockchain.info/&quot;&gt;Blockchain.info&lt;/a&gt; provide JSON APIs which will yield information about a transaction or a Bitcoin address. Using our &lt;a href=&quot;http://blog.superfeedr.com/json-path/&quot;&gt;JSON fragment subscriptions&lt;/a&gt;, you can easily turn this into a webhook system and be notified when an specific address received a payment. This can be very useful when monitoring payments to your bitcoin addresses!&lt;/p&gt;
+
+&lt;p&gt;Let’s take an example. We create a new address and added to our bitcoin wallet: &lt;code&gt;1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://blockchain.info/address/1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss?format=json&quot;&gt;Blockchain URL for this address&lt;/a&gt; includes transaction info, as well as balances.&lt;/p&gt;
+
+&lt;p&gt;Then, we wanted to be notified of the total amount of BTC received on that address, so we subscribed to &lt;code&gt;https://blockchain.info/address/1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss?format=json#%24.total_received&lt;/code&gt;, because &lt;code&gt;$.total_received&lt;/code&gt; includes the sum of all transactions sent to that address.&lt;/p&gt;
+
+&lt;p&gt;We used &lt;a href=&quot;http://webhookinbox.com&quot;&gt;Webhookinbox&lt;/a&gt; to &lt;a href=&quot;http://webhookinbox.com/view/xh5yIKaC/&quot;&gt;inspect the notifications&lt;/a&gt;, but obviously, we could have used any webhook to susbcribe to the updates to trigger other things!&lt;/p&gt;
+
+&lt;p&gt;Feel free to try it yourself: send a couple satoshis to &lt;code&gt;1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss&lt;/code&gt;, and then check &lt;a href=&quot;http://webhookinbox.com/view/xh5yIKaC/&quot;&gt;this webhookinbox&lt;/a&gt; to make sure we received it… (you may have to wait a couple minutes for the transaction to be committed and for us to check that transation info URL!).&lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>JSON Path subscriptions</title>
+        
+        <link href="http://blog.superfeedr.com/json-path"/>
+        <published>2014-09-25T00:00:00+02:00</published>
+        <updated>2014-09-25T00:00:00+02:00</updated>
+        <id>blog.superfeedr.com:/json-path</id>
+        <content type="html">&lt;p&gt;A bunch of our customers use Superfeedr to poll JSON APIs. Rather than wasting their resources, they use us to &lt;strong&gt;subscribe&lt;/strong&gt; to JSON documents using &lt;strong&gt;webhooks&lt;/strong&gt;. When the document eventually updates, we push them the whole document.&lt;/p&gt;
+
+&lt;p&gt;Yet, most of the time, they’re not interested in the &lt;em&gt;whole document&lt;/em&gt;, just parts of it, and up until today, there was no way to subscribe to parts of it.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-too-much-information&quot;&gt;Getting too much information&lt;/h3&gt;
+
+&lt;p&gt;Let’s assume my awesome application displays user profiles from &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt;. It does not display the whole profile, but only a few interesting fields, including the login name and avatar.&lt;/p&gt;
+
+&lt;p&gt;Github has a nice API to retrieve a user’s profile. (some fields removed)&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;$ curl https://api.github.com/users/julien51
+{
+  &amp;quot;login&amp;quot;: &amp;quot;julien51&amp;quot;,
+  &amp;quot;avatar_url&amp;quot;: &amp;quot;https://avatars.githubusercontent.com/u/17735?v=2&amp;quot;,
+  &amp;quot;public_repos&amp;quot;: 68,
+  &amp;quot;public_gists&amp;quot;: 114,
+  &amp;quot;followers&amp;quot;: 156,
+  &amp;quot;following&amp;quot;: 127
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you subscribe to &lt;code&gt;https://api.github.com/users/julien51&lt;/code&gt; using Superfeedr, you’ll get a new notification for each update to this user profile. You’ll get a notification when the avatar is updated, but you’ll also get a notification when somebody starts to follow me or when I &lt;a href=&quot;https://gist.github.com/&quot;&gt;create a gist&lt;/a&gt;… even though my awesome application does not really care about that.&lt;/p&gt;
+
+&lt;h3 id=&quot;jsonpath&quot;&gt;JSONPath&lt;/h3&gt;
+
+&lt;p&gt;We’ve had &lt;a href=&quot;http://blog.superfeedr.com/fragment-subscription/&quot;&gt;HTML fragments&lt;/a&gt; for a couple years now, today we’re introducing &lt;a href=&quot;http://documentation.superfeedr.com/subscribers.html#json-fragments&quot;&gt;JSON fragments&lt;/a&gt; using the exact same principle: append a &lt;a href=&quot;http://goessner.net/articles/JsonPath/&quot;&gt;JSONPath&lt;/a&gt; to the fragment part of URL of a JSON document and you’ll get notifications only when this part if the JSON document changes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A JSONPath is way to select only parts of a JSON document, using ancestry (&lt;em&gt;I want the third child of the books element&lt;/em&gt;), or more complex matchers like &lt;em&gt;I want elements whose value of X is Y&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example above, if you subscribed to &lt;code&gt;https://api.github.com/users/julien51#%24.avatar_url&lt;/code&gt;, you’ll be notified only when the &lt;code&gt;avatar_url&lt;/code&gt; changes (&lt;code&gt;%24.avatar_url&lt;/code&gt; is &lt;code&gt;$.avatar_url&lt;/code&gt; urlencoded).&lt;/p&gt;
+
+&lt;p&gt;If you’re looking for more information about JSONPath you should read more on &lt;a href=&quot;http://goessner.net/articles/JsonPath/&quot;&gt;Stefan Goessner site&lt;/a&gt; and you can test your expressions using &lt;a href=&quot;http://jsonpath.curiousconcept.com/&quot;&gt;this web application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;never-miss-a-train&quot;&gt;Never miss a train!&lt;/h3&gt;
+
+&lt;p&gt;Another great example comes from &lt;a href=&quot;http://pieter.pm/&quot;&gt;Pieter Colpaert&lt;/a&gt;. &lt;a href=&quot;https://irail.be/&quot;&gt;irail.be&lt;/a&gt; has the times of all trains in Belgium in all stations. When you pick the page of a station, like the one for &lt;a href=&quot;https://irail.be/stations/NMBS/008892007&quot;&gt;Gent-Sint-Pieters&lt;/a&gt;, you get the list of trains. By fetching this page with a &lt;code&gt;application/json&lt;/code&gt; header, you get a JSON representation of the upcoming trains.&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;{
+    &amp;quot;@context&amp;quot;: {
+        &amp;quot;delay&amp;quot;: &amp;quot;http://semweb.mmlab.be/ns/rplod/delay&amp;quot;,
+        &amp;quot;platform&amp;quot;: &amp;quot;http://semweb.mmlab.be/ns/rplod/platform&amp;quot;,
+        &amp;quot;scheduledDepartureTime&amp;quot;: &amp;quot;http://semweb.mmlab.be/ns/rplod/scheduledDepartureTime&amp;quot;,
+        &amp;quot;headsign&amp;quot;: &amp;quot;http://vocab.org/transit/terms/headsign&amp;quot;,
+        &amp;quot;routeLabel&amp;quot;: &amp;quot;http://semweb.mmlab.be/ns/rplod/routeLabel&amp;quot;,
+        &amp;quot;stop&amp;quot;: {
+            &amp;quot;@id&amp;quot;: &amp;quot;http://semweb.mmlab.be/ns/rplod/stop&amp;quot;,
+            &amp;quot;@type&amp;quot;: &amp;quot;@id&amp;quot;
+        }
+    },
+    &amp;quot;@graph&amp;quot;: [
+        {
+            &amp;quot;@id&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007/departures/20140926095185d62cd764ea09216c5783586c5b90ba&amp;quot;,
+            &amp;quot;delay&amp;quot;: &amp;quot;600&amp;quot;,
+            &amp;quot;platform&amp;quot;: &amp;quot;7&amp;quot;,
+            &amp;quot;scheduledDepartureTime&amp;quot;: &amp;quot;2014-09-26T09:51:00+02:00&amp;quot;,
+            &amp;quot;stop&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007&amp;quot;,
+            &amp;quot;headsign&amp;quot;: &amp;quot;De Panne&amp;quot;,
+            &amp;quot;routeLabel&amp;quot;: &amp;quot;IR 3631&amp;quot;
+        },
+        {
+            &amp;quot;@id&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007/departures/201409261001e93879f9830d734825c817aa195c4141&amp;quot;,
+            &amp;quot;delay&amp;quot;: &amp;quot;0&amp;quot;,
+            &amp;quot;platform&amp;quot;: &amp;quot;9&amp;quot;,
+            &amp;quot;scheduledDepartureTime&amp;quot;: &amp;quot;2014-09-26T10:01:00+02:00&amp;quot;,
+            &amp;quot;stop&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007&amp;quot;,
+            &amp;quot;headsign&amp;quot;: &amp;quot;Knokke&amp;quot;,
+            &amp;quot;routeLabel&amp;quot;: &amp;quot;IC 1530&amp;quot;
+        },
+...
+        {
+            &amp;quot;@id&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007/departures/20140926110453628a1532e8c3f47417df57e60b0dcd&amp;quot;,
+            &amp;quot;delay&amp;quot;: &amp;quot;0&amp;quot;,
+            &amp;quot;platform&amp;quot;: &amp;quot;7&amp;quot;,
+            &amp;quot;scheduledDepartureTime&amp;quot;: &amp;quot;2014-09-26T11:04:00+02:00&amp;quot;,
+            &amp;quot;stop&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007&amp;quot;,
+            &amp;quot;headsign&amp;quot;: &amp;quot;Tongeren&amp;quot;,
+            &amp;quot;routeLabel&amp;quot;: &amp;quot;IC 1510&amp;quot;
+        }
+    ]
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, I’m not interested in all trains leaving this station, just the trains to &lt;a href=&quot;https://en.wikipedia.org/wiki/Knokke&quot;&gt;Knokke&lt;/a&gt;, because it’s friday and I want to enjoy a weekend by the sea. I can use this JSONPath: &lt;code&gt;$..@graph[?(@.headsign==&quot;Knokke&quot;)]&lt;/code&gt; to get all the children of the &lt;code&gt;@graph&lt;/code&gt; element with a &lt;code&gt;headsign&lt;/code&gt; of “Knokke”. This would yield something like this:&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;[{
+  &amp;quot;@id&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007/departures/201409261001e93879f9830d734825c817aa195c4141&amp;quot;,
+  &amp;quot;delay&amp;quot;: &amp;quot;0&amp;quot;,
+  &amp;quot;platform&amp;quot;: &amp;quot;9&amp;quot;,
+  &amp;quot;scheduledDepartureTime&amp;quot;: &amp;quot;2014-09-26T10:01:00+02:00&amp;quot;,
+  &amp;quot;stop&amp;quot;: &amp;quot;http://irail.be/stations/NMBS/008892007&amp;quot;,
+  &amp;quot;headsign&amp;quot;: &amp;quot;Knokke&amp;quot;,
+  &amp;quot;routeLabel&amp;quot;: &amp;quot;IC 1530&amp;quot;
+}]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And there, I have the info I need for the next train. It then becomes incredibly more actionable if I use Superfeedr to subscribe to that specific bit of content using this &lt;code&gt;https://irail.be/stations/NMBS/008892007#%24..%40graph%5B%3F(%40.headsign%3D%3D%22Knokke%22)%5D&lt;/code&gt; &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. I now have a webhook for when a new train from Gent-Sint-Pieters to Knokke is about to leave! Also, the payload of the webhook includes all the info I need: the departure time, the platform and any potential delay. You can inspect a couple past notificationsr recived on &lt;a href=&quot;http://requestb.in/12j1ps91?inspect&quot;&gt;this requestbin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;code&gt;%24..%40graph%5B%3F(%40.headsign%3D%3D%22Knokke%22)%5D&lt;/code&gt; is &lt;code&gt;$..@graph[?(@.headsign==&quot;Knokke&quot;)]&lt;/code&gt; urlencoded &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Search in Subscriptions</title>
+        
+        <link href="http://blog.superfeedr.com/search-subscriptions"/>
+        <published>2014-09-17T00:00:00+02:00</published>
+        <updated>2014-09-17T00:00:00+02:00</updated>
+        <id>blog.superfeedr.com:/search-subscriptions</id>
+        <content type="html">&lt;p&gt;Earlier, in July, when &lt;a href=&quot;http://blog.superfeedr.com/survey-redesign/&quot;&gt;we asked our customers&lt;/a&gt; what they wanted our redesign to include, a few of them mentionned that it was sometimes hard for them to find a given subscription or a set of subscriptions matching specific requirements.&lt;/p&gt;
+
+&lt;p&gt;Today, we’re happy to introduce our &lt;strong&gt;search in subscriptions&lt;/strong&gt; feature. It’s a fairly simple mechanism: when asking for the list of subscriptions, you can just include a &lt;code&gt;search&lt;/code&gt; extra query string parameter to match a more specific subset of subscriptions.&lt;/p&gt;
+
+&lt;p&gt;Our docs already include the &lt;a href=&quot;http://documentation.superfeedr.com/subscribers.html#listingsubscriptionswithpubsubhubbub&quot;&gt;list of fieds you can use&lt;/a&gt; to find specific subscriptions. They include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Format of the subscription&lt;/li&gt;
+  &lt;li&gt;Exact feed url&lt;/li&gt;
+  &lt;li&gt;Hostname of the feed url&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;inurl&lt;/em&gt; for the feed url which will match subsets of the url&lt;/li&gt;
+  &lt;li&gt;Exact webhook url (hub.callback)&lt;/li&gt;
+  &lt;li&gt;Exact hostname of the webhook url&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;inurl&lt;/em&gt; for the webhook url which will match subsets of the url.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Try it yourself!&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;$ curl -D- -X GET https://push.superfeedr.com/ \
+-u&amp;#39;demo:e5cab21156449745c2c0c4f77f6e3b69&amp;#39; \
+-d&amp;#39;hub.mode=list&amp;#39; \
+-d&amp;#39;search[feed][inurl]=nytimes&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This should yield something like this:&lt;/p&gt;
+
+&lt;pre data-line=&quot;&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;[
+    {
+        &amp;quot;subscription&amp;quot;: {
+            &amp;quot;format&amp;quot;: null,
+            &amp;quot;endpoint&amp;quot;: &amp;quot;http://my.webhook.com/path&amp;quot;,
+            &amp;quot;secret&amp;quot;: null,
+            &amp;quot;feed&amp;quot;: {
+                &amp;quot;title&amp;quot;: &amp;quot;NYT &amp;gt; Home Page&amp;quot;,
+                &amp;quot;url&amp;quot;: &amp;quot;http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;
+            }
+        }
+    }
+]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Obviously, we’ll be &lt;a href=&quot;http://indiewebcamp.com/selfdogfood&quot;&gt;self-dogfooding&lt;/a&gt; this in our brand new dashboard, which is coming soon now!&lt;/p&gt;
+
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>AngularJS Superfeedr</title>
+        
+        <link href="http://blog.superfeedr.com/angularjs-superfeedr"/>
+        <published>2014-09-03T00:00:00+02:00</published>
+        <updated>2014-09-03T00:00:00+02:00</updated>
+        <id>blog.superfeedr.com:/angularjs-superfeedr</id>
+        <content type="html">&lt;p&gt;If you read us carefully, you’ve already seen that &lt;a href=&quot;http://blog.superfeedr.com/subtome-progress/&quot;&gt;we use AngularJS&lt;/a&gt; for &lt;a href=&quot;https://www.subtome.com/#/&quot;&gt;SubToMe&lt;/a&gt;. Angular is an open source web framework for the client side. It’s probably one of the most popular of its kind these days, so you’ve probably stumbled upon it a couple times.&lt;/p&gt;
+
+&lt;p&gt;Today, we’re introducing a &lt;a href=&quot;https://github.com/superfeedr/angular-superfeedr&quot;&gt;Superfeedr module for Angular&lt;/a&gt;. It implements all of our &lt;a href=&quot;http://documentation.superfeedr.com/subscribers.html#webhooks&quot;&gt;Web API&lt;/a&gt; so that it becomes &lt;em&gt;trivial&lt;/em&gt; to build a client side application which &lt;em&gt;consumes feeds&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;And since a demo is worth a thousand words, here’s a demo! Don’t forget, this is &lt;strong&gt;all static HTML&lt;/strong&gt;, hosted on Github.&lt;/p&gt;
+
+&lt;div ng-app=&quot;demo-app&quot;&gt;
+
+&lt;h3 id=&quot;list-of-all-subscribed-feeds&quot;&gt;List of all subscribed feeds&lt;/h3&gt;
+
+&lt;p&gt;Here’s the list of feeds used by the &lt;code&gt;demo&lt;/code&gt; account. You can remove each subscription, as well as add new subscriptions as well.&lt;/p&gt;
+
+   &lt;div ng-controller=&quot;listCtrl&quot;&gt;
+    &lt;table style=&quot;width: 100%&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;span ng-click=&quot;previous()&quot;&gt;&amp;larr; Previous Page&lt;/span&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;Page&lt;/strong&gt;:   {{ page }}
+&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td style=&quot;text-align:right;&quot;&gt;&lt;span ng-click=&quot;next()&quot;&gt;Next Page &amp;rarr;&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;width: 350px&quot;&gt;&lt;strong&gt;Feed url&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Endpoint&lt;/strong&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr ng-repeat=&quot;item in subscriptions&quot; ng-controller=&quot;subscriptionController&quot;&gt;
+          &lt;td ng-click=&quot;retrieve()&quot;&gt;{{item.subscription.feed.url}}&lt;/td&gt;
+          &lt;td&gt;{{item.subscription.format}}&lt;/td&gt;
+          &lt;td&gt;{{item.subscription.endpoint}}&lt;/td&gt;
+          &lt;td&gt;&lt;button ng-click=&quot;unsubscribe()&quot;&gt;Unsubscribe&lt;/button&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;form novalidate=&quot;&quot; ng-submit=&quot;subscribe()&quot;&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;h4&gt;Add a new Feed:&lt;/h4&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;input style=&quot;width: 350px&quot; name=&quot;topic&quot; ng-model=&quot;topic&quot; ng-required=&quot;true&quot; /&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;select name=&quot;format&quot; ng-model=&quot;format&quot; ng-required=&quot;true&quot; ng-options=&quot;format as format for format in formats&quot;&gt;
+              &lt;/select&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;input style=&quot;width: 200px&quot; name=&quot;callback&quot; ng-model=&quot;callback&quot; ng-required=&quot;true&quot; /&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;input type=&quot;submit&quot; value=&quot;Subscribe&quot; /&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/form&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+
+&lt;h3&gt;Get the status of a feed&lt;/h3&gt;
+&lt;p&gt;
+  Please, note that you need to be subscribed to a feed in order to get its status and past entries. 
+&lt;/p&gt;
+
+&lt;div ng-controller=&quot;retrieveCtrl&quot;&gt;
+  &lt;form novalidate=&quot;&quot; ng-submit=&quot;retrieve()&quot;&gt;
+    &lt;input style=&quot;width: 350px&quot; name=&quot;url&quot; ng-model=&quot;url&quot; ng-required=&quot;true&quot; /&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Retrieve&quot; /&gt;
+  &lt;/form&gt;
+  &lt;div ng-show=&quot;feed&quot;&gt;
+    &lt;h4&gt;{{feed.title}}&lt;/h4&gt;
+    &lt;p&gt;
+      &lt;strong&gt;Status&lt;/strong&gt;: {{feed.status.http}}&lt;br /&gt;
+      &lt;strong&gt;HTTP Code&lt;/strong&gt;: {{feed.status.code}}
+    &lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li ng-repeat=&quot;item in feed.items&quot;&gt;&lt;a href=&quot;{{item.permalinkUrl}}&quot;&gt;{{item.title}}&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;You can of course &lt;a href=&quot;/scripts/angular-demo.js&quot;&gt;view the JS code&lt;/a&gt; for this application, and view source to get the HTML!&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+</content>
+        <author>
+            <name>Julien</name>
+            <uri>http://ouvre-boite.com</uri>
+        </author>
+    </entry>
+    
+</feed>

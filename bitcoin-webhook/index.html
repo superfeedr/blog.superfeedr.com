@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Bitcoin Webhook </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/bitcoin-webhook">Bitcoin Webhook</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/bitcoin-webhook</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2014-10-14T00:00:00+02:00"><time>14 Oct 2014</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>At this point, you have certainly heard about <a href="https://bitcoin.org/">Bitcoin</a>. It’s the most famous crypto-currency which relies on a shared ledger to determine every account’s balance.</p>
+
+<p><img src="https://en.bitcoin.it/w/images/en/c/cb/BC_Logotype.png" alt="" /></p>
+
+<p>The network is made of clients that run the bitcoin protocol. Everyone can participate, but if you run a web app, it’s not trivial to also run a bitcoin client in order to look at transactions. </p>
+
+<p>Several services, including the popular <a href="https://blockchain.info/">Blockchain.info</a> provide JSON APIs which will yield information about a transaction or a Bitcoin address. Using our <a href="http://blog.superfeedr.com/json-path/">JSON fragment subscriptions</a>, you can easily turn this into a webhook system and be notified when an specific address received a payment. This can be very useful when monitoring payments to your bitcoin addresses!</p>
+
+<p>Let’s take an example. We create a new address and added to our bitcoin wallet: <code>1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss</code>.</p>
+
+<p>The <a href="https://blockchain.info/address/1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss?format=json">Blockchain URL for this address</a> includes transaction info, as well as balances.</p>
+
+<p>Then, we wanted to be notified of the total amount of BTC received on that address, so we subscribed to <code>https://blockchain.info/address/1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss?format=json#%24.total_received</code>, because <code>$.total_received</code> includes the sum of all transactions sent to that address.</p>
+
+<p>We used <a href="http://webhookinbox.com">Webhookinbox</a> to <a href="http://webhookinbox.com/view/xh5yIKaC/">inspect the notifications</a>, but obviously, we could have used any webhook to susbcribe to the updates to trigger other things!</p>
+
+<p>Feel free to try it yourself: send a couple satoshis to <code>1HLCuQ48xzZPYGUVbbWmdDwhdwpB1DK1Ss</code>, and then check <a href="http://webhookinbox.com/view/xh5yIKaC/">this webhookinbox</a> to make sure we received it… (you may have to wait a couple minutes for the transaction to be committed and for us to check that transation info URL!).</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

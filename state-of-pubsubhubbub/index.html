@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : State of PubSubHubbub (subscribers' edition) </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/state-of-pubsubhubbub">State of PubSubHubbub (subscribers' edition)</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/state-of-pubsubhubbub</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-07-04T00:00:00+02:00"><time>04 Jul 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Now that <a href="http://blog.superfeedr.com/pubsubhubbub-04/">PubSubHubbub evolved toward 0.4</a>, and that what used to be the most popular reader are gone, it’s time to check the <strong>state of PubSubHubbub</strong> and see which of the new readers support it.</p>
+
+<p>We’ve picked the most popular web based readers from <a href="http://alternativeto.net/software/google-reader/">this list</a> and we tested PubSubHubbub support on a feed that supports it, thru the Superfeedr <a href="http://pubsubhubbub.superfeedr.com/">PubSubHubbub Community hub</a> (open to everyone!).</p>
+
+<p>If your reader is missing from that list, please let us know in the comments, subscribe to <a href="http://push-pub.appspot.com/feed">that feed</a> and let us know in the comments when that’s done. We’ll tell you if your reader supports <em>PubSubHubbub</em>.</p>
+
+<h3 id="supporting-pubsubhubbub">Supporting PubSubHubbub</h3>
+
+<ul>
+  <li><a href="http://cloud.feedly.com/#latest">Feedly</a>: supported</li>
+  <li><a href="http://www.newsblur.com/">NewsBlur</a>: supported</li>
+  <li><a href="http://www.inoreader.com/">Inoreader</a>: supported</li>
+  <li><a href="http://theoldreader.com/">The Old Reader</a>: supported</li>
+  <li><a href="http://flipboard.com/">Flipboard</a>: supported</li>
+  <li><a href="https://www.commafeed.com">Commafeed</a>: supported</li>
+  <li><a href="https://www.bazqux.com/">BazQux</a>: supported</li>
+</ul>
+
+<h3 id="not-yet-support-pubsuhubbub">Not (yet!) support PubSuHubbub</h3>
+
+<ul>
+  <li><a href="http://www.netvibes.com/">NetVibes</a>: this is sad because they used to support PubSubHubbub a couple years ago.</li>
+  <li><a href="http://digg.com/reader">Digg Reader</a>: I heard from the team at Digg that it’s on their TODO list. The earlier the better Digg!</li>
+  <li><a href="http://www.pulse.me/">Pulse</a>: they are subscribed to some feeds on some superfeedr hubs, but I could not get them to subscribe to my test feed. </li>
+  <li><a href="http://reader.aol.com/">AOL Reader</a>: not supported. Could not get in touch with anyone working on it :(</li>
+  <li><a href="http://www.bloglovin.com/">BlogLovin</a>: not yet, but we bugged them to add support soon!</li>
+  <li><a href="https://feedbin.me/">FeedBin</a>: not yet.</li>
+</ul>
+
+<p>All in all, these are pretty good results. The 6 <strong>supporters</strong> are also the 6 most popular readers. Since <em>latency is key feature</em> for most readers (who wants to read today’s news tomorrow?), we hope that they’ll add support soon too, and we’re more than happy to help.</p>
+
+<h3 id="publishers-make-your-feeds-pubsubhubbub">Publishers, make your feeds PubSubHubbub!</h3>
+
+<p>Readers are not the only apps consuming your feeds. Did you know that search engines consume them too? For example, Matt Cutts <a href="http://www.youtube.com/watch?v=4LsB19wTt0Q">said that Google uses PuSH</a> to detect original content faster.</p>
+
+<p>There are also apps like <a href="https://ifttt.com/dashboard">IFTTT</a> or <a href="http://urbanairship.com/">UrbanAirship</a> who support the protocol to propagate updates faster to their users.</p>
+
+<p>It’s simpler than most people think and we would be thrilled to <a href="http://superfeedr.com/publisher">host your hub</a>, for free.</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

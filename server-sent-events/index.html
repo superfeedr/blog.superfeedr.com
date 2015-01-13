@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Server Sent Events </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/server-sent-events">Server Sent Events</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/server-sent-events</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2014-08-25T00:00:00+02:00"><time>25 Aug 2014</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <script src="../scripts/server-sent-events.js">
+</script>
+
+<p><a href="http://www.w3.org/TR/eventsource/">Server Sent Events</a> (also called EventSource) are clearly one of the <em>unsung heros</em> of the <strong>HTML5</strong> specs for the <strong>realtime web</strong>. It’s a very simple and consice protocol to implement realtime applications which get data from the server. In practice, it’s a long-lived HTTP socket, which means that it goes thru firewall and proxies pretty well and does not require a lot of learning.</p>
+
+<p>As of today, Superfeedr is able to deliver <strong>RSS/Atom feed content via Server Sent Events</strong>. This means that it’s trivial to include any feed into any HTML page, and to self update the page’s content when the feed is updated: no need for flash or proprietary javascript libraries!</p>
+
+<h3 id="retrieving-items-and-getting-new-ones">Retrieving items and getting new ones</h3>
+
+<p>The API is quite similar to our <a href="">streaming API</a>, introduced <a href="/stream-superfeedr/">last month</a>. Actually, the URL for the EventSource endpoint is exactly the one you would use to connect to our HTTP streaming. The browser will add the only bit that differentiates it from other requests: an <code>Accept</code> header with <code>text/event-stream</code>.</p>
+
+<p>The list below is dynamically loaded using <strong>Server Sent Events</strong>. It loads the content from <a href="http://push-pub.appspot.com/feed">this feed</a>, to which you can easily add content via <a href="http://push-pub.appspot.com/">this interface</a>. Just enter a new messaage there and wait a few seconds for it to show up right below, without reloading this page! <em>This probably won’t work if you’re reading this from a feed reader…</em></p>
+
+<ul id="sse-feed">Loading...</ul>
+
+<p>The code is rather simple:</p>
+
+<pre data-line=""><code class="language-javascript">// First, we create the event source object, using the right URL.
+var url = &quot;https://stream.superfeedr.com/?&quot;;
+url += &quot;&amp;hub.mode=retrieve&quot;;
+url += &quot;&amp;hub.topic=http%3A%2F%2Fpush-pub.appspot.com%2Ffeed&quot;;
+url += &quot;&amp;authorization=anVsaWVuOjJkNTVjNDhjMDY5MmIzZWFkMjA4NDFiMGViZDVlYzM5&quot;;
+
+var source = new EventSource(url);
+
+// When the socket has been open, let&#39;s cleanup the UI.
+source.onopen = function () {
+  var node = document.getElementById(&#39;sse-feed&#39;);
+  while (node.hasChildNodes()) {
+    node.removeChild(node.lastChild);
+  }
+};
+
+// Superfeedr will trigger &#39;notification&#39; events, which corresponds
+// exactly to the data sent to your subscription endpoint 
+// (webhook or XMPP JID), with a JSON payload by default.
+source.addEventListener(&quot;notification&quot;, function(e) {
+  var notification = JSON.parse(e.data);
+  notification.items.sort(function(x, y) {
+    return x.published - y.published;
+  });
+  notification.items.forEach(function(i) {
+    var node = document.getElementById(&#39;sse-feed&#39;);
+    var item = document.createElement(&quot;li&quot;);
+    var t = document.createTextNode([new Date(i.published * 1000), i.title, i.content].join(&#39; &#39;));
+    item.appendChild(t);
+    node.insertBefore(item, node.firstChild);
+    // We add the element to the UI.
+  });
+});</code></pre>
+
+<p>The browser will take care of the HTTP connection, reconnect to the server if needed. </p>
+
+<h3 id="caveats">Caveats!</h3>
+
+<p>There are 2 things to remember when using Superfeedr’s server sent events: IE and authentication.</p>
+
+<p>Even though the EventSource spec has been published a couple years ago and <a href="http://caniuse.com/#feat=eventsource">every other major browser supports it</a>, <strong>Internet Explorer lacks support</strong>. There are, however existing shims which mimick this API on the browser side. This page, for example, includes <a href="https://github.com/remy/polyfills/blob/master/EventSource.js">Remy Sharp’s</a> so you can view the example, even with IE!</p>
+
+<p>Another caveat is that as far as we know, you cannot change the HTTP headers when using EventSource, which means you have to submit an <code>authorization</code> <strong>query string param</strong> with the value that you would have inserted using HTTP Basic Auth: a base64 encoded concatenation of your superfeedr login and a token which allows for the <em>retrieve</em> right.</p>
+
+<p>Read more about Server Sent Events:</p>
+
+<ul>
+  <li><a href="http://www.html5rocks.com/en/tutorials/eventsource/basics/">On HTML5Rocks</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events">MDN’s article</a></li>
+</ul>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+  <script src="https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js" async></script>
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Superfeedr Heroku </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/superfeedr-heroku">Superfeedr Heroku</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/superfeedr-heroku</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2012-04-12T00:00:00+02:00"><time>12 Apr 2012</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>For the past few months, one of our projects involved working on an Heroku addon. Today it reached public beta. In a nutshell, it allows for anyone using Heroku to <strong>integrate</strong> with all of Superfeedr&#8217;s features with minimal effort: all the provisioning, integration and even billing is managed thru Heroku.</p>
+<h2>Integrating</h2>
+<p><img src="/images/heroku.png" style="float: right; margin: 5px;" alt="" /></p>
+<p>The first step is to <em>add</em> the Superfeedr addon to your existing application. Like for most Heroku addon, type this in your application&#8217;s repository:</p>
+<p><code>heroku addons:add superfeedr</code></p>
+<p>The next step is the most important step: picking up the right <span class="caps">API</span> to use:</p>
+<ul>
+	<li>The <a href="http://documentation.superfeedr.com/subscribers.html#xmpppubsub"><span class="caps">XMPP</span> PubSub</a> may require you to run an extra Dyno (process), and <span class="caps">XMPP</span> may not have good libraries for your language of choice.</li>
+	<li>The <a href="http://documentation.superfeedr.com/subscribers.html#webhooks">PubSubHubbub</a> <span class="caps">API</span> uses webhooks, which means that your development machine will need to be &#8216;accessible&#8217; from outside the firewall.</li>
+</ul>
+<p>Then, you can start implementing! When making calls to Superfeedr, make sure you use <code>SUPERFEEDR_LOGIN</code> and <code>SUPERFEEDR_PASSWORD</code> as your credentials. (you can also set these environment variables to your local development machine)</p>
+<h2>Billing</h2>
+<p>For now, using the <a href="https://addons.heroku.com/superfeedr">Superfeedr heroku addon</a> is free, but we will soon introduce plans. These plans will obviously include a <strong>free version</strong>, but they will be based on the number of feeds (we exclude track feeds though), rather than the number of entries. This has been a rather frequent request for superfeedr and we may use Heroku as a sandbox for a new superfeedr pricing model.</p>
+<p>If you&#8217;re looking at sample applications, check this <a href="https://github.com/superfeedr/superfeedr-node-sample">node.js example</a> <em>which uses XMPP_, <a href="https://github.com/superfeedr/superpipes">Superpipes</a>, or this <a href="https://github.com/superfeedr/rack-superfeedr/blob/master/examples/sinatra">Sinatra application</a></em>app.rb, which uses PubSubHubbub.</p>
+<p>Happy coding!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

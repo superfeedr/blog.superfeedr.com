@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : PubSubHubbub v0.4 </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsubhubbub-0-4">PubSubHubbub v0.4</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsubhubbub-0-4</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2012-04-03T00:00:00+02:00"><time>03 Apr 2012</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>The PubSubHubbub adoption is growing strong. There is not a week where a major publisher or a major subscriber eventually implements it. Yesterday, that was <a href="http://blog.newsblur.com/post/20371256202/building-real-time-feed-updates-for-newsblur">NewsBlur&#8217;s</a> turn.</p>
+<p>At the same time, the current PubSubHubbub spec (0.3) is a bit rusty and presents a few issues that prevented more platforms to use it. The 2 most significant issues are the following: arbitrary content support, opening the door for private feeds.</p>
+<p>We recently worked on the version 0.4 of the spec, which, solves these problems.</p>
+<h3>Arbitrary Content Support</h3>
+<p>The current spec is coupled with the Atom and <span class="caps">RSS</span> specs very deeply. However, in theory, PubSubHubbub shouldn&#8217;t really care about what is being transported for as long as it&#8217;s available via <span class="caps">HTTP</span>.</p>
+<h4>Discovery</h4>
+<p>The current spec states that discovery is performed by adding a <code>&lt;link&gt;</code> element in the &#8220;head&#8221; part of the feed (the one which contains all the meta data about the feed). Luckily, <span class="caps">HTTP</span> also has a &#8220;head&#8221; part: the <span class="caps">HTTP</span> headers.<br />
+We proposed that doing discovery for arbitrary content resources is done thru the use of <a href="http://tools.ietf.org/html/rfc5988">Link Headers</a>.</p>
+<p>They look like this:<br />
+<pre><code>HTTP/1.1 200 OK
+Date: Tue, 03 Apr 2012 08:02:19 GMT
+Content-Type: text/html
+Content-Length: 11261
+Link: &lt;http://pubsubhubbub.superfeedr.com&gt;; rel="hub"
+Link: &lt;http://blog.superfeedr.com/my-resource&gt;; rel="self"</code></pre></p>
+<p>Please note, that similar to the 0.3 spec, we need both a <em>self</em> link and a <em>hub</em> link.<br />
+A consequence of using <span class="caps">HTTP</span> headers is that, instead of doing a full <span class="caps">GET</span> request, subscribers may just use the verb <span class="caps">HEAD</span> to perform the discovery of a resource.</p>
+<h4>Diffing</h4>
+<p>Feeds have a built-in diff mechanism. As they are collections of items, it is quite easy to identify what items have been added to the collection between to <span class="caps">GET</span> requests.</p>
+<p>Now, using arbitrary formats means <em>that it is not always easy or obvious to diff the resource in a meaningful way</em>.</p>
+<p>The 0.4 spec proposes to leave diffing up to the publisher an subscriber to identify what is the right behavior, between propagating the full document (when it was updated), or just propagating the diff, using the mechanism of their choice (text based diff, or content based diff).</p>
+<h4>Notification</h4>
+<p>When using feeds, the whole content is included in the feeds, including, as we&#8217;ve seen the discovery elements. Since most <span class="caps">HTTP</span> document do not have this feature, it means that <strong>the notification must include some of the <span class="caps">HTTP</span> headers served with the content, including, well, the Link headers</strong>.<br />
+This is an important difference with the 0.3 spec, and most not be overlooked, as some resources have meaningful information in the <span class="caps">HTTP</span> headers.</p>
+<h4>Signature</h4>
+<p>The only way to perform a secure notification and avoid &#8220;man-in-the-middle&#8221; attacks, it is important that the notification from the hub to the subscriber is signed, using an <span class="caps">HMAC</span> signature with a shared secret. This behavior is the behavior <a href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#authednotify">used in the version 0.3 of the spec</a>.</p>
+<p>In the version 0.4, we use the same mechanism, but please note that this will only sign the content, and not the headers. As such, <em>if a subscriber wants to trust the complete notification, the only option is to use an HTTP*S* callback url</em>.</p>
+<p>There is another way, which is to provide a specific header which lists the signed headers, but we believe it&#8217;s overly complex. Please let us know if you disagree.</p>
+<h3>Private Resources</h3>
+<p>This is the other key aspect of this revised spec. Currently, the publisher doesn&#8217;t have any visibility on &#8216;who&#8217; the subscribers are (and if there are any actually).</p>
+<p>This is a very strong problem in the context of social networks where someone may want to distribute its content only to a restricted set of people: their friends, or family.</p>
+<p>Typically, they want to approve or deny subscriptions, but also may want to later reject a previous approved subscription. They may also want to limit the subscription to a subset of the actual published feed.</p>
+<h4>Subscription</h4>
+<p>The current spec only uses the verification of intent to determine if a subscription should be accepted. We now need to use the publisher&#8217;s input to accept or deny subscriptions. It is also very likely that the publisher will wait for the actual user&#8217;s input before accepting or denying, which means that the subscription process now becomes <strong>asynchronous</strong> by default.</p>
+<h3>Publisher Verification</h3>
+<p>This is a brand new step, but it remains optional and subscribers should completely ignore this part. Using an agreed upon mechanism, the hub will ask the publisher whether the subscription should be accepted, by echo-ing the subscription request. The publisher can then decide to accept or deny the subscription, as well as include a reason for that.</p>
+<p>This mechanism can, for example be combined with the use of a <code>From</code> <span class="caps">HTTP</span> header in the subscription. Then, using a webfinger discovery mechanism, the publisher can identify the actual user behind the subscription. Other mechanisms could also very well be used, but are beyond the scope of this spec.</p>
+<h3>Subscription Validation</h3>
+<p>Once the subscriber&#8217;s intent has been confirmed <span class="caps">AND</span> if the publisher agrees to the verification, then, the subscription should be validated and the hub will send a request to the subscriber to validate that subscription.</p>
+<p>If not, the hub should also send a request to indicate denial, with, if applicable, the reason used by the publisher. The subscriber may then either retry (using additional parameters) or just abandon its subscription.</p>
+<p>The subscription validation process can also happen later to deny an existing subscription.</p>
+<h3>Conclusions</h3>
+<p>The draft 0.4 clearly still has a points that needs to be clarified and improved, but we believe it solves the 2 current major issues that the current PubSubHubbub protocol has.</p>
+<p>It is obvious that if a hub doesn&#8217;t respond to the 0.4 spec <span class="caps">API</span> calls, a subscriber should fallback to 0.3 for as long as the 0.4 spec hasn&#8217;t been widely adopted.</p>
+<p>Please, <a href="https://groups.google.com/d/msg/pubsubhubbub/sW6nVt_a7VQ/1d91SbceG-8J">send your feedback</a>.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

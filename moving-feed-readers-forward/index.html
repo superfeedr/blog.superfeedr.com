@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Moving RSS forward </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/moving-feed-readers-forward">Moving RSS forward</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/moving-feed-readers-forward</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-03-15T00:00:00+01:00"><time>15 Mar 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>The death for Google Reader will surely bring a gigantic wave of innovation in the RSS Reader ‘market’. We’ve shown yesterday that <a href="http://blog.superfeedr.com/state-of-readers/">there are many many alternatives</a>. Superfeedr is <strong>in the business of making RSS easier</strong>, we’re introducing a little, simple (<a href="http://www.marco.org/2013/03/14/baby-steps-replacing-google-reader!">baby step</a> thing which we hope will make a subscribing easier to use for everyone.</p>
+
+<h3 id="subscribing-is-hard">Subscribing is hard</h3>
+
+<p>We’ve heard a lot of people say that they <em>replaced their RSS reader with Twitter, or Facebook</em>. It’s also possible that Google killed Reader to promote G+. These platforms are popular for news reading because it’s so easy to subscribe or follow news sources, or people sharing the blogs… etc. <strong>It’s just a click of a button</strong>.</p>
+
+<p>Subscribing to an <strong>RSS feed is still very hard</strong>. When I am on a site I like, I have to find the RSS link (which is often hidden), copy its url, open a new tab and paste the url in he right field. Finally, I can click on the ‘subscribe’ button. </p>
+
+<blockquote>
+  <p>UPDATE; people on HackerNews said that subscribing to an RSS feed is easy. Check this video of how people react when they’re asked <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ">what a browser is</a>.</p>
+</blockquote>
+
+<h3 id="meet-subtome">Meet SubToMe</h3>
+
+<p><a href="https://www.subtome.com/">SubToMe</a> aims at simplifying that. It’s a button, click on it: <input type="button" id="followThis" value="Follow this Blog" /></p>
+
+<script>
+(function(){
+  window.onload = function() {
+    document.getElementById("followThis").onclick = function() {
+    var z=document.createElement('script');
+    z.src='https://www.subtome.com/load.js';
+    document.body.appendChild(z);    
+  }
+}})()
+</script>
+
+<p>If all goes well, you should see something like this: </p>
+
+<p><img src="https://raw.github.com/superfeedr/subtome/master/misc/subtome-screenshot.png" alt="Msgboy" style="margin: 10px" /></p>
+
+<p>Of course, that’s kind of dumb you may think. This is just a list of readers and it’ll be hard to list them all. Luckily, this button has a <a href="https://www.subtome.com/developers.html">registration mechanism</a>. For example, click on <a href="https://www.subtome.com/register.html?name=Feedly&amp;url=http%3A%2F%2Fwww.feedly.com%2Fhome%23subscription%2Ffeed%2F%7Bfeed%7D" target="_blank">use Feedly</a> or <a target="_blank" href="https://www.subtome.com/register.html?name=Bloglovin&amp;url=http://www.bloglovin.com/search/%7Burl%7D">Use Bloglovin</a>, and eventually, click again on the button above.</p>
+
+<p>You should now see only the services for which you have been registered. Of course, this should be <em>100% transparent to the user</em>, using iframes, like <a href="http://theoldreader.com/">The Old Reader</a> already does! This way, <strong>each user will be able to use their favorite reader</strong> and publishers don’t have to put dozens of <em>follow me on xxx</em> buttons on their sites.</p>
+
+<p>Of course, you may wonder how this is done. Here is a little secret: it’s all stored in <code>localStorage</code>. All the SubToMe files are just static HTML files. No server involved, no app running and no data is ever leaked. </p>
+
+<p>We also have a <a href="https://www.subtome.com/settings.html">bookmarklet and browser extensions</a> for you to subscribe easily.</p>
+
+<h3 id="do-you-have-a-blog">Do you have a blog?</h3>
+
+<p>If you do, you probably understand the need for you to <strong>control the distribution of your content</strong>. You just can’t rely on Twitter, Facebook or Google+ to send your content to your subscribers and followers.</p>
+
+<p>Make sure you pick a platform that has RSS feeds and make sure you allow people to subscribe to your content in the easiest possible way. Follow these instructions if you want to <a href="https://www.subtome.com/publishers.html">add a SubToMe button</a>.</p>
+
+<p>We have a <a href="http://wordpress.org/extend/plugins/subtome">SubToMe Wordpress extension</a>. Install it!</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Ruby 1.9.2 </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/ruby19">Ruby 1.9.2</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/ruby19</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-12-23T00:00:00+01:00"><time>23 Dec 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>We&#8217;re probably late to that game, but one of our goals for December was to switch to Ruby 1.9. We use a lot of Ruby at Superfeedr. Some people claim (and some of them are right) that Ruby has a poor performance compared to other languages in the same category. <strong>It probably doesn&#8217;t matter much if the global architecture allows for horizontal scaling</strong>. That&#8217;s how we built Superfeedr.</p>
+<p><img src="http://www.prestonlee.com/wp-content/uploads/2008/09/ruby.png" style="width:150px;float:right;" alt="" /></p>
+<p>Yet, making each of the node perform better is also a way to increase performance per dollar spent. Additionally, it&#8217;s also important to stick with the most active developer community. Even though we haven&#8217;t heard of <a href="http://isitruby19.com/">many gems that are not 1.9 compatible</a>, it&#8217;s now clear that <strong>1.9 is the &#8220;base&#8221; for most of the Ruby development</strong>. Superfeedr is following this trend too!</p>
+<h2>Porting</h2>
+<p>To be fair, we were slightly scared of this and expected a few days of work to port our code from 1.8.7 (<a href="http://www.rubyenterpriseedition.com/">Enterprise Edition</a>) to Ruby 1.9. It was actually much smoother than expected. All the gems we use were actually 1.9 ready, which allowed us to focus only on our own code.</p>
+<p>One of the 2 issues we had was the fact that <code>Array::to_s</code> has a different implementation in 1.9. Replacing by <code>Array::join</code> is the way to fix it. Easy.</p>
+<p>The 2nd issue was much more complex. <em>Like everyone else, we struggled with Encodings_. Ruby 1.9 is much much better at dealing with encodings than 1.8. Yet, it also requires more work and is a lot more demanding, specially when your app actually ingests a lot of external data, for which you do not control the encoding. Luckily the <a href="http://yehudakatz.com/2010/05/05/ruby-1-9-encodings-a-primer-and-the-solution-for-rails/">web has a lot of resources</a>, and I particularly <a href="http://blog.grayproductions.net/articles/understanding_m17n">liked James Gray&#8217;s series</a>. No matter what, <strong>do not use <code>force_encoding</code></strong>, unless you exactly know and understand what you&#8217;re doing. Also, don&#8217;t forget that <a href="http://blog.marc-seeger.de/2010/04/21/Dealing_with_invalid_encodings_in_Ruby_1">you can use options when converting from one encoding to the other</a></em>9 to avoid errors. Of course, when dealing with evented libraries (like we do), it&#8217;s possible that the buffer on which you receive content will only deal with bytes, and not characters, so you want to be very careful with the data that you get from these buffers, as some characters may be truncated.</p>
+<p>I didn&#8217;t even mentioned it but, <a href="http://rvm.beginrescueend.com/"><span class="caps">RVM</span></a> is the way to go on your local development machines if you&#8217;d like to switch from a flavor to another.</p>
+<h3>Performance</h3>
+<p>No surprise here, <strong>Ruby 1.9 is much much better than 1.8.7 <span class="caps">MRI</span> and 1.8.7 <span class="caps">REE</span></strong>. We&#8217;re <span class="caps">CPU</span> bound, which means that it was our focus, rather than memory.</p>
+<p>To make a little benchmark, we pulled 60 feeds from our database, with different formats, different encodings, different sizes (short entries or very long entries), and we ran a our parser on them 20 times each, in a random order, 12 times for each version. We removed outliers and you can <a href="https://gist.github.com/751807">find the results here</a>. As you can see <strong>the average performance gain is over 35%</strong>, which is quite good.</p>
+<p>We also measure what we the <em>reactor latency</em> of our different evented applications. As you probably know these use the reactor pattern, which is nothing but an infinite loop that checks sockets, timers and a few other things. From there, it&#8217;s easy to use a periodic timer of 1sec and measure exactly how much time was actually spent until we fired it. In a perfect world, this should be exactly 1sec. In reality, when our reactors are actually computing things, they can be slightly slower and we may see a little bit over 1sec. With our Ruby 1.8, the average latency was about 0.1. With 1.9, it&#8217;s actually <strong>closer to 0.07 which proves once again that our reactors are faster</strong> at processing the same code.</p>
+<p>Finally, our memory tests proved us that <strong>we gained about 20%</strong>. Not sure if it&#8217;s related to the fact that our code runs faster and hence doesn&#8217;t need to use as much memory as it used to, or if it&#8217;s just that data-structures are slightly more efficient in 1.9.2, but it&#8217;s a decent gain there too.</p>
+<p>Happy holidays!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

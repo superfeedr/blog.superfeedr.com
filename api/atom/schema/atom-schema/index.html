@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : The New Atom Schema is up! </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/api/atom/schema/atom-schema">The New Atom Schema is up!</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/api/atom/schema/atom-schema</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-09-18T00:00:00+02:00"><time>18 Sep 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>We deployed yesterday a new code for our parsers, and it now includes a more <a href="http://documentation.superfeedr.com/schema.html">complete schema</a> that will allow you to do a lot more things with superfeedr!</p>
+<h3>Content or summary?</h3>
+<p>Up until now we were considering that anything was a summary, which wasn&#8217;t really accurate since some feeds actually <strong>offer the whole content</strong>. We fixed that. If the entry contains the full content, you&#8217;ll have a <code>&lt;content&gt;</code> tag, if not, then, it will have a <code>&lt;summary&gt;</code> tag.</p>
+<h3>Links</h3>
+<p>The biggest addition is the fact that <code>&lt;entry&gt;</code> elements now include all the <code>&lt;links&gt;</code> of the original entry, including attachments. Of course, to differentiate between them you can use the <em><code>"rel"</code> value</em>, as well as <code>"type"</code> which gives you the <em>mime type</em>. For example, here is what you&#8217;d receive for this flick <span class="caps">RSS</span> feed :</p>
+<pre data-line=''><code class='language-javascript'>&amp;lt;entry xmlns=&amp;quot;http://www.w3.org/2005/Atom&amp;quot;&amp;gt;
+<p>&lt;title&gt;IMAG0346&lt;/title&gt;<br />
+	&lt;id&gt;tag:flickr.com,2005:/photo/3931639648&lt;/id&gt;<br />
+	&lt;published&gt;2009-09-18T13:30:19Z&lt;/published&gt;<br />
+	&lt;content&gt;&amp;lt;p&amp;gt;&amp;lt;a href=&quot;http://www.flickr.com/people/fbernard1706/&quot;&amp;gt;<code>choum&amp;amp;lt;/a&amp;amp;gt; posted a photo:&amp;amp;lt;/p&amp;amp;gt;
+		&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;a href=&amp;quot;http://www.flickr.com/photos/fbernard1706/3931639648/&amp;quot; title=&amp;quot;IMAG0346&amp;quot;&amp;amp;gt;&amp;amp;lt;img src=&amp;quot;http://farm3.static.flickr.com/2497/3931639648_3437ffa730_m.jpg&amp;quot; width=&amp;quot;240&amp;quot; height=&amp;quot;180&amp;quot; alt=&amp;quot;IMAG0346&amp;quot; /&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;
+	&amp;lt;/content&amp;gt;
+	&amp;lt;link type=&amp;quot;text/html&amp;quot; title=&amp;quot;&amp;quot; href=&amp;quot;http://www.flickr.com/photos/fbernard1706/3931639648/&amp;quot; rel=&amp;quot;alternate&amp;quot;/&amp;gt;
+	&amp;lt;link type=&amp;quot;image/jpeg&amp;quot; title=&amp;quot;&amp;quot; href=&amp;quot;http://farm3.static.flickr.com/2497/3931639648_3437ffa730_m.jpg&amp;quot; rel=&amp;quot;enclosure&amp;quot;/&amp;gt;
+	&amp;lt;category term=&amp;quot;sergio&amp;quot;/&amp;gt;
+	&amp;lt;category term=&amp;quot;expo&amp;quot;/&amp;gt;
+	&amp;lt;category term=&amp;quot;lyon&amp;quot;/&amp;gt;
+	&amp;lt;category term=&amp;quot;western&amp;quot;/&amp;gt;
+	&amp;lt;category term=&amp;quot;prefecture&amp;quot;/&amp;gt;
+	&amp;lt;category term=&amp;quot;leone&amp;quot;/&amp;gt;
+	&amp;lt;author&amp;gt;
+		&amp;lt;name&amp;gt;</code>choum&lt;/name&gt;<br />
+		&lt;uri&gt;http://www.flickr.com/people/fbernard1706/&lt;/uri&gt;<br />
+		&lt;email/&gt;<br />
+	&lt;/author&gt;<br />
+&lt;/entry&gt;</code></pre></p>
+<p>As you can see, there are 2 <code>&lt;link&gt;</code> elements, <strong>one for the entry</strong> (the page that contains the image), and <strong>one for the image itself</strong>. These links are various and may include links to the <em>comments section, to the <span class="caps">RSS</span> feed of comments, to any attachment, to related articles</em>&#8230; etc.</p>
+<h3>Categories</h3>
+<p>The Web2.0 era has long be associated with the presence of <strong>tags</strong>, implemented by <a href="http://delicious.com">Delicious</a>, <a href="http://flickr.com">Flickr</a>, <a href="http://youtube.com">Youtube</a> and by bloggers. They are very useful to group things and can do a better job than search engines to find &#8220;binary&#8221; content. <strong>Superfeedr will now provide the tags</strong> (or categories from the original entries).<br />
+In the above example, you can see that the tags used are <em>sergio, expo, lyon, western and prefecture</em>.</p>
+<h3>Authors</h3>
+<p>Last, but not least, we now support <strong>author informations</strong>. There can be several authors in one entry. For each author, we provide (when available) a <em>name, an email address and a profile <span class="caps">URI</span></em>.</p>
+<p>If you&#8217;d like anything else to be added, please let us know in the comments. With the current information, we estimate we cover 80-90% of the original entry content. Also, if you&#8217;re not satisfied with our mapping, please do not hesitate to <a href="http://blog.superfeedr.com/Atom/schema/a-better-schema/">suggest fixes</a> as well.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

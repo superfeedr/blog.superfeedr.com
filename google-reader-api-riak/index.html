@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Google Reader API replacement, powered by Riak </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/google-reader-api-riak">Google Reader API replacement, powered by Riak</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/google-reader-api-riak</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-06-04T00:00:00+02:00"><time>04 Jun 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>When Google announced it was shutting down Reader on July 1st, we took a couple days to announce that <a href="http://blog.superfeedr.com/google-reader-compatible-api/">we will be offering a replacement for its API</a> as well as back up as much of the data that we can.</p>
+
+<p>Finding the <em>right tool to store</em> all this data was tricky and as we have finally deployed that backend store we wanted. We have also started backing up significant amounts of data.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>We <a href="http://blog.superfeedr.com/oss/open-source/database/nosql/kumofs-a-database-success-story/">tried several times</a> to find the perfect datastore to store the content that goes thru Superfeedr, but the fact is the size of that store quickly adds up.</p>
+
+<ul>
+  <li>
+    <p>The average size of an entry that we store is about 2KB. Google Reader stores 1000 items per feed. We want to be able to store about 50M feeds at that this point (we only store feeds for which we have susbcribers, not the publisher feeds). That’s <strong>93.13TB</strong> worth of data. </p>
+  </li>
+  <li>
+    <p>Obviously, that data is growing fast too, so we needed a data store that is able to <strong>scale horizontaly</strong>: adding more servers increases the capacity. </p>
+  </li>
+  <li>
+    <p>Availabilty is also a key requirement as we’d rather serve ‘stale’ (by a couple seconds or even minutes) data than no data. We also need to be able to <strong>constantly write</strong> to the store as we can’t <em>stop the web from happening</em>.</p>
+  </li>
+  <li>
+    <p>This takes us to eventually consistent stores. Consistency at any given time is not a strict requirement as there is already a significant latency (couple seconds!) between the time a feed is updated and we know about it.</p>
+  </li>
+  <li>
+    <p>Finally, if we want to store 1000 entries for each feed, we can’t do it in the same record, so we need some kind of schema where a <code>feed</code> record points to several <code>entry</code> records.</p>
+  </li>
+</ul>
+
+<h2 id="riak">Riak</h2>
+
+<p>We picked <a href="http://basho.com/riak/">Riak</a>. Not only there weren’t too many choices out there, but we also heard a lot of great things about Riak and the community seems pretty strong.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/en/5/53/Riak_product_logo.png" style="witdh: 200px; float: left" /></p>
+
+<p>Setting up a Riak store (with a single node) locally is quite easy and the <em>HTTP based API</em> is a breeze to use when you want to PUT, GET and DELETE records. The <a href="http://docs.basho.com/">Riak docs</a> were also quite helpful, while still being digest. </p>
+
+<p>Beyond that, setting up a cluster is also fairly easy. We used the <a href="http://docs.basho.com/riak/latest/cookbooks/Installing-With-Chef/">chef cookbook</a> and quickly enough we had a cluster of 5 with enough disk storage to get things started.</p>
+
+<p>However, we also quickly bumped into problems because eventual consistency is <em>hard</em> and because Riak’s default behavior with conflicting values (siblings) made things harder for us.</p>
+
+<h3 id="siblings">Siblings</h3>
+
+<p>Riak is eventually consistent, and is also distributed, which means it’s fairly common that 2 clients will set a conflicting value to a single key. That’s the dreaded and common <strong>race-condition</strong>. By default, Riak will keep the latest one, but that can be a problem.</p>
+
+<blockquote>
+  <p>In our case, the feed object contains a list of entries. For example, feed A may include entries 1,2 and 3. So far, so good. Now, let’s say that 2 of our supernoders (in charge of parsing the feeds and writing the entries to Riak) get started. They both get <code>[1,2,3]</code> from Riak. The first one finds 4. It’s great, it quickly adds it to the list and writes <code>[1,2,3,4]</code> back to Riak. In the meantime, the 2nd one found 5, and quickly writes <code>[1,2,3,5]</code> to Riak. If the last value wins, then, we’ve lost 4 :(</p>
+</blockquote>
+
+<p>Now, Riak is smart enough to keep multiple version of the same objects stored, as long as your client is smart enough to tie the knot next time it reads the object. In our case, that’s fairly simple: when we get conflicting values, we just merge the 2 arrays, make it unique and save the result back.</p>
+
+<h3 id="mapreduce-and-schemas">MapReduce and schemas</h3>
+
+<p>Riak has some <strong>MapReduce</strong> capabilities. The most common usage for it is to ‘group’ sequences of complex requests in one, rather than to run a piece of code on all objects stored in Riak.</p>
+
+<p>For us, the most common use is to retrieve the full content of a feed. Basically, we execute a MapReduce request which fetches the feed’s value and, then fetches K of its entries from the value directly and returns them all at once. It’s pretty handy and saves some precious time rather than doing K+1 request to fetch the feed and then all of its entries.</p>
+
+<p>However, it’s also important to <em>not abuse</em> these requests because they put some of the load which ws historically on the client’s side back to the server side. For example, it’s probably not such a great idea to run mapReduce requests on thousands of keys at once, or which would do a complex computation.</p>
+
+<h3 id="deleting">Deleting</h3>
+
+<p><strong>Riak is very good to access objects by their keys directly. On the other end it’s also very bad at ‘listing’ items</strong>. It’s good at handling objects one by one, but not so good to play with ‘unknown’ collections.</p>
+
+<p>Since our backend storage will only store a limited (high, but limited) amount of entries per feed, we have to trim the list every now and then. We have to be extremely careful to first delete the entry object, and then remove it from the feed’s list of entries, because if we do it the other way around, we may ‘lose’ track of the entry if we’re unable to delete it.</p>
+
+<blockquote>
+  <p>That’s exactly what happened in one of our initial deployments. The conflict resolution algorithm that we had was too aggressive and dropped some entry’s keys from the list of entries stored for each feed. After 2 days worth of ‘leaked’ entry, we had nearly 5M extra entries that we needed to delete, without knowing their id. Yikes.</p>
+</blockquote>
+
+<p>The solution consisted in running a very expensive MapReduce job to list all the entries keys. Then, as the entries’s keys includes the feedId (we use a feedId-EntryId form on purpose!), we groupped the entries by feed, compared the list of entries actualy kept and deleted the rest. This was long and painful (it took almost a full day to deal with all the accumulated data!) and taught us to be <strong>extremely careful as to not ‘lose’ track</strong> of items in Riak.</p>
+
+<h3 id="monitoring">Monitoring</h3>
+
+<p>Monitoring is a key aspect to running any kind of server. Monitoring our Riak cluster is obviously key to controlling its performance and making sure it scales up nicely. We use <a href="http://blog.superfeedr.com/oss/open-source/infrastructure/collectd/performance-monitoring-with-collectd/">collectd</a>, but there was no collectd plugin for Riak, so we hooked it up <a href="https://gist.github.com/julien51/5717367.js">to a script</a>. We keep track of the object’s sizes, the response times, the number of siblings… etc. Pretty handy to detect problems :) We also use <a href="http://basho.com/riak-control/">Riak Control</a> to quickly learn more about our cluster.</p>
+
+<h2 id="next">Next</h2>
+
+<p>We are now storing more and more data and we should have backed up as much as we can before July 1st. In the next couple days we will work on our APIs for this data store. It’s currently accessible thru our <code>retrieve</code> feature (both <a href="http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithxmpp">XMPP</a> and <a href="http://documentation.superfeedr.com/subscribers.html#retrievingentrieswithpubsubhubbub">PubSubHubbub</a>), as well as our <a href="https://github.com/superfeedr/documentation/tree/master/google-reader-api">Google Reader API</a>. We will also support the <a href="http://rss-sync.github.io/Open-Reader-API/resources/">Open Reader API</a>. Please, get in touch if you’d like to test them.</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

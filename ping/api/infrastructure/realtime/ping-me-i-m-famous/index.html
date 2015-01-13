@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Ping me I'm famous </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/ping/api/infrastructure/realtime/ping-me-i-m-famous">Ping me I'm famous</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/ping/api/infrastructure/realtime/ping-me-i-m-famous</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-03-05T00:00:00+01:00"><time>05 Mar 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Ping is both the <strong>ancestor</strong> and the <em>root</em> of any realtime feed protocol. A ping is a way to say : &#8220;<em>hey this content was updated</em>&#8221;. It can be light, which means the this gives a link to the content, or <a href="http://techcrunch.com/2009/09/09/rsscloud-vs-pubsubhubbub-why-the-fat-pings-win/">fat</a>, when the ping actually contains the content.</p>
+<p>As always with the internets, there are many ways to do that same thing. A pretty famous one is <a href="http://www.xmlrpc.com/weblogsCom"><span class="caps">XML</span>-<span class="caps">RPC</span></a>. <a href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#anchor9">PubsubHubbub</a> has its own way of taking them into account too, RSSCloud as well&#8230; etc. <strong>They all work with Superfeedr</strong>, as we have implemented them all :).<br />
+By the way, if you want to start pinging us when you update your content, and if you already ping services like <a href="http://pingomatic.com/">Pingomatic</a>, <a href="http://technorati.com/">Technorati</a> or <a href="http://blogsearch.google.com/">Google Blog search</a>, you can also add <strong><a href="http://ping.superfeedr.com/rpc">http://ping.superfeedr.com/rpc</a></strong> to the list of services to ping.</p>
+<h3>Building a Ping Cache.</h3>
+<p>Most of ping protocols are actually <strong><span class="caps">HTTP</span> Post requests</strong> sent to a url. That&#8217;s pretty easy to implement. Once we get a ping, we either <em>extract the right params, or parse the <span class="caps">XML</span> body</em>. That&#8217;s what&#8217;s after which is interesting!</p>
+<p>Remember, pings can sometimes concern a feed url, but they can also concern a <strong>regular web page</strong>. Lucky for us, these pages often hold a feed, so we can consider that if we get a ping for a given page, we can consider that the feed itself as been updated. As a matter of fact, we use <a href="http://code.google.com/p/redis/">Redis</a> (<a href="http://blog.superfeedr.com/datastore/memcache/mysql/performance/redis/redis-at-superfeedr/">again</a>!) to store a massive dictionary like this :</p>
+<p><code>url1 =&gt; [feed_id1, feed_id2], url2 =&gt; [feed_id3], url3 =&gt; [feed_id1, feed_id2]</code></p>
+<p>Each url might have <strong>several feeds associated</strong>, so we use an <strong>set</strong>. So far this is quite common. To be even more efficient, for each feed that we monitor, we fetch all the related &#8220;alternate&#8221; urls, and their &#8220;alternate&#8221; urls. What&#8217;s the purpose of that? <strong>Identifying clusters of urls that are updated at the same time.</strong></p>
+<p>Let&#8217;s take an example :</p>
+<p>Let&#8217;s say a user is monitoring this feed <a href="http://superfeedr.typepad.com/blog/atom.xml">http://superfeedr.typepad.com/blog/atom.xml</a>. In our system it has an unique id of <code>123</code>.</p>
+<p>When we fetch this feed, to build the Redis-based ping cache, we see that it links (with <code>rel="alternate"</code>) to <a href="http://superfeedr.typepad.com/">http://superfeedr.typepad.com/</a>. Hence, we&#8217;ll map both <code>.../atom.xml</code> and <code>http://superfeedr.typepad.com/</code> to the <code>123</code> in our cache, so that if we receive a ping for <code>http://superfeedr.typepad.com/</code> we&#8217;ll assume that the feed&#8217;s content has been updated. We also fetch <code>http://superfeedr.typepad.com/</code>, and this time, we see that it contains links (again, with <code>rel="alternate"</code>) to :</p>
+<ul>
+	<li><code>http://superfeedr.typepad.com/blog/atom.xml</code></li>
+	<li><code>http://superfeedr.typepad.com/blog/index.rdf</code></li>
+	<li><code>http://superfeedr.typepad.com/blog/rss.xml</code></li>
+</ul>
+<p>Similarly, we can now add to our cache the 2 extra feeds. As soon as we get a ping for any url, we will then assume that all of them have been updated!</p>
+<h3>Fetching the feed.</h3>
+<p>We have a <strong>complex scheduling mechanism</strong>. Contrary to the <a href="http://pubsubhubbub.appspot.com/">Google Demo hub</a>, <a href="http://superfeedr.com/">Superfeedr</a> has an <em>aggressive polling strategy</em> for which we roughly poll any feed we have under 15 minutes. This amount of feed does that <em>at every single second we have several thousands of feeds to fetch</em>.</p>
+<p>Our scheduling algorithm works in a <strong>non-deterministic way</strong> : it picks feeds that <del>will soon</del> need to be fetched, but on a random order. Obviously we can&#8217;t treat pings (for which the chance of update is hight) the same way as feeds that are just scheduled to be fetched (for which the chance of new entry is low).</p>
+<p><img src="http://www.rabbitmq.com/img/rabbitmqlogonostrap.png" style="float:right; margin: 10px;" alt="" /></p>
+<p>For the pings, we use a <strong>deterministic system</strong>: a queue system where <em>what goes in first, goes out first</em>. Each of our dispatcher, are subscribed to the queue, and as soon as they get a message from it, they push it to some parsers. For the queue, we use <a href="http://www.rabbitmq.com/">RabbitMQ</a>, and the excellent <a href="http://github.com/tmm1/amqp"><span class="caps">AMQP</span> EventMachine</a> library does an awesome job :)</p>
+<p>It&#8217;s funny to see that our dispatchers are now <strong>multi-modal components</strong>: they are <a href="http://xmpp.org/extensions/xep-0114.html"><span class="caps">XMPP</span> Components</a>, send all of our <span class="caps">HTTP</span> notifications, and get messages from an <span class="caps">AMQP</span> queue. Each protocol is used at what it is best :)</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

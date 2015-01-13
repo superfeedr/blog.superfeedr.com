@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Getting Started with PubSubHubbub </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsubhubbub/api/getting-started-with-pubsubhubbub">Getting Started with PubSubHubbub</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsubhubbub/api/getting-started-with-pubsubhubbub</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-09-02T00:00:00+02:00"><time>02 Sep 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>To my knowledge, Superfeedr is the only non-google PubSubHubbub out there. Let&#8217;s see why and how to use it.</p>
+<h3>Why using PubSubHubbub?</h3>
+<p>Superfeedr <a href="http://documentation.superfeedr.com/">provides 2 <span class="caps">API</span></a>. Here are some reasons why you&#8217;d be better off <strong>using the PubSubHubbub <span class="caps">API</span></strong>:</p>
+<ul>
+	<li>You don&#8217;t want to run a background job</li>
+	<li>You have an existing Web application</li>
+	<li>You already use PubSubHubbub with another hub.</li>
+</ul>
+<p>And here are a few reasons why you may want to <strong>avoid the PubSubHubbub <span class="caps">API</span></strong>.</p>
+<ul>
+	<li>Your endpoint (where you will receive notifications) is *behind a firewall</li>
+	<li>You want to receive a notification each time Superfeedr fetches and parses a feed for you</li>
+	<li>Your endpoint(s) are either desktop applications or embedded applications</li>
+</ul>
+<h3>What do I need to do?</h3>
+<p>The PubSubHubbub <span class="caps">API</span> will allow you to receive notifications from us when we identify new entries in feeds to which you subscribed. Thus, there are 2 things that you need to do : <em>subscribe</em> and <em>implement a &#8220;receiver&#8221; to deal with notifications</em>.</p>
+<h4>Subscription</h4>
+<p>The subscription process is not obvious, because the hub needs to verify your intent. Here is how it works.<br />
+Our hub is located at <a href="http://push.superfeedr.com/">http://push.superfeedr.com/</a></p>
+<ol>
+	<li>Send an <strong>authenticated</strong> (with your superfeedr login/password) <strong><span class="caps">POST</span> request</strong> to our <span class="caps">URL</span> with the following parameters :<br />
+    &#8211; <em>hub.mode</em> = subscribe|unsubscribe<br />
+    &#8211; <em>hub.verify</em> = sync<br />
+    &#8211; <em>hub.callback</em> = http://domain.tld/your/callback<br />
+    &#8211; <em>hub.topic</em> = http//feeds.you.want.to/subscribe</li>
+	<li>When our server receives this <span class="caps">POST</span> request, it will <strong>send back a <span class="caps">GET</span> request to your callback <span class="caps">URL</span></strong>, with the following :<br />
+    &#8211; <em>hub.mode</em> = subscribe|unsubscribe<br />
+    &#8211; <em>hub.topic</em> = http//feeds.you.want.to/subscribe<br />
+    &#8211; <em>hub.challenge</em> = a-random-string</li>
+	<li>If your server <strong>echoes the hub.challenge</strong> parameter (along with a 200 response), the <strong>subscription will be accepted</strong>. It will be refused in any other case.</li>
+</ol>
+<p>To debug the process, you can use <a href="http://hurl.r09.railsrumble.com/hurls/ea7a8a4fbc75d92497f6e1ce4f904cb5b4c04609/59aa8bca27078865519ded6c7c8d01023789348f">this hurl to send subscriptions requests</a> (don&#8217;t forget to adjust the values of the params, though). <a href="http://curl.haxx.se/">Curl</a> is another great option.</p>
+<h4>Receive Notifications</h4>
+<p>Your application must &#8220;deal&#8221; with the notifications. Notifications are <span class="caps">POST</span> requests sent to you callback <span class="caps">URL</span>, the new entries are in the request body. You then have to use an <span class="caps">XML</span> parser to fetch that body. Since we use standard <span class="caps">ATOM</span>, any parser that can deal with <span class="caps">ATOM</span> will be great.</p>
+<p>If you&#8217;re using a web application framework like Rails, Django, Merb or Symfony, it should be quite easy to register a &#8220;route&#8221; connected to the right Controller, in charge of parsing this body.</p>
+<h3>Existing libraries and plugins</h3>
+<p>The great advantage about using a standard protocol, is that you can re-use any &#8220;code&#8221; that&#8217;s been written for other hubs. Here is a small list of existing libraries that can help you deal with the subscriptions and handling notification from your web app. That should all be fairly easy to implement.</p>
+<ul>
+	<li><a href="http://github.com/empika/Superfeedr-PubSubHubbub-Rails-Plugin/tree/master">Empika&#8217;s Rails plugin</a></li>
+	<li><a href="https://git.participatoryculture.org/djpubsubhubbub/">Django App</a></li>
+	<li><a href="http://github.com/igrigorik/PubSubHubbub/tree/master">Ilya&#8217;s EventMachine Ruby daemon</a></li>
+	<li><a href="http://code.google.com/p/pubsubhubbub/source/browse/trunk/subscriber_clients/php/subscriber.php"><span class="caps">PHP</span> subscriber Client</a></li>
+	<li><a href="http://framework.zend.com/code/browse/Standard_Incubator/library/Zend/Feed/Pubsubhubbub">Zend Subscriber</a></li>
+	<li><a href="http://hackage.haskell.org/package/pubsub-0.10">Haskell Client</a></li>
+	<li><a href="http://code.google.com/p/pubsubhubbub/source/browse/#svn/trunk/subscriber">Python Subscriber</a><br />
+&#8230;</li>
+</ul>
+<p>You can also find several <a href="http://github.com/search?langOverride=&amp;q=pubsubhubbub">PubSubHubbub repositories on github</a>, some of them claim to implement the subscriber part of the protocol.</p>
+<p>Finally, please take the time to read our <a href="http://documentation.superfeedr.com/subscribers.html#webhooks">PubSubHubbub documentation</a> as this blog post is just a &#8220;getting started&#8221; guide.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

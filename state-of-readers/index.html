@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : State of RSS Readers </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/state-of-readers">State of RSS Readers</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/state-of-readers</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-03-14T00:00:00+01:00"><time>14 Mar 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>So <a href="http://googlereader.blogspot.fr/2013/03/powering-down-google-reader.html">Google Reader is shutting down</a>. This is obviously worrisome, mostly because the <em>deprecation schedule is tight</em>. But this is also a great news because Google Reader stopped innovating 5 years ago and yet was still the most visible RSS reader out there. </p>
+
+<p>When people said RSS was dead, a lot of them were just expressing the fact that Google Reader was a zombie.</p>
+
+<p>Believe it or not, we had this post in the pipes for a couple weeks. 
+The initial reason for it was to get an exhaustive overview of the many readers out there to convince them they should use <a href="https://www.subtome.com/">SubToMe</a>, but this deserves another post.</p>
+
+<p>There are actually <strong>a ton of readers</strong> and I’ll focus on the web ones, because the web is my thing.</p>
+
+<blockquote>
+  <p><strong>UPDATE</strong> There is indeed a LOT of readers and I’ve been contacted by many people to add theres. Please, make sure you read the comments too as they include a bunch of other suggestions</p>
+</blockquote>
+
+<h3 id="msgboy">Msgboy</h3>
+
+<p><img src="../images/msgboy.png" alt="Msgboy" style="float:left; margin: 10px" />
+First, I’d like to point Google Chrome users toward <a href="http://www.msgboy.com/index.html">Msgboy</a> which is our own in-house attempt.
+It’s obviously plugged to Superfeedr (realtime FTW), and will only store your data in your browser. </p>
+
+<p>It’s also <a href="https://github.com/superfeedr/msgboy">completely open source</a> and you can import your data from Google Reader :)</p>
+
+<p>We hope to have a Firefox version very soon. Feel free to get in touch if you think you can help :) </p>
+
+<h3 id="google-reader-and-the-google-reader-based-services">Google Reader and the Google Reader based services</h3>
+
+<p>By all counts Google reader is/was the most popular RSS Reader out there. What’s even more interesting is that many other services, like <a href="http://www.feedly.com/">Feedly</a> relied on its API. It’s worth mentionning <a href="http://reederapp.com/">Reeder</a> too. These services will have to find an alternative to Reader’s API, Superfeedr can help =)</p>
+
+<h3 id="the-alternatives">The alternatives</h3>
+
+<p>In the past couple weeks, we have seen dozens of new initiatives in this area. Let’s do a quick summary.</p>
+
+<h4 id="bloglovin">Bloglovin</h4>
+
+<p><a href="http://www.bloglovin.com/">Bloglovin</a> is probably the <em>only popular reader outside of the tech crowd</em>. It’s UI is probably closer to the Tumblr dashboard and the popular tabs tells more about its userbase than anything else: fashion, scrapping, food….</p>
+
+<p>In other words, it’s the proof that you do not need to be a tech nerd to use and enjoy a feed reader. </p>
+
+<h4 id="newsblur">NewsBlur</h4>
+
+<p><img src="../images/newblur-stats.png" alt="Msgboy" style="float:right; margin: 10px" /> </p>
+
+<p><a href="http://www.newsblur.com/">NewsBlur</a> is on the other side of the spectrum in terms of users: it’s a very advanced web reader which has been here for a couple years. We love the insight it gives in stories.</p>
+
+<p>Its business model is clear (freemium), which makes it a viable alternative in the long run. </p>
+
+<h4 id="the-old-reader">The Old Reader</h4>
+
+<p><a href="http://theoldreader.com/">The old Reader</a> is a very recent readers. Its UI will sound familiar to anyone who’s been using Google Reader because, well it’s explicitly inspired from it. Yet, it does a very good job and this is one of my favorite attempts.</p>
+
+<h4 id="feedspot">Feedspot</h4>
+
+<p><a href="http://feedspot.com/">Feedspot</a> is another Google Reader looking alternative.</p>
+
+<h4 id="netvibes">Netvibes</h4>
+
+<p><a href="http://www.netvibes.com/">Netvibes</a> was the most popular reader a couple years back. Even though it <em>moved away from beeing a pure feed reader</em> a long time ago, it still offers these features and may be worth a look if you like its UI.</p>
+
+<p>There are more, like <a href="http://feeds.qsensei.com/">Feedbooster</a> that I’ve been either unable to use or which seem quite abandonned. I’d love to add to that list if you leave a link in the comments :)</p>
+
+<h3 id="plaform-owned">Plaform Owned</h3>
+
+<h4 id="wordpresss-reader">Wordpress’s Reader</h4>
+
+<p><a href="http://wordpress.com/">Wordpress.com</a> has a beautiful Reader, which works really well, and it’s federated, which means that <strong>you can subscribe to feeds from other sources/platforms</strong>, like say Tumblr. 
+I wish though that it offered permanent URLs, so it could be used with <a href="https://www.subtome.com/">SubToMe</a>. </p>
+
+<p>Looks like very few people around me know about that reader though.</p>
+
+<p>I wish other platforms (I’m looking at you <a href="http://www.tumblr.com/dashboard">Tumblr</a>) which already offer some kind of reader, offered it in a federated way. <em>Why can’t I follow non-tumblr sites in my Tumblr?</em></p>
+
+<h3 id="self-hosted">Self Hosted</h3>
+
+<h4 id="feedafever">Feedafever</h4>
+
+<p><a href="http://www.feedafever.com/">Feedafever</a> is a beautiful self hosted platform. It sold with a $30 fee and then you can run it on your own server.</p>
+
+<h4 id="netflixs-rss-reader">Netflix’s RSS reader</h4>
+
+<p><a href="http://techblog.netflix.com/2013/03/introducing-first-netflixoss-recipe-rss.html">Netflix’s RSS reader</a> was released earlier this week by Netflix. I’m not sure whether this is a true product or just aimed at being a demo, but it may be worth a try!</p>
+
+<h4 id="cartulary">Cartulary</h4>
+
+<p><a href="https://github.com/daveajones/cartulary">Cartulary</a> is web reader developed by Dave Jones to be hosted on Amazon EC2.</p>
+
+<h3 id="consuming-rss-in-other-ways">Consuming RSS in other ways</h3>
+
+<p>Who said you need a dedicated app to consume RSS feeds?</p>
+
+<h4 id="ifttt">IFTTT</h4>
+
+<p><a href="https://ifttt.com/">IFTTT</a> is my favorite web automation tool. It has a lot or RSS recipes which can ease your RSS consumption a lot!
+For example, <a href="https://ifttt.com/recipes/83992">this recipe</a> will push the content of an RSS feed to you pocket account. </p>
+
+<h4 id="blogtrottr">Blogtrottr</h4>
+
+<p><a href="http://blogtrottr.com/">Blogtrottr</a> is an RSS to Email service. It allows you to subscribe to feeds and get email when they update. Simple, convenient for those who don’t susbcribe to more than a couple feeds and don’t want to use yet another service.</p>
+
+<h4 id="notifixlite">Notifixlite</h4>
+
+<p><a href="http://notifixlite.appspot.com">Notifixlite</a> is a simple RSS to IM service that <a href="http://superfeedr.com/">we</a> created. Just subscribe to feeds from your chat client nad receive notifications when they update.</p>
+
+<h3 id="will-google-be-back">Will Google be back?</h3>
+
+<p>One of Google’s argument being the end of Reader is the need for them to focus on less services. Google+ is probably one of the few things that Google wants to keep. When you think about it, <strong>Google+, like Facebook and Twitter are some kind of reader</strong>. You <del>subscribe</del> follow people or even brands, and then get to publish to your stream.</p>
+
+<p>Now, I asked some Googlers why they would not allow (with the right UI, of course) people to follow RSS feeds in their Google+. The response was that Google already had an RSS reader: Google Reader. Well, not anymore. Maybe one day, RSS will come back to Google via Google+ ?</p>
+
+<p><strong>Another theory is that Google is trying to make RSS irrelevant in order to ‘push’ publishers toward Google+ as their main subscription channel.</strong></p>
+
+<blockquote>
+  <p><strong>UPDATE</strong> The readers below were added based on comments here and on social networks.</p>
+</blockquote>
+
+<h4 id="rolio">Rolio</h4>
+
+<p><a href="https://www.rolio.com/">Rolio</a> is a simple web based RSS reader. It works great, and self updates when new stories are available.</p>
+
+<h4 id="skimr">Skimr</h4>
+
+<p><a href="http://www.skimr.co/">Skimr</a> is probably becoming my new favorite web based readers: a very simple UI, extremely readable on mobile devices. </p>
+
+<h4 id="tiny-tiny-rss">Tiny Tiny RSS</h4>
+
+<p><a href="http://tt-rss.org/index.html">Tiny Tiny RSS</a> is a reader that you need to install on your own server…</p>
+
+<h4 id="rssminer">RSSMiner</h4>
+
+<p><a href="http://rssminer.net/">RSSMiner</a> is a web based reader whose UI is very similar to Google Reader’s. It’s also quite fast. You can upvote and downvote each entry. <a href="https://github.com/shenfeng/rssminer">Code is on Github</a>.</p>
+
+<h4 id="bazqux">BazQux</h4>
+
+<p><a href="http://bazqux.com/">BazQux</a> offers a UI very similar to Google. Reader’s. You’ll have to pay to keep using it after some time.</p>
+
+<h4 id="gregarius">Gregarius</h4>
+
+<p><a href="http://sourceforge.net/projects/gregarius/">Gregarius</a>. Another feed reader that you’ll need to install (PHP) on your own server.</p>
+
+<blockquote>
+  <p><em>Want to see ways we could make RSS simpler to use? Click the button below and see how we could ease subscriptions.</em></p>
+</blockquote>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

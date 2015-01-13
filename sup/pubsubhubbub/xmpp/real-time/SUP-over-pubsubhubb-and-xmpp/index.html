@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : SUP over PubSubHubbub and XMPP </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/sup/pubsubhubbub/xmpp/real-time/SUP-over-pubsubhubb-and-xmpp">SUP over PubSubHubbub and XMPP</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/sup/pubsubhubbub/xmpp/real-time/SUP-over-pubsubhubb-and-xmpp</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-11-12T00:00:00+01:00"><time>12 Nov 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>The <a href="http://code.google.com/p/simpleupdateprotocol/">Simple Update Protocol</a> is one of the <em>very first protocols that was built to help feed polling</em>. It makes it easy to find the <strong>most appropriate time to fetch a feed</strong>.</p>
+<p><img src="http://i.friendfeed.com/p-5d0e55aafb6a4caebe266f733dd84772-large-1" style="float:left; padding-right:20px;" alt="" />Created by the <a href="http://friendfeed.com/">FriendFeed</a> team, the idea is, for a publisher, to keep track of all the feeds that have been updated in a <a href="http://friendfeed.com/api/sup.json?pretty=1">sup file</a>. Then, a subscriber instead of querying the feed over and over again, just have to query this sup file. If a poller is just polling one feed, that&#8217;s not better, but if you&#8217;re tracking 1000 feeds, instead of polling them all, you just need to poll that specific <span class="caps">SUP</span> file.</p>
+<p>One of the issues is that <strong>it&#8217;s not immediate</strong>, these <span class="caps">SUP</span> feed have a &#8220;period&#8221; and contain all the feeds that have been updated in that given period. The standard is 60sec though, so it shouldn&#8217;t be too &#8220;late&#8221;! Another issue is that these <span class="caps">SUP</span> <strong>can contain a <span class="caps">LOT</span> of feeds</strong>, so if you don&#8217;t have an very fast and efficient way to compare all the entries in this file to see if you&#8217;re actually tracking a specific feed, <em>it may be quite &#8220;complex&#8221; to be sure to get all the updates</em>.</p>
+<p>Anyway, I have no idea why I&#8217;m telling you this, because, as a matter of fact, <strong>you don&#8217;t need to implement <span class="caps">SUP</span></strong>, because Superfeedr does it for you. Give us a <span class="caps">SUP</span> enabled feed (from <a href="http://www.backtype.com/">BackType</a>, <a href="http://disqus.com/overview/">Disqus</a>, <a href="http://friendfeed.com/">Friendfeed</a>, <a href="http://12seconds.tv/">12seconds.tv</a>&#8230; etc), and <strong>we&#8217;ll fetch the right <span class="caps">SUP</span> file and you&#8217;ll get your content in a &#8220;close to real-time&#8221; fashion, via PubSubHubbub or <span class="caps">XMPP</span></strong>, exactly like we did for <a href="http://blog.superfeedr.com/PubSubHubbub/api/rsscloud/RSSCloud/">RSSCloud</a>!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

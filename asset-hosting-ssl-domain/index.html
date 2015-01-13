@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Static files hosting with SSL on custom domain </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/asset-hosting-ssl-domain">Static files hosting with SSL on custom domain</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/asset-hosting-ssl-domain</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-03-08T00:00:00+01:00"><time>08 Mar 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p><a href="http://www.subtome.com/">SubToMe</a> is a <em>universal subscribe button</em>. One of its key design goals was to use <strong>only static files</strong>. There should be no server involved: it’s not an app, it’s a button.</p>
+
+<p>Another key aspects of the SubToMe button is that it’s included on many page, and needs to be able to run on any page (thanks to the bookmarklet), <strong>including https pages</strong>. With that in mind, we are forced
+to host the button on a system that supports SSL.</p>
+
+<p>The third (and final) constraint is that we must be <strong>using the subtome.com domain</strong> for it, because it stores the user’s default in his browser’s localstorage. As we know browsers have different localStorage instances for each domain. If we used different domains, then, we’ll found ourselves with different versions of the users default.</p>
+
+<h3 id="we-needed-a-platform-to-host-static-files-with-our-domain-and-ssl">We needed a platform to host static files, with our domain and SSL.</h3>
+
+<p>When thinking about static files in a very scalable and fully managed way, the almost immediate answer is <a href="http://aws.amazon.com/s3/">AWS S3</a>. That’s what we initially tried… create a <code>www.subtome.com</code> bucket, create the right CNAME, upload and hope for profit. The problem is that this does not match the SSL requirement. Amazon offers SSL, but only on their <code>xxx.aws.amazon.com</code> domain. </p>
+
+<p>In despair, we started considering running a small box somewhere, put Nginx on top, get an SSL cert and run it like in the old days: hoping that I’ll always find the courage to do the basic ops this box will eventually need.</p>
+
+<p>At that point, my first savior comes in the picture. <a href="http://paddy.io/">Paddy Foran</a> tweets:</p>
+
+<blockquote class="twitter-tweet">
+  <p>@<a href="https://twitter.com/julien51">julien51</a> <a href="https://t.co/uSizmul6Cf" title="https://developers.google.com/appengine/docs/ssl">developers.google.com/appengine/docs…</a> ?</p>&mdash; Paddy Foran (@paddyforan) <a href="https://twitter.com/paddyforan/status/309611169071652865">March 7, 2013</a>
+</blockquote>
+
+<script src="https://platform.twitter.com/widgets.js">
+</script>
+
+<p>After reading that doc, I felt that this could be a solution, but was still a bit <em>worried</em> about <em><a href="https://developers.google.com/appengine/">Google App Engine</a>’s heavy bills</em>. Of course, if that worked, it meant I wouldn’t have to maintain any box after all, but that could cost me more than a full time engineer to maintain these boxes =)</p>
+
+<p>And that’s where my 2nd hero of the day comes to the party. In one of his posts, <a href="https://harperreed.org/">Harper Reed</a> wrote this:</p>
+
+<blockquote>
+  <p>I am constantly telling my friends about the new technology tricks that I learn in my internet travels. I learn a lot, which has caused my friends to ignore around 90% of what I say about technology. I don’t mind, because I know that I am a genius(heh) and they will come around some day.</p>
+</blockquote>
+
+<p>Well, in <a href="https://www.nata2.org/2011/01/26/how-to-use-app-engine-to-host-static-sites-for-free">this exact same post</a>, Harper gives out a little secret that I ignored for too long: hosting static files on GAE is <em>free</em>, free as in beer.</p>
+
+<p>The GAE pricing machine is triggered only when instances are running. For static files, Google uses some kind of cache which means that there is no CPU involved in running them… </p>
+
+<h3 id="hosting-any-static-site-on-gae-is-easy">Hosting any static site on GAE is easy.</h3>
+
+<p>Here is what it took to run SubToMe for free on Google App Engine: a <a href="https://github.com/superfeedr/subtome/blob/master/app.yaml">small app.yaml file</a>. That’s it.</p>
+
+<p>Configuring SSL was a bit trickier, but I followed the docs, got a free cert from <a href="http://www.startssl.com/">startssl</a>; configured it and <a href="https://github.com/superfeedr/subtome/blob/master/index.html#L64">added Javascript redirects</a> to all the SubToMe files.</p>
+
+<p>All in all, we get static files hosting, under our own domain, with SSL, unlimited free traffic (and bandwidth) for $9/month, which is what GAE charges for 5 SSL SNI Certificates. I’d say it’s a good deal which becomes even better when I remember that it’s fully managed!</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

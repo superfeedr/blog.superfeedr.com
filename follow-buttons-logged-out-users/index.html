@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Follow buttons & the logged out user </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/follow-buttons-logged-out-users">Follow buttons & the logged out user</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/follow-buttons-logged-out-users</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-10-23T00:00:00+02:00"><time>23 Oct 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <blockquote>
+  <p>This article has been cross posted to other platforms, including <a href="http://julien.svbtle.com/logged-out-users-follow-buttons">Svbtle</a>.</p>
+</blockquote>
+
+<p>Here is a new episode of my quest to understand and improve the <a href="http://julien.svbtle.com/follow-buttons-everywhere">follow button pattern</a> on the web. </p>
+
+<p>Of course, I have found a lot of new follow buttons in this past month. Unfortunately, they all show the same characteristic: you can only use them if you have an account with the platform that shows them.</p>
+
+<h2 id="the-logged-out-user">The Logged Out User</h2>
+
+<p>Fred Wilson <a href="http://www.avc.com/a_vc/2011/06/dont-forget-your-logged-out-users.html">coined the term</a> over 2 years ago. The logged out user is the <em>user who visits a site without an account on this site</em>, or, who has an account but is not logged in at the moment. Many websites have now understood that the logged out users account for <em>most</em> of the visits they receive everyday. Even Facebook now has a lot of content for the logged out user.</p>
+
+<p>In practice, the logged out user is also, the <strong>next user</strong>. It’s the user who will make the decision to signup or not. As Arnold Waldstein put it in the comments, the widest part of the engagement funel is made of logged out users, which is why it is extremely important to make sure these logged out users have the best experience.</p>
+
+<h2 id="trading-identity-for-features">Trading identity for features</h2>
+
+<p>A few service will only show logged out users to signed up users. It’s a bit sad, because it means they do not offer (or even advertise) such an important feature to the logged out users. That’s the case for <a href="http://themeforest.net/">Themeforest</a>. You will only see Follow buttons on profile for the users if you are logged in.</p>
+
+<p>Other services, like <a href="http://www.behance.net/">Behance</a>, will show Follow Buttons to their users, but once they’re clicked on, the user is asked to signup. The buttons are used as a <strong>bait</strong>: give us your identity and we’ll allow you to follow. In the day and age of the PRISM scandal, the price for one identity is probably going up and users are less and less willing to sign up with new services (which they may barely know) just to access a small feature. They probably also don’t like the bait approach very much: nobody likes to try using a service and hit walls on every action.</p>
+
+<p>This is a <em>missed opportunity</em>. If they had a way to offer that follow feature without forcing the user to sign up, they would have had an opportunity to engage the logged out user, build trust, and eventually get the user to signup when the user <em>wants</em> it.</p>
+
+<h2 id="services-with-no-user-accounts">Services with no user accounts</h2>
+
+<p>Luckily, there are also a lot of websites for which there is no user account and hence only logged out users. Think about blogs, small corporate websites, classified ads services… etc.</p>
+
+<p>Unfortunately, the engagement on these sites as a percentage is probably at an all time low (we spend our days on Facebook, Twitter or G+ it seems). I believe one of the reasons is that these smaller sites do not offer features like a follow button. </p>
+
+<p>Facebook, Google+, Twitter and other excel at sending us email reminders, mobile alerts which trigger a new visit to them.</p>
+
+<p>The solution to that problem has been to provide RSS feeds and hope that users will be brave enough to copy and paste urls to their readers. We all know that it’s too complex and is barely possible on mobile… compared to clicking on a Follow button.</p>
+
+<h2 id="subtome">SubToMe</h2>
+
+<p>RSS is the plumbing solution to the decetralized follow model. There is no doubt about that: it’s widely adopted on both ends (millions of websites publish one, there are hundreds ot readers to consume them). However, since it’s plumbing, we still need the faucets and the sinks to avoid making a mess everytime we use them.</p>
+
+<p><a href="https://www.subtome.com/#/">SubToMe</a> is a simple and <strong>universal follow button</strong>, which works on any website that has an RSS feed. It does not require a user account and will just redirect you to the feed reader you use when you click on it.</p>
+
+<p>It’s also fully <a href="https://github.com/superfeedr/subtome/">open source</a>, with no app server running and respects your privacy by only storing your data in your browser.</p>
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

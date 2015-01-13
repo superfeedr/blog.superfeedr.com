@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Scale with Chef </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/chef/deployment/infrastructure/configuration/scale-with-chef">Scale with Chef</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/chef/deployment/infrastructure/configuration/scale-with-chef</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2009-08-02T00:00:00+02:00"><time>02 Aug 2009</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>This will be a long post, but it deserves some time. Go get a glass of water, breathe deeply and let&#8217;s dive!</p>
+<h3>The why?</h3>
+<p>Even though we use &#8220;smart&#8221; techniques to get content from the feeds in real-time (or close), we still need to do some polling (remember, <a href="http://blog.superfeedr.com/gospel/something-stupid/">we&#8217;re doing something stupid, so that you don&#8217;t have to</a>). To achieve that, we have a distributed architecture where workers can ask dispatchers for feeds to parse.</p>
+<p>From there it is somehow easy to scale : <strong>more feeds to fetch? add more workers</strong>. We&#8217;re building a system that, at any given time knows how many workers are (and will be) needed. Once we know that, we just have to fire off some new workers (or kill unneeded ones), and we need this to happen in something like 5 minutes.</p>
+<h3>Theory</h3>
+<p>You should really check out this <del>long</del> presentation from <a href="http://brainspl.at">Ezra</a> and <a href="http://twitter.com/adamhjk">Adam</a></p>
+<p><embed src="http://blip.tv/play/AYGMpxGLqzQ" type="application/x-shockwave-flash" width="480" height="290" allowscriptaccess="always" allowfullscreen="true"></embed></p>
+<p>They say that <em>scaling usually has 3 steps</em> :</p>
+<ul>
+	<li><strong>bootstrapping</strong> : it is the act of &#8216;acquiring&#8217; resources. Basically starting servers at a given IP, with a base (naked OS), and hopefully a way to connect (ssh).</li>
+	<li><strong>configuration</strong> : the goal here is to change a &#8220;vanilla&#8221; server into something operational.</li>
+	<li><strong>command and control</strong> : once the server is configured and running, you still need to send him specific instructions and have feedback on how it performs.</li>
+</ul>
+<p>There are several options for the configuration. The most basic one is to <em>do everything by hand</em> (and try to repeat for as many servers you need to deploy). Another one is to <em>deal with an &#8220;image&#8221;</em> (a ghost if you want), but then it&#8217;s quite hard to improve it and evolve it. At <a href="http://superfeedr.com">superfeedr</a>, the option we chose is to use <a href="http://wiki.opscode.com/display/chef/Home">Chef</a>.</p>
+<h3>Chef</h3>
+<p>Chef allows you to define a set of <strong>specifications</strong> (packages to be installed, files to de deployed, options to be configured&#8230;) of what our server should like when it&#8217;s ready. There are a few advantages to that : it&#8217;s <em>stateless</em>, it is <em>idempotent</em>, it is <em>repeatable</em>&#8230; etc.</p>
+<p>There are a lot of ways to use Chef. Here is <strong>ours</strong>. It&#8217;s probably <em>not the best for everyone</em> (and maybe not even for us), but playing with it gave us some experience and we&#8217;re sharing it with you.</p>
+<p><img src="http://upload.wikimedia.org/wikipedia/en/thumb/8/82/Chef.svg/350px-Chef.svg.png" style="width: 30%; float:left; margin: 5px;" alt="" /></p>
+<p>Chef is a <strong>client-server architecture</strong>, where the client is the node to be configured, which implies several things. The first one (and most impacting) is that <strong>everything happens from the client</strong> (called node). If you used to do your configurations by hand (or using scripts), you were not doing it from the client. Another consequence is that you need to have your clients to be &#8216;chef-ready&#8217;. This might (and will) sound weird, but <em>you need to have some basic configuration on your servers before you can start to do the actual configuration</em>. Luckily this configuration is rather basic and can be automated by using a script <a href="http://gist.github.com/160263">like this one</a>.</p>
+<h4>Cookbooks</h4>
+<p>On the chef server, you would define a set of <strong>cookbooks</strong>. Cookbooks are <strong>collections of related recipes</strong>. For example, a cookbook can deal with installing the &#8220;build-essentials&#8221; packages, the apache server or git&#8230; etc. For each cookbook, you would have a set of recipes. For example, the git cookbook, may have recipes such as : install client and install server.</p>
+<p>Technically the cookbooks can be used by different users and/or for different machines in your architecture. Actually, you <strong>want</strong> them to be as generic as they can.</p>
+<h4>Roles</h4>
+<p>Once you have your cookbooks, you should define <strong>roles</strong>. A role is a &#8220;type&#8221; of node you&#8217;d like to configure. Technically, roles are just sets of cookbooks. A role for a blog application would include recipes for Apache, MySQL, and Wordpress for example. A Rails application may have an &#8220;MySQL server&#8221; role, a &#8220;Memcached server&#8221; role, and a Web application role.</p>
+<h4>Attributes</h4>
+<p>To differentiate a cookbook for 2 nodes, Chef has <strong>attributes</strong>. An attribute would be for example the name of your server, or the port used by apache, the names of the gems you want to install, the user who runs your apache server&#8230; etc. Of course, you can define attributes at several levels : inside a cookbook, they would be the default values, or at the &#8220;role&#8221; level and even, at the node level. For example, a node IP is clearly at the node level, but the login/password to an external MySQL database can be set at the role level, while the apache cookbook should probably set the default http port to 80.</p>
+<p>Got it? Of course, this clearly a &#8220;crash-course&#8221;, you can find a lot more information in the <a href="http://wiki.opscode.com/display/chef/Home">Opscode wiki</a>, as well as in the <a href="irc://irc.freenode.net/chef">#chef room at irc.freenode.net</a>. Ezra also wrote a <a href="http://brainspl.at/articles/2009/01/31/cooking-with-chef-101">great blog post</a> that you should read as well.</p>
+<h3>Where to start?</h3>
+<ol>
+	<li>I&#8217;d start <strong>first with setting up a Chef Server</strong>. The Chef server will provide you with a few things, including a web application that can be used to see all your cookbooks, roles, and nodes at a glance.</li>
+	<li>Once that&#8217;s done, <strong>setup a chef repository</strong>, that would basically contain the code of your cookbooks. Then, add a few cookbooks, define a first role and assign it some recipes, as well as attributes. Writing cookbooks shouldn&#8217;t be too hard, but you should first try to see if someone has written one. Check <a href="http://github.com/opscode/chef/tree/master">opscode repository</a> and all the <a href="http://github.com/opscode/chef/network">associated branches</a>. With a little luck, <strong>you won&#8217;t have to write anything but define attributes</strong>.<br />
+When you have a few cookbooks, clone that chef repo on your chef server and run <code>rake deploy</code> anytime you want to update the configuration.</li>
+	<li>Then, create a bootstrap script, <a href="http://gist.github.com/160263">like this one</a>, which installs the bricks for a chef client on your node.</li>
+	<li>Finally, start a new node on your favorite cloud provider (Slicehost:&#8220;http://slicehost.com&#8221;, <a href="http://linode.com">Linode</a>, <a href="http://aws.amazon.com/ec2/">EC2</a>), copy the boostrap (<code>scp</code> should make it) script and run it.</li>
+</ol>
+<p>The great thing with this &#8220;spec&#8221; approach is that you can (and should) kill instances all the time and re-configure clean ones in minutes.</p>
+<p>Hosting in the cloud really means that <strong>you don&#8217;t know (or at least shouldn&#8217;t care) about the nodes</strong> on which your app is running.</p>
+<p>I&#8217;ve heard people like <a href="http://37signals.com/">37signals</a>, <a href="http://www.engineyard.com/">EngineYard</a> or even <a href="http://twitter.com">Twitter</a> are using Chef to scale and deploy their architectures, that can only be a good sign ;)</p>
+<p>Again, this was a very light intro, but, when we started to play with Chef, we found that resources (and feedback) were missing.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : AngularJS Superfeedr </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/angularjs-superfeedr">AngularJS Superfeedr</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/angularjs-superfeedr</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2014-09-03T00:00:00+02:00"><time>03 Sep 2014</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>If you read us carefully, you’ve already seen that <a href="http://blog.superfeedr.com/subtome-progress/">we use AngularJS</a> for <a href="https://www.subtome.com/#/">SubToMe</a>. Angular is an open source web framework for the client side. It’s probably one of the most popular of its kind these days, so you’ve probably stumbled upon it a couple times.</p>
+
+<p>Today, we’re introducing a <a href="https://github.com/superfeedr/angular-superfeedr">Superfeedr module for Angular</a>. It implements all of our <a href="http://documentation.superfeedr.com/subscribers.html#webhooks">Web API</a> so that it becomes <em>trivial</em> to build a client side application which <em>consumes feeds</em>.</p>
+
+<p>And since a demo is worth a thousand words, here’s a demo! Don’t forget, this is <strong>all static HTML</strong>, hosted on Github.</p>
+
+<div ng-app="demo-app">
+
+<h3 id="list-of-all-subscribed-feeds">List of all subscribed feeds</h3>
+
+<p>Here’s the list of feeds used by the <code>demo</code> account. You can remove each subscription, as well as add new subscriptions as well.</p>
+
+   <div ng-controller="listCtrl">
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <td><span ng-click="previous()">&larr; Previous Page</span></td>
+          <td><strong>Page</strong>:   {{ page }}
+</td>
+          <td></td>
+          <td style="text-align:right;"><span ng-click="next()">Next Page &rarr;</span></td>
+        </tr>
+        <tr>
+          <th style="width: 350px"><strong>Feed url</strong></th>
+          <th><strong>Format</strong></th>
+          <th><strong>Endpoint</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in subscriptions" ng-controller="subscriptionController">
+          <td ng-click="retrieve()">{{item.subscription.feed.url}}</td>
+          <td>{{item.subscription.format}}</td>
+          <td>{{item.subscription.endpoint}}</td>
+          <td><button ng-click="unsubscribe()">Unsubscribe</button></td>
+        </tr>
+        <form novalidate="" ng-submit="subscribe()">
+          <tr>
+            <td><h4>Add a new Feed:</h4></td>
+          </tr>
+          <tr>
+            <td>
+              <input style="width: 350px" name="topic" ng-model="topic" ng-required="true" />
+            </td>
+            <td>
+              <select name="format" ng-model="format" ng-required="true" ng-options="format as format for format in formats">
+              </select>
+            </td>
+            <td>
+              <input style="width: 200px" name="callback" ng-model="callback" ng-required="true" />
+            </td>
+            <td>
+              <input type="submit" value="Subscribe" />
+            </td>
+          </tr>
+        </form>
+      </tbody>
+    </table>
+  </div>
+<div>
+<br />
+
+<h3>Get the status of a feed</h3>
+<p>
+  Please, note that you need to be subscribed to a feed in order to get its status and past entries. 
+</p>
+
+<div ng-controller="retrieveCtrl">
+  <form novalidate="" ng-submit="retrieve()">
+    <input style="width: 350px" name="url" ng-model="url" ng-required="true" />
+    <input type="submit" value="Retrieve" />
+  </form>
+  <div ng-show="feed">
+    <h4>{{feed.title}}</h4>
+    <p>
+      <strong>Status</strong>: {{feed.status.http}}<br />
+      <strong>HTTP Code</strong>: {{feed.status.code}}
+    </p>
+    <ul>
+      <li ng-repeat="item in feed.items"><a href="{{item.permalinkUrl}}">{{item.title}}</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<h3>Code</h3>
+<p>You can of course <a href="/scripts/angular-demo.js">view the JS code</a> for this application, and view source to get the HTML!</p>
+
+
+
+</div>
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js" async></script>
+  
+  <script src="../scripts/angular-superfeedr.js" async></script>
+  
+  <script src="../scripts/angular-demo.js" async></script>
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

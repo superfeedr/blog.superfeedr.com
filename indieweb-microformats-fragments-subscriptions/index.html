@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : IndieWeb: fragment subscriptions to microformats </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/indieweb-microformats-fragments-subscriptions">IndieWeb: fragment subscriptions to microformats</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/indieweb-microformats-fragments-subscriptions</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2014-03-27T00:00:00+01:00"><time>27 Mar 2014</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>In the past couple weeks, the <a href="http://indiewebcamp.com/">IndieWeb</a> crowd got a lot of attention. This is a very good news, because we strongly believe <strong>the web needs more diversity</strong> and the indieweb movement is clearly a step in that direction.</p>
+
+<p>Yet, the current <a href="http://indiewebcamp.com/POSSE">POSSE</a> culture, as well as a strong biais against RSS/Atom feeds means that this community currently relies on silos for the it’s <em>following</em> features. Pragmatically, <strong>most of the actors there provide RSS or Atom feeds</strong>, though, but they seem to put more effort into crafting their microformated HTML.</p>
+
+<p>That’s not a problem, because Superfeedr obviously can deal with that very well too, thanks to our <a href="http://documentation.superfeedr.com/subscribers.html#htmlfragments">fragment subscriptions</a>, and here this is a perfect example to illustrate how it works. We’re basically re-using the <code>#</code> element of topic URLs to indicate which part of an HTML page you’re subscribing to.</p>
+
+<p>Let’s pick <a href="http://waterpigs.co.uk/notes/">Barnaby’s blog</a>. His site has a nice layout and a lot of interesting navigation items, but what I’m really interested in knowing is actually the entries (<code>h-entry</code> in <a href="http://microformats.org/wiki/h-feed">h-feed</a> speak) he publishes. So, rather than subscribing to the whole HTML document (Superfeedr would allow that), I will subscribe to the entries using this topic URL: <code>http://waterpigs.co.uk/notes/#.h-entry</code> (basically, the fragment is the CSS path of the content to which I want to subscribe on the page).</p>
+
+<p>For the sake of this example, I have indeed subscribed to Barnaby’s site and used a <a href="https://www.runscope.com">Runscope</a> <a href="https://www.runscope.com/docs/request-capture">capture</a> to log the requests. It’s as easy as this:</p>
+
+<pre width="100%" class="embedcurl" title="Subscribe to microformats">curl -X POST -ujulien:paSsWOrD https://push.superfeedr.com -d'hub.mode=subscribe' -d'hub.callback=https://n6ygb81xcek3.runscope.net' -d'hub.topic=http://waterpigs.co.uk/notes/#.h-entry' 
+</pre>
+
+<p>The notification includes the HTML content that has an <code>h-entry</code> class. Of course, I could have used a more complex CSS expression if I wanted a more specific item.</p>
+
+<p>For this, and because Barnaby’s blog is not (yet?) PubSubHubbub enabled, you’ll need a <a href="http://superfeedr.com/subscriber">Superfeedr subscriber account</a>, but next, we’ll show you how you can also <strong>enable PubSubHubbub on your IndieWeb site</strong> so that anyone can subscribe to your microformatted content in your <a href="http://waterpigs.co.uk/notes/4T3FSd/">indieReader</a> (as well as your RSS/Atom feeds) :)</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+  <script src="https://www.embedcurl.com/embedcurl.min.js" async></script>
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

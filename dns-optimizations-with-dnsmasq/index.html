@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : DNS Optimizations with Dnsmasq </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/dns-optimizations-with-dnsmasq">DNS Optimizations with Dnsmasq</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/dns-optimizations-with-dnsmasq</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2014-02-25T00:00:00+01:00"><time>25 Feb 2014</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>We <strong>currently fetch milions of feeds</strong> and we need to do that in a very timely fashion. Since the beginning of 2014, it took about <em>600ms</em> to fetch a feed on average. The fetching time includes <em>DNS resolution</em>, the <em>establishment of the HTTP connection</em>, the <em>HTTP transfer</em>, and the <em>decoding of the answer</em> (if it was gzipped for example). This is by far what takes the longest <a href="http://en.wikipedia.org/wiki/Wall-clock_time">wall time</a>.</p>
+
+<p>Luckily, we <strong>use asynchronous IO</strong>, which means, that we never really wait idly for the data to come: we usually start processing other feeds. However, this significantly increases the memory consumption, and eventually has a toll on performance. For this reason, it’s important that we optimize our requests as much as possible. This starts with DNS.</p>
+
+<h3 id="dnsmasq-locally">Dnsmasq locally</h3>
+
+<blockquote>
+  <p>Dnsmasq is a lightweight, easy to configure DNS forwarder…</p>
+</blockquote>
+
+<p>We currently have 20 servers in charge of polling resources on the web. They perform the bulk of our DNS requests. They’re now all running a <a href="http://dnsmasq.org/">Dnsmasq</a> instance. Dnsmasq is only efficient if it stays small, so we limited the size of the cache to <strong>1024 entries</strong>.</p>
+
+<p>To test the impact of Dnsmasq, we built a quick benchmark script. We extracted 10k urls from our database, and extracted their domains. We kept the buggy domains in them. We then used <a href="https://gist.github.com/julien51/9208115">this simple node.js script</a> which takes a domain and resolves it with <a href="http://nodejs.org/api/dns.html#dns_dns_resolve_domain_rrtype_callback"><code>dns.resolve</code></a> before handling the next one. </p>
+
+<p>We changed the content of <code>/etc/resolv.conf</code> to include only the server which will be used by Node to resolve the requests. We tested with 3 different ones and here are the results:</p>
+
+<ul>
+  <li>One of <a href="https://developers.google.com/speed/public-dns/?csw=1">Google’s public DNS</a> (<code>8.8.8.8</code>): <em>Min:7 Max:4097 Median:8 Average:33.66747</em></li>
+  <li>One of <a href="http://www.opendns.com/">OpenDNS</a>’s public servers (<code>208.67.222.222</code>): <em>Min:29 Max:6030 Median:30 Average:100.3912</em></li>
+  <li>One of <a href="https://www.linode.com/">Linode</a>’s local resolvers (<code>97.107.133.4</code>): <em>Min:49 Max:67166 Median:52 Average:183.1860</em></li>
+</ul>
+
+<p>The point here is not to compare these servers, but to see the impact of using a cache locally.</p>
+
+<h3 id="results">Results</h3>
+
+<p>With dnsmasq installed and 127.0.0.1 as the first line of <code>/etc/resolv.conf</code>, we get the following results:</p>
+
+<ul>
+  <li>Google: <em>Min:0 Max:3028 Median:8 Average:18.41814</em></li>
+  <li>OpenDNS: <em>Min:0 Max:8768 Median:29 Average:66.38854</em></li>
+  <li>Linode: <em>Min:0 Max:41248 Median:49 Average:110.6278</em></li>
+</ul>
+
+<p>The resolution time went down to 0 for 3605 requests, affecting the average pretty significantly (between 30% and 50%).</p>
+
+<p>In practice, we get a <strong>hit rate of about 50%</strong> in our production environment, which is quite high and saves us a significant wall time. A 50% hit rate on our local caches is also a 50% miss rate, we’ll see <a href="/dns-optimizations-with-unbound/">next</a> how we can improve further our DNS resolution performance… </p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Susbcriber Toolbox </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/meta/subscriber-toolbox">Susbcriber Toolbox</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/meta/subscriber-toolbox</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-10-01T00:00:00+02:00"><time>01 Oct 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Our <span class="caps">XMPP</span> console is great for very <em>initial debugging</em> but doesn&#8217;t fulfill a lot of our user&#8217;s need after they subscribed to a few dozen feeds. Additionally, the subscribers who use <a href="http://push.superfeedr.com/">PubSubHubbub</a> cannot benefit from it and they usually have a hard time debugging their endpoints. As a consequence of this, we have decided to re-factor most of our Subscriber toolbox. Here is a small review of it.</p>
+<p>Like always, please remember <strong>that all these tools actually use our <span class="caps">API</span> and only our <span class="caps">API</span></strong>, which means <em>you can certainly build similar or better tools on your own to fit your specific needs</em>. Check <a href="http://superfeedr.com/documentation">our documentation</a>.</p>
+<h3>A PubSubHubbub Console</h3>
+<p>With this tool, <strong>you can easily build and debug your callback url</strong>. It lets you choose a feed url, and point to your callback to perform subscriptions and unsubscriptions, and shows the result in details, so you can fix your callback <span class="caps">URL</span> accordingly. It should be your first stop if you&#8217;re building a <a href="http://documentation.superfeedr.com/subscribers.html#webhooks">PubSubHubbub</a> based application.<br />
+It can also be <strong>used to retrieve the status of a given subscription, as PubSubHubbub is idem-potent</strong>. Which means that if you want to know whether you&#8217;re subscribed to a feed you just have to actually make a subscription request. If it succeeds, it means that you&#8217;re subscribed. If it fails, it means that you aren&#8217;t!</p>
+<h3>A Feed Status Retrieval tool</h3>
+<p>If you don&#8217;t get any notification for a given feed, it may be that there is nothing in it, or that there is problem with this feed. It may have been deleted, it may not be parse-able&#8230; etc. At any point <strong>you can now check a feed&#8217;s status</strong>.<br />
+We will show the last <span class="caps">HTTP</span> status we got for it, a small log message, the next fetch, the last fetch, the period at which we fetch it&#8230; Again, all this data (and more!) is actually available thru the <span class="caps">API</span>, <em>as well as upon notification</em>. You should check it out too!</p>
+<h3>Our <span class="caps">XMPP</span> Console</h3>
+<p>The venerable <span class="caps">XMPP</span> console is still here, with a few bug fixes and improved performance. It&#8217;s the best tool if you&#8217;d like to build your own <span class="caps">XMPP</span> client and you need to see the detail of the traffic sent to and from Superfeedr.</p>
+<h3>Feed Export</h3>
+<p><strong>No lock-ins</strong>. We really value your freedom and what happy users more than &#8220;locked&#8221; users. You can export all the subscriptions. To prevent obvious traffic jams, you will have to export them by pages of 100.</p>
+<p>Of course, we&#8217;re committed to improve this, as always, your feedback is greatly appreciated. <a href="http://superfeedr.com/subscriber">Go log-in your subscriber account</a> and let us know what you think!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

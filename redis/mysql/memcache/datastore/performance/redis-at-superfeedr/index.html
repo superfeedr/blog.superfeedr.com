@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Redis at Superfeedr </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/redis/mysql/memcache/datastore/performance/redis-at-superfeedr">Redis at Superfeedr</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/redis/mysql/memcache/datastore/performance/redis-at-superfeedr</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-02-20T00:00:00+01:00"><time>20 Feb 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>A lot of the problems we had to tackle in the last months were directly related to the <em>data stores</em> we used, as well as the <em>schema</em> of the objects we stored.</p>
+<p>We&#8217;ve been using <a href="http://www.mysql.com/">MySQL</a> and <a href="http://memcached.org/">Memcached</a> from day one, because it&#8217;s always good when you have 50 different problems to tackle to <a href="http://blogmaverick.com/2008/03/09/my-rules-for-startups/">use tools that you know</a> (read this article by <a href="http://twitter.com/mcuban">@mcuban</a> if you&#8217;re about to take the red pill).</p>
+<p>However, given our growth, we reached a step where the complexity of scaling horizontally involves sharding and other stuff that we weren&#8217;t convinced MySQL would do well (at least, because we need to have Memcached in front too). Rather than heading too far into <a href="http://code.flickr.com/blog/2010/02/08/using-abusing-and-scaling-mysql-at-flickr/">bending MySQL</a>, we thought we should give a chance to <a href="http://code.google.com/p/redis/">Redis</a>. And here the story.</p>
+<h2>How it is/was</h2>
+<p>Let me start first to say that <em>we&#8217;re not dumping MySQL + Memcache altogether</em>. We identified one type of data for which it wasn&#8217;t appropriate anymore : the feed entries.</p>
+<p>One of the key things <a href="http://push.superfeedr.com/">the hub</a> does is diff-ing : identify new entries from old entries in the feed.</p>
+<p>We do this by storing some kind of data when for each entry, in each feed. We use a <em>hash of the entry id</em> in our schema. The problem is that a feed can have several dozen of entries, and we obviously need to keep track of them all, plus some older ones, because you don&#8217;t want entries to &#8220;re-appear&#8221; in a feed (if a more recent entry has been deleted).  When you have say <strong>1M feeds, and you need to store 50 entries per feed on average, that&#8217;s 50M entries</strong>. And every time we fetched a feed, we need to compare the existing entries to see if we&#8217;ve seen them already<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>. And we fetched all our feeds <em>at most</em> every 15 minutes : that&#8217;s a lot of queries.</p>
+<p>Also, some feeds have new entries every few seconds, if we leave that for a while, say, 2 days, that&#8217;s a lot of entries stored that we&#8217;ll never see again. So, as soon as we see a new entry in a feed, <strong>we have to clean older entries</strong>.</p>
+<p>Needless to say that this whole traffic is too much for our &#8220;simple&#8221; MySQL setting on a 8GB of <span class="caps">RAM</span> server. We had to put a Memcached in front of that to store the most recent entries. We obviously can&#8217;t use Memcached alone, because if the server goes down (or if we just need to reboot, update the configuration it), all the traffic will end up on MySQL which will obviously die in hell in seconds.</p>
+<h3>Requirements</h3>
+<p>As a matter of fact, <em>we have the same exact information in Memcache and MySQL</em>. We can&#8217;t use either of them alone. <strong>MySQL is just too slow</strong> to deal with that much traffic (even with all the InnoDB indices in <span class="caps">RAM</span>), and <strong>Memcache isn&#8217;t persistent</strong>, so we can&#8217;t accept to use it alone. Also, we actually store our very own datastructure into Memcached, because it only deals with key/value that are strings. In our case, we have a key which is our internal feed id and the value is a string of all the entries&#8217; id joined together.<br />
+Also, we do some sharding on Memcached (on the client side), based on the superfeedr-wide feed id, and we&#8217;d love to keep that.</p>
+<p>We wanted to find a tool that has the <em>&#8220;speed&#8221; of Memcached</em>, <em>some persistence</em>, and which should be <em>easy to shard on the client side</em>. Also, we want to use a store that could just <em>silently fail</em>, to avoid any bottleneck (at the risk of having duplicate entries). Also, this tool should ideally have some kind of <em>data-structures</em> so we don&#8217;t have to hack one that can be mapped in strings at a low extra-size cost.</p>
+<p>A few months ago, I heard about and played with <a href="http://code.google.com/p/redis/">Redis</a>. I was quite impressed by it and thought I should keep that in mind. A few weeks ago, <a href="http://antirez.com/">Antirez</a> added 2 awesome features that made Redis an excellent candidate : <a href="http://code.google.com/p/redis/wiki/AppendOnlyFileHowto">Append-On-File</a> persistence (instead of periodic snapshots) and <a href="http://code.google.com/p/redis/wiki/IntroductionToRedisDataTypes">Sorted Sets</a>.</p>
+<h3>Implementation</h3>
+<p><img src="/images/redis.png" style="float:right; margin:10px;" alt="" /><br />
+<strong>We use <span class="caps">ZSETS</span></strong> (sorted sets). Each feed has it&#8217;s own sorted set. The <em>key is the global feed id</em>, the <em>members are the entries ids</em>, and the scores are <em>feed entries timestamps_. When fetching a feed, *we compare the unique</em>ids* in the set very efficiently (in parallel). Then, when the size of the sorted sets goes beyond an arbitrary limit, <strong>we use the score to delete the oldest entries</strong>. Easy!</p>
+<p>For the client, since all of <a href="http://superfeedr.com/technology">our components are evented</a>, we use <a href="http://github.com/madsimian/em-redis">em-redis</a>. It allows us to run the comparisons of new entries in parallel. However, we had to <a href="http://gist.github.com/310288">hack it a little bit</a> to allow <strong>silent fail</strong> when/if the server is not present.</p>
+<p>Obviously, we use <a href="http://code.google.com/p/redis/wiki/AppendOnlyFileHowto"><span class="caps">AOF</span></a> for persistence, so even if Redis goes down abruptly, <strong>we shouldn&#8217;t lose any data</strong>. We keep the regular snapshot (<a href="http://code.google.com/p/redis/wiki/BgsaveCommand"><span class="caps">BGSAVE</span></a>) every 15 minutes or so, just to make sure we have the data twice (and we copy it somewhere else).</p>
+<p>We <strong>shard based on the feed id</strong>. We do not use a hash key, because (even if we used consistent hashing), we would have duplicate entry for each new redis server we add to our farm. We based that on the fact our ids are consecutive and we store 250k feeds per server. <code>id &lt; 150000, redis = server1; if id &lt; 300000, redis = server2 ...</code>. that&#8217;s not the cleanest thing but that works :)</p>
+<p>We use 2GB slices at <a href="http://www.slicehost.com/">slicehost</a> and all the entries should fit in there, which is good. If not, we&#8217;ll keep less entries per feed (we currently keep between twice and 3 times as much entries that there are currently in the feed.)</p>
+<p>When getting into prod, we had a few issues with Redis and the <a href="http://groups.google.com/group/redis-db/browse_thread/thread/9dc579d4afab6dfa">performance was very disappointing</a>, specifically at the time of the snapshots. It appeared that it was degraded by some changes <a href="http://twitter.com/antirez">antirez</a> introduced in the last version. We were delighted that he acknowledged the issue very fast and even used one of our boxes to debug. A few hours later <a href="http://code.google.com/p/redis/downloads/detail?name=redis-1.2.2.tar.gz&amp;can=2&amp;q=#makechanges">1.2.2 was out</a>, fixing all the issues! Who said customer service sucked with Open Source Software?</p>
+<h4>Tip</h4>
+<p>If you can run redis servers with less than 4GB of <span class="caps">RAM</span>, <strong>compile<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup> and run it in 32bits</strong> : redis is very greedy in terms of pointers and 64bits pointers are twice as long as 32bits pointers (suprising!). On one of our servers, we gained 40% (from 1602428 to 1002124). Pretty big! Also, you <em>want</em> to have servers with less than 4GB : it&#8217;s probably <strong>safer to have many small redis instances than just a few big ones</strong>.</p>
+<h3>Conclusion</h3>
+<p>It&#8217;s been now in production a few days, each of our redis servers process on average <strong>3500 queries per second</strong>. They store on average slightly less than 1GB for 200k sorted sets (with about 4k per key/value), which should give enough space for more entries. The load is consistently below 0.1 on a quad-core. This will probably not grow much, so <strong>we&#8217;re more <span class="caps">RAM</span> bound than <span class="caps">CPU</span> bound</strong> here, so you want to implement the trick above :)</p>
+<p>It feels good to not have an &#8220;horizon&#8221; anymore in terms of scale for the entries. Our only concern is to find the best way to provision and deploy more redis servers when we need them :D</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> I&#8217;m oversimplifying, we use <code>Etag</code>, <code>If-Mofidied-Since</code> and a global feed hash, to avoid comparing that every times, but that&#8217;s still pretty high!</p>
+<p class="footnote" id="fn2"><a href="#fnr2"><sup>2</sup></a> Change the 32bit target: to <code>make ARCH="-m32"</code>. Then, <code>make 32bit</code></p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

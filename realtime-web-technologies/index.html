@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Realtime web technologies </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/realtime-web-technologies">Realtime web technologies</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/realtime-web-technologies</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2010-08-22T00:00:00+02:00"><time>22 Aug 2010</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>We live in the realtime web era. There are different appreciations of what realtime web is. To me, the best definition is that it means the <strong>content is pushed</strong> from a publisher to a subscriber, rather than have the subscriber poll the publisher over and over. Today there exists a bunch of different <em>realtime web technologies</em>. Let&#8217;s review a few of them.</p>
+<h2>Realtime web in the browser</h2>
+<p>This is probably the most commonly observed technology. It goes from <a href="http://netvibes.com/">Netvibes</a>&#8217; page which updates by itself, to Twitter&#8217;s new published tweets, via <a href="http://www.tumblr.com/dashboard">Tumblr&#8217;s</a>  new items. Basically, your browser communicates with a service&#8217;s server and this one is able to push updates to it. They use different techniques and it&#8217;s not uncommon so see people naming for the other. You can also easily find providers for these solutions, like <a href="http://beaconpush.com/">BeaconPush</a>, <a href="http://pusherapp.com/">PusherApp</a> or <a href="http://kwwika.com/">Kwwika</a>.</p>
+<h3>Ajax</h3>
+<p>It relies on Javascript and is <em>not technically a push</em> . What happens here is that the client&#8217;s browser is able to send &#8220;smaller&#8221; requests to the server, which do not generate a full reload of the page, but just bits of it. Even though the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same Origin Policy</a> prevents the browser from doing calls to a server that is not the one from which the whole page was loaded, a few techniques, like <span class="caps">JSON</span>-P can allow developers to bypass this limitation.<br />
+It&#8217;s far from perfect and can <strong>be very heavy on the publisher&#8217;s side</strong>, but it&#8217;s also one of the most frequents techniques and probably one of the oldest and easier to implement.</p>
+<h3>Comet</h3>
+<p>This one is often called &#8220;long-polling&#8221; too. The idea here is that the initial request made by the browser to get the content is actually <strong>never closed by the server</strong>, which means that the server can still push to the line a few more bits of information. This is what <a href="http://www.google.com/talk/">GTalk</a> uses to show you chat messages. This is also what <a href="http://friendfeed.com/">Friendfeed</a> <del>used to do</del> does, and their <a href="http://www.tornadoweb.org/">Tornado WebServer</a> is particularly suited for this purpose. So instead of having the server to handle millions of requests per seconds, it needs to keep thousands of connections open. At the same time, it may be a little faster to show updates to the client, because it doesn&#8217;t have to wait for the client to ask for them (that&#8217;s actually push!).</p>
+<h3>WebSockets</h3>
+<p>Both Ajax and Comet feel like <em>hacks</em> and what they allows was obviously not in the mind of those who designed <span class="caps">HTML</span>. Luckily these experiences have pushed (pun intended) the W3C to think a little bit about a native solution to <span class="caps">HTML</span> so people would have an <strong>agreed upon standard</strong> that meets the realtime requirement. The came up with <a href="http://en.wikipedia.org/wiki/WebSockets">WebSockets</a>. Even though they&#8217;re not yet supported by all browsers, we can safely bet that they will be the standard as it will be part of <a href="http://dev.w3.org/html5/spec/Overview.html">HTML5</a> requirements. It&#8217;s basically a 2-way communication channel between the browser and the server and both can send and receive data on this line (comet is uni-directional).</p>
+<h2>Realtime web for Mobile &amp; Desktop</h2>
+<p>More and more we consume the web from outside the browser, as Wired tried to show us. Whether it&#8217;s with a phone, a Tablet or even directly integrated in the OS of our desktop applications.</p>
+<h3>To the Phone</h3>
+<p><img src="http://s3.amazonaws.com/twitter_production/profile_images/768419049/ua-sq-icon.png" style="margin:0px 0px 10px 10px; float:right;" alt="" />Heard about <span class="caps">SMS</span>? This is push data from a publisher to a subscriber. The UX isn&#8217;t all that magic, so Apple went live with their <a href="http://en.wikipedia.org/wiki/Apple_Push_Notification_Service">Push Notification Service</a> which allows app builders to push data down to the phones where the app is installed. The fine people at <a href="http://urbanairship.com/">UrbanAirship</a><br />
+ have built an awesome wrapper around the systems from Apple, Android and Blackberry because they all require a significant amount of work. Blackberry actually is quite famous for their <a href="http://na.blackberry.com/eng/services/business/">BlackBerry Enterprise Server</a> which is dedicated to emails mainly. There is a lot of different techniques and protocol, most of them close and proprietary, but that&#8217;s how the telephony industry rolls it seems :)</p>
+<h3>To the Desktop</h3>
+<p>Oddly enough (or because this is due to the close presence of a web browser), most desktop OS do not offer the ability for the web to talk to the machine in an push way. Of course, Apple&#8217;s Dashboard can show you the weather or stock tickers, that are taken from the internet, but all this is pulled, not push.</p>
+<p><img src="http://drupal.org/files/images/logo_main.png" style="margin:0px 10px 10px 0px; float:left;" alt="" /><br />
+Hardcore Mac Users have known <a href="http://growl.info/">Growl</a> for a while, it&#8217;s a local notification server that can show messages on the screen. By design, it is very hard to add external services notifications to growl. But this is probably about to change. Yesterday, <a href="http://twitter.com/jazzychad">Chad</a> and <a href="http://twitter.com/Stammy">Stammy</a> from <a href="http://notifo.com/">Notifo</a> released a <a href="http://notifo.com/desktop">desktop application</a>.</p>
+<p>Of course, there is another way, once that was barely explored : <a href="http://xmpp.org/"><span class="caps">XMPP</span></a>. Almost everybody has a chat client running on their computer. This chat client can certainly talk <span class="caps">XMPP</span>. So technically, it is possible (and it should be easy too) to send messages from the web down to the desktop, thru our chat clients. The few attempts <em>focused way too much on a &#8220;chat&#8221; approach with text messages</em>. Let&#8217;s hope that someone comes up with a much better solution in the near future. What about a combination of <a href="http://lab.arc90.com/experiments/readability/">Readability</a>, Growl and iChat?</p>
+<h2>Server to Server Realtime web</h2>
+<p>According to me, this is the <em>highest mountain to climb</em> in the realtime web sector. The objective here, is to allow information to flow from a service to another, rather than have everybody poll everybody else.</p>
+<p>Tackling the <strong>Server-to-Server</strong> issue involves dealing with the <em>transportation</em> problem and the <em>data format</em> problem. Not only do service A and B need to emit and receive the same kind of signal, but they also need to speak the same language.</p>
+<p>For the transportation, there are very few protocols. <span class="caps">XMPP</span> and <a href="http://push.superfeedr.com/">PubSubHubbub</a> are the ones Superfeedr chose, because <strong>they&#8217;re both open</strong>, which means that anyone else can implement them and we should be able to work together in a loosely coupled way (without business agreement).</p>
+<p>For the data, we chose <strong><span class="caps">RSS</span> and Atom feeds (<span class="caps">XML</span>)</strong>, because almost <strong>everybody out there has them</strong>. Of course, some people also have their own <span class="caps">JSON</span> based APIs, but who said we should only speak one language?</p>
+<p>A lot of people wonder why they should start getting content from other services or even push their content away. <em>Many applications would rather focus on pushing down to the browser or build their own iPhone apps rather than push their content away</em>. We think it&#8217;s wrong, because allowing your content to be pushed to other providers means that <em>these providers can then implement their own iPhone apps, Growl clients, or even web clients with your content and bring you more users or grow engagement for your existing users</em>.</p>
+<p>This will conclude this loooong sunday post. I hope you haven&#8217;t all been lost on the way, and if there was one thing that I want you to take out of this is : <a href="http://superfeedr.com/publisher">start to push your content</a> to other servers and <a href="http://superfeedr.com/subscriber">make sure you can also subscribe to content from other servers</a>. The web experience will just become insanely better.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Federated Web Button </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/federated-follow-button">Federated Web Button</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/federated-follow-button</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2012-08-27T00:00:00+02:00"><time>27 Aug 2012</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Summer is always a good time to think about making the world better, because it&#8217;s too hot to get things done.<br />
+This summer&#8217;s theme is the federated social web. There has been a couple of <a href="https://alpha.app.net/">new</a> <a href="http://tent.io">players</a>, a couple of <a href="https://dev.twitter.com/blog/delivering-consistent-twitter-experience">attacks by existing players</a>, and a lot of noise about what <a href="http://blog.superfeedr.com/better-web/">needs to be done</a>.</p>
+<h3>A button</h3>
+<p>We have protocols. We even have some platforms that do actually implement them, so why don&#8217;t we see a federated web appear? What&#8217;s missing? I would argue that the <strong>biggest missing link is a button</strong>. A button that the user can press to say <em>I want to follow that person on the social web application I use</em>. There are tweet buttons, but they&#8217;re kind of useless if I&#8217;m not on Twitter. There are Facebook buttons, but they&#8217;re also useless if I&#8217;m not on Facebook. Now I still want to follow my friends on these platforms.</p>
+<p>It&#8217;s the same with App.net. Some of my friends use that. I want to follow them&#8230; but I don&#8217;t want to join yet another service on which I&#8217;ll build yet another social graph or circles, and that I will abandon after a couple days, because no one is talking to me there&#8230;</p>
+<p>My friends will stick to their favorite platform, but I won&#8217;t be forced to move to theirs to not miss any of their updates: I&#8217;ll use whatever is best for me, and I&#8217;ll be able to listen to my friends there.</p>
+<h3>Lets do it.</h3>
+<p>That button needs to be extremely simple so that all sites out there could have one. It needs to be a single html tag ideally. A new kind of <code>&lt;submit&gt;</code> <span class="caps">HTML</span> tag<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>.</p>
+<p>We need a button that says <a href="http://blog.superfeedr.com/pubsub-web/"><span class="caps">SUBSCRIBE</span></a>. That button, when pressed, in my browser, should be smart enough to pick whatever data is on that page and send it over to my social web app. My app can then subscribe using whatever open protocol services have agreed for subscriptions. I have strong favor for PubSubHubbub with feeds&#8230;</p>
+<p>Of course, I know this means having a new <span class="caps">HTML</span> tag, that needs then to be implemented by browsers, and then, hopefully by all these sites. I agree with you that we&#8217;re not there yet&#8230; but we have new standards, like <a href="http://blog.superfeedr.com/webintents-links2/">WebIntents</a> which are emerging and which could very well provide a solution to that problem. See by yourself, here is a follow button: <input type="button" onclick="subscribe();" value="Subscribe"> for me.</p>
+<p>The suggested app list that you&#8217;ll seee when clicking on this button is interesting. There is <a href="http://www.msgboy.com/index.html">Msgboy</a>, and there is Google Reader (which is inded a subscription app), but there is also <a href="http://wordpress.com/#!/intent/subscribe/">Wordpress</a>, as it can allow you to subscribe to 3rd party sites easily. I wish there was Tumblr too (they have a great follow button after all), or Twitter, Facebook&#8230; but more importantly, I wish there was Status.net, Diaspora, App.net, Tent.io&#8230;</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> For those unfamiliar, and with a lot of shortcuts, a submit button is what allows you to <span class="caps">POST</span> data back to a site.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

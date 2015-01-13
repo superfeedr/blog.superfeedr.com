@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : WebIntents </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/webintents">WebIntents</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/webintents</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2011-10-25T00:00:00+02:00"><time>25 Oct 2011</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p><em>Beware, the WebIntents protocol has been updated and the example given below are inaccurate. The general idea stays true, though.</em></p>
+<p>We <strong>hate barriers and user locks of any kind</strong>, but the web is full of them. The <em>web works better when services are decoupled</em>, when the user is at the center and picks the services he wants to use, not the services other services wants him to use.</p>
+<p>One of the key characteristics of the <a href="http://msgboy.com">msgboy</a> is that it integrates seamlessly with your web : the user&#8217;s web. We have 2 features in mind : <strong>allowing our users to subscribe</strong> to more content using the msgboy or 3rd party services, and <strong>allowing the msgboy&#8217;s users to share the content</strong> they received using their favorite 3rd party services.</p>
+<h3>Enter WebIntents.</h3>
+<p><a href="http://paul.kinlan.me/">Paul Kinlan</a> is a developer advocate at Google. He introduced <a href="http://webintents.org/">WebIntents</a> almost a year ago. WebIntent&#8217;s general idea is to allow web services to register features with each others in a decoupled way.  One of the example that Paul uses often is editing an image to remove red-eye.</p>
+<blockquote>
+<p>If I am the developer who creates a photo library online, I may not have that feature. Yet, I know there exists services online that do that very well (maybe better than what I would do). WebIntents allows these 3rd services to register their &#8220;red-eye-removal&#8221; feature as an &#8220;intent&#8221;. WebIntents also allows my app to call these services without &#8220;knowing&#8221; about them previously.</p>
+</blockquote>
+<p>If you think about it, the web is full of services that do a great job, but the web itself would be tremendously more useful if all these services worked together in workflows.</p>
+<p>Msgboy wants to be a first class citizen of the web by allowing you to subscribe to content thru it anywhere you are. There are 2 ways of doing it :</p>
+<ul>
+	<li>Convince every other website out there to just work for us and add a msgboy button to their site. Of course it&#8217;d be much better for us in terms of branding&#8230;. but that wouldn&#8217;t work. Why would people promote us?</li>
+	<li>The other option is to implement the WebIntents so that rather than promoting another company/service/product, they promote a feature and make their application more useful for their users, without trading them!</li>
+</ul>
+<h3>Registering the &#8220;subscribe&#8221; intent.</h3>
+<p>Registering an intent is fairly easy; you add the following code to your web application&#8217;s <span class="caps">HTML</span> code (in the <code>&lt;head&gt;</code> part) :</p>
+<p><code>&lt;intent action="http://webintents.org/subscribe" /&gt;</code></p>
+<p>Also, make sure you add a <code>&lt;link&gt;</code> element to <a href="http://code.google.com/p/webintents/source/browse/webintents.min.js">webintents.min.js</a></p>
+<p>What this code does is simple : it registers an intent on the webintents.org service. This intent is to handle the &#8220;subscribe&#8221; action on behalf of the user. There are a couple more options, but for the sake of simplicity, let&#8217;s stick with this simple default : feel free to check the <a href="https://github.com/superfeedr/msgboy/tree/webintents">msgboy&#8217;s webintent&#8217;s branch</a> to see how registration is performed in the context of a more complex app.</p>
+<p>Technically, what happend here is that webintents.org stored the intent (using HTML5&#8217;s localStorage). Which means that all the user data is local, but we&#8217;ll come back to this a bit later. Of course the action/verb is stored, but also the url of the page that declared the intent.</p>
+<h3>Starting the activity.</h3>
+<p>Say you have a blog and you want to provide a subscribe button that your readers could use to indicate they want more of your content, using the application of their choice. When the button is triggered, you would do something like this:</p>
+<p><code>
+    var intent = new Intent("http://webintents.org/subscribe", "application/atom+xml", "http://blog.msgboy.com/rss");
+    window.navigator.startActivity(intent);
+</code></p>
+<p>What this does is quite simple: it creates an action of type &#8220;subscribe&#8221;, and uses the params <code>"application/atom+xml", "http://blog.msgboy.com/rss"</code> for it. It then starts the activity, and that&#8217;s when the magic happens:</p>
+<ul>
+	<li>If you looked a bit in the webintents.js code, you would see that this will just send a request to webintents.org to perform that action.</li>
+	<li>Webintents.org will then open a popup and read the previously stored data in local storage about intents.</li>
+	<li>If there intents registered for that action, they are presented to the user</li>
+	<li>If the user choses any of the previously registered application, it it redirected to it.</li>
+</ul>
+<p><small>If you implement WebIntents you have to know that the params for the action are stored in a base64 encoded <span class="caps">JSON</span> stringed used as the window&#8217;s name.</small></p>
+<h3>What&#8217;s next</h3>
+<p>It is fairly easy to register events, but also to trigger actions, and that works fine, even though this is very early for webintents. However, ff you&#8217;ve taken a couple minutes to think about it, you will rightly notice that <strong>webintents.org becomes a single point of failure</strong>, which kind of kills the principle of decentralized, decoupled, that&#8217;s so precious for the web.</p>
+<p>Of course, you can run your own own if you forked the <a href="https://github.com/PaulKinlan/WebIntents">code from Github</a>. But then, if an app is registered on a given web intents server, while the action is triggered on another server, the chain will not be completed.</p>
+<p>Luckily there is a solution for this, and that was actually Paul Kinlan&#8217;s orginal idea : <em>use the browser to register intents and trigger actions</em>. Browsers already include a lot of Javascript APIs, and it&#8217;s Paul&#8217;s goal to have them integrate the webintent&#8217;s <span class="caps">API</span> as well. When that happens there is no need to use a 3rd party server. Users will eventually use their browsers to register intents and trigger actions, and the workflow stay the same.</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

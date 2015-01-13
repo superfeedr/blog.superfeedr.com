@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : SubToMe: Angular, Localization and more! </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/subtome-progress">SubToMe: Angular, Localization and more!</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/subtome-progress</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-06-14T00:00:00+02:00"><time>14 Jun 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>The <a href="https://www.subtome.com/#/">SubToMe</a> button we launched a couple weeks is now getting a <strong>significant traction</strong> and has been added to thousands of blogs and sites! This makes us very proud! Many readers now also support direct registration which makes them extremely convenient to use when susbcribing <em>on the fly</em>!</p>
+
+<h2 id="angularjs">AngularJS</h2>
+
+<p><a href="https://www.subtome.com/#/">SubToMe</a> is the perfect single page application as it does not even have an application server. It’s <a href="https://github.com/superfeedr/subtome">just static files</a> (HTML + JS) linked together with smart redirects and a little localstorage love.</p>
+
+<p>At first, we did not use any framework, but maintaining the code while adding new functionnalities quickly made that a bad choice. After trying <a href="http://emberjs.com/">Ember.js</a> and <a href="http://backbonejs.org/">Backbone.js</a> we settled for <a href="http://angularjs.org/">Angular.js</a>. Even though the first one is very ambitious, it still feels too early to use, and the seconds felt a bit too lightweight. Angular’s approach to <strong>focus on HTML</strong> seemed quite appropriate for us.</p>
+
+<p>Rewriting the whole app was <em>relatively simple and quite pain-free</em> if you put aside the learning of all the angularjs vocab and architecture. There’s probably room for improvment in our technique though!</p>
+
+<h2 id="localization">Localization</h2>
+
+<p>As one of the key goals of SubToMe is <strong>simplicity of use</strong>, localization is one of our priorities. Not everyone speaks English and as the concepts of “following” or “subscribing” are not obvious to english speakers, adding a language barrier was a no-go. Luckily, Javascript has a couple nifty localization tools. We settled on <a href="http://i18next.com/">i18next</a> which is very complete and includes most of what we need. </p>
+
+<p>Most JS localization tools will not include a way to translate the HTML, as they expect that you’re able to serve localized versions of these files. Given the lack of app server, we could not easily provide an HTML version of each of our files in all languages. <a href="http://i18next.com/">i18next</a> comes with a very handy way to translate the content of HTML pages using JSON languages files. That’s perfect for us.</p>
+
+<p>Unfortunately though, i18next was <em>not built to work for Angular</em>, so we had to find a way to get it to work with it. After searching a a little bit, we found a <a href="http://docs.angularjs.org/api">directive</a> by <a href="https://github.com/archer96">Andre Meyering</a> which makes the <strong>bridge</strong> between the 2 awesome frameworks: <a href="https://github.com/archer96/ng-i18next">ng-i18next</a>. It was a bit rough around the egdes but Andre quickly iterated to make it much better!</p>
+
+<p>SubToMe now has <a href="https://github.com/superfeedr/subtome/tree/master/locales">french</a> (and english of course) :) We need to help to add more. Please get in touch: Spanish accounts for 5.04% of our traffic and Japanese for 3.80% already!</p>
+
+<h2 id="icing-on-the-cake">Icing on the cake</h2>
+
+<p>We moved SubToMe to <a href="https://www.cloudflare.com/">Cloudflare</a>! They offer SSL on custome domains, a pretty ubiquituous CDN (latency FTW!), as well as a complete optimizer which we plan on using to speed up the serving of SubToMe. </p>
+
+<p>Finally, along the way, we made the SubToMe modal responsive so that you can easily use it on mobile devices or tablets!</p>
+
+<p>We have a lot more to do, and we’re excited by the possibilities, but we’re even more excited to see random blogs adding support. <strong>It makes the web better and allows more people to follow more content in an open way</strong>: add your button now.</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

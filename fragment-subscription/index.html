@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : Fragment Subscription </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/fragment-subscription">Fragment Subscription</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/fragment-subscription</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2011-01-12T00:00:00+01:00"><time>12 Jan 2011</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>Last month, we introduced <a href="http://blog.superfeedr.com/arbitrary-content-pubsubhubbub/">arbitrary content PubSubHubbub subscription</a>, which allowed you to <strong>subscribe to any kind of web resource</strong>, including <span class="caps">HTML</span> web pages (but also <span class="caps">JSON</span>, <span class="caps">YAML</span>, VCard and many many more).</p>
+<p><span class="caps">HTML</span> is a rich format, which means that an <span class="caps">HTML</span> page contains a lot of data and that some of this data may not be content to which one wants to subscribe. For example, you can find the navigation, but also ads, tracking codes or counter of any kinds. If you subscribed to a page like this, whenever any element would change, you would receive notifications which is certainly not what you want.</p>
+<p>Today, we&#8217;re introducing what we call <strong>fragment subscriptions</strong>. Basically, <em>you can subscribe to a fragment in any page, using a fragment in the <span class="caps">URL</span></em>.</p>
+<p>See <a href="http://www.nytimes.com/weather">this page</a>? It&#8217;s shows the weather in New York, but it&#8217;s pretty complex. Subscribing to it may not yield the result that you expect : updates when the weather changes. Yet, that data is in that page and you should be able to subscribe just to the fragment you care about.</p>
+<p>You&#8217;re probably familiar with <span class="caps">HTML</span>. Often times, in order to separate the content from the presentation, web developers will use <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">Stylesheets</a> to define the look and feel of their data. These stylesheets use a simple language to identify each element in a web page and define its style. In the example above, the weather is accessible at <code>.wCurrent .summary</code>. Right now, it shows <em>30°F (-1°C) Cloudy</em> (brrr).</p>
+<p>h4.How to subscribe to a fragment?</p>
+<p>Using a fragment! You&#8217;ve probably seen them in URLs already. They&#8217;re the part after <code>#</code>. For example in <code>http://blog.superfeedr.com/arbitrary-content-pubsubhubbub/#post</code>, the fragment is <code>post</code> and if you&#8217;re browser is smart, when you put that in the address bar, it should just align the top of your browser with the post, rather than the top of the page.</p>
+<p>Coming back to our weather example, if you subscribed to <code>http://www.nytimes.com/weather#.wCurrent .summary</code>, then, we would send you the content at the <span class="caps">CSS</span> path <code>.wCurrent .summary</code>. Simple! The only tweak is to escape the <span class="caps">CSS</span> fragment, so, in practice, you would have to subscribe to <code>http://www.nytimes.com/weather#.wCurrent%20.summary</code>, but that works just fine.</p>
+<p>As always, feedback appreciated!</p>
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+

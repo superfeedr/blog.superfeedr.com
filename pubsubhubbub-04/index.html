@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+
+  <title>Superfeedr : PubSubHubbub v0.4 </title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+  <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+      <nav class="nav-header">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container body">
+    <header class="body-header">
+      <div class="blog-links">
+        <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+        <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
+      </div>
+      <h2><strong>Blog</strong></h2>
+    </header>
+
+    <div class="body-content">
+      <section class="column  column--terms  body-content-text">
+        <article class="blog-article blog-article--single h-entry">
+  <h3 class="entry-title p-name"><a class="u-url" href="/pubsubhubbub-04">PubSubHubbub v0.4</a></h3>
+
+  <span class="invisible u-uid" style="display:none">blog.superfeedr.com:/pubsubhubbub-04</span>
+
+  <div class="entry-meta">
+    <ul class="entry-meta--primary postmeta">
+      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=20" > <a href="http://ouvre-boite.com" rel="author">Julien</a></span></li>
+      <li class="entry-meta--item dt-published" datetime="2013-06-28T00:00:00+02:00"><time>28 Jun 2013</time></li>
+    </ul>
+  </div>
+  <div class="entry-content e-content">
+    <p>It’s been brewing for almost 2 years now, but it’s finally here. Superfeedr now supports the <a href="https://superfeedr-misc.s3.amazonaws.com/pubsubhubbub-core-0.4.html">version 0.4 of the PubSubHubbub</a> spec. We’re also proud to say that Superfeedr has taken the lead on the PubSubHubbub spec. We now also offer a <a href="http://tests.superfeedr.com/">complete compliance test suite</a> for anyone who wants to implement a hub on their end:</p>
+
+<blockquote>
+  <p>Code &gt; Spec!</p>
+</blockquote>
+
+<p>Of course, all the <strong>Superfeedr hosted hubs are compatible</strong> with both 0.3 and 0.4 versions of the spec. <a href="http://superfeedr.com/publisher">Get yours now!</a></p>
+
+<h2 id="whats-new">What’s new</h2>
+
+<p>We’ve learnt a lot from running hubs all these years. There are at least 3 things that people wanted to see happenining:</p>
+
+<ul>
+  <li>
+    <p><strong>Arbitrary contents</strong>: PubSubHubbub is a HTTP based delivery mechanism and should not interfere with the data itself. That’s now  the case. The new version of the spec makes an extensive use of <em>HTTP and its headers</em> and does not assume anything about the content itself anymore. JSON, Vcards, Sitemaps… they’re all welcome now :)</p>
+  </li>
+  <li>
+    <p><strong>Simplification</strong>: PubSubHubbub is based on webhooks, but to ensure security and trust in the delivery, it comes with a couple extra mechanisms: including a <em>dialback</em>, as well as <em>signatures</em>. These are non trivial but the new spec is now much clearer by being a bit stricter and removing optional parameters.</p>
+  </li>
+  <li>
+    <p><strong>Protected Content</strong>: PubsubHubbub makes a lot of sense in the <em>social web</em> context. With that in mind, it is important to allow for a transparent mechanism where the publishers gets to approve or deny subscriptions to a certain topic from certain subscribers. This is now also baked in the protocol.</p>
+  </li>
+</ul>
+
+<h2 id="whats-breaking">What’s breaking</h2>
+
+<p>Unfortunately, some of these changes are partially breaking. However , most hub implementations, like <a href="http://pubsubhubbub.superfeedr.com/">Superfeedr’s</a> will support both transparently.</p>
+
+<p>For example, if your subscriber relied on auto-refresh, you will probably have to update it to make sure you handle re-subscribing to expired content. The rationale behind is that that we found that hubs could not do garbage collection easily.</p>
+
+<h2 id="whats-next">What’s next</h2>
+
+<p>One of the key next steps is to get a wider adoption of the protocol, with, hopefully a merge with existing PubSubHubbub-like implementations, like <a href="https://developers.facebook.com/docs/reference/api/realtime/">Facebook</a>’s or <a href="http://developer.github.com/v3/repos/hooks/#pubsubhubbub">Github</a>’s.</p>
+
+<p>It is also time to slowly move the <em>governance</em> around the PubSubHubbub spec toward a web standard’s body. Google is going to support 0.4 with their hub too, but it’s now obvious that this protocol goes far beyond Google and should not be tied too much to it.</p>
+
+<p>For those interested in contributing, we believe the best place at this point it the <a href="https://github.com/pubsubhubbub/PubSubHubbub">PubSubHubbub spec repository</a>.</p>
+
+
+  </div>
+</article>
+<div class="blog-more">
+  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+</div>
+<div class="blog-comments">
+  <h3>Comments</h3>
+
+    <div id="disqus_thread">
+    </div>
+
+    <script type="text/javascript" src="https://disqus.com/forums/superfeedr-thoughts/embed.js"></script>
+    <noscript>
+        <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+
+    <script id="webmention-hosted">
+    (function () {
+      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+      url = url && url[0] ? url[0].href : false;
+      sn.type = "text/javascript"; sn.async = true;
+      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+      s.parentNode.insertBefore(sn, s);
+    }());
+    </script>
+</div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <div class="footer container">
+    <footer class="site-footer">
+      <ul class="site-footer__list">
+<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
+        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
+        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
+ -->      </ul>
+      <ul class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; 2009&ndash;2014 Superfeedr</p>
+      </ul>
+    </footer>
+  </div>
+
+
+
+  
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try {
+    var pageTracker = _gat._getTracker('UA-9285763-1');
+    pageTracker._setDomainName("superfeedr.com");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  } catch(err) {}
+  //--><!]]>
+  </script>
+
+  <script src="/scripts/prism.js"></script>
+
+</body>
+</html>
+
+
+
