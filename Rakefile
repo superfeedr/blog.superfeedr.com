@@ -18,9 +18,16 @@ namespace :site do
     })).process
   end
 
+  desc "Generate and publish blog"
+  task :publish => [:publish_to_s3]
+
+  desc "Generate and publish blog to s3"
+  task :publish_to_s3 => [:generate] do
+    system "bundle exec s3_website push"
+  end
 
   desc "Generate and publish blog to gh-pages"
-  task :publish => [:generate] do
+  task :publish_to_github => [:generate] do
     Dir.mktmpdir do |tmp|
       cp_r "_site/.", tmp
       Dir.chdir tmp
