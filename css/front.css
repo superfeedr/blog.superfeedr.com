@@ -18,3 +18,8 @@ blockquote {
 .webmention-author img {
 	max-width: 50px;
 }
+
+.footnotes {
+	margin-top: 100px;
+	font-size: 0.8em;
+}
