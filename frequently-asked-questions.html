@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Frequently Asked Questions"
 ---
 
@@ -27,30 +28,19 @@ Duplicate entries/notifications : why do they happen? </h3>
 <h3>
 The "next fetch date" for some of my feeds seems inconsistent? </h3>
 <p>
-	 When you add a feed that we're not monitoring yet, we have to assigned it a next fetch date. To make sure this feed gets fetched as soon as possible, we assign it a date in the past (<span style="font-size:13px;border-collapse:collapse">2012-01-15T22:25:05+00:00 to be precise).<span style="border-collapse:separate;font-size:small"> Hopefully, if you wait a few seconds, you should soon see a more accurate next fetch date.
+	 When you add a feed that we're not monitoring yet, we have to assigned it a next fetch date. To make sure this feed gets fetched as soon as possible, we assign it a date in the past (2012-01-15T22:25:05+00:00 to be precise). Hopefully, if you wait a few seconds, you should soon see a more accurate next fetch date.
 </p>
 <h3>
 How do you (and I) handle redirections in the feeds to which I subscribed? </h3>
 <p>
 	 Redirections should be transparent to you. When you give us a feed url, whether it is a permanent redirection, or a temporary redirection, we will follow it to get the final content. The only limitation is that we won't follow more than 5 redirections. You should make sure, however that you give us atomic (final) urls when you can.
 </p>
-<h3>How redundant is your architecture?</h3>
-<p>
-	 We know that for most of our customers applications, feed parsing is critical. That is why Superfeedr relies on a very redundant architecture. Indeed, all of its components (from the database to the "parsers" have been replicated accross different datacenters (in different states). We are currently relying on Slicehost and they make a perfect job for us.
-</p>
+
 <h3>Why do you call 15 minutes Real-time?</h3>
 <p>
 	 Because real-time in computer science is not synonymous of "instantaneous". Wikipedia <a href="http://en.wikipedia.org/wiki/Real-time_computing">says</a> that<i><b>real-time computing</b> (RTC) is the study of <a href="http://en.wikipedia.org/wiki/Computer_hardware" title="Computer hardware">hardware</a> and <a href="http://en.wikipedia.org/wiki/Computer_software" title="Computer software">software</a> systems that are subject to a "real-time constraint"—i.e., operational deadlines from event to system response.</i><br>
 	 So, technically real-time means that we can guarantee delivery of new entries within 15 minutes of their publication. <br>
 	 Over time, our goal is to actually decrease this limit to 10, 5, 3 or even 1 minute, and we're already working on that.
-</p>
-<h3>
-What is the small <img src="http://superfeedr.com/images/icons/arrow_in.png" border="0" style="border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;border-style:initial;border-color:initial"> icon in the "next fetch" columns for some feeds in my dashboard? </h3>
-<p>
-	 This icon shows that a given feed doesn&#39;t need to be fetched as it is pushed to us (via PubSubHubbub, <a href="http://blog.superfeedr.com/rsscloud/api/pubsubhubbub/RSSCloud/">RSSCloud</a>, XML-RPC or <a href="http://blog.superfeedr.com/sup/pubsubhubbub/xmpp/real-time/SUP-over-pubsubhubb-and-xmpp/">SUP</a>), or because we use a specific API to get its content intantaneously.
-</p>
-<p>
-	 However, please remember that in any situation, we will always failover to regular polling to make sure you get all the content no-matter what. The only difference is that polling will be much much less frequent.
 </p>
 <h2>PubSubHubbub</h2>
 <h3>
@@ -80,5 +70,5 @@ How come Superfeedr doesn't work with my IM client (Adium, Gajim, ...)? </h3>
 <h3>
 Do I need to have an XMPP server running to use Superfeedr? Do I need to 'learn' XMPP? </h3>
 <p>
-	 No! Of course not... You only need to <a href="http://superfeedr.com/signup">register</a> to actually start using superfeedr. Then, you can even use one of <a href="http://github.com/superfeedr">our wrappers</a> so that you won't even see a single XMPP stanza.
+	 No! Of course not... You only need to <a href="https://superfeedr.com/subscriber">Signup</a> to actually start using superfeedr. Then, you can even use one of <a href="http://github.com/superfeedr">our wrappers</a> so that you won't even see a single XMPP stanza.
 </p>
