@@ -12,7 +12,8 @@ title: Blog
 	</div>
 	<div class="entry-meta">
 		<ul class="entry-meta--primary">
-			<li class="entry-meta--item"><time>{{ post.date | date:"%B %d, %Y" }}</time></li>
+			<li class="entry-meta--item dt-published" datetime="{{ post.date | date_to_xmlschema }}"><time>{{ post.date | date:"%B %d, %Y" }}</time></li>
+			<li style="display:none" class="entry-meta--item dt-published"><a href="{{ page.author_uri}}" rel="author">{{ post.author_name }}</a></li>
 			<li class="entry-meta--item"><a href='{{ post.url }}/#disqus_thread'>View Comments</a></li>
 		</ul>
 		<div class="entry-meta--secondary">
