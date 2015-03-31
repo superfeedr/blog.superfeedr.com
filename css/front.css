@@ -23,3 +23,30 @@ blockquote {
 	margin-top: 100px;
 	font-size: 0.8em;
 }
+
+/* April's foold 2015 */ 
+.header {
+background: black;
+}
+ 
+.header-logo a:hover span {
+text-shadow: none;
+}
+ 
+.header-logo a,
+.nav-header .nav-link,
+.hero a,
+.hero-counter {
+color: yellow;
+}
+ 
+.nav-header .nav-link.nav-link-bubble {
+background: yellow;
+color: black;
+}
+ 
+.hero-counter {
+background: rgba( 0, 0, 0, 0.5 );
+border-bottom-color: rgba(0, 0, 0, 0.7);
+}
+
