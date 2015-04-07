@@ -8,7 +8,6 @@ var source = new EventSource(url);
 
 // When the socket has been open, let's cleanup the UI.
 source.onopen = function () {
-  console.log("OPEN");
 	var node = document.getElementById('sse-feed');
 	while (node.hasChildNodes()) {
 		node.removeChild(node.lastChild);

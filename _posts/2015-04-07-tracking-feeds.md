@@ -15,7 +15,7 @@ We're incredibly excited to introduce a new type of user on Superfeedr today: [t
 
 As you probably know, [publishers](https://superfeedr.com/publisher) are applications, like [Medium](https://medium.com/) or [Etsy](https://www.etsy.com/), which decided to host their PubSubHubbub hub with Superfeedr. [Subscribers](https://superfeedr.com/subscriber), on the other end, are applications which consume our **feed API** to agregate feeds from accross the web (whether they use hubs that we host, or not).
 
-> [Trackers](https://superfeedr.com/tracker) are application, which, rather than subscribing to feeds, subscribe to search queries.
+> [Trackers](https://superfeedr.com/tracker) are applications, which, rather than subscribing to feeds, subscribe to search queries.
 
 ### Complex queries
 
@@ -25,7 +25,7 @@ For example, one might want to subscribe to a search query of their name and be 
 
 ### A single API
 
-Rather than re-inventing the wheel, we decided to rely on feeds for each query. For example, [this feed](http://track.superfeedr.com/?query=superfeedr) is the feed with results for any story that mentions *superfeedr*.
+Rather than re-inventing the wheel, we decided to rely on feeds for each query. For example, [this feed](http://track.superfeedr.com/?query=superfeedr) is the feed with results for any story that mentions *superfeedr* (note that you can see entries in the feed only if you load with a tracking account credentials)!
 
 From there, all of our subscriber API calls can be used:
 
