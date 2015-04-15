@@ -7,7 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-We've been a bit silent over the past couple weeks, but *we have an excuse*: days last 24 hours! We worked hard on the "msgboy":msgboy.com. Chrome's latest versions broke our legs several times (changes in "IndexedDB":http://www.w3.org/TR/IndexedDB/, changes in "Websockets":http://dev.w3.org/html5/websockets/... etc). If what doesn't kill us makes us stronger, _Msgboy is going to be super-hero strong_.
+We've been a bit silent over the past couple weeks, but *we have an excuse*: days last 24 hours! We worked hard on the "msgboy":http://msgboy.com. Chrome's latest versions broke our legs several times (changes in "IndexedDB":http://www.w3.org/TR/IndexedDB/, changes in "Websockets":http://dev.w3.org/html5/websockets/... etc). If what doesn't kill us makes us stronger, _Msgboy is going to be super-hero strong_.
 
 Hopefully we can introduce it very soon, at the "Krtconf":http://krtconf.com/.
 

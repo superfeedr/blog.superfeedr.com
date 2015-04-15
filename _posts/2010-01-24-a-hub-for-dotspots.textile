@@ -7,9 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
-As "Matt":http://twitter.com/mmastrac "announced earlier":http://blog.dotspots.com/2010/01/21/dotspots-goes-real-time/ this week, "Dotspots":http://dotspots.com/ now as a "PubSubHubbub hub":http://dotspots.superfeedr.com/, hosted by Superfeedr.
-
-!{width:20%;float:left;padding:10px}http://dotspots.superfeedr.com/images/hubs/dotspots.gif!
+As "Matt":http://twitter.com/mmastrac announced earlier this week, Dotspots now as a PubSubHubbub hub, hosted by Superfeedr.
 
 bq. _DotSpots enables anyone to update the news in real-time with dots: mini-blog posts, including videos, pictures, documents and links, that appear in context on all relevant news articles._
 
@@ -20,7 +18,7 @@ Using superfeedr's hub is quite easy and involves 2 steps :
 
 I asked Matt some feedback on the process of using Superfeedr's hub, and he kindly sent me the following :
 
-bq. Turning on real-time updates with *PubSubHubbub was really easy*. We use the "Rome library":(https://rome.dev.java.net/) to output *Atom* feeds for a number of different views on the data. We added a simple hub link to each feed to do this:
+bq. Turning on real-time updates with *PubSubHubbub was really easy*. We use the "Rome library":https://rome.dev.java.net/ to output *Atom* feeds for a number of different views on the data. We added a simple hub link to each feed to do this:
 
 <script src="http://gist.github.com/285503.js?file=add_link.java"></script>
 
