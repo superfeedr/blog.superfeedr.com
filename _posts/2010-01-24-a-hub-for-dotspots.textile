@@ -20,7 +20,7 @@ Using superfeedr's hub is quite easy and involves 2 steps :
 
 I asked Matt some feedback on the process of using Superfeedr's hub, and he kindly sent me the following :
 
-bq. Turning on real-time updates with *PubSubHubbub was really easy*. We use the "Rome library":(https://rome.dev.java.net/ to output *Atom* feeds for a number of different views on the data. We added a simple hub link to each feed to do this:
+bq. Turning on real-time updates with *PubSubHubbub was really easy*. We use the "Rome library":(https://rome.dev.java.net/) to output *Atom* feeds for a number of different views on the data. We added a simple hub link to each feed to do this:
 
 <script src="http://gist.github.com/285503.js?file=add_link.java"></script>
 
