@@ -22,7 +22,7 @@ curl https://push.superfeedr.com/
   -G 
   -u demo:demo 
   -d'hub.mode=replay' 
-  -d'async:true' 
+  -d'async=true' 
   -d'hub.topic=http://push-pub.appspot.com/feed' 
   -d'hub.callback=http://mycallback.tld/ok'
 {% endprism %}
