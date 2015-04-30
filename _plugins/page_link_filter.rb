@@ -1,9 +1,9 @@
 module Jekyll
 	module PageLinksFilter
 		def pages_link_list(input)
-			if input.size > 1
+			if input.size > 1 
 				last = input.pop
-				str = input.map do |i|
+				str = input[0..1].map do |i|
 					link_to_item i
 				end.join(', ')
 

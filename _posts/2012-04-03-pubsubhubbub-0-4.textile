@@ -5,6 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: webhook, pubsubhubbub, http, openweb
 ---
 
 The PubSubHubbub adoption is growing strong. There is not a week where a major publisher or a major subscriber eventually implements it. Yesterday, that was "NewsBlur's":http://blog.newsblur.com/post/20371256202/building-real-time-feed-updates-for-newsblur turn.

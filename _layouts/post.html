@@ -22,7 +22,7 @@ layout: default
     Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
   </p>
 
-  {% if site.related_posts.length > 0 %}
+  {% if site.related_posts[0] %}
   <p>
     On the same topic, check {{ site.related_posts limit:3 | pages_link_list }}. 
   </p>
