@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  {% if page.description %}
+  <meta name="description" content="{{page.description}}" />
+  {% else %}
+  <meta name="description" content="{{ page.title }}" />
+  {% endif %}
+
+
+
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
-
   <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/css/prism.css" rel="stylesheet" type="text/css">
 
@@ -15,8 +22,6 @@
 
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
   <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
-
-  <meta http-equiv="Content-Security-Policy" content="connect-src stream.superfeedr.com">
 
   <link rel="shortcut icon" href="/favicon.png">
 
@@ -27,14 +32,26 @@
       <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
       <nav class="nav-header">
         <ul class="nav-items">
-          <li class="nav-item"><a href="http://superfeedr.com/about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="http://superfeedr.com/publisher" class="nav-link">Publishers</a></li>
-          <li class="nav-item"><a href="http://superfeedr.com/subscriber" class="nav-link">Subscribers</a></li>
-          <li class="nav-item"><a href="http://superfeedr.com/subscriber/pricing" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="http://superfeedr.com/login" class="nav-link nav-link-bubble">Login</a></li>
-        </ul>
-      </nav>
-    </div>
+          <li class="nav-item">
+            <a class="nav-link" href="https://superfeedr.com/publisher">Publishers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://superfeedr.com/subscriber">Subscribers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://superfeedr.com/tracker">Trackers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://superfeedr.com/pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-bubble" href="https://superfeedr.com/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-bubble" href="https://superfeedr.com/users/new">Sign Up</a>
+          </li></ul>
+        </nav>
+      </div>
   </header>
 
   <main class="container body">
@@ -56,23 +73,37 @@
 
   <div class="footer container">
     <footer class="site-footer">
-      <ul class="site-footer__list">
-<!--         <li class="site-footer__item"><a href="" class="site-footer__link">Documentation</a></li>
-        <li class="site-footer__item"><a href="" class="site-footer__link">Support</a></li>
-        <li class="site-footer__item"><a href="" class="site-footer__link">Blog</a></li>
-        <li class="site-footer__item"><a href="/pricing.html" class="site-footer__link">Pricing</a></li>
-        <li class="site-footer__item"><a href="" class="site-footer__link">Terms</a></li>
- -->      </ul>
-      <ul class="site-footer__meta">
-        <p class="site-footer__copyright">&copy; 2009&ndash;2015 Superfeedr</p>
+      <div class="site-footer__block">
+        <a href="/" class="site-footer__logo"><img alt="Logo invert" src="images/logo-invert.svg"></a>
+        <p class="site-footer__copyright"><span>Superfeedr</span><br>© 2009–2015</p>
+      </div>
+      <ul class="site-footer__block site-footer__list">
+        <li class="site-footer__item"><strong>Superfeedr</strong></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://superfeedr.com/about">About</a></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://superfeedr.com/pricing">Pricing</a></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://superfeedr.com/terms">Terms</a></li>
       </ul>
-    </footer>
+      <ul class="site-footer__block site-footer__list">
+        <li class="site-footer__item"><strong>For developers</strong></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="http://documentation.superfeedr.com/">Documentation</a></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://github.com/superfeedr/">Code Libraries</a></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://github.com/superfeedr/documentation/issues">Support</a> <a href="" class="site-footer__link"></a></li>
+      </ul>
+      <ul class="site-footer__block site-footer__list">
+        <li class="site-footer__item"><strong>Connect with us</strong></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://superfeedr.com/about">Contact Us</a></li>
+        <li class="site-footer__item"><a class="site-footer__link" href="mailto:info@superfeedr.com">Email</a> </li>
+        <li class="site-footer__item"><a class="site-footer__link" href="https://twitter.com/superfeedr">Twitter</a> </li>
+      </ul>
+    </footer> 
   </div>
 
 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
+  <script src="/scripts/prism.js" defer></script>
 
   {% for js_file in page.js_includes %}
-  <script src="{{ js_file }}" async></script>
+  <script src="{{ js_file }}" defer></script>
   {% endfor %}
 
 
@@ -90,8 +121,6 @@
   } catch(err) {}
   //--><!]]>
   </script>
-
-  <script src="/scripts/prism.js"></script>
 
 </body>
 </html>

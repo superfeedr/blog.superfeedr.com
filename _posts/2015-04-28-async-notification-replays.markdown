@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
+description: "It's very convenient when implementing Superfeedr in a Rails application to be able to replay notification asynchronously."
 ---
 
 Last week, we blogged about [agregating RSS feeds in a Rails](http://blog.superfeedr.com/consuming-rss-feeds-rails/) application. Ruby On Rails is one of these frameworks which **integrates very well with Superfeedr**. However, Rails has a very annoying feature in development: *it can only handle one single request at a time*.
