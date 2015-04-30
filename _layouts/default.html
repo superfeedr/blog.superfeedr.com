@@ -15,10 +15,10 @@
 
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
-  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/css/prism.css" rel="stylesheet" type="text/css">
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
 
-  <title>Superfeedr : {{ page.title }} </title>
+  <title>{{ page.title }} </title>
 
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
   <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
@@ -29,7 +29,14 @@
 <body>
   <header class="header">
     <div class="container">
-      <h1 class="header-logo"><a href="/"><img src="/images/logo.png" alt=""> <span>Superfeedr Blog</span></a></h1>
+
+      <h1 class="header-logo">
+        <a title="Superfeedr Home" href="/">
+          <img alt="Logo" src="/images/logo.svg"> 
+          <span>Superfeedr Blog</span>
+        </a>
+      </h1>
+
       <nav class="nav-header">
         <ul class="nav-items">
           <li class="nav-item">
@@ -60,7 +67,7 @@
         <input type="button" class="button  button--raised  button--positive" value="Subscribe" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
         <a href="/archive.html" class="button  button--raised  button--neutral">Read Archives</a>
       </div>
-      <h2><strong>{{ page.title }} </strong></h2>
+      <h1 class="slim">{{ page.title }}</h1>
     </header>
 
     <div class="body-content">
@@ -74,8 +81,8 @@
   <div class="footer container">
     <footer class="site-footer">
       <div class="site-footer__block">
-        <a href="/" class="site-footer__logo"><img alt="Logo invert" src="images/logo-invert.svg"></a>
-        <p class="site-footer__copyright"><span>Superfeedr</span><br>© 2009–2015</p>
+        <a href="/" class="site-footer__logo"><img alt="Logo invert" src="/images/logo-invert.svg"></a>
+        <p class="site-footer__copyright"><span>Superfeedr</span><br>&copy; 2009–2015</p>
       </div>
       <ul class="site-footer__block site-footer__list">
         <li class="site-footer__item"><strong>Superfeedr</strong></li>

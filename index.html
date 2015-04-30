@@ -7,7 +7,7 @@ description: "We blog about Superfeedr's features, how to parse RSS feeds with s
 {% for post in site.posts limit:10 %}
 
 <article class="blog-article h-entry hentry">
-	<h3 class="entry-title p-name"><a class="u-url" href="{{ post.url }}">{{ post.title }}</a></h3>
+	<h2 class="entry-title p-name"><a class="u-url" href="{{ post.url }}">{{ post.title }}</a></h2>
 	<div class="excerpt p-summary entry-content">
 		<p> {{ post.content | strip_html | truncatewords:50 }} &nbsp;</p>
 	</div>

@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: ["https://www.embedcurl.com/embedcurl.min.js"]
+tags: feed api, http, stream
 ---
 
 In the last year, we focused a lot on storing data from the feeds inside Superfeedr. We started by storing a lot of Google Reader content, [using our Riak backend](http://blog.superfeedr.com/google-reader-api-riak/). When introducing our [new PubSubHubbub endpoint](http://blog.superfeedr.com/push-endpoint/), we had the opportunity to add things like [subscribe and retrieve](http://blog.superfeedr.com/subscribe-retrieve/) and later, params like [before and after](http://blog.superfeedr.com/retrieve-before-after/). 

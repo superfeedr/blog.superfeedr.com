@@ -3,13 +3,13 @@ layout: default
 ---
 
 <article class="blog-article blog-article--single h-entry">
-  <h3 class="entry-title p-name"><a class="u-url" href="{{page.url}}">{{page.title}}</a></h3>
+  <h2 class="entry-title p-name"><a class="u-url" href="{{page.url}}">{{page.title}}</a></h2>
 
   <span class="invisible u-uid" style="display:none">blog.superfeedr.com:{{ page.id }}</span>
 
   <div class="entry-meta">
     <ul class="entry-meta--primary postmeta">
-      <li class="entry-meta--item">By <span class="p-author h-card"><img class="u-photo" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" > <a href="{{ page.author_uri}}" rel="author">{{ page.author_name }}</a></span></li>
+      <li class="entry-meta--item">By <span class="p-author h-card"><img alt="avatar {{ page.author_name }}" class="u-photo" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" > <a href="{{ page.author_uri}}" rel="author">{{ page.author_name }}</a></span></li>
       <li class="entry-meta--item dt-published" datetime="{{ page.date | date_to_xmlschema }}"><time>{{ page.date | date_to_string }}</time></li>
     </ul>
   </div>
@@ -18,7 +18,21 @@ layout: default
   </div>
 </article>
 <div class="blog-more">
-  Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+  <p>
+    Liked this post? <a href="/archive.html">Read the archive</a> or <input type="button" value="Subscribe" class="button  button--raised  button--positive" onclick="(function(){var z=document.createElement('script');z.src='http://www.subtome.com/load.js';document.body.appendChild(z);})()">
+  </p>
+
+  {% if site.related_posts.length > 0 %}
+  <p>
+    On the same topic, check {{ site.related_posts limit:3 | pages_link_list }}. 
+  </p>
+  {% endif %}
+  
+  <p>
+    Previously, on the Superfeedr blog: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>.
+  </p>
+</ul>
+
 </div>
 <div class="blog-comments">
   <h3>Comments</h3>

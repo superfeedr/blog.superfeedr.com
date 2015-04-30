@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
+tags: podcast, rss, feed api, openweb
 ---
 
 2014 was the biggest year for **Podcasts** to date. Of course, this came from massively popular shows: [This American Life](http://www.thisamericanlife.org/podcast) and [Serial](http://serialpodcast.org/) come to mind, but more importantly, it came from the incredibly long tail of smaller or even niche podcasts thousands of indie people create out there. Platforms like [Soundcloud](https://soundcloud.com/) are  to Podcasts what Tumblr is to blogs.

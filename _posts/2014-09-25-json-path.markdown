@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
+tags: feed api, json, fragment
 ---
 
 A bunch of our customers use Superfeedr to poll JSON APIs. Rather than wasting their resources, they use us to **subscribe** to JSON documents using **webhooks**. When the document eventually updates, we push them the whole document.

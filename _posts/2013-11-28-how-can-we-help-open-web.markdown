@@ -5,6 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: openweb, indieweb, feed
 ---
 
 Today is thanksgiving in the USA. It's a holliday in where you *celebrate others and thank them for the help they provided*. Of course, we want to thank everyone in our community: our customers, developers, partners and investors. It's a pleasure to be working with you and we hope to keep doing that for a long time.

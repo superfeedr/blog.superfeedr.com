@@ -5,6 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: feed api, list, subscription
 ---
 
 Releasing our [new API endpoint](/push-endpoint/) last month has already enabled us to release the oldest feature request: [subscribing and retrieving feeds in one single call](/subscribe-retrieve/). Today, we're introducing another long time requested feature: the ability to [list PubSubHubbub subscriptions](http://documentation.superfeedr.com/subscribers.html#listingfeedswithpubsubhubbub).

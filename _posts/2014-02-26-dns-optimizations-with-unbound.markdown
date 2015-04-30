@@ -4,6 +4,7 @@ title: "DNS Optimizations with Unbound"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: dns, backend, unbound
 ---
 
 We've [seen yesterday](/dns-optimizations-with-dnsmasq/) that an easy way to significantly decrease the time spent doing DNS resolution was to put a small (1024 items!) cache on each of our fetchers.

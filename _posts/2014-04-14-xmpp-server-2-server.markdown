@@ -4,6 +4,7 @@ title: "Develop custom XMPP Server-2-Server components with nodejs"
 author_name: chris-rock
 author_uri: http://lollyrock.com/
 author_email_md5: f59cf51b88cf75171f7687652b19c5b0
+tags: openweb, xmpp, nodejs
 ---
 
 ### The challenge

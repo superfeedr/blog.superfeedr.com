@@ -6,11 +6,12 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "Agregating RSS feeds in a web application is easier than ever with the Superfeedr Rails Engine. Here's a tutorial on how to consume RSS/atom in a Ruby On Rails web application."
 js_includes: []
+tags: ruby, rails, engine
 ---
 
 *Consuming RSS feeds in a web application* is often **complex** and requires *offline workers* or *queue systems* which are yet another infrastructure to maintain. This scheduling algorithm also means that this application will be "late" at detecting updates or will check the feeds too frequently for most publishers.
 
-## A Rails Engine
+### A Rails Engine
 
 As you know, [Superfeedr](https://superfeedr.com/) offers a **feed API** which you can now easily integrate in your Ruby on Rails application, using the [Superfeedr Engine](https://rubygems.org/gems/superfeedr_engine). From the [Ruby On Rails Guide](http://guides.rubyonrails.org/engines.html):
 
@@ -23,9 +24,9 @@ In practice, the Superfeedr Engine handles interactions with Superfeedr's endpoi
  * retrieve the past content and entries from them,
  * handle notifications when the resources have been updated.
 
-## How-to
+### How-to
 
-### Install
+#### Install
 
 First, install the `gem` and its dependencies. Add the following line to your `Gemfile`: 
 
@@ -39,7 +40,7 @@ And run:
 bundle install
 {% endprism %}
 
-### Configure the engine
+#### Configure the engine
 
 Create a configuration file: `config/initailizers/superfeedr_engine.rb` with the following content:
 
@@ -70,7 +71,7 @@ SuperfeedrEngine::Engine.scheme = "http"
 SuperfeedrEngine::Engine.port = 80
 {% endprism %}
 
-### Mount
+#### Mount
 
 Update routes in `config/routes.rb` to mount the Engine.
 
@@ -78,7 +79,7 @@ Update routes in `config/routes.rb` to mount the Engine.
 mount SuperfeedrEngine::Engine => SuperfeedrEngine::Engine.base_path 
 {% endprism %}
 
-### Subscribe, unsubscribe and receive notifications
+#### Subscribe, unsubscribe and receive notifications
 
 You can call now perform the following calls from inside your application:
 
@@ -115,7 +116,7 @@ class Feed < ActiveRecord::Base
 end
 {% endprism %}
 
-## Full example
+### Full example
 
 We deployed a very basic feed reader to [Heroku](https://heroku.com/) which uses this engine. Feel free to [check it out](https://cryptic-peak-7737.herokuapp.com/) to see how simple it is to consume RSS feeds in your Rails application with this engine. One of its great features is that it runs using a single [Dyno](https://devcenter.heroku.com/articles/dyno-size) (without any worker) and stays in Heroku's free tier.
 

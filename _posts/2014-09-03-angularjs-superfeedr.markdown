@@ -9,6 +9,7 @@ js_includes: [
 "../scripts/angular-superfeedr.js",
 "../scripts/angular-demo.js"
 ]
+tags: javascript, angularjs, feed api
 ---
 
 If you read us carefully, you've already seen that [we use AngularJS](http://blog.superfeedr.com/subtome-progress/) for [SubToMe](https://www.subtome.com/#/). Angular is an open source web framework for the client side. It's probably one of the most popular of its kind these days, so you've probably stumbled upon it a couple times.

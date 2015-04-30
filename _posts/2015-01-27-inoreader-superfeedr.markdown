@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
+tags: publisher, pubsubhubbub, inoreader
 ---
 
 > The following is a blog post written by Yordan from Innologica, the company behind Inoreader. If you want to write a guest post, please get in touch!

@@ -7,6 +7,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js"
 ]
+tags: tracking, stream, trackers
 ---
 <script src="../scripts/server-sent-events-tracking.js" >
 </script>

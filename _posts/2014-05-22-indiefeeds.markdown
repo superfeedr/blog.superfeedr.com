@@ -4,6 +4,7 @@ title: "Indie-feeds"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: openweb, rss, indieweb
 ---
 
 The indieweb community has been pretty active in the past couple months. One of the key [principles](http://indiewebcamp.com/Principles) is that people should *own their data online*.

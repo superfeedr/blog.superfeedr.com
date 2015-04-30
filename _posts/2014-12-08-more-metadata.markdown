@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
+tags: metadata, spam, porn, feed api
 ---
 
 All RSS/Atom feeds aren't born equal. As we process more and more we start to have a better understanding of them and one of our goals is to **share more of the knowledge with our customers**.
