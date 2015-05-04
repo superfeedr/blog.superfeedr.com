@@ -5,6 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: ruby, rack, sinatra, rails
 ---
 
 I am a bit ashamed that this comes so late... but it's always better late than never: we have a [rack middleware for Superfeedr](http://rubygems.org/gems/rack-superfeedr).
