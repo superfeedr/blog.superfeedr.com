@@ -158,4 +158,4 @@ def post(self):
 
 ### There's more!
 
-We're missing several! Go, Erlang, Scala, Java, Perl, .net, Haskell, ASP... etc! Please, help us by leaving details in the comments or by sending a pull request.
+We're missing several! Go, Erlang, Scala, Java, Perl, .net, Haskell, ASP... etc! Please, help us by leaving details in the comments or [by sending a pull request](https://github.com/superfeedr/blog.superfeedr.com/edit/master/_posts/2015-05-05-http-raw-body.markdown).
