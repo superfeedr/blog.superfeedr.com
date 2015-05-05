@@ -1,7 +1,5 @@
 module Jekyll
 
-
-
   class RedirectsGenerator < Generator
 
     def generate(site)
@@ -18,7 +16,6 @@ module Jekyll
       site.posts.each do |post|
         suff = post.url.split('/').last 
       end
-
 
     end
   end

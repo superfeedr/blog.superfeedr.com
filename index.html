@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog
+title: Superfeedr Blog
 description: "We blog about Superfeedr's features, how to parse RSS feeds with several web platforms, the open web and more!"
 ---
 
@@ -13,9 +13,20 @@ description: "We blog about Superfeedr's features, how to parse RSS feeds with s
 	</div>
 	<div class="entry-meta">
 		<ul class="entry-meta--primary">
-			<li class="entry-meta--item dt-published" datetime="{{ post.date | date_to_xmlschema }}"><time>{{ post.date | date:"%B %d, %Y" }}</time></li>
-			<li style="display:none" class="entry-meta--item dt-published"><a href="{{ page.author_uri}}" rel="author">{{ post.author_name }}</a></li>
-			<li class="entry-meta--item"><a href='{{ post.url }}/#disqus_thread'>View Comments</a></li>
+
+			<li style="display:none" class="entry-meta--item">
+				<span class="dt-published published dt-updated updated" datetime="{{ page.date | date_to_xmlschema }}"><time class="value">{{ page.date | date_to_string }}</time></span>
+			</li>
+
+			<li style="display:none" class="entry-meta--item">
+				<a href="{{ page.author_uri}}" class="p-author h-card author-icon" rel="author" title="{{ post.author_name }}">
+					<img src="http://www.gravatar.com/avatar/{{post.author_email_md5}}?s=20" alt="{{ post.author_name }}" />
+				</a>
+			</li>
+
+			<li class="entry-meta--item">
+				<a href='{{ post.url }}/#disqus_thread'>View Comments</a>
+			</li>
 		</ul>
 		<div class="entry-meta--secondary">
 			<a href="{{ post.url }}/"  class="entry-read-more">Read More &rarr;</a>

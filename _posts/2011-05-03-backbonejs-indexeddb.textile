@@ -15,7 +15,7 @@ Late in 2009, the "W3C started working on a spec for IndexedDB":http://www.w3.or
 
 "Backbone.js":http://documentcloud.github.com/backbone/ is a *Javascript MVC framework* to build elegant applications on the client side. It was initially designed to work with a remote server and its APIs as the data source, but there is nothing that technically prevents it from being used with local storage solutions. For example, "Jérôme Gravel-Niquet":http://jgn.me/ wrote a "LocalStorage adapter":http://documentcloud.github.com/backbone/docs/backbone-localstorage.html.
 
-Unfortunately, localStorage is pretty limited and doesn't work well for complex data. We hope that *IndexedDB* quickly grows and fits the needs of many web apps. Please make sure you consult the "README file":https://github.com/superfeedr/indexeddb-backbonejs-adapter/blob/master/README.markdown to learn more. Also, feel free to "fork it and make it better":https://github.com/superfeedr/indexeddb-backbonejs-adapter! Feel free to "run the tests with your browser":http://blog.superfeedr.com/indexeddb-backbonejs-adapter/tests.html to see if IndexedDB is supported!
+Unfortunately, localStorage is pretty limited and doesn't work well for complex data. We hope that *IndexedDB* quickly grows and fits the needs of many web apps. Please make sure you consult the "README file":https://github.com/superfeedr/indexeddb-backbonejs-adapter/blob/master/README.markdown to learn more. Also, feel free to "fork it and make it better":https://github.com/superfeedr/indexeddb-backbonejs-adapter! Feel free to run the tests with your browser to see if IndexedDB is supported!
 
 
 

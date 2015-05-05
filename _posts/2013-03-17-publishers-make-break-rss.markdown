@@ -5,6 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+description: The RSS ecosystem's fate is in your hands if you're publishing feeds. It's your call to decide if you want to only rely on private silos to distribute your content.
 ---
 
 The truth is that eventually, the **ones deciding of the RSS fate are not going to be subscribers, but publishers**. Publishers, big (media outlets, blogging platforms) or small (indie bloggers or CMS users) can easily decide whether they want RSS to die or to thrive.
