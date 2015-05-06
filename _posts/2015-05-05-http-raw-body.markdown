@@ -155,6 +155,19 @@ def post(self):
 
 {% endprism %}
 
+### C# (ASP.NET)
+
+Using the Request.InputStream property, data can be read in a raw fashion as binary, or using a [System.IO.StreamReader](https://msdn.microsoft.com/de-de/library/system.io.streamreader%28v=vs.110%29.aspx) it can be read as test. This can be done multiple times.
+
+{% prism C# %}
+
+string value;
+using (System.IO.StreamReader SR = new System.IO.StreamReader(Request.InputStream))
+{
+    value=SR.ReadToEnd();
+}
+
+{% endprism %}
 
 ### There's more!
 
