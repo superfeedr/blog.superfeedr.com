@@ -160,11 +160,9 @@ def post(self):
 
 #### Cowboy
 
-Accessing the [request body](http://ninenines.eu/docs/en/cowboy/1.0/guide/req_body/) is a snap in [Cowboy](https://github.com/ninenines/cowboy), a small, fast, modular HTTP server for Erlang applications.
+Accessing the [request body](http://ninenines.eu/docs/en/cowboy/1.0/guide/req_body/) is a snap in [Cowboy](https://github.com/ninenines/cowboy), a small, fast, modular HTTP server for Erlang applications. Use the this call in your handler function:
 
-Use the this call in your handler function:
-
-{% prism Erlang %}
+{% prism erlang %}
 {ok, Body, Req2} = cowboy_req:body(Req1).
 {% endprism %}
 
@@ -177,7 +175,7 @@ For web applications in the Haskell programming language there exists a shared [
 
 The Yesod web framework provides access to the Wai request in handlers. This lets you read the body into a lazy [ByteString](http://hackage.haskell.org/package/bytestring/docs/Data-ByteString-Lazy.html), so that you can start consuming the data while it's being received.
 
-{% prism Haskell %}
+{% prism haskell %}
 import Yesod
 import qualified Network.Wai as Wai
 
@@ -190,3 +188,5 @@ postEndpointR = do
 ### There's more!
 
 We're missing several! Go, Scala, Java, Perl, .net, ASP... etc! Please, help us by leaving details in the comments or [by sending a pull request](https://github.com/superfeedr/blog.superfeedr.com/edit/master/_posts/2015-05-05-http-raw-body.markdown).
+
+Thanks a lot to [astro](https://github.com/astro) and [AyrA](https://github.com/AyrA) for their contributions!
