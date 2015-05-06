@@ -155,6 +155,17 @@ def post(self):
 
 {% endprism %}
 
+### C# (ASP.NET)
+
+Using the Request.InputStream property, data can be read in a raw fashion as binary, or using a [System.IO.StreamReader](https://msdn.microsoft.com/de-de/library/system.io.streamreader%28v=vs.110%29.aspx) it can be read as test. This can be done multiple times.
+
+{% prism aspnet %}
+string value;
+using (System.IO.StreamReader SR = new System.IO.StreamReader(Request.InputStream))
+{
+    value=SR.ReadToEnd();
+}
+{% endprism %}
 
 ### Erlang
 
@@ -187,6 +198,6 @@ postEndpointR = do
 
 ### There's more!
 
-We're missing several! Go, Scala, Java, Perl, .net, ASP... etc! Please, help us by leaving details in the comments or [by sending a pull request](https://github.com/superfeedr/blog.superfeedr.com/edit/master/_posts/2015-05-05-http-raw-body.markdown).
+We're missing several! Go, Scala, Java, Perl... etc! Please, help us by leaving details in the comments or [by sending a pull request](https://github.com/superfeedr/blog.superfeedr.com/edit/master/_posts/2015-05-05-http-raw-body.markdown).
 
 Thanks a lot to [astro](https://github.com/astro) and [AyrA](https://github.com/AyrA) for their contributions!
