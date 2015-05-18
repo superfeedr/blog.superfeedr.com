@@ -9,8 +9,6 @@ js_includes: [
 ]
 tags: tracking, stream, trackers
 ---
-<script src="../scripts/server-sent-events-tracking.js" >
-</script>
 
 We're incredibly excited to introduce a new type of user on Superfeedr today: [trackers](https://superfeedr.com/tracker).
 
@@ -35,9 +33,6 @@ From there, all of our subscriber API calls can be used:
 * [Listing subscriptions](http://documentation.superfeedr.com/subscribers.html#listing-subscriptions-with-pubsubhubbub)
 * [Retrieving past entries](http://documentation.superfeedr.com/subscribers.html#retrieving-entries-with-pubsubhubbub)
 
-For example, here is, in realtime, a list of stories that mention "Music". 
-
-<ul id="sse-feed">Loading...</ul>
 
 ### Pricing
 
