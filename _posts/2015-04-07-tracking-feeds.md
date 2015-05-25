@@ -5,12 +5,11 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: [
-"https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js"
+"https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js",
+'../scripts/server-sent-events-tracking.js'
 ]
 tags: tracking, stream, trackers
 ---
-<script src="../scripts/server-sent-events-tracking.js" >
-</script>
 
 We're incredibly excited to introduce a new type of user on Superfeedr today: [trackers](https://superfeedr.com/tracker).
 
