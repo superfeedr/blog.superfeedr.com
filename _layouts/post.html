@@ -9,8 +9,8 @@ layout: default
 
   <div class="entry-meta">
     <ul class="entry-meta--primary postmeta">
-      <li class="entry-meta--item">By <span class="p-author h-card"><img alt="avatar {{ page.author_name }}" class="u-photo" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20" > <a href="{{ page.author_uri}}" rel="author">{{ page.author_name }}</a></span></li>
-      <li class="entry-meta--item dt-published" datetime="{{ page.date | date_to_xmlschema }}"><time>{{ page.date | date_to_string }}</time></li>
+      <li class="entry-meta--item author">By <span class="p-author h-card vcard"><img alt="avatar {{ page.author_name }}" class="u-photo" src="http://www.gravatar.com/avatar/{{page.author_email_md5}}?s=20"> <a href="{{ page.author_uri}}" class="url fn" rel="author">{{ page.author_name }}</a></span></li>
+      <li class="entry-meta--item dt-published published dt-updated updated" datetime="{{ page.date | date_to_xmlschema }}"><time>{{ page.date | date_to_string }}</time></li>
     </ul>
   </div>
   <div class="entry-content e-content">

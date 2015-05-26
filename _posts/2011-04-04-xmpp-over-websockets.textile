@@ -5,6 +5,8 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+tags: openweb, html5, xmpp
+description: "XMPP's biggest hurdle is that it does not run in the browser. HTML5's webscoket can change that for the best! Let's XMPP all of the browsers!"
 ---
 
 You know *we're great XMPP fans* : it's _by far the greatest protocol to "push" content from a server to client_. It comes with stuff like *identity*, *authentication*, *presence*, and many awesome features. Yet, it is not as widespread as HTTP.
