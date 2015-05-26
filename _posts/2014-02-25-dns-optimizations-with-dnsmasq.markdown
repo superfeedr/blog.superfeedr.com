@@ -5,6 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 tags: dns, backend, dnsmasq
+description: "DNS resolution is key to Superfeedr's speed. Caching records is hence very important. Here we show how using Dnsmasq helps us speed things up."
 ---
 
 We **currently fetch milions of feeds** and we need to do that in a very timely fashion. Since the beginning of 2014, it took about *600ms* to fetch a feed on average. The fetching time includes *DNS resolution*, the *establishment of the HTTP connection*, the *HTTP transfer*, and the *decoding of the answer* (if it was gzipped for example). This is by far what takes the longest [wall time](http://en.wikipedia.org/wiki/Wall-clock_time).
