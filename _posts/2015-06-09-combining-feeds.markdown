@@ -63,6 +63,7 @@ We're string believer in the open web and when great open web protocols exist, w
 * we encode the `hub.callback` query string
 * we create an `authorization` query string parameter which is just a `base64` encoded version of the `login:token` string. (you can also copy it from the URL when opening the combined feed in a new tab).
 
+Here's a code sample:
 
 {% prism javascript%}
 
