@@ -1,3 +1,4 @@
+url: http://blog.superfeedr.com
 permalink: /:categories/:title/
 highlighter: prism
 markdown:    kramdown
