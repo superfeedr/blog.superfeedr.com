@@ -73,7 +73,7 @@ url += "&hub.mode=retrieve";
 url += "&hub.callback=https%3A%2F%2Fpush.superfeedr.com%2Fdev%2Fnull";
 url += "&authorization=c3VwZXJmZWVkcjpjNzU1ZjMyYjkzZmQ1MGM3NTQyZTIwNzYxOWJjMmI4NQ%3D%3D&";
 
-{% endprism%}
+{% endprism %}
 
 We can then create the `EventSource` object:
 
