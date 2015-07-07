@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="./superfeedr.js"></script>
+    <script type="text/javascript">
+
+    function initialize() {
+      var feed = new superfeedr.Feed("http://blog.superfeedr.com/atom.xml");
+      feed.load(function(result) {
+        if (!result.error) {
+          console.log(result)
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+          }
+        }
+        else {
+          console.log(result.error)
+        }
+      });
+    }
+
+    superfeedr.auth('superfeedr', 'c77d4103dfe9fe2f32b19b9b4653c09b');
+    superfeedr.setOnLoadCallback(initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="feed"></div>
+  </body>
+</html>

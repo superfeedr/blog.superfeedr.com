@@ -5,6 +5,9 @@ categories: [Feeds, RSS, Atom, Best Practice]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+description: "Publishing RSS feeds can seem trivial. Yet, so many people do it wrong, even within the large companies. Here are some good practices if you're adding RSS feeds to your app. This is better for your users, the apps consuming the feeds and you!"
+tags: RSS, best practice, openweb
+
 ---
 
 Working with publishers and polling hundreds of thousands of feed has taught us a few lessons and best practices for people who publish RSS or Atom feeds. You might disagree with some of them, so please, let us know in the comments.
