@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Real-time Web and it's future"
+title: "The Real-time Web and its future"
 categories: [Real-time, statistics, market]
 author_name: Julien
 author_uri: http://ouvre-boite.com

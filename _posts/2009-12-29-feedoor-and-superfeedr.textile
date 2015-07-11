@@ -10,11 +10,7 @@ alias: /API/Perl/PubSubHubbub/feedoor/use-case/feedoor-and-superfeedr/
 
 Earlier this month "Mamod":http://twitter.com/Mamod sent me a notice saying that they enabled real-time feeds management to any website or blog (See "Arabcrunch":http://arabcrunch.com/2009/12/feedoor-enables-real-time-feeds-management-to-any-website-or-blog.html) used through "Feedoor":http://www.feedoor.com/.
 
-Mamod was kind enough to create this great presentation on how he integrated "Superfeedr":http://superfeedr.com/ into Feedoor :
-
-<div style="width:425px;text-align:left" id="__ss_2705362"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/mamod/superfeedr-integration-with-feedoor2" title="Superfeedr Integration With Feedoor">Superfeedr Integration With Feedoor</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=superfeedrintegrationwithfeedoor2-091212111230-phpapp02&stripped_title=superfeedr-integration-with-feedoor2" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=superfeedrintegrationwithfeedoor2-091212111230-phpapp02&stripped_title=superfeedr-integration-with-feedoor2" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/mamod">mamod</a>.</div></div>
-
-He also sent me the following :
+Mamod was kind enough to create this great presentation on how he integrated "Superfeedr":http://superfeedr.com/ into Feedoor. He also sent me the following :
 
 bq. Our major concern was to make all bloggers able to *enable real-time support for their feeds*, and Superfeedr helped us to achieve that.
 

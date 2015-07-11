@@ -22,7 +22,7 @@ The [Google Feed API](https://developers.google.com/feed/v1/devguide) is one of 
 
 If you want to use Superfeedr's API, you need to create a (free) [subscriber account](https://superfeedr.com/subscriber/). You also need to *subscribe* to the feed(s) you want to retrieve using Superfeedr's management interface, as well as create an authentication token. 
 
-All of this should not take more than a couple minutes and you're ready to start implementing: the most notable differences with [Google's code](https://developers.google.com/feed/v1/devguide#hiworld) is that we use and extra `auth` method which takes both a subscriber login and a token. 
+All of this should not take more than a couple minutes and you're ready to start implementing: the most notable differences with [Google's code](https://developers.google.com/feed/v1/devguide#hiworld) is that we use an extra `auth` method which takes both a subscriber login and a token. 
 
 {% prism markup %}
 <html>
