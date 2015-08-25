@@ -324,7 +324,7 @@ function percentiles_with_chebyshev(div, opts) {
 	var recursiveAverage = 0;
 	var recursiveAverageOfSquares = 0;
 
-	var recurs = 100000;
+	var recurs = 100;
 	var vals = 0;
 
 	if(!opts)
