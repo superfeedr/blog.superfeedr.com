@@ -71,7 +71,7 @@ Let's now see how to compute the standard deviation.
 
 In math terms, the variance can be written like this: $$\sigma = \frac{1}{N} * \sum_{k=1}^N (\mu-k)^2 $$ where $$\mu$$ is the mean, $$N$$ is the number of items. We immediately see the **problem** here: *we need to keep track of all items to check their distance to the mean*. Luckily, Koenig and Huygens came up with an [algebraic formula for the variance](https://en.wikipedia.org/wiki/Algebraic_formula_for_the_variance) which states that $$\sigma = \frac{1}{N} * \sum_{k=1}^N k^2 - \mu^2 $$. The 1st member is the mean of squared values. As [we've seen previously](/streaming-average/), we can use recursive streaming averages to estimate averages of data streams.
 
-Computing the variance is then trivial (as the difference of 2 streaming averages). From there, we get the standard deviation (square route), and we can then find in which percentile any data point is.
+Computing the variance is then trivial (as the difference of 2 streaming averages's squares). From there, we get the standard deviation (square root), and we can then find in which percentile any data point is.
 
 Here's a stream of data point from a normal distribution (Javascript code stolen from [Eric Woroshow](https://github.com/errcw/gaussian)) with a mean of 0.5 and a standard deviation of 0.1. The red line shows the 90th percentile ($$1.65*\sigma$$). 
 
