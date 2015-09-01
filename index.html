@@ -4,7 +4,7 @@ title: Superfeedr Blog
 description: "We blog about Superfeedr's features, how to parse RSS feeds with several web platforms, the open web and more!"
 ---
 
-{% for post in site.posts limit:10 %}
+{% for post in paginator.posts limit:10 %}
 
 <article class="blog-article h-entry hentry">
 	<h2 class="entry-title p-name"><a class="u-url" href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -37,10 +37,28 @@ description: "We blog about Superfeedr's features, how to parse RSS feeds with s
 
 {% endfor %}
 
-<p>
-	Superfeedr's powerful unified Feed API simplifies how you handle RSS, Atom, or JSON feeds. Whether you publish or consume feeds, we streamline the notification process, saving you time and resources.
-</p>
+<article class="container container--content pagination" style="width:100%; text-align: center">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous button button--raised  button--positive">Previous Page</a>
+  {% else %}
+<!--     <span class="previous button button--raised  button--neutral">Previous</span>
+ -->  {% endif %}
+<!--   <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+ -->  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}"  class="next button button--raised  button--positive">Next Page</a>
+  {% else %}
+<!--     <span class="next button button--raised  button--neutral">Next</span>
+ -->  {% endif %}
+</article>
 
-<p>
-	We blog about Superfeedr's features, how to parse RSS feeds with several web platforms, the open web and more!
-</p>
+
+<article class="blog-article">
+	<h3>What is Superfeedr?</h3>
+	<p>
+		Superfeedr's powerful unified <strong>Feed API</strong> simplifies how you handle <em>RSS, Atom, or JSON feeds</em>. Whether you publish or consume feeds, we streamline the notification process, saving you time and resources.
+	</p>
+
+	<p>
+		We blog about Superfeedr's features, how to parse RSS feeds with several web platforms, the open web and more!
+	</p>
+</article>

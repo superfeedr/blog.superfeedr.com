@@ -2,5 +2,7 @@ url: http://blog.superfeedr.com
 permalink: /:categories/:title/
 highlighter: prism
 markdown:    kramdown
+paginate: 10
+paginate_path: "/:num/"
 gems:
   - jekyll-sitemap
