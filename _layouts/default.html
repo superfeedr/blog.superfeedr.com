@@ -6,9 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   {% if page.description %}
-  <meta name="description" content="{{page.description}}" />
+    {% if paginator.page %}
+      <meta name="description" content="{{page.description}} - Page {{ paginator.page }}" />
+    {% else %}
+      <meta name="description" content="{{page.description}}" />    
+    {% endif %}
   {% else %}
-  <meta name="description" content="{{ page.title }}" />
+    {% if paginator.page %}
+      <meta name="description" content="{{page.title}} - Page {{ paginator.page }}" />
+    {% else %}
+      <meta name="description" content="{{page.title}}" />    
+    {% endif %}
   {% endif %}
 
 
@@ -17,7 +25,11 @@
   <link href="/css/prism.css" rel="stylesheet" type="text/css">
   <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
 
+  {% if paginator.page %}
+  <title>Superfeedr Blog - {{ page.title }} - Page {{ paginator.page }}</title>
+  {% else %}
   <title>Superfeedr Blog - {{ page.title }}</title>
+  {% endif %}
 
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
   <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
