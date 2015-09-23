@@ -20,10 +20,15 @@
   {% endif %}
 
 
-
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic%7CSource+Code+Pro:400,600' rel='stylesheet' type='text/css'>
   <link href="/css/prism.css" rel="stylesheet" type="text/css">
   <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+  {% for css_file in page.css_includes %}
+  <link href="{{ css_file }}" rel="stylesheet" type="text/css">
+  {% endfor %}
+
 
   {% if paginator.page %}
   <title>Superfeedr Blog - {{ page.title }} - Page {{ paginator.page }}</title>
