@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: retrieve, callback, search, feed api
+tags: [retrieve, callback, search, feed api]
 ---
 
 You're probably familiar with our [retrieve by feed](http://documentation.superfeedr.com/subscribers.html#retrieving-entries-with-pubsubhubbub) API which lets you retrieve past content from a feed quite conveniently:

@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: ""
-tags: reactjs, static, feed api, server-sent-events, eventsource, stream
+tags: [reactjs, static, feed api, server-sent-events, eventsource, stream]
 ---
 
 [React](https://facebook.github.io/react/) is an open-source javascript framework for creating user interfaces. At Superfeedr, we already use it for a bunch of internal tools and projects to be released. A couple of months ago, we also released [Reader News](https://readers-ne.ws/) which is a **river of news** style feed reader. For this example, we subscribed to the blogs of several feed readers.

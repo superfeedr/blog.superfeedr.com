@@ -6,7 +6,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "We curated a list of popular feeds. These top feeds have been extracted from the Superfeedr database."
-tags: popularity, feed api, metadata, top feeds, curation
+tags: [popularity, feed api, metadata, top feeds, curation]
 ---
 
 **[Update]** we now have a much better way to assess the popularity of each feed inside Superfeedr by combining many different signals, from the social networks, the feed readers... etc. Check "our schema for details":http://documentation.superfeedr.com/schema.html#popularity and see how to use Superfeedr to "subscribe to the most popular content":/subscribe-to-popular-rss-feeds/ on the web.!

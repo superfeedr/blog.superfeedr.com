@@ -7,7 +7,7 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js"
 ]
-tags: twitter, feed api, openweb
+tags: [twitter, feed api, openweb]
 ---
 
 > "Those who cannot remember the past are condemned to repeat it." 

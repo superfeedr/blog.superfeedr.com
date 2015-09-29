@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "You can now search subscriptions to feeds using their porn rank and bozo rank or their velocity."
-tags: search, subscriptions, feeds, bozo, porn, velocity, feed api
+tags: [search, subscriptions, feeds, bozo, porn, velocity, feed api]
 ---
 
 Last november, we started adding [more metadata](/more-metadata/) to the notifications we send:

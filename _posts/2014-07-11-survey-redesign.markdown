@@ -4,7 +4,7 @@ title: "Survey for the new Superfeedr.com"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: company, plans, design
+tags: [company, plans, design]
 ---
 
 The main Superfeedr.com is about to change. We've started working on a complete redesign of our identity and features offered by the website. For this, we need your help to understand what exactly you would expect from us. Please help us by filling out this quick form.

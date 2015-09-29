@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: subscribe, retrieve, http, feed api
+tags: [subscribe, retrieve, http, feed api]
 ---
 
 Do you know what has been the oldest Superfeedr *feature request*? 

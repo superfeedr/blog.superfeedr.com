@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "State is a luxury that fewer and fewer application have: the data changes faster than it takes to iterate over it, it does not fit in memory and yet, we need simple things like averages to always be up to date. "
-tags: algorithm, streams
+tags: [algorithm, streams]
 js_includes: [
 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js',
 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML',

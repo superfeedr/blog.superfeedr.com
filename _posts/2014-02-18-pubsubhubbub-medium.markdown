@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: pubsubhubbub, publisher, customer
+tags: [pubsubhubbub, publisher, customer]
 ---
 
 In the last couple months, the **blogging platform** world has been innovative again. [Medium](https://medium.com/), one of these new players have been leading the way with an amazing interface to write and read content.

@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: language, feed api, metadata
+tags: [language, feed api, metadata]
 ---
 
 Extracting more metadata about feeds and entries is one of our highest priorities. A couple months ago, [we started surfacing](/more-metadata/) a *porn rank* and a *bozo rank* to help you identify NSFW or broken feeds.

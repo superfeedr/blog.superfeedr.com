@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Recently, both Apple and Facebook started to recommend using RSS as an publishing tool for their platforms."
-tags: guidelines, RSS, reboot
+tags: [guidelines, RSS, reboot]
 ---
 
 The publishing industry is evolving quite quickly these days and several tech giants have recently showed their love of RSS. 

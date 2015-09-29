@@ -4,7 +4,7 @@ title: "DNS Optimizations with Dnsmasq"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: dns, backend, dnsmasq
+tags: [dns, backend, dnsmasq]
 description: "DNS resolution is key to Superfeedr's speed. Caching records is hence very important. Here we show how using Dnsmasq helps us speed things up."
 ---
 

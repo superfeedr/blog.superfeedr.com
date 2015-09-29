@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "Agregating RSS feeds in a web application is easier than ever with the Superfeedr Rails Engine. Here's a tutorial on how to consume RSS/atom in a Ruby On Rails web application."
 js_includes: []
-tags: ruby, rails, engine
+tags: [ruby, rails, engine]
 ---
 
 *Consuming RSS feeds in a web application* is often **complex** and requires *offline workers* or *queue systems* which are yet another infrastructure to maintain. This scheduling algorithm also means that this application will be "late" at detecting updates or will check the feeds too frequently for most publishers.

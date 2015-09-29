@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: company, plans
+tags: [company, plans]
 ---
 
 Happy new year! 2014 has been a **fantastic year** for Superfeedr with a lot of new customers consuming our [feed APIs](https://superfeedr.com/subscriber), a [complete redesign](http://blog.superfeedr.com/new-design/), as well as a lot of great backend changes to help us scale further and further every month. 

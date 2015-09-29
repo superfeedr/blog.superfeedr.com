@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: webhook, pubsubhubbub, http
+tags: [webhook, pubsubhubbub, http]
 ---
 
 [Webhooks](http://en.wikipedia.org/wiki/Webhook) provide a very elegant solution to the *polling problem*, and many popular APIs such as [Github](http://developer.github.com/v3/repos/hooks/), [Mailchimp](http://apidocs.mailchimp.com/webhooks/), [Instagram](http://instagram.com/developer/realtime/#) or even [Shopify](http://docs.shopify.com/manual/settings/notifications/webhooks) provide such hooks.

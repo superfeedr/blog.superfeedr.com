@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: webhook, debug, pubsubhubbub, replay
+tags: [webhook, debug, pubsubhubbub, replay]
 ---
 
 A [webhook](https://en.wikipedia.org/wiki/Webhook) is a very common design pattern for HTTP APIs. Webhooks provide an elegant mechanism for developers who are interested in changes happening "rarely" on an HTTP resource (or API). They are sometimes called *callback URL*.

@@ -4,7 +4,7 @@ title: "Reboot RSS"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: openweb, rss
+tags: [openweb, rss]
 ---
 
 If you read this blog, by now, you probably know that we're convinced that *RSS feeds are amazing and can solve a huge number of common issues* faced by today's web: **decentralization**, **open-ness**, **privacy**... etc.

@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: company, aprilfools
+tags: [company, aprilfools]
 ---
 
 Branding is the most important aspect of any tech company. After our redesign last year, we decided to sit with an internationaly recognized consulting firm and assess our brand and the messages it conveys. 

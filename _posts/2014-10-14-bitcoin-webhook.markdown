@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: bitcoin, webhook, fragment
+tags: [bitcoin, webhook, fragment]
 ---
 
 At this point, you have certainly heard about [Bitcoin](https://bitcoin.org/). It's the most famous crypto-currency which relies on a shared ledger to determine every account's balance.

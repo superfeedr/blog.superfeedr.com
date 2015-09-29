@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: token, authentication, security
+tags: [token, authentication, security]
 ---
 
 This is yet another benefit from the introduction of [our new frontend](http://blog.superfeedr.com/push-endpoint/) back in november: starting today, Superfeedr offers [authentication tokens](https://superfeedr.com/tokens/new).

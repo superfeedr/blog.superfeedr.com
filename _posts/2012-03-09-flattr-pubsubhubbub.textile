@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: pubsubhubbub, publisher, customer
+tags: [pubsubhubbub, publisher, customer]
 ---
 
 I have to confess I am not the best at writing consistently and often on that blog. There are so many topics that I want to write about: writing a "Chrome application":http://msgboy.com/, the future of "PubSubHubbub":http://code.google.com/p/pubsubhubbub/, not using "JQuery":http://jquery.com/ when it's not necessary, our "Heroku Addon":https://addons.heroku.com/superfeedr... etc. But today, I want to share with you an awesome new hub that we host at Superfeedr.

@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: xmpp, backend, prosody
+tags: [xmpp, backend, prosody]
 ---
 
 We have recently updated our XMPP servers and we're now using [Prosody.im](https://prosody.im/). It does not change much for our existing users.

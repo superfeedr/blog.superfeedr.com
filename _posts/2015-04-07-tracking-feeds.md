@@ -8,7 +8,7 @@ js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js",
 '../scripts/server-sent-events-tracking.js'
 ]
-tags: tracking, stream, trackers
+tags: [tracking, stream, trackers]
 ---
 
 We're incredibly excited to introduce a new type of user on Superfeedr today: [trackers](https://superfeedr.com/tracker).

@@ -4,7 +4,7 @@ title: "Superfeedr, Hapi & Feedparser"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: javascript, hapi, feed api, pack
+tags: [javascript, hapi, feed api, pack]
 ---
 
 The last couple weeks have been busy with the [redesign](http://blog.superfeedr.com/survey-redesign/). We had to update our venerable Rails 2.3.X app and move to a new Ruby2.0 + Rails 3.2 stack, with Rails 4.0 right around the corner.

@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "The web has hundreds of millions of RSS feeds. Only a hadful of them is popular and Superfeedr lets you subscribe only to the most popular RSS feeds."
-tags: RSS, tracker, popularity, feed api, metadata
+tags: [RSS, tracker, popularity, feed api, metadata]
 js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js",
 '../scripts/server-sent-events-popular-feeds.js',

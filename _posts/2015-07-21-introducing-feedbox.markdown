@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Our tracker feeds let you track feeds from all over the web. The Feedbox allows anyone to add their feeds to the mix!"
-tags: tracking, trackers, RSS
+tags: [tracking, trackers, RSS]
 ---
 
 Our [tracking feeds](https://superfeedr.com/tracker) let trackers build applications which **track keywords, boolean expressions and more in real time**. Want to know any mention of a product name, any mention of a brand, any link to a site in real time? That's what our trackers are for.

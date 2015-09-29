@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: feed api, list, subscription
+tags: [feed api, list, subscription]
 ---
 
 As we're closing on the redesign of [Superfeedr](https://superfeedr.com/), we found that there was a bunch of simple improvements we could bring to the API to bring **increase consistency and usability**.

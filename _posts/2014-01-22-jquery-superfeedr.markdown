@@ -7,7 +7,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: ["http://code.jquery.com/jquery-1.10.1.min.js",
 "https://raw.githubusercontent.com/superfeedr/superfeedr-jquery/master/superfeedr.jquery.js"]
-tags: javascript, jquery, feed api
+tags: [javascript, jquery, feed api]
 ---
 
 Today, we're happy to introduce the first [Superfeedr Jquery plugin](http://plugins.jquery.com/superfeedr/). It's simple piece of *syntactic* sugar that was aked by one of our customers but makes it really simple to **integrate an RSS feed into a page**!

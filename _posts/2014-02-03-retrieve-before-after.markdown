@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: retrieve, http, feed api
+tags: [retrieve, http, feed api]
 ---
 
 As you know, we've invested a lot recently in our retrieve API (see the [jquery plugin](http://blog.superfeedr.com/jquery-superfeedr/) and [subscribe & retrieve](http://blog.superfeedr.com/subscribe-retrieve/). This API allows you to **retrieve the past** content from any feed, based on what Superfeedr stored of it. It's an easy way to *bootstrap* your application with historic data before you start getting new entries.

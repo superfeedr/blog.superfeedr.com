@@ -9,7 +9,7 @@ js_includes: [
 "../scripts/angular-superfeedr.js",
 "../scripts/angular-demo.js"
 ]
-tags: javascript, angularjs, feed api
+tags: [javascript, angularjs, feed api]
 description: "Parsing RSS feeds with Angular has never been easier by using Superfeedr. Here's a tutorial on how to consume RSS with Angularjs"
 ---
 

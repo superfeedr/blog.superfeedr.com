@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: debug, replay, pubsubhubbub
+tags: [debug, replay, pubsubhubbub]
 ---
 
 Debugging webhook patterns is tricky because they're mostly asynchronous: the *subscribing* (which listens to the webhook) side usually does not control the *publishing* side (which triggers the webhook).

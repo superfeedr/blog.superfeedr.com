@@ -5,7 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: http, feed api, backend
+tags: [http, feed api, backend]
 ---
 
 We've been a bit silent in the past couple months here at Superfeedr.It's because we've been working on a complete rewrite of our [PubSubHubbub endpoint](http://push.superfeedr.com/).

@@ -6,7 +6,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "Publishing RSS feeds can seem trivial. Yet, so many people do it wrong, even within the large companies. Here are some good practices if you're adding RSS feeds to your app. This is better for your users, the apps consuming the feeds and you!"
-tags: RSS, best practice, openweb
+tags: [RSS, best practice, openweb]
 
 ---
 

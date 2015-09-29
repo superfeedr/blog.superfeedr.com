@@ -6,7 +6,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 alias: /activity/pubsubhubbub/streams/activity-streams/
-tags: openweb, activitystreams
+tags: [openweb, activitystreams]
 description: "ActivityStreams are a key component of the social web. Superfeedr is able to process them as feeds."
 ---
 

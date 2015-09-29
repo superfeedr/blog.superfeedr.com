@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Knowing when someone links to your site is extremly important for SEO, but also community management. Tracking feeds let you do that very easily"
-tags: tracking, search, backlinks, SEO, webmentions
+tags: [tracking, search, backlinks, SEO, webmentions]
 ---
 
 Anyone who's spent at least 5 minutes looking at Search Engine Optimizations found how crucial [backlinks](https://en.wikipedia.org/wiki/Backlink) are. In practice for search engines, they're *votes* that lets them rank all sites together. In the social web world, people often talk about [@mentions](http://en.wikipedia.org/wiki/Mention_%28blogging%29), which are ways to link a post or a picture to someone else. 

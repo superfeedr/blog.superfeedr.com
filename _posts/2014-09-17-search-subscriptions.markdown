@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: feed api, list, subscriptions, search
+tags: [feed api, list, subscriptions, search]
 ---
 
 Earlier, in July, when [we asked our customers](http://blog.superfeedr.com/survey-redesign/) what they wanted our redesign to include, a few of them mentionned that it was sometimes hard for them to find a given subscription or a set of subscriptions matching specific requirements.

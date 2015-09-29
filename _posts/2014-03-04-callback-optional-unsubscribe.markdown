@@ -4,7 +4,7 @@ title: "Unsubscribing without the hub.callback"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-tags: feed api, unsubscribe, pubsubhubbub
+tags: [feed api, unsubscribe, pubsubhubbub]
 ---
 
 

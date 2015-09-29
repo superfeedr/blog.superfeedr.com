@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-tags: http, user-agent, pubsubhubbub
+tags: [http, user-agent, pubsubhubbub]
 ---
 
 A couple weeks ago, we moved this static blog from github pages to Amazon S3. The move itself was uneventful, as both plaforms handle CNAME's pretty well. However, S3 provides a feature that we needed: **redirects**. We wanted to redirect [our feed address](http://blog.superfeedr.com/atom.xml) to an app which we could use to monitor who is polling our feed. We created a very simple Node application application which proxies our Atom feed while recording hits (both user-agent and IP) in a Redis database.

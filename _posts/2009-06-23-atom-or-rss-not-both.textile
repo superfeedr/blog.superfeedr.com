@@ -6,7 +6,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "Do not publish both an Atom and an RSS feed: chose one and make it perfect."
-tags: guidelines, RSS, openweb
+tags: [guidelines, RSS, openweb]
 ---
 
 "RSS":http://en.wikipedia.org/wiki/RSS_(file_format) and "ATOM":http://www.atomenabled.org/developers/syndication/atom-format-spec.php have very similar (if not identical) purposes. I don't know any feed consumer that consumes only one type, yet, a lot of services are still providing both.
