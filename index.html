@@ -39,16 +39,16 @@ description: "We blog about Superfeedr's features, how to parse RSS feeds with s
 
 <article class="container container--content pagination" style="width:100%; text-align: center">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous button button--raised  button--positive">Previous Page</a>
+    <a href="{{ paginator.previous_page_path }}" class="previous button button--raised  button--positive">← Previous Page ({{ paginator.previous_page }})</a>
   {% else %}
-<!--     <span class="previous button button--raised  button--neutral">Previous</span>
- -->  {% endif %}
-<!--   <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
- -->  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}"  class="next button button--raised  button--positive">Next Page</a>
+    <span class="previous button button--raised  button--neutral">← Previous Page</span>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}"  class="next button button--raised  button--positive">Next Page ({{ paginator.next_page }}) →</a>
   {% else %}
-<!--     <span class="next button button--raised  button--neutral">Next</span>
- -->  {% endif %}
+    <span class="next button button--raised  button--neutral">Next Page →</span>
+  {% endif %}
 </article>
 
 
