@@ -5,6 +5,7 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+description: "Superfeedr supports ActivityStreams for iTunes feeds, using Apple's namespace for RSS feeds."
 ---
 
 Let's put our money where our mouth is. Last week, we wrote about the "need to favor protocols over APIs":http://blog.superfeedr.com/protocols-over-api/. This obviously also applies to schemas.

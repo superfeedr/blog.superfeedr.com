@@ -7,8 +7,6 @@ author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Most web applications these days will come with an OAuth endpoint to authenticate against the API. At Superfeedr, we stick to HTTP Basic. Here's why."
 tags: api, authentication
-js_includes: [
-]
 ---
 
 One of the most recurring question that we have regarding our API is why we do not use OAuth. Generally, the question comes from people who do not use our API yet!

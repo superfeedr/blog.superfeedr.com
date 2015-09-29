@@ -5,10 +5,8 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-description: ""
+description: "The Google Feed API bas been deprecated. Replace it with Superfeedr."
 tags: RSS, feed api, Google, shim, javascript
-js_includes: [
-]
 ---
 
 

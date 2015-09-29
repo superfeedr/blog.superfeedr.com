@@ -4,9 +4,8 @@ title: "River.news"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-js_includes: []
 description: "A RSS River is the perfect use case for us to build a fully static application which uses React.js and Superfeedr's API. That's what we did: here's http://river.news."
-tags: 
+tags: openweb, reactjs, static, reader
 js_includes: [
 '//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js',
 '//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js',

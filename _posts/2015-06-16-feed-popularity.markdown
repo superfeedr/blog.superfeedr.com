@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-description: ""
+description: "In our effort to provide more meta-data about RSS feeds on the web, today, we're adding popularity."
 tags: metadata, popularity, feed api
 ---
 
