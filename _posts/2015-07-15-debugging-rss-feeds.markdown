@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-description: ""
+description: "RSS feeds, like any other type of HTTP web resource have a life of their own and even if they may be behaving as expected at a given point, they are likely to break in the future. Superfeedr will take care of these broken feeds for you."
 tags: [debugging, RSS, metadata, feed api]
 ---
 

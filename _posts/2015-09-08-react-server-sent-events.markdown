@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
-description: ""
+description: "Integrating Server-Sent Events in React is trivial. Here's an example."
 tags: [reactjs, static, feed api, server-sent-events, eventsource, stream]
 ---
 
