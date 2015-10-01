@@ -8,7 +8,7 @@ description: "RSS autodiscovery is a mechanism that makes it simple for browsers
 tags: [rss, openweb, discovery, practices]
 ---
 
-RSS is **meant to be consumed by machines and software**, not by humans. The *accronym is meaningless* and we should not expose it to users. The *orange wave icon* is similarly cryptic and we should rather [show actionable buttons](https://www.subtome.com/#/) to our readers and users when we wat them to subscribe to the content we publish.
+RSS is **meant to be consumed by machines and software**, not by humans. The *accronym is meaningless* and we should not expose it to users. The *orange wave icon* is similarly cryptic and we should rather [show actionable buttons](https://www.subtome.com/#/) to our readers and users when we want them to subscribe to the content we publish.
 
 When the users subscribe (or follow) to a pages, they do it *in the context of said page*. For example, on this very blog, you can subscribe using the button at the [bottom of this post](#blog-more). This means that the application which handles the *subscription* is probably passed something like this page's URL.
 
