@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Building an RSS bot for Telegraph with AWS Lambda"
+title: "Building an RSS bot for Telegram with AWS Lambda"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-description: "In this post we illustrate how to create an RSS bot with Superfeedr, Amazon Lambda for the Telegraph messenger."
+description: "In this post we illustrate how to create an RSS bot with Superfeedr, Amazon Lambda for the Telegram messenger."
 tags: [rss, bot, webhook]
 ---
 
-In this post we illustrate how to create an **RSS bot** with [Superfeedr](http://superfeedr.com/), [Amazon Lambda](https://aws.amazon.com/lambda/) for the [Telegraph messenger](https://telegram.org).
+In this post we illustrate how to create an **RSS bot** with [Superfeedr](http://superfeedr.com/), [Amazon Lambda](https://aws.amazon.com/lambda/) for the [Telegram messenger](https://telegram.org).
 
-What's an RSS bot you ask? Well, that's simple. It's a chat bot which answers the following commands: `/subscribe http://blog.superfeedr.com/atom.xml` and will then send you messages when the feed updates. Are you using Telegraph? [Try it by yourself](https://telegram.me/superfeedr_bot)!
+What's an RSS bot you ask? Well, that's simple. It's a chat bot which answers the following commands: `/subscribe http://blog.superfeedr.com/atom.xml` and will then send you messages when the feed updates. Are you using Telegram? [Try it by yourself](https://telegram.me/superfeedr_bot)!
 
-In practice, both Superfeedr and Telegraph's bot API rely on **webhooks** ([PubSubHubbub is webhooks](http://blog.superfeedr.com/webhooks-improved/) with benefits). This means that our app's main goal will be to *translate incoming messages* from one to the other. We'll do that by processing incoming HTTP requests from a service and trigger and outbound HTTP request to the other.
+In practice, both Superfeedr and Telegram's bot API rely on **webhooks** ([PubSubHubbub is webhooks](http://blog.superfeedr.com/webhooks-improved/) with benefits). This means that our app's main goal will be to *translate incoming messages* from one to the other. We'll do that by processing incoming HTTP requests from a service and trigger and outbound HTTP request to the other.
 
 ### Lambda
 
@@ -83,13 +83,13 @@ Right now our lambda does nothing... which mean that it returns null by default.
 
 ### Plugging the bot
 
-[Creating a Telegraph bot](https://core.telegram.org/bots) is meta... you do it using the bot [BotFather](https://telegram.me/botfather). Follow the bot's instructions :
+[Creating a Telegram bot](https://core.telegram.org/bots) is meta... you do it using the bot [BotFather](https://telegram.me/botfather). Follow the bot's instructions :
 
 ![Stage Summary](/images/rss-bot-telegraph-lambda/create-bot.png)
 
 At the bottom, you see the authentication token, which you should keep secret! 
 
-Telegraph can invoke our webhook for any incoming message to our bot. All messages will be sent as a JSON blob to our lambda function. Telegraph offers the `setWebhook` call which does just this:
+Telegram can invoke our webhook for any incoming message to our bot. All messages will be sent as a JSON blob to our lambda function. Telegram offers the `setWebhook` call which does just this:
 
 {% prism bash %}
 
@@ -140,7 +140,7 @@ exports.handler = function(event, context) {
   return context.succeed("Hum. who are you?");
 };
 
-/* A (simpistic) library to post to Telegraph */
+/* A (simpistic) library to post to Telegram */
 var telegraphBot = {
   // Sends a message to the chatId. Calls callback when done
   sendMessage: function(chatId, message, callback) {
@@ -228,7 +228,7 @@ function superfeedrHandler(event, context) {
 }
 
 /*
-  Handles chat messages from Telegraph.
+  Handles chat messages from Telegram.
   We should identify commands and handle them
   We should respond for the commands we dd not process or do not understand
 */
@@ -281,7 +281,7 @@ function parseCommand(text) {
 
 {% endprism %}
 
-Of course, this bot is quite limited for now... for example, you could add more commands, such as `unsubscribe`, `list`. You could also add support for Telegraph's custom keyboards!
+Of course, this bot is quite limited for now... for example, you could add more commands, such as `unsubscribe`, `list`. You could also add support for Telegram's custom keyboards!
 
 
 
