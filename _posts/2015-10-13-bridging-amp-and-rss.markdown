@@ -5,7 +5,7 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "The AMP project became public last week. "
-tags: [rss, bot, webhook]
+tags: [openweb, RSS, Twitter, Google, Facebook]
 js_includes: ["//platform.twitter.com/widgets.js"]
 ---
 
