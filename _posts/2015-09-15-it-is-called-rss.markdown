@@ -6,7 +6,7 @@ author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Google and Twitter are re-inventing the wheel with a new kind of web link and article storage system that would load online news articles and digital magazine pieces in a few milliseconds. RSS exists and it's great!"
-tags: [openweb, RSS, Twitter, Google]
+tags: [openweb, RSS, Twitter, Google, guidelines, reboot]
 ---
 
 A couple weeks ago, [we rejoiced about the fact](http://blog.superfeedr.com/apple-facebook-rss/) that **both** Facebook and Apple, which have been notoriously known as *closed platforms* and players have been promoting the use of RSS as an ingestion mechanism for their Instant Aricle and News products. When doing this, they joined companies like [Flipboard](http://flipboard.com/) which have been laying the work for a [new kind of web browser](http://www.ouvre-boite.com/new-browsers/) for a long time.
