@@ -24,26 +24,26 @@ Given that our app is extremely simple, there's certainly no need to use a compl
 
 Let's start by creating a new lambda. Lambda lets us chose among multiple *blueprints*. We pick their *hello world* example which uses Node.js. For now, let's leave the code as is. We decided to name the lambda "webhook" and we make sure to use the *Basic Execution Role*. 
 
-![Lambda Blueprint](/images/rss-bot-telegraph-lambda/select-blueprint.png)
+![Lambda Blueprint](/images/rss-bot-telegram-lambda/select-blueprint.png)
 
 We finish by reviewing and creating the lambda.
 
-![Review Lambda](/images/rss-bot-telegraph-lambda/review-lambda.png)
+![Review Lambda](/images/rss-bot-telegram-lambda/review-lambda.png)
 
 
 ### API Gateway
 
 As is, our lambda can only be invoked from *inside* the AWS tools. We'd like to expose it to the outside world and specifically to the open web! For this, we'll use another AWS tool: [API Gateway](https://console.aws.amazon.com/apigateway/home) which is able to route HTTP requests to various AWS tools. Let's start by creating an API.
 
-![new API Gatewar](/images/rss-bot-telegraph-lambda/new-api-getaway.png)
+![new API Gatewar](/images/rss-bot-telegram-lambda/new-api-getaway.png)
 
 Once our API has been created, we need to attach methods. Let's create a `POST` method on the `/` path and configure what happens when our API getaway receive a POST request. We pick 'Lambda function', select the region and enter our **lambda's ARN** (which you can get from your lambda's page, in the top right corner)
 
-![Gateway to Lambda](/images/rss-bot-telegraph-lambda/gateway-lambda-integration.png)
+![Gateway to Lambda](/images/rss-bot-telegram-lambda/gateway-lambda-integration.png)
 
 AWS warns us that we're now exposing our lambda function to the outside which means, in practice that anyone could make requests and trigger costs. On the next screen, AWS shows a summary of the integration. 
 
-![Integrating Lambda](/images/rss-bot-telegraph-lambda/integration-summary.png)
+![Integrating Lambda](/images/rss-bot-telegram-lambda/integration-summary.png)
 
 Here we need to change how the HTTP request is mapped into our lambda's parameters. Click on `Integration Request`. On the next screen, expand `Mapping Templates` and add a mapping the `application/json` Content-Type. On the right, click on the small pencil (or on Mapping Template) and enter the following template:
 
@@ -61,7 +61,7 @@ This tells Amazon that you want to pass an object with 2 keys to your lambda wit
 
 Make sure you save the mapping template and finally click on the *Deploy* button to deploy the API gateway. AWS will ask you to pick a `stage` for your deployment. We chose `v0`. 
 
-![Stage Summary](/images/rss-bot-telegraph-lambda/stage-summary.png)
+![Stage Summary](/images/rss-bot-telegram-lambda/stage-summary.png)
 
 
 {% prism bash %}
@@ -85,7 +85,7 @@ Right now our lambda does nothing... which mean that it returns null by default.
 
 [Creating a Telegram bot](https://core.telegram.org/bots) is meta... you do it using the bot [BotFather](https://telegram.me/botfather). Follow the bot's instructions :
 
-![Stage Summary](/images/rss-bot-telegraph-lambda/create-bot.png)
+![Stage Summary](/images/rss-bot-telegram-lambda/create-bot.png)
 
 At the bottom, you see the authentication token, which you should keep secret! 
 
@@ -120,12 +120,12 @@ var lambda = "https://xcdzbx40nb.execute-api.us-east-1.amazonaws.com/v0/";
 
 /* The Superfeedr credentials */
 var superfeedrCredentials = {
-  login: 'telegraphbot',
+  login: 'telegrambot',
   token: '7e4de2150d78defc8b314486167560cf'
 };
 
-/*The telegraph credentials*/
-var telegraphBotAuth = "126929150:AAGdigQnMlKj0fmhQf4SnNC7C4LOyABjYrI";
+/*The telegram credentials*/
+var telegramBotAuth = "126929150:AAGdigQnMlKj0fmhQf4SnNC7C4LOyABjYrI";
 
 
 /* Main lambda function. context is the object from the API gateway mapping */
@@ -135,13 +135,13 @@ exports.handler = function(event, context) {
   }
   
   if(event["body"] && event["body"]["message"] && typeof(event["body"]["message"]["chat"]) != 'undefined') {
-    return telegraphHandler(event, context);
+    return telegramHandler(event, context);
   }
   return context.succeed("Hum. who are you?");
 };
 
 /* A (simpistic) library to post to Telegram */
-var telegraphBot = {
+var telegramBot = {
   // Sends a message to the chatId. Calls callback when done
   sendMessage: function(chatId, message, callback) {
     var data = querystring.stringify({
@@ -153,7 +153,7 @@ var telegraphBot = {
       method: 'POST',
       host: 'api.telegram.org',
       port: 443,
-      path: '/bot' + telegraphBotAuth + '/sendMessage',
+      path: '/bot' + telegramBotAuth + '/sendMessage',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Content-Length': data.length,
@@ -168,7 +168,7 @@ var telegraphBot = {
     req.end();
   },
 
-  // Responds to a telegraph message
+  // Responds to a telegram message
   respondMessage: function(chatId, message, callback) {
     return callback({"method": "sendMessage", "chat_id": chatId, "text": message});
   }
@@ -215,13 +215,13 @@ var superfeedr = {
 function superfeedrHandler(event, context) {
   // If we have no items, this must be a notification about an error in the feed
   if(!event["body"]["items"]) {
-    return telegraphBot.sendMessage(event["chat_id"], "Hum. We got a problem fetching content from " + event["body"]["status"]["feed"] + ". You may want to unsubscribe from it.", function() {
+    return telegramBot.sendMessage(event["chat_id"], "Hum. We got a problem fetching content from " + event["body"]["status"]["feed"] + ". You may want to unsubscribe from it.", function() {
       return context.succeed("Thanks"); 
     });
   }
   // For each new item in the feed, let's send it to 
   event["body"]["items"].forEach(function(item) {
-    return telegraphBot.sendMessage(event["chat_id"], [item.title, item.permalinkUrl].join(' : '), function() {
+    return telegramBot.sendMessage(event["chat_id"], [item.title, item.permalinkUrl].join(' : '), function() {
       return context.succeed("Thanks"); 
     });    
   });
@@ -232,13 +232,13 @@ function superfeedrHandler(event, context) {
   We should identify commands and handle them
   We should respond for the commands we dd not process or do not understand
 */
-function telegraphHandler(event, context) {
+function telegramHandler(event, context) {
   if(!event["body"]["message"] || !event["body"]["message"]["text"]) {
     return context.succeed({}); // Meh
   }
   var command = parseCommand(event["body"]["message"]["text"]);
   handleCommand(command, event["body"]["message"]["chat"]["id"], function(message) {
-    return telegraphBot.respondMessage(event["body"]["message"]["chat"]["id"], message, function(response) {
+    return telegramBot.respondMessage(event["body"]["message"]["chat"]["id"], message, function(response) {
       context.succeed(response)
     })
   });
