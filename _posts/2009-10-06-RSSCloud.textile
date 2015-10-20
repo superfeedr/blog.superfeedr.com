@@ -5,6 +5,8 @@ categories: [rsscloud, api, PubSubHubbub]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+description: "If the feeds you're subscribed to using Superfeedr support RSSCloud, we'll send you their notification as PubSubHubbub."
+tags: [ping, RSSCloud, PubSubHubbub, openweb]
 ---
 
 "Why make things simple when you can make them complex?". It was probably just too easy to have a common *open* protocol that everyone would share and use for push notifications of feed changes. At Superfeedr, we chose "PubSubHubbub":http://blog.superfeedr.com/api/http/pubsubhubbub/pubsubhubbub/, for "obvious reasons":http://www.techcrunch.com/2009/09/09/rsscloud-vs-pubsubhubbub-why-the-fat-pings-win/, and we're quite happy with it.

@@ -6,6 +6,8 @@ author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 alias: /xml-rpc/ping/pubsubhubbub/xmpp/real-time/XMLRPC-Ping-to-PubSubHubbub
+description: "XML-RPC ping* is the grand father of all ping mechanisms for feeds and blogs. We mapped XML-RPC into PuSH."
+tags: [ping, xmlrpc, PubSubHubbub, openweb]
 ---
 
 Slow blogging these days, but we're still (more than ever!) crushing it :) *XML-RPC ping* is the grand father of all ping mechanisms for feeds and blogs. There are a few famous ping servers, including "Google":http://www.google.com/help/blogsearch/pinging_API.html's or "Ping-o-matic":http://pingomatic.com/ from "Automattic":http://automattic.com/. Unfortunately, the lack of "subscription" have made this ping servers *a nest for spammers*. Check the "changes.xml":http://rpc.weblogs.com/changes.xml files to see how many notifications are spam vs. legit. Sad :(.

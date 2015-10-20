@@ -5,6 +5,8 @@ categories: [ping, api, infrastructure, realtime]
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+description: "Ping is both the ancestor and the root of any realtime feed protocol. A ping is a way to say : “hey this content was updated”. It can be light, which means the this gives a link to the content, or fat, when the ping actually contains the content."
+tags: [ping, publisher, pubsubhubbub]
 ---
 
 Ping is both the *ancestor* and the _root_ of any realtime feed protocol. A ping is a way to say : "_hey this content was updated_". It can be light, which means the this gives a link to the content, or "fat":http://techcrunch.com/2009/09/09/rsscloud-vs-pubsubhubbub-why-the-fat-pings-win/, when the ping actually contains the content.
