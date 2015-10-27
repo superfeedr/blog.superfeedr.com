@@ -5,6 +5,8 @@ categories: []
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+description: "Our tracking feeds now include source information to help you identify what feed initially published any given matching mention."
+tags: [tracking, trackers, sources, schema]
 ---
 
 When we introduced our [latest revision of track](http://blog.superfeedr.com/stemming-track/) last week, we announced that we would grant **free access to anyone willing to hack on track**, as long as they would help us make it better.

@@ -8,6 +8,7 @@ js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js",
 '../scripts/server-sent-events-tracking.js'
 ]
+description: "Superfeedr's prospective search engine relies on our tracking feeds. This is a realtime mention monitoring API for brands, social web and more."
 tags: [tracking, stream, trackers]
 ---
 
@@ -34,7 +35,7 @@ From there, all of our subscriber API calls can be used:
 * [Listing subscriptions](http://documentation.superfeedr.com/subscribers.html#listing-subscriptions-with-pubsubhubbub)
 * [Retrieving past entries](http://documentation.superfeedr.com/subscribers.html#retrieving-entries-with-pubsubhubbub)
 
-For example, here is, in realtime, a list of stories that mention "Music". 
+For example, here is, in realtime, a list of stories that mention "Music".
 
 <ul id="sse-feed">Loading...</ul>
 
