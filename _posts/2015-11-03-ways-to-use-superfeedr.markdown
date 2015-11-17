@@ -4,7 +4,7 @@ title: "2 ways to use Superfeedr"
 author_name: Julien
 author_uri: http://ouvre-boite.com
 author_email_md5: b30ce50678f0e934eaa6697425c59dd7
-description: ""
+description: "When consuming data from Superfeedr, you can choose between either pulling data from us or waiting for us to push you the data from the RSS feeds."
 tags: [subscriber, PubSubHubbub, howto, feed api]
 js_includes: []
 ---
