@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="ofroHQ3qXBS1SQfblK9-U_oduGZ975Bb3i_uP13Myao" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts + CSS -->
+  <link href="/css/prism.css" rel="stylesheet" type="text/css">
+  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic%7CSource+Code+Pro:400,600" rel="stylesheet" type="text/css">
+
+
+  {% for css_file in page.css_includes %}
+  <link href="{{ css_file }}" rel="stylesheet" type="text/css">
+  {% endfor %}
+
 
   {% if page.description %}
     {% if paginator.page %}
@@ -20,14 +31,20 @@
   {% endif %}
 
 
-  <link href="/css/prism.css" rel="stylesheet" type="text/css">
-  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic%7CSource+Code+Pro:400,600" rel="stylesheet" type="text/css">
 
+  <!-- facebook open graph tags -->
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:url" content="http://blog.superfeedr.com{{ page.url }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="{{page.description}}" />
+  <meta property="og:site_name" content="Superfeedr Blog" />
+  <meta property="og:image" content="{{page.image}}" />
 
-  {% for css_file in page.css_includes %}
-  <link href="{{ css_file }}" rel="stylesheet" type="text/css">
-  {% endfor %}
+  <!-- twitter card tags additive with the og: tags -->
+  <meta name="twitter:domain" value="blog.superfeedr.com" />
+  <meta name="twitter:title" value="{{ page.title }}" />
+  <meta name="twitter:description" value="{{page.description}}" />
+  <meta name="twitter:url" value="http://blog.superfeedr.com{{ page.url }}" />
 
 
   {% if paginator.page %}
@@ -36,9 +53,8 @@
   <title>Superfeedr Blog - {{ page.title }}</title>
   {% endif %}
 
+  <!-- Alternate -->
   <link rel="alternate feed" type="application/atom+xml" title="Superfeedr Blog" href="/atom.xml">
-
-
   <link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
 
   <link rel="shortcut icon" href="/favicon.png">

@@ -6,6 +6,7 @@ author_uri: http://voxpelli.com/
 author_email_md5: 0b6a41604162fdc38846fb002274ae4c
 description: "Multiping is a Drupal module which enables PubSubHubbub on any Drupal site."
 tags: [drupal, PubSubHubbub, ping, opensource]
+image: "/images/drupal-8.png"
 js_includes: []
 ---
 
