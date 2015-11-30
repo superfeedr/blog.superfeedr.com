@@ -40,10 +40,13 @@
   <meta property="fb:app_id" content="191433524399">
 
   <!-- twitter card tags additive with the og: tags -->
-  <meta name="twitter:domain" value="blog.superfeedr.com" />
-  <meta name="twitter:title" value="{{ page.title }}" />
-  <meta name="twitter:description" value="{{page.description}}" />
-  <meta name="twitter:url" value="http://blog.superfeedr.com{{ page.url }}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@superfeedr" />
+  <meta name="twitter:domain" content="blog.superfeedr.com" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+  <meta name="twitter:description" content="{{page.description}}" />
+  <meta name="twitter:url" content="http://blog.superfeedr.com{{ page.url }}" />
+  <meta name="twitter:image" content="http://blog.superfeedr.com{{page.image}}" />
 
 
   {% if paginator.page %}
