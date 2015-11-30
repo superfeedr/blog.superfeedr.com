@@ -2,9 +2,6 @@
 layout: post
 title: Node XMPP Server
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 At Superfeedr, we've always been *great fans of node.js*. We believe the ability to use the _same language on both servers and clients_ will breed a whole new generation of web developers that can do amazing work on both ends. Last year already, we released node.js code a couple hours ahead of "NodeKO":http://nodeknockout.com/, and this year, we're doing it again.

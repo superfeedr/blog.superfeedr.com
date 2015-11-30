@@ -2,9 +2,6 @@
 layout: post
 title: Fun Numbers
 categories: [push, twitter]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It's hard to talk about numbers, because they're often subject to interpretation. I was crunching a few of them earlier today for some presentation that I'm working on and I found out that Superfeedr is currently *pushing away about 237 new entries per second*.

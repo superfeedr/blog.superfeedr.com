@@ -2,9 +2,6 @@
 layout: post
 title: Users don't care
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We we try to convince people that the web would be better if we relied more on open protocols and platforms would do adopt these, we often get the deaded __but the people, are like the "honey badger":http://www.youtube.com/watch?v=4r7wHMg5Yjg, they don't care__. And that is *true*!

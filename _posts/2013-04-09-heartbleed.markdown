@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Heartbleed: change your passwords and tokens"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Two days ago, a security flaw in OpenSSL [was made public](http://heartbleed.com/). This flaw, named **Heartbleed** is *Catastrophic* in Bruce Schneier's [words](https://www.schneier.com/blog/archives/2014/04/heartbleed.html), because it exposes a chunk of memory from any vulnerable server.

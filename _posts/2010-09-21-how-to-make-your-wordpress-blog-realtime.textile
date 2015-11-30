@@ -2,9 +2,6 @@
 layout: post
 title: How to make your Wordpress.org real-time
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 If you've been blogging for more than a few days, you already found out that the faster your content is propagated, the more engagement you get ; it's shared, retweeted, commented, liked more in the first minutes after publication than in the next days altogether. The protocol PubSubHubbub helps you by making sure your content is pushed directly from your blog, to applications such as "Google Reader":http://www.google.com/reader/view/, "Ping.fm":http://ping.fm/, "Twitterfeed":http://twitterfeed.com/, "Digg":http://digg.com/, "FeedMyInbox":http://www.feedmyinbox.com/ and many many others.

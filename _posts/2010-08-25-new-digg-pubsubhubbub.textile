@@ -2,9 +2,6 @@
 layout: post
 title: PubSubHubbub in the new Digg
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today's best news is coming from Digg HQ : "Digg v4":http://digg.com/. I wasn't a big Digg user, but their new approach, with news tailored to me based on my social network _makes a ton of sense for me_.

@@ -2,9 +2,6 @@
 layout: post
 title: "Who Implemented PubSubHubbub"
 categories: [PubSubHubbub, Feeds, real-time, stats]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Exactly like "last month":/pubsubhubbub/feeds/real-time/stats/who-implemented-pubsubhubbub/, here is a _list of domains for which we have callback urls_ : *they implemented PubSubHubbub*!

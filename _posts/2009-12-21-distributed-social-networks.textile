@@ -2,9 +2,6 @@
 layout: post
 title: "Distributed and Federated Social Networks"
 categories: [social-networks, federation, pubsubhubbub, XMPP]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 There "is":http://staynalive.com/articles/2009/12/19/developers-its-time-to-open-up-twitters-api/ "a lot":http://code-bear.com/bearlog/2009/12/20/responding-to-jesses-call-to-open-twitters-api/ of debate around on "OpenTwitter":http://groups.google.com/group/opentwitter, "OpenFriendFeed":http://bit.ly/4voQKK "OpenFacebook":http://bit.ly/8J9SIv.  these days. The "de-facto standard":http://www.avc.com/a_vc/2009/12/open-apis-and-open-standards.html which is now Twitter's API is a good news. Yet, social Networks have 2 big features : *publish content* (it seems that Twitter's API is the reference now), and *consume content* from your friends. This second part seems much harder and I think *PubSubHubbub* and *XMPP* can provide this API.

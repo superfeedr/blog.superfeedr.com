@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "RSS streaming"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: ["https://www.embedcurl.com/embedcurl.min.js"]
 tags: [feed api, http, stream]
 ---

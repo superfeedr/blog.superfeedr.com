@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "How wasteful is polling?"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "Polling is a very wasteful process. Even with relatively low frequencies (4 times per hour), we get a hit rate that's below 5%. Our unique feed graph lets us improve this drastically."
 tags: [ping, polling, feed graph, stats]
 js_includes: []

@@ -2,9 +2,6 @@
 layout: post
 title: BlameStella and PubSubHubbub
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 For a lot of people, *PubSubHubbub* is something that should _mostly work with the social web_. However, when you think about it, it is actually much wider, as it relies solely on feeds, without caring much about the semantics of this feed.

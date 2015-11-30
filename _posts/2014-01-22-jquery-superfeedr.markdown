@@ -2,9 +2,6 @@
 layout: post
 title: "Superfeedr Jquery"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: ["http://code.jquery.com/jquery-1.10.1.min.js",
 "https://raw.githubusercontent.com/superfeedr/superfeedr-jquery/master/superfeedr.jquery.js"]
 tags: [javascript, jquery, feed api]

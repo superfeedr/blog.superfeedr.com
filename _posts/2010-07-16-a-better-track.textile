@@ -2,9 +2,6 @@
 layout: post
 title: A Better track
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It seems that you *people love our track feature*. Much more than we anticipated, so we'll be focusing on this in the coming weeks to make it both smarter and better. The version 1.0 is great, but many of you asked for the ability to track more than just 1 keyword, some of you have asked to track data from a specific source, or within certain geo boundaries. We want to work on this and I'm preparing a few requirements and design options.

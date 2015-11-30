@@ -2,9 +2,6 @@
 layout: post
 title: XMPP over websockets.
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 tags: [openweb, html5, xmpp]
 description: "XMPP's biggest hurdle is that it does not run in the browser. HTML5's webscoket can change that for the best! Let's XMPP all of the browsers!"
 ---

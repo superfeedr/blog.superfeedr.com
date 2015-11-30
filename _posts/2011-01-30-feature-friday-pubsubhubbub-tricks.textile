@@ -2,9 +2,6 @@
 layout: post
 title: Feature Friday
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It's a new year and we decided to take even more feedback from our users to make their lives even easier! This week, we introduced our *#FeatureFriday*. Basically, on fridays, we will take at least one feature that you guys want to see appear on Superfeedr and we'll implement before the next friday. Ideally, during the following weekend! This week, we took 3 requests.

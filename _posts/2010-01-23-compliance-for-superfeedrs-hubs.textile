@@ -2,9 +2,6 @@
 layout: post
 title: "Compliance for Superfeedr's Hubs"
 categories: [pubsubhubbub, testing, compliance]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We "said it in the past":http://blog.superfeedr.com/OSS/gospel/kind-of-open-source/, *abiding by standards makes the web better*. Yet, sometimes, standards have a tendency to diverge from an implementation to another. You know, the _theory vs. practice_ thing.

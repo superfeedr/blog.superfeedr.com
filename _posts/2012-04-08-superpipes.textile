@@ -2,9 +2,6 @@
 layout: post
 title: "Weekend Projects: Superpipes"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Google has their "20% free time":http://www.google.com/jobs/lifeatgoogle/englife/index.html. At Superfeedr, we use weekends, or flights.

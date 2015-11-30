@@ -2,9 +2,6 @@
 layout: post
 title: Happy New Year
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 2012 is starting and, well, I have to confess we haven't published as much as we wanted on this blog! This is one of our new 2012 resolutions!

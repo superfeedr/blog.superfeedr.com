@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Feed-Id in User Agents"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 tags: [http, webhook, user-agent]
 ---

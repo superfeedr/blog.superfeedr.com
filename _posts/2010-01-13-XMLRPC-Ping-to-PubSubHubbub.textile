@@ -2,9 +2,6 @@
 layout: post
 title: "XML-RPC Ping to PubSubHubbub"
 categories: [XML-RPC, Ping, PubSubHubbub, XMPP, Real-time]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 alias: /xml-rpc/ping/pubsubhubbub/xmpp/real-time/XMLRPC-Ping-to-PubSubHubbub
 description: "XML-RPC ping* is the grand father of all ping mechanisms for feeds and blogs. We mapped XML-RPC into PuSH."
 tags: [ping, xmlrpc, PubSubHubbub, openweb]

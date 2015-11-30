@@ -2,9 +2,6 @@
 layout: post
 title: A Social Network?
 categories: [pubsubhubbub, xmpp, open, social]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 There are *two* steps to *open-data epiphany* : support the "OpenStack":http://openstack.blogspot.com/ for your users data is the first step. I would argue though that this is not enough : if I tell you that all your data is available for you (or apps that want to get it - with your authorization -) to take it, it's great, but it's less than ideal if you have data in tens of different apps.

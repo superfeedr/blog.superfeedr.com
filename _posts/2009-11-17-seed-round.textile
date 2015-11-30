@@ -2,9 +2,6 @@
 layout: post
 title: Seed Round
 categories: [seed, investors, cuban, betaworks]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 That's true. We've finalized our *seed investment round*. It took us a little more time than expected, but we're very happy to join "Betawork's":http://betaworks.com/ and "Mark Cuban's":http://blogmaverick.com/ portfolios. Both of them have shown a *genuine interest and vision in what appears to be the _real-time web_*. We're also pretty excited to announce that both "Andrew Anker":http://aa.typepad.com/ and "David Recordon":http://www.davidrecordon.com/ have joined our *advisory board*.

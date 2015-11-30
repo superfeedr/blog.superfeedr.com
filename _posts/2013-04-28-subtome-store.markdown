@@ -2,9 +2,6 @@
 layout: post
 title: SubToMe Store
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 As the web now flourishes with new feed readers, we have decided to help that community by simplifying the subscription process as it is still extremely complex for a user to say "I want to know when there is new content here".

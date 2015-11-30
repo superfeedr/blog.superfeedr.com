@@ -2,9 +2,6 @@
 layout: post
 title: Static files hosting with SSL on custom domain
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 [SubToMe](http://www.subtome.com/) is a *universal subscribe button*. One of its key design goals was to use **only static files**. There should be no server involved: it's not an app, it's a button.

@@ -2,9 +2,6 @@
 layout: post
 title: Publishers, make or break RSS
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: The RSS ecosystem's fate is in your hands if you're publishing feeds. It's your call to decide if you want to only rely on private silos to distribute your content.
 ---
 

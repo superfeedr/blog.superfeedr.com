@@ -2,9 +2,6 @@
 layout: post
 title: Top Feeds list
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "We curated a list of popular feeds. These top feeds have been extracted from the Superfeedr database."
 tags: [popularity, feed api, metadata, top feeds, curation]
 ---

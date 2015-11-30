@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Subscribing to backlinks"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Knowing when someone links to your site is extremly important for SEO, but also community management. Tracking feeds let you do that very easily"
 tags: [tracking, search, backlinks, SEO, webmentions]

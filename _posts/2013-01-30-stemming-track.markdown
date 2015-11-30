@@ -2,9 +2,6 @@
 layout: post
 title: Stemming Track
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Most you already know about our [track API](http://documentation.superfeedr.com/misc.html#track). It allows you to subscribe

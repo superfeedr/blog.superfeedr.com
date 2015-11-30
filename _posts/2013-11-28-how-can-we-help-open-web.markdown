@@ -2,9 +2,6 @@
 layout: post
 title: "How can we help the open web?"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 tags: [openweb, indieweb, feed]
 ---
 

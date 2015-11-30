@@ -2,9 +2,6 @@
 layout: post
 title: "Results of the contest"
 categories: [Real-time, contest, rivers, Leweb]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 A little over 3 weeks ago we announced "a contest":http://blog.superfeedr.com/API/Leweb/compp/rivers/win-a-ticket-for-leweb/ to win a free ticket for "LeWeb":http://www.leweb.net/. The goal was to *create an application that uses our "Rivers":http://rivers.superfeedr.com:8001/.*

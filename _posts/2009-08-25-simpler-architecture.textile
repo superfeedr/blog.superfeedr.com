@@ -2,9 +2,6 @@
 layout: post
 title: A new Architecture
 categories: [api, xmpp, pubsubhubbub, architecture]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 No post for almost 2 weeks : we've been incredibly busy. We had a lot of instability in the past 10 days, in conjonction (but not related) to significant "API changes":/api/xmpp/pubsubhubbub/API-changes/. We'd like to apologize for the few times when you had problems accessing our service. We've done our best to limit these downtime periods and most of the time they only affected subscription/unsubscriptions : *notifications were still going on, as usual*.

@@ -2,9 +2,6 @@
 layout: post
 title: Google Reader API replacement, powered by Riak
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 When Google announced it was shutting down Reader on July 1st, we took a couple days to announce that [we will be offering a replacement for its API](http://blog.superfeedr.com/google-reader-compatible-api/) as well as back up as much of the data that we can.

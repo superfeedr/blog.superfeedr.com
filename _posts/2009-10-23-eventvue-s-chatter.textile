@@ -2,9 +2,6 @@
 layout: post
 title: EventVue's Chatter
 categories: [pubsubhubbub, API, PHP, eventvue, use-case]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Meeting the right people at conferences is *always very difficult*. Even if you're the most extraverted person in the room, most of the time, you just don't have enough time. "EventVue":http://www.eventvue.com/ is providing a very elegant way for that by helping you prepare your conferences in advance.

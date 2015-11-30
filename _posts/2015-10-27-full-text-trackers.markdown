@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Full Text Trackers"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "We are matching full text content for your tracking queries. This helps us find new content even in truncated RSS feeds."
 tags: [tracking, trackers, search, prospective, fulltext]
 js_includes: []

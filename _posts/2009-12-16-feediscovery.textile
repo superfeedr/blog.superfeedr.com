@@ -2,9 +2,6 @@
 layout: post
 title: "Feediscovery"
 categories: [api, feeds, discovery, feediscovery]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 At "Superfeedr":http://superfeedr.com, we believe _we have to do one thing only in the best way it can be done_: *make feeds real-time*.

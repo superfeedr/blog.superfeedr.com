@@ -2,9 +2,6 @@
 layout: post
 title: A social filtering algorithm
 categories: [social, algorithm]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 This post is not directly related to what Superfeedr is building but to what we're seeing as a trend in the social applications field. About 10 years ago, a small company called "Google":http://www.google.com/ wiped out any competing search engine with their "PageRank algorithm":http://en.wikipedia.org/wiki/PageRank. This one, without going into a lot of details was based on *reputation of a web page* : the more other pages have links to it, the more accurate it has to be.

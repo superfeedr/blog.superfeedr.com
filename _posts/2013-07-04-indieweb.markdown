@@ -2,9 +2,6 @@
 layout: post
 title: "Independence day on the web"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today is Independence Day in the US: happy 4th of July. There will be fireworks and BBQs in the offline world, but let's also take a couple seconds to think about what *independent* means on the web.

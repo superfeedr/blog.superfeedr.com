@@ -2,9 +2,6 @@
 layout: post
 title: "Thanks"
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today is the probably the most symbolic holiday here in the US. It's about saying : Thank You!

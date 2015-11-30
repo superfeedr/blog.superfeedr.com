@@ -2,9 +2,6 @@
 layout: post
 title: Highlights iOS app
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 bq. Back in 2010, Gowalla launched a PubSubHubbub hub powered by Superfeedr that allowed for realtime notifications of checkins either by user or spot. Whereas before you’d have to subscribe to an RSS feed and check it every so often for updates, PubSubHubbub allows for you to subscribe to that feed and have them push the data to you as soon as an update is available. It’s very similar to the difference between checking mail on your iPhone manually or having it pushed to you automatically.

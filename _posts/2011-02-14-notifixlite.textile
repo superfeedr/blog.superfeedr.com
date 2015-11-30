@@ -2,9 +2,6 @@
 layout: post
 title: Notifixlite
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Often times people email me to ask if "Superfeedr":http://superfeedr.com/ can be used to get IM alerts when a feed they follow as been updated. I usually tell them that, even though we are able to "send traffic via XMPP":http://documentation.superfeedr.com/subscribers.html#xmpppubsub, it's unlikely that their client can "understand" that traffic, because it's probably only a chat client, and not a PubSub client. In a nutshell, Superfeedr is a service on which RSS to IM bots can easily be built.

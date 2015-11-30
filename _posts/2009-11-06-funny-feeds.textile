@@ -2,9 +2,6 @@
 layout: post
 title: Funny Feeds
 categories: [feeds, RSS, ATOM]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Our business cards say : "_We make something stupid so that nobody else has to do it_". And it's true : we do a lot of things so that nobody else has to. While debugging some code last weekend, I checked at some feeds that we had trouble dealing with. If you use "Superfeedr":http://superfeedr.com, you won't have to deal with that, and that's good, because these things can break your feed parsing module.

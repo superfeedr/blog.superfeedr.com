@@ -2,9 +2,6 @@
 layout: post
 title: Web apps vs. native apps
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 "Facebook finally surrendered to Apple":https://www.facebook.com/notes/facebook-engineering/under-the-hood-rebuilding-facebook-for-ios/10151036091753920 and rewrote their app as a full native iOS app, rather than using Webkit's Webview. This may look like a good news to all the Facebook junkies, but it's actually a very bad news for all the web lovers, because it slowly pushes the *false idea that native apps are better* and that HTML5 apps can't reach that same level of performance.

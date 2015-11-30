@@ -2,9 +2,6 @@
 layout: post
 title: "The Real-time Web and its future"
 categories: [Real-time, statistics, market]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 !{float:left; margin:10px}http://www.readwriteweb.com/images/real_time_web.png!Marshall have been kind enough, when he wrote the "ReadWriteWeb":http://www.readwriteweb.com/ "report on the Real-time":http://bit.ly/rtwreport to ask for my opinion. I want to complete my thoughts as well as give a few hint on this report.

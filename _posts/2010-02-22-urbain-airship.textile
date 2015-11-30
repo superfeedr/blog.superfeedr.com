@@ -2,9 +2,6 @@
 layout: post
 title: UrbanAirship
 categories: [Use-Case, Python, PubSubHubbub]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We've had a few customer feedback and use-cases in the past. This week, I'd like to write about "UrbanAirship":http://urbanairship.com/. We've been in touch with "Scott":http://kveton.com/blog/ and "Michael":http://mtrichardson.com/ for a while now, and they "recently announced":http://blog.urbanairship.com/2010/02/16/urban-airship-secures-1-1-million-in-venture-capital-funding/ a Series A round.

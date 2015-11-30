@@ -2,9 +2,6 @@
 layout: post
 title: "Notifixlite"
 categories: [Superfeedr, XMPP, Google App Engine]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Superfeedr "comes from":http://blog.superfeedr.com/meta/reality-checked/ "Notifixious":http://notifixio.us/. We followed "Dave's":http://500hats.typepad.com/ advice and removed many features, so much that we found a market! :) However, I am still using Notifixious on a daily basis and I know many other people do. Yet, *I am not fully satisfied with it* and there are many things that deserve to be changed and improved. One of it's biggest "disadvantages" is its code-base : it _lacks documentation, tests_ and I am scared to even change a tiny thing because I'm afraid it may break a lot of stuff.

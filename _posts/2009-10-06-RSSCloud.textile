@@ -2,9 +2,6 @@
 layout: post
 title: "RSSCloud and PubSubHubbub"
 categories: [rsscloud, api, PubSubHubbub]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "If the feeds you're subscribed to using Superfeedr support RSSCloud, we'll send you their notification as PubSubHubbub."
 tags: [ping, RSSCloud, PubSubHubbub, openweb]
 ---

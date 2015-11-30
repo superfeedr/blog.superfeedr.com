@@ -2,9 +2,6 @@
 layout: post
 title: Node.js Powered
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Late, but not too late, the whole Superfeedr tream want to wish you a wonderful year 2013, may it be filled with joy and successes!

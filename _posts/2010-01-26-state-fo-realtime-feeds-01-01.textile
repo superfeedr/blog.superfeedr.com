@@ -2,9 +2,6 @@
 layout: post
 title: "State of Real-Time feeds"
 categories: [Real-time, statistics, market]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It's this time again : the time for the _very_ controversial numbers about realtime feeds. Before anything else, I'd like to indicate that it would be great for other services to publish similar numbers. We know "who":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-implemented-pubsubhubbub/ "implemented":http://blog.superfeedr.com/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/ *PubSubHubbub*, I guess some of them implemented *RSSCloud* and *SUP* too.

@@ -2,9 +2,6 @@
 layout: post
 title: A Google Reader Compatible API
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 As we're been providing APIs to build feed readers for years now, last week, we saw a flock of people coming to us and asking if we could help them overcome the disparition of the **Google Reader API**.

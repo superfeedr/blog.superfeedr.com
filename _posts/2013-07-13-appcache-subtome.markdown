@@ -2,9 +2,6 @@
 layout: post
 title: "SubToMe News"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 [SubToMe](https://www.subtome.com/#/) is growing like a weed. It's now triggering more than *500 new subscriptions daily* on the websites that display it.

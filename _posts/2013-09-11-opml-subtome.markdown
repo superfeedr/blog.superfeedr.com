@@ -2,9 +2,6 @@
 layout: post
 title: "OPML Support in SubToMe"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 [SubToMe](https://www.subtome.com/#/) aims at being *your* subscription app so that you can use any *reader* app for the content you care about. We are also (pretty much like in all of the code we release) committed to open-ness. As part of this, we're releasing today a [SubToMe](https://www.subtome.com/#/) update with [OPML](https://en.wikipedia.org/wiki/OPML) support.

@@ -10,7 +10,9 @@ defaults:
   -
     scope:
       paths: ""
+      type: "posts"
     values:
+      layout: post
       image: /images/logo.svg
       author_name: Julien
       author_uri: http://ouvre-boite.com

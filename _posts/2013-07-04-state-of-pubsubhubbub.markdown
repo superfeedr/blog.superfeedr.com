@@ -2,9 +2,6 @@
 layout: post
 title: "State of PubSubHubbub (subscribers' edition)"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Now that [PubSubHubbub evolved toward 0.4](http://blog.superfeedr.com/pubsubhubbub-04/), and that what used to be the most popular reader are gone, it's time to check the **state of PubSubHubbub** and see which of the new readers support it.

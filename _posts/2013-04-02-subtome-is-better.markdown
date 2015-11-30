@@ -2,9 +2,6 @@
 layout: post
 title: Why SubToMe is better
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 A couple weeks ago (before the Google Reader demise!), we soft launched [SubToMe](https://www.subtome.com/) as a universal subscribe button. As weeks passed, we  tried to promote it. We offered a [SubToMe Wordpress plugin](http://wordpress.org/extend/plugins/subtome/), a [Chrome Extension](https://chrome.google.com/webstore/detail/subtome/cjkhnlmkkfheepafpgppmpdahbjgkjfc?hl=en), a [Firefox Extension](https://addons.mozilla.org/en-us/firefox/addon/subtome-subscribe-button/)... etc.

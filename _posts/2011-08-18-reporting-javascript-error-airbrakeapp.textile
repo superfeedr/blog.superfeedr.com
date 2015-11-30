@@ -2,9 +2,6 @@
 layout: post
 title: Reporting Chrome Application Errors
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 The "msgboy":http://msgboy.com is Chrome Application, and like all Chrome applications, it's _written in Javascript_. Coming from the Ruby world, we really love "Airbrakeapp":http://airbrakeapp.com/pages/home (previously known as Hoptoadapp), and we missed it when we started rolling out the msgboy.

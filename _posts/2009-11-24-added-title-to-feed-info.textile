@@ -2,9 +2,6 @@
 layout: post
 title: Added Title to Feed Info
 categories: [title, feed, schema]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We just pushed a small code update (it should be fully deployed within minutes) to our schema. Of course, this is fully downward compatible.

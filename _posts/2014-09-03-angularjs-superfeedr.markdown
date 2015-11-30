@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "AngularJS Superfeedr"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: [
 "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js",
 "../scripts/angular-superfeedr.js",

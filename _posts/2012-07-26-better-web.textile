@@ -2,9 +2,6 @@
 layout: post
 title: A better web
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 In the last couple weeks, there's been a lot of hubbub (again!) around "Twitter's latest move":https://dev.twitter.com/blog/delivering-consistent-twitter-experience with its ecosystem. Twitter is more and more of a media company and less and less of a communication company Generally, _on Twitter you're interracting more and more with twitter itself and less and less with your friends_. People claim that this decision is driven by the fact that Twitter's business model is ad based.

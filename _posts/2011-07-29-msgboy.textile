@@ -2,9 +2,6 @@
 layout: post
 title: Introducing the Msgboy
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We have a bit neglected this blog in the past couple months, because we've been working hard on an awesome new product, called the "msgboy":http://msgboy.com.

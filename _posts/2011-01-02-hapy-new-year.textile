@@ -2,9 +2,6 @@
 layout: post
 title: Superfeedr 2010
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 2010 has been a wonderful year for Superfeedr. The idea of a realtime web made tremendous progress even though I think people are still not fully realizing the benefit of having a smart web of interconnected islands, rather than having an archipelago where each website interacts with others in a very limited set of functionalities.

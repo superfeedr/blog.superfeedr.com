@@ -2,9 +2,6 @@
 layout: post
 title: "Feedburner stats for real-time web"
 categories: [Real-time, analytics, pubsubhubbub]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It's been a feature request since day one (almost!), and we're rolling it out today : analytics. "Subscribers":Subscribers wanted to know _how many feeds they susbcribed_ to with Superfeedr, while "publishers":http://superfeedr.com/publisher wanted to _know how many feeds from them are used in real-time, as well as how many subscriptions they generated_.

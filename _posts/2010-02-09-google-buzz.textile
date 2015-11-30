@@ -2,9 +2,6 @@
 layout: post
 title: Google's Buzz is PubSubHubbub in, and out
 categories: [pubsubhubbub, use-case, google]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today, Google launched "Buzz":http://www.google.com/buzz. Aside from the great *social features* that it brings, I want to emphasize how PubSubHubbub is at the core of it. As Brad (who is clearly behind that in some way) "said":http://twitter.com/bradfitz/status/8866417834, Buzz is PubSubHubbub both "in":http://code.google.com/apis/buzz/documentation/#connect, and "out":http://code.google.com/apis/buzz/documentation/#syndication. This means that Buzz gets its data via PubSubHubbub, but also publishes it in realtime, via PubSubHubbub as well.

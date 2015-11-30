@@ -2,9 +2,6 @@
 layout: post
 title: A hub for Dotspots
 categories: [hub, usecase, pubsubhubbub]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 As "Matt":http://twitter.com/mmastrac announced earlier this week, Dotspots now as a PubSubHubbub hub, hosted by Superfeedr.

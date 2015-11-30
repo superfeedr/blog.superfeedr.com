@@ -2,9 +2,6 @@
 layout: post
 title: This week in Google - Episode 52
 categories:
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 If you're not listening to any of "Leo":http://twit.tv/'s shows, you're certainly missing a few of the best online shows of these days. Leo and his hosts get the web and the "last episode to date":http://twit.tv/twig52 of "ThisWeekInGoogle":http://twit.tv/twig (happy birthday) is just the best proof.

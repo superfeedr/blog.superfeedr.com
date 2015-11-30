@@ -2,9 +2,6 @@
 layout: post
 title: JSON retrieve
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 This is the second week ("first week is here":http://blog.superfeedr.com/feature-friday-pubsubhubbub-tricks/) of our #FeatureFriday series! I've been traveling quite a bunch in the past few days, so I haven't been able to push as much code as I hoped, but we have a released a bunch of features and fixed a few bugs again :)

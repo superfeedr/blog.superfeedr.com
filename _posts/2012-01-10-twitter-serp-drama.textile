@@ -2,9 +2,6 @@
 layout: post
 title: Twitter SERP Drama
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today Google introduced significant changes to their algorithm. Like every time this happens some people are scared their _free pension_ will end. This is clearly due to Google's -too- incredibly high market share. This time, among the whiners, is Twitter, and this is interesting.

@@ -2,9 +2,6 @@
 layout: post
 title: Superfeedr on FLOSS weekly
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Twit is an amazing web success. It's been an honor to be invited to talk about Superfeedr and PubSubHubbub on FLOSS Weekly!

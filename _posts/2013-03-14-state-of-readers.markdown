@@ -2,9 +2,6 @@
 layout: post
 title: State of RSS Readers
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 So [Google Reader is shutting down](http://googlereader.blogspot.fr/2013/03/powering-down-google-reader.html). This is obviously worrisome, mostly because the *deprecation schedule is tight*. But this is also a great news because Google Reader stopped innovating 5 years ago and yet was still the most visible RSS reader out there. 

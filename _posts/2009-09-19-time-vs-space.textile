@@ -2,9 +2,6 @@
 layout: post
 title: "Time vs. Space : how do we apprehend information?"
 categories: [real-time, gospel]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 There are several ways information comes to us, but they are either mostly either *geographical* or *temporal*.

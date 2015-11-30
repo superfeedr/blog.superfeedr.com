@@ -2,9 +2,6 @@
 layout: post
 title: "PubSubHubbub for Everybody"
 categories: [pubsubhubbub, API, publishers]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today is an exciting day! We're are at the "ReadWriteWeb Real-time summit":http://www.readwriteweb.com/summit/. If you're here, come and ping us, "I":http://twitter.com/julien51 wear a yellow sweatshirt.

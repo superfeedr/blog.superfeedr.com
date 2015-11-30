@@ -2,9 +2,6 @@
 layout: post
 title: PubSubHubbub is not a license
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Today, "GNIP and Twitter announced a deal where GNIP will be able to resell some of the Twitter data":http://www.readwriteweb.com/archives/twitter_to_sell_50_of_all_tweets_for_360kyear_thro.php. Twitter repeated several times that they didn't want to use PubSubHubbub and *prefered closed and proprietary solutions*. I believe that, from the beginning, we were not clear enough that *PubSubHubbub* was -just- a technical protocol. It's a mistake that I'm trying to repair now.

@@ -2,9 +2,6 @@
 layout: post
 title: Webhooks Piping
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 A "recent post by Progrium":http://progrium.com/blog/2012/11/19/from-webhooks-to-the-evented-web/ (aka webhook's biggest evangelist) reminded me that I needed to show how easy it was to plug Superfeedr in a *network of webhooks*. Here is what you can do, quite quickly!

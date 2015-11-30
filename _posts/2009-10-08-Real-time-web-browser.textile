@@ -2,9 +2,6 @@
 layout: post
 title: "Real-Time web browsers"
 categories: [Real-time, gospel, Seesmic, Tweetdeck]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 !{float:right;margin:3px;}http://www.devx.com/assets/articlefigs/6939.gif!

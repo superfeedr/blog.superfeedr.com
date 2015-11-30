@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Apple, Facebook and RSS"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Recently, both Apple and Facebook started to recommend using RSS as an publishing tool for their platforms. When using Superfeedr, we extract AMP for you."
 tags: [guidelines, RSS, reboot]

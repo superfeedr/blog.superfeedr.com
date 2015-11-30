@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "River.news"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "A RSS River is the perfect use case for us to build a fully static application which uses React.js and Superfeedr's API. That's what we did: here's http://river.news."
 tags: [openweb, reactjs, static, reader]
 js_includes: [

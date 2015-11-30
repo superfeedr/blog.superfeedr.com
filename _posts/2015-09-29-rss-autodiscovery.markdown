@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "RSS Auto Discovery"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "RSS autodiscovery is a mechanism that makes it simple for browsers and other software to reliably find RSS feeds from HTML documents."
 tags: [rss, openweb, discovery, practices]
 ---

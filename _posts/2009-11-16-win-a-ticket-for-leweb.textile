@@ -2,9 +2,6 @@
 layout: post
 title: Win a ticket for LeWeb!
 categories: [API, compp, rivers, Leweb]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 We're very excited to be part of "LeWeb's":http://www.leweb.net/  "startup competition":http://eu.techcrunch.com/2009/11/10/le-web-announces-the-list-for-the-startup-competition/. We will have a few minutes only to demo in front of the jury how cool superfeedr is. Needless to say that it's pretty hard for an API-based service, and we want to show-case cool stuff created with Superfeedr!

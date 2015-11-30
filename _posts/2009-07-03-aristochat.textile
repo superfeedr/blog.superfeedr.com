@@ -2,9 +2,6 @@
 layout: post
 title: Aristochat
 categories: [OSS, Chat, XMPP, MUC]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It all started when we used "Slicehost's chat-room":http://chat.slicehost.com/ for their support : not only it's awesome to have 24/7 support, but it's also great to have a short-message interface that allows real-time discussion and interaction.

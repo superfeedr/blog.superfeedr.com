@@ -2,9 +2,6 @@
 layout: post
 title: Post Mortem 02/11
 categories: [post-mortem, MySQL, Memcache]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 alias: /Memcache/MySQL/post-mortem/post-mortem-02-11
 description: Here's a post mortem of yesterday's downtime at Superfeedr. It was a result of increased and excessive load on our MySQL servers. 
 ---

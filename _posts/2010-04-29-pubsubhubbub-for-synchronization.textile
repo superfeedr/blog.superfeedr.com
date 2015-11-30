@@ -2,9 +2,6 @@
 layout: post
 title: PubSubHubbub for Synchronization
 categories: [pubsubhubbub, synchronization, gospel]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 I trust that _we haven't seen yet how much the realtime web is about to change the web_. It's currently quite hard to synchronize data between 2 services in an efficient way.

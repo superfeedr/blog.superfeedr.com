@@ -2,9 +2,6 @@
 layout: post
 title: Realtime Conference Europe
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Long time, no post! We've been busy. We mostly ported Superfeedr to Node.js, but more on that soon.

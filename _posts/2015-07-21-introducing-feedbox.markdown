@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Introducing the Feedbox"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Our tracker feeds let you track feeds from all over the web. The Feedbox allows anyone to add their feeds to the mix!"
 tags: [tracking, trackers, RSS]

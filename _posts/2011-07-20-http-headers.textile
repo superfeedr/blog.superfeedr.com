@@ -2,9 +2,6 @@
 layout: post
 title: HTTP Headers
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It's one of the small tricks we're the proudest of, but it's also a well hidden gem, so I'd like to take a couple seconds to introduce you to the HTTP headers we send on PubSubHubbub notifications.

@@ -2,9 +2,6 @@
 layout: post
 title: "New Documentation"
 categories: []
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 It was long overdue but we're finally introducing a completely [refactored documentation](http://documentation.superfeedr.com/). Up until now, the documentation was part of our main site. This was a **bad** choice for several reasons: 

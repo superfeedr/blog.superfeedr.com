@@ -2,9 +2,6 @@
 layout: post
 title: Susbcriber Toolbox
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 Our XMPP console is great for very _initial debugging_ but doesn't fulfill a lot of our user's need after they subscribed to a few dozen feeds. Additionally, the subscribers who use "PubSubHubbub":http://push.superfeedr.com/ cannot benefit from it and they usually have a hard time debugging their endpoints. As a consequence of this, we have decided to re-factor most of our Subscriber toolbox. Here is a small review of it.

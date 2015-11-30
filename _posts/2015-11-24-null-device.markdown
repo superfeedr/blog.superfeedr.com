@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "Superfeedr's null device"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 description: "When subscribing to a feed, you should use https://push.superfeedr.com/dev/null if you want notifications to be ignored."
 tags: [feed api, retrieve, subscribe]
 js_includes: []

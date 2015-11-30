@@ -2,9 +2,6 @@
 layout: post
 title: Internet of Things and PubSubHubbub
 categories: [meta]
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 ---
 
 The "Internet of things":http://en.wikipedia.org/wiki/Web_of_Things is one that makes us dream : everything connected to the internet, talking together and making our lives easier. It's something that I've been thinking to a lot lately.

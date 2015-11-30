@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "It's called RSS"
-author_name: Julien
-author_uri: http://ouvre-boite.com
-author_email_md5: b30ce50678f0e934eaa6697425c59dd7
 js_includes: []
 description: "Google and Twitter are re-inventing the wheel with a new kind of web link and article storage system that would load online news articles and digital magazine pieces in a few milliseconds. RSS exists and it's great!"
 tags: [openweb, RSS, Twitter, Google, guidelines, reboot]
