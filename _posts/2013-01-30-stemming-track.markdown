@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Stemming Track
-categories: []
 ---
 
 Most you already know about our [track API](http://documentation.superfeedr.com/misc.html#track). It allows you to subscribe

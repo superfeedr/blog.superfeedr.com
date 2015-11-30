@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Do You Prefer Buffet or Sit-Down?"
 categories: [kaleidico, pubsubhubbub, PuSH, RSSCloud, "social-media", "zend-framework", "contribution"]
 author_name: Doug Van De Motter

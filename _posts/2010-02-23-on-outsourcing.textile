@@ -1,5 +1,4 @@
 ---
-layout: post
 title: On Outsourcing
 categories: [outsourcing, startups, validation]
 ---

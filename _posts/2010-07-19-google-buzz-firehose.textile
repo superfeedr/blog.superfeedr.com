@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Google Buzz Firehose
-categories: []
 ---
 
 !{width:150px;margin:0px 10px 10px 0px; float:left; }http://www.webdesign-guru.co.uk/icon/wp-content/uploads/google-buzz-icon-1-400.png!Our track feature brought us a lot of new subscribers. Track is definitely one of our "big priorities":http://blog.superfeedr.com/a-better-track/ of the moment as people love it! One of the primary concerns, is to *increase its search base*. 20M+ entries per day might not be enough for some of you, who want even more data.  Starting today, you can use "Superfeedr's track":http://documentation.superfeedr.com/misc.html#track feature to get realtime *PubSubHubbub* notifications from *Google Buzz* for any entry that matches a given keyword.

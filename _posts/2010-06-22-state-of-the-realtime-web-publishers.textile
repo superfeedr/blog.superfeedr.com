@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "State of the Realtime Web : the Publishers"
 categories: [realtime, publishers, twitter, facebook, pubsubhubbub]
 ---

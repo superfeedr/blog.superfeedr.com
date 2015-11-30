@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Heartbleed: change your passwords and tokens"
 ---
 

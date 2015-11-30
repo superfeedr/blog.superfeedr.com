@@ -1,5 +1,4 @@
 ---
-layout: post
 title: What API to choose
 categories: [pubsubhubbub, xmpp, API]
 ---

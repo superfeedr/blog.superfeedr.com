@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Kind of Open Source
 categories: [OSS, gospel]
 alias: /OSS/gospel/kind-of-open-source/

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: How to make your Wordpress.org real-time
 categories: [meta]
 ---

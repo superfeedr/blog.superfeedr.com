@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Results of the contest"
 categories: [Real-time, contest, rivers, Leweb]
 ---

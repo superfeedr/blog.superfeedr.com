@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Debugging broken RSS feeds"
-js_includes: []
 description: "RSS feeds, like any other type of HTTP web resource have a life of their own and even if they may be behaving as expected at a given point, they are likely to break in the future. Superfeedr will take care of these broken feeds for you."
 tags: [debugging, RSS, metadata, feed api]
 ---

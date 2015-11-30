@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Posterous supports PubSubHubbub
 categories: [PubSubHubbub, posterous, publisher]
 alias: [/PubSubHubbub/posterous/publisher/posterous-supports-pubsubhubbub-with-superfeedr/]

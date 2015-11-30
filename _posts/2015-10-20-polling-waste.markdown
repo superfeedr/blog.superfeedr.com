@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "How wasteful is polling?"
 description: "Polling is a very wasteful process. Even with relatively low frequencies (4 times per hour), we get a hit rate that's below 5%. Our unique feed graph lets us improve this drastically."
 tags: [ping, polling, feed graph, stats]
-js_includes: []
 ---
 
 Timeliness and latency are among the most crucial challenges to *increase engagement*. If you rely on polling to aggregate content or get your content distributed, you have to increase the polling frequency to make sure the content is always fresh. But how wasteful is this?

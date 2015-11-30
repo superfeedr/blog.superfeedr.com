@@ -1,9 +1,6 @@
 ---
-layout: post
 title: Sinatra, Heroku and Superfeedr
-categories: []
 tags: [ruby, sinatra, heroku]
-js_includes: []
 ---
 
 This is a short tutorial on how to deploy an Sinatra web app that uses Superfeedr to Heroku. This app provides a very simple home page that lists the latests entries of some of your favorites sites. It's greatly inspired by the awesome [start.io](http://start.io/) from the awesome [Peter Vidani](http://petervidani.com/) and [Jacob

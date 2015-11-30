@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "LeWeb's Official Bloggers in RealTime"
 categories: [Real-time, leweb, use-case]
 alias: /Real-time/leweb/use-case/LeWeb-blog-posts-in-realtime/

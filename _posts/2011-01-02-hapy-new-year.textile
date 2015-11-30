@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Superfeedr 2010
-categories: []
 ---
 
 2010 has been a wonderful year for Superfeedr. The idea of a realtime web made tremendous progress even though I think people are still not fully realizing the benefit of having a smart web of interconnected islands, rather than having an archipelago where each website interacts with others in a very limited set of functionalities.

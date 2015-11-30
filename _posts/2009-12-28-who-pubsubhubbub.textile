@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Who Implemented PubSubHubbub"
 categories: [PubSubHubbub, Feeds, real-time, stats]
 alias: [/Feeds/PubSubHubbub/real-time/stats/who-pubsubhubbub/, /PubSubHubbub/Feeds/real-time/stats/who-pubsubhubbub]

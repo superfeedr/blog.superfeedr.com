@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "PubSubHubbub for Drupal with multiping"
 author_name: Pelle
 author_uri: http://voxpelli.com/
@@ -7,7 +6,6 @@ author_email_md5: 0b6a41604162fdc38846fb002274ae4c
 description: "Multiping is a Drupal module which enables PubSubHubbub on any Drupal site."
 tags: [drupal, PubSubHubbub, ping, opensource]
 image: "/images/drupal-8.png"
-js_includes: []
 ---
 
 [Drupal](https://www.drupal.org/) has many strengths. You can build pretty powerful websites through very little custom code. So far though, if you’ve wanted that pretty powerful website to not be all alone in its own corner of the internet but instead be a bit more chatty with the rest of the web, then your options have been slim.

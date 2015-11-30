@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "AngularJS Superfeedr"
 js_includes: [
 "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js",

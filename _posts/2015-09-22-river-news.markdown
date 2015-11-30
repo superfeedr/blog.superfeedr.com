@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "River.news"
 description: "A RSS River is the perfect use case for us to build a fully static application which uses React.js and Superfeedr's API. That's what we did: here's http://river.news."
 tags: [openweb, reactjs, static, reader]

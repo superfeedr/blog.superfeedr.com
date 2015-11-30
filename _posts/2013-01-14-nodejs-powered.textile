@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Node.js Powered
-categories: []
 ---
 
 Late, but not too late, the whole Superfeedr tream want to wish you a wonderful year 2013, may it be filled with joy and successes!

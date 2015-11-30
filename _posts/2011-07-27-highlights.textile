@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Highlights iOS app
 categories: [meta]
 ---

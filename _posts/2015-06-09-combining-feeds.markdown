@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Combining Feeds"
-js_includes: []
 description: "Combining RSS feeds is one of the most basic use case and provides a great way to aggregate content from several websites on a single page. Here's a quick tutorial on how to combine feeds with Superfeedr."
 tags: [API, react, javascript, jquery]
 ---

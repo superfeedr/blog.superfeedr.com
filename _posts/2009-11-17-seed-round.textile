@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Seed Round
 categories: [seed, investors, cuban, betaworks]
 ---

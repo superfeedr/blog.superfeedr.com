@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "It's called RSS"
-js_includes: []
 description: "Google and Twitter are re-inventing the wheel with a new kind of web link and article storage system that would load online news articles and digital magazine pieces in a few milliseconds. RSS exists and it's great!"
 tags: [openweb, RSS, Twitter, Google, guidelines, reboot]
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Real-time search
 categories: [meta, real-time, search, foo]
 ---

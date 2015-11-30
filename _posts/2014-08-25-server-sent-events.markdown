@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Server Sent Events"
 js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js"

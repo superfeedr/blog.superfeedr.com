@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Why realtime matters for publishers
 categories: [realtime, publisher]
 alias: /publisher/realtime/why-realtime-matters-for-publishers

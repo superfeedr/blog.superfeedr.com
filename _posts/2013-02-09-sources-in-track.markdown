@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Sources in Track
-categories: []
 description: "Our tracking feeds now include source information to help you identify what feed initially published any given matching mention."
 tags: [tracking, trackers, sources, schema]
 ---

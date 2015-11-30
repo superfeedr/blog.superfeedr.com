@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "PubSubHubbub for Everybody"
 categories: [pubsubhubbub, API, publishers]
 ---

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: A Google Reader Compatible API
-categories: []
 ---
 
 As we're been providing APIs to build feed readers for years now, last week, we saw a flock of people coming to us and asking if we could help them overcome the disparition of the **Google Reader API**.

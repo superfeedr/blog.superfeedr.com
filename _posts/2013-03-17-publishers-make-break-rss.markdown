@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Publishers, make or break RSS
-categories: []
 description: The RSS ecosystem's fate is in your hands if you're publishing feeds. It's your call to decide if you want to only rely on private silos to distribute your content.
 ---
 

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "A Google Feed API alternative"
-js_includes: []
 description: "The Google Feed API bas been deprecated. Replace it with Superfeedr."
 tags: [RSS, feed api, Google, shim, javascript]
 ---

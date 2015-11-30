@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "State of Real-Time feeds"
 categories: [Real-time, statistics, market]
 alias: [/Real-time/market/statistics/state-of-real-time-feeds/]

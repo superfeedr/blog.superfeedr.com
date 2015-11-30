@@ -1,5 +1,4 @@
 ---
-layout: post
 title: There is no such thing as Real Time Search
 categories: [real-time]
 ---

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Searching Subscriptions"
-js_includes: []
 description: "You can now search subscriptions to feeds using their porn rank and bozo rank or their velocity."
 tags: [search, subscriptions, feeds, bozo, porn, velocity, feed api]
 ---

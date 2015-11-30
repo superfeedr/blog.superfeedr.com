@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Node Superfeedr"
-js_includes: []
 ---
 
 It’s long overdue, but we built a little node.js library to interact

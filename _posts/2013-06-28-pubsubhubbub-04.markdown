@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "PubSubHubbub v0.4"
-categories: []
 ---
 
 It's been brewing for almost 2 years now, but it's finally here. Superfeedr now supports the [version 0.4 of the PubSubHubbub](https://superfeedr-misc.s3.amazonaws.com/pubsubhubbub-core-0.4.html) spec. We're also proud to say that Superfeedr has taken the lead on the PubSubHubbub spec. We now also offer a [complete compliance test suite](http://tests.superfeedr.com/) for anyone who wants to implement a hub on their end:

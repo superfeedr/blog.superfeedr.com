@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Payment Improved
-categories: []
 ---
 
 It's now a little over 2 months that we started charging our customers and, like we expected, we learnt a lot. The first thing that we learnt (but we hoped that too) is that we're building a legit business. Without going much into details, we made enough revenues to cover our expenses during this period (and even more!), which gives a lot of new perspectives. However, the solution we started 2 months ago isn't good enough, for several reasons.

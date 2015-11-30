@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "RSSCloud and PubSubHubbub"
 categories: [rsscloud, api, PubSubHubbub]
 description: "If the feeds you're subscribed to using Superfeedr support RSSCloud, we'll send you their notification as PubSubHubbub."

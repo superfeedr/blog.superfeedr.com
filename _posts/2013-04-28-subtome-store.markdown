@@ -1,7 +1,5 @@
 ---
-layout: post
 title: SubToMe Store
-categories: []
 ---
 
 As the web now flourishes with new feed readers, we have decided to help that community by simplifying the subscription process as it is still extremely complex for a user to say "I want to know when there is new content here".

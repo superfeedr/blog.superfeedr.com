@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "More Feed Metadata"
-js_includes: []
 tags: [metadata, spam, porn, feed api]
 ---
 

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Batfeedr"
-js_includes: []
 tags: [company, aprilfools]
 ---
 

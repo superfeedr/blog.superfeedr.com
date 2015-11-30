@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Win a ticket for LeWeb!
 categories: [API, compp, rivers, Leweb]
 ---

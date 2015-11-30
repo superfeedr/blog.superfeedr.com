@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Performance monitoring with collectd
 categories: [OSS, open-source, infrastructure, collectd]
 author_name: Astro

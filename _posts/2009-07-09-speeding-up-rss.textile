@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Speeding Up RSS : what for?"
 categories: [RSS, Atom, Feeds, Push, Techcrunch]
 ---

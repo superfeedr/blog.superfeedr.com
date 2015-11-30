@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Feed Retrieving and Status Improved
-categories: []
 ---
 
 *Publish-Subscribe patterns are hard to debug*, because they silently fail. When you give us a feed to parse on your behalf, you have to wait for us to actually send you some data to be 100% sure that everything works. In the coming months, we will slowly release more tools to help you with this. Today we're releasing 2.

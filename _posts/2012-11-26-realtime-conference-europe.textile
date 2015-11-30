@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Realtime Conference Europe
-categories: []
 ---
 
 Long time, no post! We've been busy. We mostly ported Superfeedr to Node.js, but more on that soon.

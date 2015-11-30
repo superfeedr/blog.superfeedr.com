@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Bitcoin Webhook"
-js_includes: []
 tags: [bitcoin, webhook, fragment]
 ---
 

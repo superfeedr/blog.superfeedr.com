@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Listing feeds with our PuSH endpoint"
-categories: []
 tags: [feed api, list, subscription]
 ---
 

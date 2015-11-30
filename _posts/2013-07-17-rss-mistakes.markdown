@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "RSS: let's not do the same mistakes"
-categories: []
 ---
 
 

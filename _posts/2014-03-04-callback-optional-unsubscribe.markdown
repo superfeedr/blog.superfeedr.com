@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Unsubscribing without the hub.callback"
 tags: [feed api, unsubscribe, pubsubhubbub]
 ---

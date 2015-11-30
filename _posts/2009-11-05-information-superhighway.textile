@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Information Superhighway
 categories: [OSS, XMPP, JavaScript, http, web-apps]
 author_name: Astro

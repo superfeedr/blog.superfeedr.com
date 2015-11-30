@@ -1,5 +1,4 @@
 ---
-layout: post
 title: PubSubHubbub for Synchronization
 categories: [pubsubhubbub, synchronization, gospel]
 ---

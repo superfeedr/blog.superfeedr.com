@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Appticles
-categories: []
 ---
 
 > [Appticles.com](http://appticles.com) is a mobile content delivery and monetization platform for small and medium publishers completely based around the concept of Open Web and HTML5 and it is being developed by [Webcrumbz.co](http://webcrumbz.co/). They're using Superfeedr as you'll see below and we opened the door of this blog to them!

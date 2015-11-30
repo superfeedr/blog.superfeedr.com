@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Survey for the new Superfeedr.com"
 tags: [company, plans, design]
 ---

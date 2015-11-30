@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Moving RSS forward
-categories: []
 ---
 
 The death for Google Reader will surely bring a gigantic wave of innovation in the RSS Reader 'market'. We've shown yesterday that [there are many many alternatives](http://blog.superfeedr.com/state-of-readers/). Superfeedr is **in the business of making RSS easier**, we're introducing a little, simple ([baby step](http://www.marco.org/2013/03/14/baby-steps-replacing-google-reader!) thing which we hope will make a subscribing easier to use for everyone.

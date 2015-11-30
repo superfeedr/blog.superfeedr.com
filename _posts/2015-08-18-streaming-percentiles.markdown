@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Streaming Percentiles"
-js_includes: []
 description: "Percentiles are often more valuable than averages and means. In this post we show how you can monitor them on infinite streams of data."
 tags: [algorithm, streams, percentiles]
 js_includes: [

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Medium supports PubSubHubbub"
-categories: []
 tags: [pubsubhubbub, publisher, customer]
 ---
 

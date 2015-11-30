@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Superfeedr, Hapi & Feedparser"
 tags: [javascript, hapi, feed api, pack]
 ---

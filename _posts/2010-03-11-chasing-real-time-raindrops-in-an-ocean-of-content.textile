@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Chasing Real-Time Raindrops in an Ocean of Content"
 categories: [realtime, search, web]
 ---

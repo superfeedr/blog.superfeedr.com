@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "New Documentation"
-categories: []
 ---
 
 It was long overdue but we're finally introducing a completely [refactored documentation](http://documentation.superfeedr.com/). Up until now, the documentation was part of our main site. This was a **bad** choice for several reasons: 

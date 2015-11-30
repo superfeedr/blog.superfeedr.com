@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Moving to Prosody.im"
-categories: []
 tags: [xmpp, backend, prosody]
 ---
 

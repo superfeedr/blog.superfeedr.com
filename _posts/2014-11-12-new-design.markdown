@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "New Design"
-js_includes: []
 tags: [company, debug, console, design]
 ---
 

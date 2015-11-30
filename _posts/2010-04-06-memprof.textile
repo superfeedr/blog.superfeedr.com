@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Memprof
 categories: [memprof, ruby, debugging, memory]
 alias: /debugging/memory/memprof/ruby/memprof/

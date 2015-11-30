@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A new Architecture
 categories: [api, xmpp, pubsubhubbub, architecture]
 ---

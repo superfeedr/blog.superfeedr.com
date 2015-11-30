@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Feed Popularity"
-js_includes: []
 description: "In our effort to provide more meta-data about RSS feeds on the web, today, we're adding popularity."
 tags: [metadata, popularity, feed api]
 ---

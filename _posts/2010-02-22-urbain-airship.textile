@@ -1,5 +1,4 @@
 ---
-layout: post
 title: UrbanAirship
 categories: [Use-Case, Python, PubSubHubbub]
 ---

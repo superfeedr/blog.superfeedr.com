@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Protocols over APIs
-categories: []
 ---
 
 There is not a week where I don't see developers discovering that a given API has been deprecated. Today's disappointment (at least in my twitter stream) comes from the "Google Chart Tool API":https://developers.google.com/chart/.

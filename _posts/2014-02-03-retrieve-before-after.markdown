@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Retrieve Before or After"
-categories: []
 tags: [retrieve, http, feed api]
 ---
 

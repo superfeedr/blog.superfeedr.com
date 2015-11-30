@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SubToMe and the open web"
 tags: [subtome, indieweb, openweb, subscriptions]
 ---

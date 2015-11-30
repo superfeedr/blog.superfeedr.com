@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "XML-RPC Ping to PubSubHubbub"
 categories: [XML-RPC, Ping, PubSubHubbub, XMPP, Real-time]
 alias: /xml-rpc/ping/pubsubhubbub/xmpp/real-time/XMLRPC-Ping-to-PubSubHubbub

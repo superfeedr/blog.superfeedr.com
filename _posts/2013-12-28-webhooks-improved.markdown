@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "PubSubHubbub is webhooks with benefits"
-categories: []
 tags: [webhook, pubsubhubbub, http]
 ---
 

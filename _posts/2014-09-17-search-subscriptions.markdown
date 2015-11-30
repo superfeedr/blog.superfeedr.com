@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Search in Subscriptions"
-js_includes: []
 tags: [feed api, list, subscriptions, search]
 ---
 

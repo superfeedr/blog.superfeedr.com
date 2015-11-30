@@ -1,5 +1,4 @@
 ---
-layout: post
 title: PubSubHubbub
 categories: [api, http, pubsubhubbub]
 ---

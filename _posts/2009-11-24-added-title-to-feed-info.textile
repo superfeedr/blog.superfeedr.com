@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Added Title to Feed Info
 categories: [title, feed, schema]
 ---

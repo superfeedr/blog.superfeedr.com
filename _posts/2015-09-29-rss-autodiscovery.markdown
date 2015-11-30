@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "RSS Auto Discovery"
 description: "RSS autodiscovery is a mechanism that makes it simple for browsers and other software to reliably find RSS feeds from HTML documents."
 tags: [rss, openweb, discovery, practices]

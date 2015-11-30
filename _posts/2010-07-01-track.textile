@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Track
 categories: [track, filter, xmpp, pubsubhubbub]
 ---

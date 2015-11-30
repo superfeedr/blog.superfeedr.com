@@ -1,5 +1,4 @@
 ---
-layout: post
 title: This week in Google - Episode 52
 categories:
 ---

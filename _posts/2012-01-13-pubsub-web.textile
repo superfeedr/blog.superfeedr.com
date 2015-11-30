@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Publish Subscribe for the web
-categories: []
 ---
 
 Everybody tries to make the web better. Here's my attempt.

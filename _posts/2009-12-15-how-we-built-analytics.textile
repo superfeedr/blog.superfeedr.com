@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How we built Analytics"
 categories: [analytics, pubsubhubbub, publisher, tutorial, mongodb]
 alias: [/analytics/mongodb/publisher/pubsubhubbub/tutorial/how-we-built-analytics]

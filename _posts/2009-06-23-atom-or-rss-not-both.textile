@@ -1,5 +1,4 @@
 ---
-layout: post
 title: RSS or Atom, not both!
 categories: [gospel, feeds]
 description: "Do not publish both an Atom and an RSS feed: chose one and make it perfect."

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Distributed and Federated Social Networks"
 categories: [social-networks, federation, pubsubhubbub, XMPP]
 ---

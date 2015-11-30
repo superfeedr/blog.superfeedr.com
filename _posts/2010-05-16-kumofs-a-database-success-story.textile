@@ -1,5 +1,4 @@
 ---
-layout: post
 title: KumoFS, a database success story
 categories: [OSS, open-source, Database, NoSQL]
 author_name: Astro

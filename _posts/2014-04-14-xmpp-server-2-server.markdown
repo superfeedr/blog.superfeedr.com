@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Develop custom XMPP Server-2-Server components with nodejs"
 author_name: chris-rock
 author_uri: http://lollyrock.com/

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Scale with Chef
 categories: [chef, deployment, infrastructure, configuration]
 ---

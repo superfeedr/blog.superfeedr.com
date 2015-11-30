@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "How to implement PubSubHubbub"
-js_includes: []
 tags: [pubsubhubbub, howto]
 ---
 

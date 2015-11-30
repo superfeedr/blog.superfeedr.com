@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Replaying Notifications"
-js_includes: []
 tags: [debug, replay, pubsubhubbub]
 ---
 

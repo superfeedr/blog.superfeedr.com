@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The Real-time Web and its future"
 categories: [Real-time, statistics, market]
 ---

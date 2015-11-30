@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Compliance for Superfeedr's Hubs"
 categories: [pubsubhubbub, testing, compliance]
 ---

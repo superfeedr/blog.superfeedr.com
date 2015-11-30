@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "IndieWeb: fragment subscriptions to microformats"
 js_includes: ["https://www.embedcurl.com/embedcurl.min.js"]
 tags: [openweb, indieweb, fragments]

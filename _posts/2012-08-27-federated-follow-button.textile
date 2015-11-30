@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Federated Web Button
-categories: []
 ---
 
 Summer is always a good time to think about making the world better, because it's too hot to get things done.

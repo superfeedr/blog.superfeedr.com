@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Ruby Fibers may confuse
 categories: [ruby, open]
 author_name: Astro

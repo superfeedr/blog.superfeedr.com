@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Arbitrary Content support
-categories: []
 ---
 
 I've read several times that it's *dumb to do the same thing more than twice*. If that happens, it means that you can automate it and never do it any more.

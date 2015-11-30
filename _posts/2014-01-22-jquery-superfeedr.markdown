@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Superfeedr Jquery"
-categories: []
 js_includes: ["http://code.jquery.com/jquery-1.10.1.min.js",
 "https://raw.githubusercontent.com/superfeedr/superfeedr-jquery/master/superfeedr.jquery.js"]
 tags: [javascript, jquery, feed api]

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Follow buttons & the logged out user"
-categories: []
 tags: [subtome, indieweb, openweb, button]
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: The Non-Decision makers
 categories: [Entrepreneurship]
 alias: [/Entrepreneurship/the-non-decision-makers/]

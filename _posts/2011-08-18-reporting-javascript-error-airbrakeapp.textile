@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Reporting Chrome Application Errors
 categories: [meta]
 ---

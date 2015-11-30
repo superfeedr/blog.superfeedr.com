@@ -1,5 +1,4 @@
 ---
-layout: post
 title: The New Atom Schema is up!
 categories: [API, Atom, schema]
 alias: /API/Atom/schema/atom-schema/

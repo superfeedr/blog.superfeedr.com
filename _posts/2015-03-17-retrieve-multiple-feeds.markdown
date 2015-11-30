@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Retrieving Multiple Feeds"
-js_includes: []
 tags: [retrieve, callback, search, feed api]
 ---
 

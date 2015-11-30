@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "New Year, new hires"
-js_includes: []
 tags: [company, plans]
 ---
 

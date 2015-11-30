@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Publisher Callback Extension to PubSubHubbub"
 categories: [PubSubHubbub, Spec, Extension]
 alias: [/PubSubHubbub/Spec/Extension/publisher-callback-extension, /Extension/PubSubHubbub/Spec/publisher-callback-extension/]

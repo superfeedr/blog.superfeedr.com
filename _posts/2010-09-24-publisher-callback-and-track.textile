@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Publisher's callback, track and firehoses
-categories: []
 ---
 
 <blockquote>

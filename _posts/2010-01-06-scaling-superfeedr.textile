@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Scaling Superfeedr"
 categories: [Superfeedr, lateness, scaling]
 alias: /Superfeedr/lateness/scaling/scaling-superfeedr/

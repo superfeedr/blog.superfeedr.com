@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "PubSubHubbub : security"
 categories: [PubSubHubbub, API, secure]
 alias: /API/PubSubHubbub/secure/secure-pubsubhubbub

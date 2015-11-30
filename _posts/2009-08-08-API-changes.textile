@@ -1,5 +1,4 @@
 ---
-layout: post
 title: API changes
 categories: [api, xmpp, pubsubhubbub]
 alias: /API/PubSubHubbub/secure/secure-pubsubhubbub/

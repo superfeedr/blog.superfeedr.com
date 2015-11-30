@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A Social Network?
 categories: [pubsubhubbub, xmpp, open, social]
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Aristochat
 categories: [OSS, Chat, XMPP, MUC]
 ---

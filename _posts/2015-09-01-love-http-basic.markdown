@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "We love HTTP Basic"
-js_includes: []
 description: "Most web applications these days will come with an OAuth endpoint to authenticate against the API. At Superfeedr, we stick to HTTP Basic. Here's why."
 tags: [api, authentication]
 ---

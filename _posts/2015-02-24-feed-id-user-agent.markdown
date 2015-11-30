@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Feed-Id in User Agents"
-js_includes: []
 tags: [http, webhook, user-agent]
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Tumblr has a hub"
 categories: [Tumblr, pubsubhubbub, publisher]
 alias: /Tumblr/publisher/pubsubhubbub/tumblr-has-a-hub/

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: SUP over PubSubHubbub and XMPP
 categories: [SUP, PubSubHubbub, XMPP, Real-time]
 alias: /PubSubHubbub/Real-time/SUP/XMPP/SUP-over-pubsubhubb-and-xmpp/

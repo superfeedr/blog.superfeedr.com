@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "State of Real-Time feeds"
 categories: [Real-time, statistics, market]
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A Perl Wrapper
 categories: [API, Perl, XMPP]
 ---

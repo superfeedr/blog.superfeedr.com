@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Rack Middleware for Superfeedr
-categories: []
 tags: [ruby, rack, sinatra, rails]
 ---
 

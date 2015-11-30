@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Harper's friends
 categories: [use-case, friends, harper]
 ---

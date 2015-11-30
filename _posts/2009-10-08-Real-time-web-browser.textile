@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Real-Time web browsers"
 categories: [Real-time, gospel, Seesmic, Tweetdeck]
 ---

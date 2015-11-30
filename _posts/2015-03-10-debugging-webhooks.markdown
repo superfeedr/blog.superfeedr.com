@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Debugging Webhooks"
-js_includes: []
 tags: [webhook, debug, pubsubhubbub, replay]
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Subscribe to popular feeds"
 description: "The web has hundreds of millions of RSS feeds. Only a hadful of them is popular and Superfeedr lets you subscribe only to the most popular RSS feeds."
 tags: [RSS, tracker, popularity, feed api, metadata]

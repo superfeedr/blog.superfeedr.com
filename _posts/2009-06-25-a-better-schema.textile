@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A better Schema
 categories: [Atom, schema]
 ---

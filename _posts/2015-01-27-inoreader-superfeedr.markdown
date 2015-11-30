@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Inoreader: Super-charge your RSS with Superfeedr"
-js_includes: []
 tags: [publisher, pubsubhubbub, inoreader]
 ---
 

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Language Detection"
-js_includes: []
 tags: [language, feed api, metadata]
 ---
 

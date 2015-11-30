@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Introducing the Feedbox"
-js_includes: []
 description: "Our tracker feeds let you track feeds from all over the web. The Feedbox allows anyone to add their feeds to the mix!"
 tags: [tracking, trackers, RSS]
 ---

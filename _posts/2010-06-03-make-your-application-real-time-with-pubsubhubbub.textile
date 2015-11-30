@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Make your application real-time with PubSubHubbub
 categories: [PubSubHubbub, gospel, googleio]
 alias: /pubsubhubbub/gospel/googleio/make-your-application-real-time-with-pubsubhubbub

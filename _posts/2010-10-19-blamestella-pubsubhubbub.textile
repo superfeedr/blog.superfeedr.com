@@ -1,7 +1,5 @@
 ---
-layout: post
 title: BlameStella and PubSubHubbub
-categories: []
 ---
 
 For a lot of people, *PubSubHubbub* is something that should _mostly work with the social web_. However, when you think about it, it is actually much wider, as it relies solely on feeds, without caring much about the semantics of this feed.

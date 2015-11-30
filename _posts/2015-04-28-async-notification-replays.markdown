@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Async Notification Replays"
-js_includes: []
 description: "It's very convenient when implementing Superfeedr in a Rails application to be able to replay notification asynchronously."
 tags: [rails, replay, notifications]
 ---

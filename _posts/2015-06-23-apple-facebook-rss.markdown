@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Apple, Facebook and RSS"
-js_includes: []
 description: "Recently, both Apple and Facebook started to recommend using RSS as an publishing tool for their platforms. When using Superfeedr, we extract AMP for you."
 tags: [guidelines, RSS, reboot]
 ---

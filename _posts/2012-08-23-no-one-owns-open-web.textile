@@ -1,7 +1,5 @@
 ---
-layout: post
 title: No one owns the open web!
-categories: []
 ---
 
 It seems that the pendulum as swung and that a lot of people are now worried about the silos in which we stored and built our online lives for the last couple years. We had "app.net":https://join.app.net/, and we now have "tent.io":https://github.com/tent/tent.io.

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "10 Feed Publishing Best Practices"
 categories: [Feeds, RSS, Atom, Best Practice]
 description: "Publishing RSS feeds can seem trivial. Yet, so many people do it wrong, even within the large companies. Here are some good practices if you're adding RSS feeds to your app. This is better for your users, the apps consuming the feeds and you!"

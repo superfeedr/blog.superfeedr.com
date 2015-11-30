@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Track v2
-categories: []
 ---
 
 <blockquote>

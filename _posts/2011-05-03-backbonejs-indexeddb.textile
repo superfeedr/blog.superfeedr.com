@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Backbonejs adapter for IndexedDB
-categories: []
 ---
 
 One message a month is clearly not as much as we wanted. There is so much going on right now, but *we're also working on an amazing new product* that we an't wait to get our the door. For this new product, we needed to *work on a lot of little things and we decided to open-source them all*. Last month, we released an "ejabberd module to use Websockets":http://blog.superfeedr.com/xmpp-over-websockets/ instead of Bosh. Today, we release an "IndexedDB adapter for Backbone.js":https://github.com/superfeedr/indexeddb-backbonejs-adapter.

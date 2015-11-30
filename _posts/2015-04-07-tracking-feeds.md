@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Tracking Feeds"
 js_includes: [
 "https://raw.githubusercontent.com/remy/polyfills/master/EventSource.js",

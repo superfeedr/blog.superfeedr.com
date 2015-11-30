@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Building an RSS bot for Telegram with AWS Lambda"
 description: "In this post we illustrate how to create an RSS bot with Superfeedr, Amazon Lambda for the Telegram messenger."
 tags: [rss, bot, webhook]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Gawker Media and ReadWriteWeb have hubs"
 categories: [PubSubHubbub, readwriteweb, gawker, Lifehacker, Gizmodo]
 ---

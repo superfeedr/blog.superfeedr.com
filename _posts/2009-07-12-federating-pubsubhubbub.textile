@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Federating PubSubHubbub
 categories: [pubsubhubbub, api, federation]
 ---

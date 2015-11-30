@@ -1,7 +1,7 @@
 ---
-layout: post
 title: JSON PubSubHubbub Notifications
-categories: []
+tags: [feed api, pubsubhubbub, JSON]
+description: "Making RSS simpler to consume is also a matter of making sure subscribers don't have to deal with the hundreds of flavors (and broken) versions of XML. We can ping you the content of any feed using JSON."
 ---
 
 At Superfeedr, our biggest focus is to *make RSS/Atom feeds consumption much easier* than what it was, just a year ago. Of course, the "transportation" part of it is a big issue. Polling was the only way up to a few months ago. It's now less and less the case and pushing the "PubSubHubbub protocol for publishers":http://superfeedr.com/publisher is a way to solve this pain. _Another pain is to parse the XML_, not only because there are multiple flavors of it : RSS, Atom, and all their versions and sub-namespaces, but also because of all the invalid feeds that we have out there in the wild. *Normalization to Atom is our way to fix this*.

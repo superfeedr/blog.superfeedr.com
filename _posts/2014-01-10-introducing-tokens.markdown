@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Introducing tokens"
-categories: []
 tags: [token, authentication, security]
 ---
 

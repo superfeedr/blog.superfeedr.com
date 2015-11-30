@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Podcast is RSS"
-js_includes: []
 tags: [podcast, rss, feed api, openweb]
 ---
 

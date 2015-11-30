@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Introducing a free Superfeedr plan!
-categories: []
 ---
 
 In the various list of [Google Reader alternatives](http://blog.superfeedr.com/state-of-readers/), we found out that a lot of indie hackers were either hosting their own reader or even creating one.

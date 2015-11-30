@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Detailed Subscription List"
-js_includes: []
 tags: [feed api, list, subscription]
 ---
 

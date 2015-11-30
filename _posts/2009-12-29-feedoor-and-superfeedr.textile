@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Feedoor and Superfeedr"
 categories: [PubSubHubbub, use-case, feedoor, API, Perl]
 alias: /API/Perl/PubSubHubbub/feedoor/use-case/feedoor-and-superfeedr/

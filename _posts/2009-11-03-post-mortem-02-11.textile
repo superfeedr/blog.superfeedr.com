@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Post Mortem 02/11
 categories: [post-mortem, MySQL, Memcache]
 alias: /Memcache/MySQL/post-mortem/post-mortem-02-11

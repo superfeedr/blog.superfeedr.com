@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Streaming averages"
 description: "State is a luxury that fewer and fewer application have: the data changes faster than it takes to iterate over it, it does not fit in memory and yet, we need simple things like averages to always be up to date. "
 tags: [algorithm, streams]

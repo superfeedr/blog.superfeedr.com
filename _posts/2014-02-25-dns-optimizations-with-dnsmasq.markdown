@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "DNS Optimizations with Dnsmasq"
 tags: [dns, backend, dnsmasq]
 description: "DNS resolution is key to Superfeedr's speed. Caching records is hence very important. Here we show how using Dnsmasq helps us speed things up."

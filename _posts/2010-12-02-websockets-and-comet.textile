@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Websockets and Comet
-categories: []
 ---
 
 Up until now, Superfeedr mostly focused on server to server communications (even though, technically, "XMPP":http://documentation.superfeedr.com/subscribers.html#xmpppubsub also works very well with clients too). Today, we're announcing 2 server to client protocols, even though, they too, can be used for servers : *websockets* and *comet*. On both, we will push "JSON":http://documentation.superfeedr.com/schema.html#json by default.

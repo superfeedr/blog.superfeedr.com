@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Grove.io and Superfeedr
-categories: []
 ---
 
 Do you know "Grove.io":https://grove.io/? It is a great hosted IRC service with a bunch of really awesome features to make your rooms much much smarter and useful. One of the great things they did is allow their users to plug other applications to the room using webhooks.

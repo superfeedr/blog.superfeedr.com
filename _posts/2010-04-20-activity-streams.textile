@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Activity Streams
 categories: [activity, streams, pubsubhubbub]
 alias: /activity/pubsubhubbub/streams/activity-streams/

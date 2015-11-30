@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "A Hub for Twitter"
 categories: [PubSubHubbub, Twitter, API, feeds, streaming]
 alias: /API/PubSubHubbub/Twitter/feeds/streaming/a-hub-for-twitter

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Who fetches our blog feed"
-js_includes: []
 tags: [http, user-agent, pubsubhubbub]
 ---
 

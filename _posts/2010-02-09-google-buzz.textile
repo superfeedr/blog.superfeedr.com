@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Google's Buzz is PubSubHubbub in, and out
 categories: [pubsubhubbub, use-case, google]
 ---

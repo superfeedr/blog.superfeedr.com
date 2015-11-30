@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Susbcribe and Retrieve"
-categories: []
 tags: [subscribe, retrieve, http, feed api]
 ---
 

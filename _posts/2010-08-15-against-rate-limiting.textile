@@ -1,7 +1,5 @@
 ---
-layout: post
 title: The Case against Rate Limiting
-categories: []
 ---
 
 At Superfeedr, we do a lot of polling, and we do it in aggressive ways sometimes. We obviously try anything we can to be nice with servers, by implementing "ETags":http://en.wikipedia.org/wiki/HTTP_ETag, "If-Modified-Since":http://webee.technion.ac.il/labs/comnet/netcourse/CIE/RFC/1945/58.htm headers, but also (and more importantly), by avoiding to make any request that doesn't need to be made (using "PubSubHubbub":http://blog.superfeedr.com/api/http/pubsubhubbub/pubsubhubbub/, "RSSCloud":http://blog.superfeedr.com/rsscloud/api/PubSubHubbub/RSSCloud/, "XML-RPC":http://blog.superfeedr.com/XML-RPC/Ping/PubSubHubbub/XMPP/Real-time/XMLRPC-Ping-to-PubSubHubbub/ pings... etc). We also do back-off when we see errors from a given url/domain, to avoid making an existing issue worse. Finally, *we do not hide ourselves*. The "list of IPs":http://documentation.superfeedr.com/misc.html#listofips we use is public and our User-Agents[1] are very explicit. Yet, some people block us and we think it's sad.

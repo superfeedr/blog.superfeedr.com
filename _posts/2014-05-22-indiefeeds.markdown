@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Indie-feeds"
 tags: [openweb, rss, indieweb]
 ---

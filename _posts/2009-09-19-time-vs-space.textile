@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Time vs. Space : how do we apprehend information?"
 categories: [real-time, gospel]
 ---

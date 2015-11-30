@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Susbcriber Toolbox
 categories: [meta]
 ---

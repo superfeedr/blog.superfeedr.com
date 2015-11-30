@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Make Our Logo!
 categories: [logo, meta, open-source]
 ---

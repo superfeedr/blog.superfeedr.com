@@ -1,5 +1,4 @@
 ---
-layout: post
 title: We're doing something stupid so that you don't have to
 categories: [gospel]
 ---

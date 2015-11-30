@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Weekend Projects: Superpipes"
-categories: []
 ---
 
 Google has their "20% free time":http://www.google.com/jobs/lifeatgoogle/englife/index.html. At Superfeedr, we use weekends, or flights.

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: EventVue's Chatter
 categories: [pubsubhubbub, API, PHP, eventvue, use-case]
 ---

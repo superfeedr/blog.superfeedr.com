@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Flattr PubSubHubbub-ed
-categories: []
 tags: [pubsubhubbub, publisher, customer]
 ---
 

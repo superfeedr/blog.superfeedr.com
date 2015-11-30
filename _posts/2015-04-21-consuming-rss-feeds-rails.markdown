@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "Consuming RSS feeds in Rails Application"
 description: "Agregating RSS feeds in a web application is easier than ever with the Superfeedr Rails Engine. Here's a tutorial on how to consume RSS/atom in a Ruby On Rails web application."
-js_includes: []
 tags: [ruby, rails, engine]
 ---
 
@@ -25,7 +23,7 @@ In practice, the Superfeedr Engine handles interactions with Superfeedr's endpoi
 
 #### Install
 
-First, install the `gem` and its dependencies. Add the following line to your `Gemfile`: 
+First, install the `gem` and its dependencies. Add the following line to your `Gemfile`:
 
 {% prism bash %}
 gem 'superfeedr_engine'
@@ -42,21 +40,21 @@ bundle install
 Create a configuration file: `config/initailizers/superfeedr_engine.rb` with the following content:
 
 {% prism bash %}
-SuperfeedrEngine::Engine.feed_class = "Feed" 
+SuperfeedrEngine::Engine.feed_class = "Feed"
 # Use the class you use for feeds. (Its name as a string)
 # This class needs to have the following attributes/methods:
 # * url: should be the main feed url
 # * id: a unique id (string) for each feed (can be the primary key in your relational table)
 # * secret: a secret which should never change and be unique for each feed. It must be hard to guess. (a md5 or sha1 string works fine!)
 
-SuperfeedrEngine::Engine.base_path = "/superfeedr_engine/" 
+SuperfeedrEngine::Engine.base_path = "/superfeedr_engine/"
 # Base path for the engine don't forget the trailing / and make it hard to guess!
 
-SuperfeedrEngine::Engine.host = "my-fancy-app.com" # Your hostname (no http). Used for webhooks! 
+SuperfeedrEngine::Engine.host = "my-fancy-app.com" # Your hostname (no http). Used for webhooks!
 # When debugging, you can use tools like https://www.runscope.com/docs/passageway to share your local web server with superfeedr's API via a public URL
 
 # Superfeedr username
-SuperfeedrEngine::Engine.login = "demo" 
+SuperfeedrEngine::Engine.login = "demo"
 
 # Token value. Make sure it has the associated rights your application needs
 SuperfeedrEngine::Engine.password = "8ac38a53cc32f91a6445e880fc6fc865"
@@ -73,7 +71,7 @@ SuperfeedrEngine::Engine.port = 80
 Update routes in `config/routes.rb` to mount the Engine.
 
 {% prism bash %}
-mount SuperfeedrEngine::Engine => SuperfeedrEngine::Engine.base_path 
+mount SuperfeedrEngine::Engine => SuperfeedrEngine::Engine.base_path
 {% endprism %}
 
 #### Subscribe, unsubscribe and receive notifications
@@ -82,16 +80,16 @@ You can call now perform the following calls from inside your application:
 
 {% prism bash %}
 # Will subscribe your application to the feed object and will retrieve its past content yielded as a JSON string in body.
-body, ok = SuperfeedrEngine::Engine.subscribe(feed, {:retrieve => true}) 
+body, ok = SuperfeedrEngine::Engine.subscribe(feed, {:retrieve => true})
 
 # Will retrieve the past content of a feed (but you must be subscribed to it first)
-body, ok = SuperfeedrEngine::Engine.retrieve(feed) 
+body, ok = SuperfeedrEngine::Engine.retrieve(feed)
 
 # Will stop receiving notifications when a feed changes.
-body, ok = SuperfeedrEngine::Engine.unsubscribe(feed) 
+body, ok = SuperfeedrEngine::Engine.unsubscribe(feed)
 {% endprism %}
 
-Finally, make sure your `SuperfeedrEngine::Engine.feed_class` has a `notified` method which will be called by the engine when new content is received by your application. You'll probably want to save the content of this notification. By default, this engine will subscribe to Superfeedr using the `JSON` format. Please check our [JSON schema](http://documentation.superfeedr.com/schema.html#json) for more details. 
+Finally, make sure your `SuperfeedrEngine::Engine.feed_class` has a `notified` method which will be called by the engine when new content is received by your application. You'll probably want to save the content of this notification. By default, this engine will subscribe to Superfeedr using the `JSON` format. Please check our [JSON schema](http://documentation.superfeedr.com/schema.html#json) for more details.
 
 Here's an example:
 
@@ -102,7 +100,7 @@ class Feed < ActiveRecord::Base
 
   ##
   # When notified, we save the status of the feed and, for each item
-  # we create a new entry by saving its title, atom_id, url and 
+  # we create a new entry by saving its title, atom_id, url and
   # content.
   def notified params
     update_attributes(:status => params["status"]["http"])

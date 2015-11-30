@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Fragment Subscription
-categories: []
 ---
 
 Last month, we introduced "arbitrary content PubSubHubbub subscription":http://blog.superfeedr.com/arbitrary-content-pubsubhubbub/, which allowed you to *subscribe to any kind of web resource*, including HTML web pages (but also JSON, YAML, VCard and many many more).

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: PubSubHubbub for APIs
-categories: []
 ---
 
 *PubSubHubbub* _was initially created for feeds_, because the polls/update ratio is usually quite high for them. Unfortunately, this ratio is also often times very high for APIs. Generally, we push people into implementing feeds rather than APIs for their content, as feeds are standard, and once a developer has created an app that is able to consume and RSS feed from Flickr, it is able to consume a feed from Tumblr, a feed from ReadWriteWeb or a feed from Craigslist. *Feeds are the web's lingua franca*! Yet, in some cases, having a custom JSON API just makes more sense. Here is *how to support PubSubHubbub with your API*.

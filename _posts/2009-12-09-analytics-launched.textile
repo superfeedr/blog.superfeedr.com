@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Feedburner stats for real-time web"
 categories: [Real-time, analytics, pubsubhubbub]
 ---

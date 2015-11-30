@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "How can we help the open web?"
-categories: []
 tags: [openweb, indieweb, feed]
 ---
 

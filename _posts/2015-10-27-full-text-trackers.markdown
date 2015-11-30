@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "Full Text Trackers"
 description: "We are matching full text content for your tracking queries. This helps us find new content even in truncated RSS feeds."
 tags: [tracking, trackers, search, prospective, fulltext]
-js_includes: []
 ---
 
 You can only use search engines to find *past* documents, articles or pages which mention specific keywords. If you want to **search in the future** (that's often called *prospective search*), you should look at our [tracking feeds](/tracking-feeds/). They let you define search queries which are executed against each new feed entry that goes through Superfeedr.

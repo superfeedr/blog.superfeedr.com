@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Redis at Superfeedr
 categories: [redis, mysql, memcache, datastore, performance]
 alias: /datastore/memcache/mysql/performance/redis/redis-at-superfeedr/

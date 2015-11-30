@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Unicorn
 categories: [webapp, pubsubhubbub, architecture, nnicorn]
 alias: /architecture/nnicorn/pubsubhubbub/webapp/unicorn

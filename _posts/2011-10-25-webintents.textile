@@ -1,7 +1,5 @@
 ---
-layout: post
 title: WebIntents
-categories: []
 ---
 
 <em>Beware, the WebIntents protocol has been updated and the example given below are inaccurate. The general idea stays true, though.</em>

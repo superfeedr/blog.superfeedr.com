@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Readers News"
-js_includes: []
 tags: [reactjs, jquery, static, feed api]
 ---
 

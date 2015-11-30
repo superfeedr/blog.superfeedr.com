@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "More analytics"
 tags: [analytic, publisher]
 ---

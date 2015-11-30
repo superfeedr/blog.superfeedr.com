@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Be my guest"
 categories: [blog, meta, superfeedr, ecosystem]
 alias: /blog/ecosystem/meta/superfeedr/be-my-guest/

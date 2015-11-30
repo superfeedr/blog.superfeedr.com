@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Why PubSubHubbub at Etsy is awesome!
-categories: []
 ---
 
 A lot or people tend to think that PubSubHubbub is limited to the blogs or the social web. As "Etsy showed yesterday":http://developer.etsy.com/docs/read/PubSubHubbub_Feeds by introducing "PubSubHubbub":http://hub.etsy.com to their feeds, this is a wrong assumption and *e-commerce makes another excellent business-case for PubSubHubbub*!

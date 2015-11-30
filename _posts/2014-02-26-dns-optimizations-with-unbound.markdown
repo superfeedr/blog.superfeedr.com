@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "DNS Optimizations with Unbound"
 tags: [dns, backend, unbound]
 description: "Caching DNS results locally is not always enough. At Superfeedr we're using a shared recursive DNS cache accross all of our pollers to make sure all DNS requests are served as fast as possible."

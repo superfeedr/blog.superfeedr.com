@@ -1,7 +1,5 @@
 ---
-layout: post
 title: XMPP over websockets.
-categories: []
 tags: [openweb, html5, xmpp]
 description: "XMPP's biggest hurdle is that it does not run in the browser. HTML5's webscoket can change that for the best! Let's XMPP all of the browsers!"
 ---

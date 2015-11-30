@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A social filtering algorithm
 categories: [social, algorithm]
 ---

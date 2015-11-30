@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Independence day on the web"
-categories: []
 ---
 
 Today is Independence Day in the US: happy 4th of July. There will be fireworks and BBQs in the offline world, but let's also take a couple seconds to think about what *independent* means on the web.

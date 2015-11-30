@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "Superfeedr's null device"
 description: "When subscribing to a feed, you should use https://push.superfeedr.com/dev/null if you want notifications to be ignored."
 tags: [feed api, retrieve, subscribe]
-js_includes: []
 ---
 
 Many people, us included, see the web being a complex *operating system*. A consequence of this is that we embrace the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) of small components loosely coupled using streams for data in and out.

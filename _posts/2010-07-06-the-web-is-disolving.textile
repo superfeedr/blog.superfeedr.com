@@ -1,7 +1,5 @@
 ---
-layout: post
 title: The web dissolving
-categories: []
 ---
 
 In the past few weeks, I've been struck by the thought that *the web is dissolving*. There used to be a time (like 6 years ago!) where we could only browse the web in specific places, from specific devices, at specific times and then, we would go on specific sites.

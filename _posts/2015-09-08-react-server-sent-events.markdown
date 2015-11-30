@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "React and Server Sent Events"
-js_includes: []
 description: "Integrating Server-Sent Events in React is trivial. Here's an example."
 tags: [reactjs, static, feed api, server-sent-events, eventsource, stream]
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "RSS streaming"
 js_includes: ["https://www.embedcurl.com/embedcurl.min.js"]
 tags: [feed api, http, stream]

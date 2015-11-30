@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Digest and Heartbeat notifications
 categories: [pubsubhubbub, pubsub, digest, heartbeat]
 alias: /digest/heartbeat/pubsub/pubsubhubbub/digest-and-heartbeat-notification/

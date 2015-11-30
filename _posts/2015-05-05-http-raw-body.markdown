@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "HTTP Raw Body"
-js_includes: []
 description: "Most modern web frameworks and languages will make assumption about the body of HTTP POST requests and try to parse it. However, often, with webhooks, you'll want to access its raw version."
 tags: [debugging, webhook, pubsubhubbub, http]
 ---

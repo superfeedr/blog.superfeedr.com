@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "A new PubSubHubbub endpoint"
-categories: []
 tags: [http, feed api, backend]
 ---
 

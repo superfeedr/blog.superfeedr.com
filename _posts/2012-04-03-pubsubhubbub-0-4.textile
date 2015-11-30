@@ -1,7 +1,5 @@
 ---
-layout: post
 title: PubSubHubbub v0.4
-categories: []
 tags: [webhook, pubsubhubbub, http, openweb]
 ---
 

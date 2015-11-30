@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Internet of Things and PubSubHubbub
 categories: [meta]
 ---

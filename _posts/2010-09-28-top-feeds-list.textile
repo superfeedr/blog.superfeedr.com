@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Top Feeds list
-categories: []
 description: "We curated a list of popular feeds. These top feeds have been extracted from the Superfeedr database."
 tags: [popularity, feed api, metadata, top feeds, curation]
 ---

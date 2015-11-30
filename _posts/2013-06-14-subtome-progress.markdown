@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "SubToMe: Angular, Localization and more!"
-categories: []
 ---
 
 The [SubToMe](https://www.subtome.com/#/) button we launched a couple weeks is now getting a **significant traction** and has been added to thousands of blogs and sites! This makes us very proud! Many readers now also support direct registration which makes them extremely convenient to use when susbcribing *on the fly*!

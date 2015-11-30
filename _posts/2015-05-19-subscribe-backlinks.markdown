@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Subscribing to backlinks"
-js_includes: []
 description: "Knowing when someone links to your site is extremly important for SEO, but also community management. Tracking feeds let you do that very easily"
 tags: [tracking, search, backlinks, SEO, webmentions]
 ---

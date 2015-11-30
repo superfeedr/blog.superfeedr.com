@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Feediscovery"
 categories: [api, feeds, discovery, feediscovery]
 ---

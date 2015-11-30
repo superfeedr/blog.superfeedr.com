@@ -1,7 +1,5 @@
 ---
-layout: post
 title: WebIntents are links 2.0
-categories: []
 ---
 
 You may have heard of "WebIntents":http://webintents.org/. At least, "here":http://blog.superfeedr.com/webintents/.

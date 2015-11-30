@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Realtime web technologies
-categories: []
 ---
 
 We live in the realtime web era. There are different appreciations of what realtime web is. To me, the best definition is that it means the *content is pushed* from a publisher to a subscriber, rather than have the subscriber poll the publisher over and over. Today there exists a bunch of different _realtime web technologies_. Let's review a few of them.

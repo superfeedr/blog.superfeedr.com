@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Jyri Engestrom joins as an Advisor
 categories: [superfeedr, startup]
 alias: /startup/superfeedr/jyri-engestrom-is-an-advisor/

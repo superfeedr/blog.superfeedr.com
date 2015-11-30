@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Users don't care
-categories: []
 ---
 
 We we try to convince people that the web would be better if we relied more on open protocols and platforms would do adopt these, we often get the deaded __but the people, are like the "honey badger":http://www.youtube.com/watch?v=4r7wHMg5Yjg, they don't care__. And that is *true*!

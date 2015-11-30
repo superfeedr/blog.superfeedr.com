@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Superfeedr Java Wrapper
 categories: [API, Java, XMPP, wrappers, OSS]
 ---

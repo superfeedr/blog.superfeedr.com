@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A hub for Dotspots
 categories: [hub, usecase, pubsubhubbub]
 ---

@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "State of PubSubHubbub (subscribers' edition)"
-categories: []
 ---
 
 Now that [PubSubHubbub evolved toward 0.4](http://blog.superfeedr.com/pubsubhubbub-04/), and that what used to be the most popular reader are gone, it's time to check the **state of PubSubHubbub** and see which of the new readers support it.

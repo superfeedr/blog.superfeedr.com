@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Bridging AMP and RSS"
 description: "The AMP project became public last week. "
 tags: [openweb, RSS, Twitter, Google, Facebook]

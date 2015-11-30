@@ -1,10 +1,10 @@
 ---
-layout: post
 title: JSON retrieve
-categories: []
+tags: [feed api, RSS, JSON, retrieve]
+description: "Not only Superfeedr can convert RSS or Atom into JSON when upon notification, but we can also convert RSS to JSON when retrieving the past content for any RSS feed."
 ---
 
-This is the second week ("first week is here":http://blog.superfeedr.com/feature-friday-pubsubhubbub-tricks/) of our #FeatureFriday series! I've been traveling quite a bunch in the past few days, so I haven't been able to push as much code as I hoped, but we have a released a bunch of features and fixed a few bugs again :)
+This is the second week ("first week is here":/feature-friday-pubsubhubbub-tricks/) of our #FeatureFriday series! I've been traveling quite a bunch in the past few days, so I haven't been able to push as much code as I hoped, but we have a released a bunch of features and fixed a few bugs again :)
 
 h3. JSON when retrieving a feed status
 

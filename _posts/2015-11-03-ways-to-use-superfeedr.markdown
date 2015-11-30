@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "2 ways to use Superfeedr"
 description: "When consuming data from Superfeedr, you can choose between either pulling data from us or waiting for us to push you the data from the RSS feeds."
 tags: [subscriber, PubSubHubbub, howto, feed api]
-js_includes: []
 ---
 
 <svg width="45%" height="30%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="float:right;">

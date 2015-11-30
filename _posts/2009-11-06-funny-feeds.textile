@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Funny Feeds
 categories: [feeds, RSS, ATOM]
 ---

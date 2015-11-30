@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Getting Started with PubSubHubbub
 categories: [pubsubhubbub, API]
 alias: /pubsubhubbub/API/getting-started-with-pubsubhubbub/

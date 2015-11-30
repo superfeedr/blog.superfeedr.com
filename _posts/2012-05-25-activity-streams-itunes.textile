@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Activity Streams for iTunes feeds
-categories: []
 description: "Superfeedr supports ActivityStreams for iTunes feeds, using Apple's namespace for RSS feeds."
 ---
 

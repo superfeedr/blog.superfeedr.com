@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Cave is Back
-categories: []
 ---
 
 Last spring, we had our first attempt at releasing a feature that a lot of you asked for : *cave*. The cave is where Superfeedr stores all the entries that we find in all the feeds that we process. It's not quite easy with the volume that we're dealing with, but we finally have found a solution that is working well for now.

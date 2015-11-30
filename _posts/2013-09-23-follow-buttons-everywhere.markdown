@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Follow Buttons everywhere"
-categories: []
 tags: [subtome, indieweb, openweb, button]
 ---
 

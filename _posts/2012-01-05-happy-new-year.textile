@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Happy New Year
-categories: []
 ---
 
 2012 is starting and, well, I have to confess we haven't published as much as we wanted on this blog! This is one of our new 2012 resolutions!

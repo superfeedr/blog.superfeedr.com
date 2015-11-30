@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "SubToMe News"
-categories: []
 ---
 
 [SubToMe](https://www.subtome.com/#/) is growing like a weed. It's now triggering more than *500 new subscriptions daily* on the websites that display it.
