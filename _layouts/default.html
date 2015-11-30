@@ -9,20 +9,20 @@
     {% if paginator.page %}
       <meta name="description" content="{{page.description}} - Page {{ paginator.page }}" />
     {% else %}
-      <meta name="description" content="{{page.description}}" />    
+      <meta name="description" content="{{page.description}}" />
     {% endif %}
   {% else %}
     {% if paginator.page %}
       <meta name="description" content="{{page.title}} - Page {{ paginator.page }}" />
     {% else %}
-      <meta name="description" content="{{page.title}}" />    
+      <meta name="description" content="{{page.title}}" />
     {% endif %}
   {% endif %}
 
 
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic%7CSource+Code+Pro:400,600' rel='stylesheet' type='text/css'>
   <link href="/css/prism.css" rel="stylesheet" type="text/css">
   <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic%7CSource+Code+Pro:400,600" rel="stylesheet" type="text/css">
 
 
   {% for css_file in page.css_includes %}
@@ -80,7 +80,7 @@ var google_remarketing_only = true;
 
       <div class="header-logo">
         <a title="Superfeedr Home" href="/">
-          <img alt="Logo" src="/images/logo.svg"> 
+          <img alt="Logo" src="/images/logo.svg">
           <span>Superfeedr Blog</span>
         </a>
       </div>
@@ -150,7 +150,7 @@ var google_remarketing_only = true;
         <li class="site-footer__item"><a class="site-footer__link" href="mailto:info@superfeedr.com">Email</a> </li>
         <li class="site-footer__item"><a class="site-footer__link" href="https://twitter.com/superfeedr">Twitter</a> </li>
       </ul>
-    </footer> 
+    </footer>
   </div>
 
 
