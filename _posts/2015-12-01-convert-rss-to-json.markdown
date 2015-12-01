@@ -7,9 +7,9 @@ image: "/images/json-logo.png"
 
 <img src="/images/json-logo.png" style="float:right; width: 160px; margin-left: 10px; margin-bottom:5px" />
 
-Every year which passes makes it more obvious that **JSON is the format of choice when it comes APIs**. Yet, the web is based on HTML and RSS feeds also use XML-like formats. JSON is also often how mobile or web application share data between the backend and the frontent. As such, consuming RSS feeds means that your application has to be ready to consume XML, and usually immediately translate it into JSON.
+Every year which passes makes it more obvious that **JSON is the format of choice when it comes APIs**. Yet, the web is based on HTML and RSS feeds also use XML-like formats. JSON is also often how mobile or web application share data between the backend and the frontend. As such, consuming RSS feeds means that your application has to be ready to consume XML, and usually immediately translate it into JSON.
 
-Luckily, when using Superfeedr as a [subscriber](http://superfeedr.com/subscriber/), you can **safely ignore the original format** of the feed. Whether it's Atom, RSS, any flavor of the two, and even broken syntaxes, you can use Superfeedr to retrieve and be notified of changes in the feed using our [RSS to JSON schema](http://documentation.superfeedr.com/schema.html#json).
+Luckily, when using Superfeedr as a [subscriber](http://superfeedr.com/subscriber/), you can **safely ignore the original format** of the feed. Whether it's Atom, RSS, any flavour of the two, and even broken syntaxes, you can use Superfeedr to retrieve and be notified of changes in the feed using our [RSS to JSON schema](http://documentation.superfeedr.com/schema.html#json).
 
 For example, here's what this very blog's previous entry looks like, *converted to JSON*:
 
