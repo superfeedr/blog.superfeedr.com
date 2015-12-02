@@ -27,7 +27,7 @@ Subscribers can retrieve content from 3rd party feeds, as well as be notified wh
 
 ### Create an authentication token
 
-When interracting with Superfeedr's API, you should use tokens. Each token has different *rights* and you can create and delete an unlimited number of tokens.
+When interacting with Superfeedr's API, you should use tokens. Each token has different *rights* and you can create and delete an unlimited number of tokens.
 
 Here, we want to [create a token](http://superfeedr.com/tokens/new) to **retrieve**, so we only check that box. We also give a name to the token.
 
