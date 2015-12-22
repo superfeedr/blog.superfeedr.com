@@ -4,7 +4,7 @@ description: "Knowing when someone links to your site is extremly important for 
 tags: [tracking, search, backlinks, SEO, webmentions]
 ---
 
-Anyone who's spent at least 5 minutes looking at Search Engine Optimizations found how crucial [backlinks](https://en.wikipedia.org/wiki/Backlink) are. In practice for search engines, they're *votes* that lets them rank all sites together. In the social web world, people often talk about [@mentions](http://en.wikipedia.org/wiki/Mention_%28blogging%29), which are ways to link a post or a picture to someone else. 
+Anyone who's spent at least 5 minutes looking at Search Engine Optimizations found how crucial [backlinks](https://en.wikipedia.org/wiki/Backlink) are. In practice for search engines, they're *votes* that lets them rank all sites together. In the social web world, people often talk about [@mentions](http://en.wikipedia.org/wiki/Mention_%28blogging%29), which are ways to link a post or a picture to someone else.
 
 Outside of search engines, knowing when someone links to your site is also extremly important. For the longest time, search engines have provided you with a `link:` operator which lets you find the most relevant links to a site... but search engines also filter a lot of content from this list (because it's their secret sauce!), and it's really not adequate to find links which have just been made to your site.
 
@@ -23,7 +23,7 @@ For example, this page will match the following queries:
 
 Also, you can of course, combine the `link` operator with other keywords and operators, such as `site`. If we wanted to track all links to superfeedr, but not coming from a superfeedr site, we would use: `link:superfeedr.com -site:superfeedr.com`.
 
-### Want to get started? 
+### Want to get started?
 
 [Create your Tracker account](https://superfeedr.com/tracker) NOW! and check our docs on how to [build your tracking feeds](http://documentation.superfeedr.com/trackers.html#building-track-feeds).
 

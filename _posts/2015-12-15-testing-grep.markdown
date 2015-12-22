@@ -1,7 +1,7 @@
 ---
 title: "Grep.io needs testers!"
 description: "Grep is an email application which sends you email when things you care about are mentioned on the web. We need testers!"
-tags: [grep, search, filter mention]
+tags: [grep, search, filter, mention]
 js_includes: [
 "../scripts/typed.min.js",
 "../scripts/things-typed.js"]
@@ -15,7 +15,7 @@ This is an **incredibly powerful API** which lets you filter the web in realtime
 
 Unfortunately, like most APIs, it's not easily consumed by humans and will require some engineering and development work to integrate in a user workflow. This is the reason why we created [grep.io](https://grep.io/).
 
-<blockquote><span class="logo">Grep</span> emails you when your <span class="things"><span class="things__spacer">&nbsp;</span><span id="typed">business</span><span class="things__spacer">&nbsp;</span></span> is mentioned online.</blockquote>
+<blockquote>Grep emails you when your <span class="things"><span class="things__spacer">&nbsp;</span><span id="typed">business</span><span class="things__spacer">&nbsp;</span></span> is mentioned online.</blockquote>
 
 <br>
 
