@@ -24,10 +24,10 @@ layout: default
 
   {% if site.related_posts[0] %}
   <p>
-    On the same topic, check {{ site.related_posts limit:3 | pages_link_list }}. 
+    On the same topic, check {{ site.related_posts limit:3 | pages_link_list }}.
   </p>
   {% endif %}
-  
+
   <p>
     Previously, on the Superfeedr blog: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>.
   </p>
@@ -43,15 +43,4 @@ layout: default
     <noscript>
         <a href="https://superfeedr-thoughts.disqus.com/?url=ref">View the discussion thread.</a>
     </noscript>
-
-    <script id="webmention-hosted">
-    (function () {
-      var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
-      url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
-      url = url && url[0] ? url[0].href : false;
-      sn.type = "text/javascript"; sn.async = true;
-      sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
-      s.parentNode.insertBefore(sn, s);
-    }());
-    </script>
 </div>

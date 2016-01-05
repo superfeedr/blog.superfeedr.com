@@ -6,8 +6,34 @@ description: "Archives for Superfeedr's Blog"
 
 
 <h3>Superfeedr Blog Archive</h3>
-<ul>
-    {% for post in site.posts %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+
+
+{% for post in site.posts %}
+    {% unless post.next %}
+      <h4 id="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</h4>
+      <ul class="this">
+    {% else %}
+      {% capture year %}
+        {{ post.date | date: '%Y' }}
+      {% endcapture %}
+      {% capture nyear %}
+        {{ post.next.date | date: '%Y' }}
+      {% endcapture %}
+
+      {% if year != nyear %}
+      </ul>
+
+      <h4 id="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</h4>
+
+      <ul class="past">
+      {% endif %}
+    {% endunless %}
+      <li>
+        <time>
+{% assign d = post.date | date: "%-d" %}
+{{ post.date | date: "%B" }}
+{% case d %}{% when "1" or "21" or "31" %}{{ d }}st{% when "2" or "22" %}{{ d }}nd{% when "3" or "23" %}{{ d }}rd{% else %}{{ d }}th{% endcase %}
+        </time> - <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+  {% endfor %}
+
