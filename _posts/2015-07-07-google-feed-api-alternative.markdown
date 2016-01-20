@@ -4,18 +4,20 @@ description: "The Google Feed API bas been deprecated. Replace it with Superfeed
 tags: [RSS, feed api, Google, shim, javascript]
 ---
 
+> **[UPDATE]**: Google has now started to return errors when using their *feed API*. If you've reached this place when looking for a replacement, please, read this other article to help you [get started with Superfeedr](/google-feeds-api-welcome/).
+
 
 The [Google Feed API](https://developers.google.com/feed/v1/devguide) is one of the most **popular feed APIs**. It lets you download any public Atom, RSS, or Media RSS feed using only Javascript:
 
-> With the Feed API, you can download any public Atom, RSS, or Media RSS feed using only JavaScript, so you can mash up feeds with your content and other APIs with just a few lines of JavaScript. This makes it easy to quickly integrate feeds on your website. 
+> With the Feed API, you can download any public Atom, RSS, or Media RSS feed using only JavaScript, so you can mash up feeds with your content and other APIs with just a few lines of JavaScript. This makes it easy to quickly integrate feeds on your website.
 
 <img src="/images/google-feed-api.png" style="width:200px; float: left; margin-right: 10px"> It turns out that **Google has deprecated their Feed API**, which means that it's probably unsafe to use for any new projects. Luckily **Superfeedr's Feed API** is a very good alternative and our API offers the same capabilities so it's quite easy to move from the Google Feed API to Superfeedr's.
 
 ### The "Hello World" of Feed
 
-If you want to use Superfeedr's API, you need to create a (free) [subscriber account](https://superfeedr.com/subscriber/). You also need to *subscribe* to the feed(s) you want to retrieve using Superfeedr's management interface, as well as create an authentication token. 
+If you want to use Superfeedr's API, you need to create a (free) [subscriber account](https://superfeedr.com/subscriber/). You also need to *subscribe* to the feed(s) you want to retrieve using Superfeedr's management interface, as well as create an authentication token.
 
-All of this should not take more than a couple minutes and you're ready to start implementing: the most notable differences with [Google's code](https://developers.google.com/feed/v1/devguide#hiworld) is that we use an extra `auth` method which takes both a subscriber login and a token. 
+All of this should not take more than a couple minutes and you're ready to start implementing: the most notable differences with [Google's code](https://developers.google.com/feed/v1/devguide#hiworld) is that we use an extra `auth` method which takes both a subscriber login and a token.
 
 {% prism markup %}
 <html>
