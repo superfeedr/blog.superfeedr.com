@@ -20,13 +20,13 @@ description: "We blog about Superfeedr's features, how to parse RSS feeds with s
 
       <li style="display:none" class="entry-meta--item author">
       	<span class="p-author h-card vcard">
-      		<img alt="avatar {{ post.author_name }}" class="u-photo" src="http://www.gravatar.com/avatar/{{post.author_email_md5}}?s=20"> 
+      		<img alt="avatar {{ post.author_name }}" class="u-photo" src="//www.gravatar.com/avatar/{{post.author_email_md5}}?s=20">
       		<a href="{{ post.author_uri}}" class="url fn" rel="author">{{ post.author_name }}</a>
       	</span>
       </li>
 
 			<li class="entry-meta--item">
-				<a href='{{ post.url }}#disqus_thread'>View Comments</a> |  {{ post.tags | array_to_sentence_string }} 
+				<a href='{{ post.url }}#disqus_thread'>View Comments</a> |  {{ post.tags | array_to_sentence_string }}
 			</li>
 		</ul>
 		<div class="entry-meta--secondary">
