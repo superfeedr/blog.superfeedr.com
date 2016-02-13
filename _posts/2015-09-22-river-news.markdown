@@ -5,13 +5,13 @@ tags: [openweb, reactjs, static, reader]
 js_includes: [
 '//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js',
 '//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js',
-'http://river.news/js/river.news.min.js'
+'https://river.news/js/river.news.min.js'
 ]
 ---
 
 When we started investigating [React](https://facebook.github.io/react/), we were looking for a side project for which we could use both React and [Superfeedr's API](http://push.superfeedr.com/). This had to be an *RSS reader*. One of the aspects of the modern web we're really fond of is the ability to build rich application *without* an app server... **only using static files**.
 
-A **RSS River** is the perfect use case for us to build a fully static application which uses React.js and Superfeedr's API. That's what we did: here's [river.news](http://river.news/).
+A **RSS River** is the perfect use case for us to build a fully static application which uses React.js and Superfeedr's API. That's what we did: here's [river.news](https://river.news/).
 
 Ha! Do you know what's amazing? Since it's just static files (just Javascript, CSS and a simple `<section id="content"></section>` HTML line), you can embed this river of news on *any web page* very easily. Check it by yourself:
 
@@ -25,7 +25,7 @@ Ha! Do you know what's amazing? Since it's just static files (just Javascript, C
 
 ### In the browser
 
-Since it run on *your user agent*, it can show the feeds to which *you* are subscribed... and only to you! It actually stores a Supefeedr login and token in your browser's localstorage. Open a [Superfeedr susbcriber account](https://superfeedr.com/subscriber/), head to [river.news](http://river.news/) (or to any page which includes it, really!), enter your credentials and start subscribing!
+Since it run on *your user agent*, it can show the feeds to which *you* are subscribed... and only to you! It actually stores a Supefeedr login and token in your browser's localstorage. Open a [Superfeedr susbcriber account](https://superfeedr.com/subscriber/), head to [river.news](https://river.news/) (or to any page which includes it, really!), enter your credentials and start subscribing!
 
 ### And it's realime!
 

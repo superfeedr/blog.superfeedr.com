@@ -16,7 +16,7 @@ If you're brave enough, you can then think about deploying your own software: a 
 
 Don't be ashmed that it does not look as nice as some silos: *golden jails are still jails*, [mine](http://ouvre-boite.com) is ugly!
 
-If you have any of these, think about adding a [SubToMe](http://subtome.com/) button to make sure people can follow you easily It's an open and decentralized solution that builds on giants's shoulders (RSS).
+If you have any of these, think about adding a [SubToMe](https://subtome.com/) button to make sure people can follow you easily It's an open and decentralized solution that builds on giants's shoulders (RSS).
 
 If you're looking for help, feel free to ask here, or join the [IndieWeb](http://indiewebcamp.com/Main_Page) community.
 
