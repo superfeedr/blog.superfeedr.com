@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts + CSS -->
-  <link href="/css/prism.css" rel="stylesheet" type="text/css">
-  <link href="/css/front.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="//assets.superfeedr.com/assets/css/global.css" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic%7CSource+Code+Pro:400,600" rel="stylesheet" type="text/css">
 
 
@@ -97,7 +96,7 @@ var google_remarketing_only = true;
 
       <div class="header-logo">
         <a title="Superfeedr Home" href="/">
-          <img alt="Logo" src="/images/logo.svg">
+          <img alt="Logo" src="//assets.superfeedr.com/assets/img/logo.svg">
           <span>Superfeedr Blog</span>
         </a>
       </div>
@@ -146,7 +145,7 @@ var google_remarketing_only = true;
   <div class="footer container container--front">
     <footer class="site-footer">
       <div class="site-footer__block">
-        <a href="/" class="site-footer__logo"><img alt="Logo invert" src="/images/logo-invert.svg"></a>
+        <a href="/" class="site-footer__logo"><img alt="Logo invert" src="//assets.superfeedr.com/assets/img/logo-invert.svg"></a>
         <p class="site-footer__copyright"><span>Superfeedr</span><br>&copy; 2009–{{ site.time | date: '%Y' }}</p>
       </div>
       <ul class="site-footer__block site-footer__list">
@@ -171,8 +170,7 @@ var google_remarketing_only = true;
   </div>
 
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
-  <script src="/scripts/prism.js" defer></script>
+  <script src="//assets.superfeedr.com/assets/js/global.min.js" defer></script>
 
   {% for js_file in page.js_includes %}
   <script src="{{ js_file }}" defer></script>
