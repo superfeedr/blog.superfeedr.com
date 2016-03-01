@@ -4,13 +4,9 @@ title: Archives
 description: "Archives for Superfeedr's Blog"
 ---
 
-
-<h3>Superfeedr Blog Archive</h3>
-
-
 {% for post in site.posts %}
     {% unless post.next %}
-      <h4 id="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</h4>
+      <h2 id="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</h2>
       <ul class="this">
     {% else %}
       {% capture year %}
@@ -23,7 +19,7 @@ description: "Archives for Superfeedr's Blog"
       {% if year != nyear %}
       </ul>
 
-      <h4 id="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</h4>
+      <h2 id="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</h2>
 
       <ul class="past">
       {% endif %}
