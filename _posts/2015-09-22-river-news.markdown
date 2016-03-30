@@ -21,7 +21,7 @@ Ha! Do you know what's amazing? Since it's just static files (just Javascript, C
 }
 </style>
 
-<section id="content"></section>
+<section id="rivernews"></section>
 
 ### In the browser
 
