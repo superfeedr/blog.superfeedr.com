@@ -1,6 +1,6 @@
 ---
 title: "Medium acquires Superfeedr"
-description: "Publishing on the web is changing drastically. Medium is one of these few companies which are building the future of publishing and reading. We're excited to join forces with them and continue buildin the open web in this new era!"
+description: "Publishing on the web is changing drastically. Medium is one of these few companies which are building the future of publishing and reading. We're excited to join forces with them and continue building the open web in this new era!"
 tags: []
 js_includes: []
 image: "/images/superfeedr-medium.png"
