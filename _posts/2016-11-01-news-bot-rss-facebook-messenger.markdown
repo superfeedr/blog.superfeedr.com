@@ -1,6 +1,6 @@
 ---
 title: "Building a News Bot for Facebook Messenger"
-description: ""
+description: "We built a news bot Facebook Messenger which lets you follow you favorite websites and be notified when they publish new stories."
 tags: ["bot", "rss", "facebook", "news", "chatbot"]
 js_includes: []
 image: "/images/facebook-messenger-logo.jpg"
