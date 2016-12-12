@@ -6,7 +6,6 @@ paginate: 10
 paginate_path: "/:num/"
 gems:
   - jekyll-sitemap
-  - jekyll-crosspost-to-medium
 defaults:
   -
     scope:
