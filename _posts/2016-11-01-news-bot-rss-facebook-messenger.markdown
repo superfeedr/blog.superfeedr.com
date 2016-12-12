@@ -4,6 +4,7 @@ description: ""
 tags: ["bot", "rss", "facebook", "news", "chatbot"]
 js_includes: []
 image: "/images/facebook-messenger-logo.jpg"
+crosspost_to_medium: true
 ---
 
 With each month that goes by, there is less and less doubt that messaging applications and bots are one of the interfaces with whom we are interacting more and more. One of the verticals for which messaging applications are the most useful is news.

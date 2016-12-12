@@ -6,6 +6,7 @@ paginate: 10
 paginate_path: "/:num/"
 gems:
   - jekyll-sitemap
+  - jekyll-crosspost-to-medium
 defaults:
   -
     scope:
@@ -17,3 +18,10 @@ defaults:
       author_name: Julien
       author_uri: http://ouvre-boite.com
       author_email_md5: b30ce50678f0e934eaa6697425c59dd7
+jekyll-crosspost_to_medium:
+  enabled: true
+  cache: .jekyll-crosspost_to_medium
+  status: draft
+  license: all-rights-reserved
+  text: ''
+  backdate: true
