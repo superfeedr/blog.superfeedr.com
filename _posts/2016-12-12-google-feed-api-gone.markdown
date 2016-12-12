@@ -5,8 +5,6 @@ tags: ["feed", "API", "Google", "embed"]
 js_includes: []
 ---
 
-# Google Feed API is gone: now what?
-
 As you [might have heard](https://blog.superfeedr.com/google-feed-api-alternative/), the **Google Feed API** is closing on December 15th, 2016. It’s not too late to look for a replacement and Superfeedr has you covered, either directly, or via Embedly.
 
 The Google Feed API was used to build all types of  applications, from simple web page embeds to more advanced feed readers and podcasts players. [Superfeedr](https://superfeedr.com) is a powerful replacement which also provides tools for all of these use cases. We also have solutions for feed [publishers](https://superfeedr.com/publisher) or even for people looking for [real-time search filters](https://superfeedr.com/tracker).
